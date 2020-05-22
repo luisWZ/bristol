@@ -1,0 +1,22 @@
+{
+  "name": "bristol",
+  "version": "1.0.0",
+  "description": "bristol template",
+  "scripts": {
+    "sass": "node-sass --output-style expanded -o main-files/assets/css main-files/assets/scss --source-map true --source-map-contents true",
+    "css-prefix": "post-css --replace main-files/assets/css/style.css --use autoprefixer --map",
+    "css": "npm run sass && npm run css-prefix",
+    "docs": "browser-sync start --server documentation --logPrefix 'template documentation' --no-open --no-notify",
+    "server": "browser-sync main-files -w --logPrefix $npm_package_name --no-open --no-notify",
+    "watch": "onchange 'main-files/assets/**/*.scss' -- npm run sass",
+    "dev": "parallelshell 'npm run watch' 'npm run server'"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.0",
+    "browser-sync": "^2.26.7",
+    "node-sass": "^4.14.1",
+    "onchange": "^7.0.2",
+    "parallelshell": "^3.0.1",
+    "post-cli": "^1.0.5"
+  }
+}
