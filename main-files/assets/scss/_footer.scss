@@ -24,11 +24,29 @@
     }
 }
 
+.footer-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 40px 0;
+
+    &-img {
+        flex-basis: 0;
+        max-width: 40%;
+    }
+}
+
 .f-logo-text {
     position: relative;
     margin-top: -5px;
+
     img {
         margin-bottom: 20px;
+        max-width: 60%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     p {
         color: #c5c5c5;
@@ -56,7 +74,7 @@ ul.f-links {
             &:hover {
                 color: $primaryColor;
             }
-            
+
         }
     }
 }
@@ -97,14 +115,14 @@ ul.fsc-icon-list {
                 color: $elementsColor;
             }
         }
-        
+
     }
 }
 /*----------- Footer Style END ------------*/
 
 
 /*----------------------------------------*/
-/*  Newsletter Style 
+/*  Newsletter Style
 /*----------------------------------------*/
 .newsletter-area {
     position: relative;
@@ -161,7 +179,7 @@ form.newsletter-form {
             }
         }
     }
-    
+
 }
 
 /*----------- Newsletter Style END ------------*/

@@ -1,10 +1,31 @@
 // Variables
 
 //Font Variables
-$primaryFont: 'Circular Std Book';
 $secondaryFont: 'Circular Std';
 $tertiaryFont : 'Poppins', sans-serif;
-// $tertiaryFont: 'Circular Std';
+
+$primaryFont : 'Roboto', sans-serif;
+
+// $primaryFont:
+//     // Safari for macOS and iOS (San Francisco)
+//     -apple-system,
+//     // Chrome < 56 for macOS (San Francisco)
+//     BlinkMacSystemFont,
+//     // Windows
+//     "Segoe UI",
+//     // Android
+//     Roboto,
+//     // Basic web fallback
+//     "Helvetica Neue", Arial,
+//     // Linux
+//     "Noto Sans",
+//     // Sans serif fallback
+//     sans-serif,
+//     // Emoji fonts
+//     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$headerFont : 'Poppins', sans-serif;
+
 
 
 // Color Variables

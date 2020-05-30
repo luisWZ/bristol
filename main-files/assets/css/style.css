@@ -181,81 +181,81 @@ body.mobiletoggleSlide {
   width: 100%;
 }
 
-/* 
+/*
 Table Of Contents
 =========================
 - Default Typography
 - Custom Typography
 =========================
 */
-/* 
+/*
 --------------------------
 - Default Typography
 --------------------------
 */
 body {
-  font-family: "Circular Std Book";
+  font-family: "Roboto", sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
   margin: 0;
-  font-family: "Circular Std Book";
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: #000;
   letter-spacing: 1.5px;
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
+h1 a, .h1 a,
+h2 a, .h2 a,
+h3 a, .h3 a,
+h4 a, .h4 a,
+h5 a, .h5 a,
+h6 a, .h6 a {
   font-weight: inherit;
-  font-family: "Circular Std Book";
+  font-family: "Poppins", sans-serif;
 }
 
-h1 {
+h1, .h1 {
   font-size: 36px;
   line-height: 70px;
   letter-spacing: 1px;
   margin-bottom: 0px;
 }
 
-h2 {
+h2, .h2 {
   font-size: 22px;
   line-height: 24px;
   margin-bottom: 0px;
 }
 
-h3 {
+h3, .h3 {
   font-size: 24px;
   line-height: 30px;
   margin-bottom: 0px;
 }
 
-h4 {
+h4, .h4 {
   font-size: 20px;
   line-height: 27px;
 }
 
-h5 {
+h5, .h5 {
   font-size: 16px;
   line-height: 24px;
 }
 
-h6 {
+h6, .h6 {
   font-size: 14px;
   line-height: 24px;
 }
 
 p {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 0;
@@ -268,7 +268,7 @@ p img {
 }
 
 span {
-  font-family: "Circular Std Book";
+  font-family: "Roboto", sans-serif;
 }
 
 /* em and strong */
@@ -289,7 +289,7 @@ small {
 /*  blockquotes */
 blockquote {
   border-left: 0 none;
-  font-family: "Circular Std Book";
+  font-family: "Roboto", sans-serif;
   margin: 10px 0;
   padding-left: 40px;
   position: relative;
@@ -349,7 +349,7 @@ abbr:hover {
 a,
 a:visited {
   text-decoration: none;
-  font-family: "Circular Std Book";
+  font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-size: 12px;
   color: #111;
@@ -751,13 +751,11 @@ a.btn-style-1b:hover {
 
 .logo-wrapper {
   position: relative;
-  padding: 5px 0px;
+  margin-top: 16px;
 }
 
 .logo-wrapper a {
   display: block;
-  margin: 15px auto;
-  padding: 15px 5px;
 }
 
 .topbar-contact {
@@ -2091,10 +2089,11 @@ ul.tsc-icon-list li a:hover {
 .single-courses .sc-text .sc-enroll ul {
   position: relative;
   padding: 0;
-  margin: 20px auto 5px;
+  margin: 20px 5px 5px 0;
+  text-align: right;
 }
 
-.single-courses .sc-text .sc-enroll ul li {
+.single-courses .sc-text .sc-enroll li {
   position: relative;
   list-style-type: none;
   display: inline-block;
@@ -2105,14 +2104,14 @@ ul.tsc-icon-list li a:hover {
   color: #5d6076;
 }
 
-.single-courses .sc-text .sc-enroll ul li svg {
+.single-courses .sc-text .sc-enroll li svg {
   font-size: 18px;
   margin-right: 5px;
   margin-left: 5px;
   color: #fe4646;
 }
 
-.single-courses .sc-text .sc-enroll ul li:last-child {
+.single-courses .sc-text .sc-enroll li:last-child {
   margin-right: 0px;
   margin-left: -10px;
   text-align: right;
@@ -2292,7 +2291,7 @@ a.scfc-wrapper:hover .sc-text h4 {
 
 /*--------- Courses Style 2 END ------------*/
 /*----------------------------------------*/
-/*  Courses Details Style 
+/*  Courses Details Style
 /*----------------------------------------*/
 .courses-enroll-area {
   position: relative;
@@ -2338,7 +2337,7 @@ a.scfc-wrapper:hover .sc-text h4 {
   padding: 50px 0px 0px;
   margin: 60px auto 40px;
   width: 100%;
-  max-width: 150px;
+  max-width: 200px;
   text-align: left;
   margin-right: 0;
 }
@@ -3812,6 +3811,14 @@ ul.tag-lists li a:hover {
   font-style: italic;
 }
 
+.single-testimonialV2 .t-text p:before {
+  content: "« ";
+}
+
+.single-testimonialV2 .t-text p:after {
+  content: " »";
+}
+
 .single-testimonialV2 .t-avatar {
   position: relative;
   padding-left: 70px;
@@ -4056,6 +4063,18 @@ textarea.cw-input {
   margin-bottom: 20px;
 }
 
+.footer-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 40px 0;
+}
+
+.footer-logos-img {
+  flex-basis: 0;
+  max-width: 40%;
+}
+
 .f-logo-text {
   position: relative;
   margin-top: -5px;
@@ -4063,6 +4082,11 @@ textarea.cw-input {
 
 .f-logo-text img {
   margin-bottom: 20px;
+  max-width: 60%;
+}
+
+.f-logo-text img:last-child {
+  margin-bottom: 0;
 }
 
 .f-logo-text p {
@@ -4144,7 +4168,7 @@ ul.fsc-icon-list li a:hover {
 
 /*----------- Footer Style END ------------*/
 /*----------------------------------------*/
-/*  Newsletter Style 
+/*  Newsletter Style
 /*----------------------------------------*/
 .newsletter-area {
   position: relative;

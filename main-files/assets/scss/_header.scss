@@ -82,7 +82,7 @@
     background: $primaryColor;
     -webkit-transition: all 0.25s;
     transition: all 0.25s;
-    &:before, 
+    &:before,
     &:after {
         position: absolute;
         top: 50%;
@@ -180,14 +180,15 @@
 }
 
 .logo-wrapper {
-	position: relative;
-    padding: 5px 0px;
+    position: relative;
+    margin-top: 16px;
+    // padding: 5px 0px;
     a {
         display: block;
-        margin: 15px auto;
-        padding: 15px 5px;
+        // margin: 15px auto;
+        // padding: 15px 5px;
     }
-    
+
 }
 .topbar-contact {
     position: relative;
@@ -214,7 +215,7 @@
                 color: $tertiaryColor;
                 line-height: 24px;
             }
-            i, 
+            i,
             svg {
                 margin-right: 5px;
                 color: $elementsColor;

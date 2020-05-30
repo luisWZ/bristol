@@ -74,7 +74,7 @@ ul.tsc-icon-list {
     .section-titleV1 {
         margin-bottom: 25px;
     }
-    
+
 }
 
 
@@ -118,9 +118,9 @@ ul.tsc-icon-list {
                 font-size: inherit;
                 letter-spacing: inherit;
                 line-height: inherit;
-                
+
             }
-            
+
         }
         p {
             color: $secondaryColor;
@@ -143,29 +143,33 @@ ul.tsc-icon-list {
             ul {
                 position: relative;
                 padding: 0;
-                margin: 20px auto 5px;
-                li {
-                    position: relative;
-                    list-style-type: none;
-                    display: inline-block;
-                    width: 50%;
-                    margin-right: 0px;
-                    font-size: 14px;
-                    letter-spacing: 0px;
-                    color: $secondaryColor;
-                    svg {
-                        font-size: 18px;
-                        margin-right: 5px;
-                        margin-left: 5px;
-                        color: $elementsColor;
-                    }
-                    &:last-child {
-                        margin-right: 0px;
-                        margin-left: -10px;
-                        text-align: right;
-                    }
-                    
+                margin: 20px 5px 5px 0;
+                text-align: right;
+            }
+
+            li {
+                position: relative;
+                list-style-type: none;
+                display: inline-block;
+                width: 50%;
+                margin-right: 0px;
+                font-size: 14px;
+                letter-spacing: 0px;
+                color: $secondaryColor;
+
+                svg {
+                    font-size: 18px;
+                    margin-right: 5px;
+                    margin-left: 5px;
+                    color: $elementsColor;
                 }
+
+                &:last-child {
+                    margin-right: 0px;
+                    margin-left: -10px;
+                    text-align: right;
+                }
+
             }
         }
     }
@@ -182,7 +186,7 @@ ul.tsc-icon-list {
             }
         }
     }
-    
+
 }
 
 
@@ -202,7 +206,7 @@ ul.tsc-icon-list {
     .col-md-4 {
         padding: 0px;
     }
-    
+
 }
 
 .mfc-title {
@@ -231,7 +235,7 @@ ul.tsc-icon-list {
     a.btn-style-a {
         left: 40px;
         bottom: 20px;
-        
+
     }
 }
 
@@ -279,7 +283,7 @@ ul.tsc-icon-list {
                 color: $primaryColor;
             }
        }
-    
+
     }
 }
 
@@ -336,7 +340,7 @@ a.scfc-wrapper {
             letter-spacing: 0px;
             font-weight: 100;
         }
-        
+
     }
 }
 
@@ -344,7 +348,7 @@ a.scfc-wrapper {
 
 
 /*----------------------------------------*/
-/*  Courses Details Style 
+/*  Courses Details Style
 /*----------------------------------------*/
 
 .courses-enroll-area {
@@ -388,7 +392,7 @@ a.scfc-wrapper {
     padding: 50px 0px 0px;
     margin: 60px auto 40px;
     width: 100%;
-    max-width: 150px;
+    max-width: 200px;
     text-align: left;
     margin-right: 0;
     a {
@@ -425,7 +429,7 @@ a.scfc-wrapper {
         margin-top: -80px;
         box-shadow: 0px 0px 45.54px 0.46px rgba(39, 43, 60, 0.07);
     }
-    
+
 }
 
 ul.course-info {
@@ -470,7 +474,7 @@ ul.course-info {
         letter-spacing: 0px;
         font-weight: 500;
     }
-    
+
     .cdc-text {
         position: relative;
         padding: 40px 0px;
@@ -482,7 +486,7 @@ ul.course-info {
             letter-spacing: 0px;
             color: $septenary;
         }
-        
+
     }
 }
 
@@ -568,7 +572,7 @@ ul.course-info {
             }
         }
     }
-    
+
 }
 
 .recommended-courses-area {

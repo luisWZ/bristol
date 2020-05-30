@@ -46,7 +46,7 @@
             width: 75px;
         }
     }
-   
+
     .owl-thumbs {
         position: absolute;
         top: 0;
@@ -128,7 +128,7 @@
             display: inline-block;
             margin: 5px auto 15px;
         }
-        
+
     }
 }
 
@@ -146,12 +146,22 @@
     .t-text {
         position: relative;
         margin: 25px auto;
+
         p {
             font-size: 16px;
             line-height: 26px;
             letter-spacing: 0px;
             color: $secondaryColor;
             font-style: italic;
+
+            &:before {
+                content: "« ";
+                // content: "“";
+            }
+            &:after {
+                content: " »";
+                // content: "”";
+            }
         }
     }
     .t-avatar {
@@ -205,7 +215,7 @@
         z-index: -1;
         transform: scaleY(-1);
     }
-     
+
 }
 
 /* ---------- Testimonial 1 Style END ---------- */
