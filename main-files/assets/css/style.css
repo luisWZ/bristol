@@ -476,7 +476,7 @@ i[class^="flaticon-"]:before {
 .section-titleV1 p {
   font-size: 20px;
   letter-spacing: 0px;
-  color: #fe4646;
+  color: #F53C3C;
   display: inline-block;
   padding: 0px;
   margin-bottom: 15px;
@@ -532,7 +532,7 @@ i[class^="flaticon-"]:before {
 a.btn-style-a {
   position: relative;
   display: inline-block;
-  background-color: #fe4646;
+  background-color: #F53C3C;
   color: #fff;
   font-size: 18px;
   line-height: 28px;
@@ -541,7 +541,7 @@ a.btn-style-a {
 }
 
 a.btn-style-a:hover {
-  background-color: #3d84c6;
+  background-color: #3853EC;
 }
 
 a.btn-style-1 {
@@ -549,13 +549,13 @@ a.btn-style-1 {
   font-size: 18px;
   letter-spacing: 0px;
   color: #fff;
-  background-color: #fe4646;
+  background-color: #F53C3C;
   padding: 16px 30px;
   display: inline-block;
 }
 
 a.btn-style-1:hover {
-  background-color: #3d84c6;
+  background-color: #3853EC;
 }
 
 a.btn-style-1b {
@@ -564,7 +564,7 @@ a.btn-style-1b {
   line-height: 20px;
   letter-spacing: 0px;
   color: #fff;
-  background-color: #3d84c6;
+  background-color: #3853EC;
   padding: 8px 15px;
   display: inline-block;
 }
@@ -745,7 +745,7 @@ a.btn-style-1b:hover {
   background-color: #fff;
   top: 0;
   left: 0;
-  border-left: 5px solid #fe4646;
+  border-left: 5px solid #F53C3C;
   z-index: 99;
 }
 
@@ -793,7 +793,7 @@ a.btn-style-1b:hover {
 .topbar-contact ul li i,
 .topbar-contact ul li svg {
   margin-right: 5px;
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .topbar-social {
@@ -825,7 +825,7 @@ ul.sc-icon-list li a {
 
 ul.sc-icon-list li a:hover {
   background-color: #f5f5f5;
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .header-register-btn {
@@ -837,7 +837,7 @@ ul.sc-icon-list li a:hover {
 .header-register-btn a {
   display: block;
   position: relative;
-  background-color: #3d84c6;
+  background-color: #3853EC;
   font-size: 16px;
   letter-spacing: 0px;
   color: #fff;
@@ -1133,7 +1133,7 @@ ul.sc-icon-list li a:hover {
 
 .reg-form form.r-form input.rn-btn {
   margin-bottom: 20px;
-  background-color: #3d84c6;
+  background-color: #3853EC;
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 32px;
@@ -1143,7 +1143,7 @@ ul.sc-icon-list li a:hover {
 
 .reg-form form.r-form input.rn-btn:hover {
   color: #fff;
-  background-color: #fe4646;
+  background-color: #F53C3C;
 }
 
 .register-now-text {
@@ -1246,12 +1246,12 @@ ul.sc-icon-list li a:hover {
 }
 
 .breadcrumb nav li.active {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .about-page-scroll-nav {
   position: relative;
-  background-color: #fe4646;
+  background-color: #F53C3C;
 }
 
 .ap-sn {
@@ -1281,7 +1281,7 @@ ul.sc-icon-list li a:hover {
 }
 
 .ap-sn ul li a:hover {
-  background-color: #3d84c6;
+  background-color: #3853EC;
 }
 
 .who-we-area {
@@ -1310,7 +1310,7 @@ ul.sc-icon-list li a:hover {
 }
 
 .section-text .sqoutes-text {
-  background-color: #fe4646;
+  background-color: #F53C3C;
   position: relative;
   padding: 25px;
   margin: 36px auto;
@@ -1401,7 +1401,7 @@ ul.sc-icon-list li a:hover {
 }
 
 .single-team:hover h4 {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .single-team:hover .st-img img {
@@ -1457,7 +1457,7 @@ ul.fl-list li {
 }
 
 .ipt-bg .breadcrumb nav li.active {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .ipt-bg .breadcrumb nav li a {
@@ -1565,7 +1565,7 @@ ul.fl-list li {
 .single-event .se-text .se-meta ul li svg,
 .single-event .se-text .se-meta ul li i {
   margin-right: 5px;
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .single-event .se-text p {
@@ -1741,15 +1741,15 @@ ul.fl-list li {
   height: 20px;
   width: 20px;
   background-color: #fff;
-  border: 1px solid #fe4646;
+  border: 1px solid #F53C3C;
 }
 
 .speaker-carousel .owl-dots:hover span {
-  background-color: #fe4646;
+  background-color: #F53C3C;
 }
 
 .speaker-carousel .owl-dots .owl-dot.active span {
-  background-color: #fe4646;
+  background-color: #F53C3C;
 }
 
 .event-ticket-form {
@@ -1788,12 +1788,12 @@ textarea.etf-input {
 
 input.etf-btn {
   width: 100%;
-  background-color: #fe4646;
+  background-color: #F53C3C;
   color: #fff;
   font-size: 16px;
   letter-spacing: 0px;
   height: 50px;
-  border: 1px solid #fe4646;
+  border: 1px solid #F53C3C;
   cursor: pointer;
   margin-bottom: 15px;
 }
@@ -1815,7 +1815,7 @@ form.etf {
 a.register-btn {
   position: relative;
   display: block;
-  background-color: #fe4646;
+  background-color: #F53C3C;
   color: #fff;
   letter-spacing: 0px;
   font-size: 16px;
@@ -1884,7 +1884,7 @@ a.register-btn {
 
 #eds-map {
   height: 200px;
-  background-color: #fe4646;
+  background-color: #F53C3C;
   width: 100%;
   max-width: 215px;
 }
@@ -1903,7 +1903,7 @@ a.maps-direction-btn {
 }
 
 a.maps-direction-btn:hover {
-  background-color: #fe4646;
+  background-color: #F53C3C;
   color: #fff;
 }
 
@@ -2108,7 +2108,7 @@ ul.tsc-icon-list li a:hover {
   font-size: 18px;
   margin-right: 5px;
   margin-left: 5px;
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .single-courses .sc-text .sc-enroll li:last-child {
@@ -2122,11 +2122,11 @@ ul.tsc-icon-list li a:hover {
 }
 
 .single-courses:hover h4 {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .single-courses:hover h4 a {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .most-effective-course-area {
@@ -2240,7 +2240,7 @@ a.scfc-wrapper {
 }
 
 a.scfc-wrapper:hover .sc-text h4 {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 /*--------- Courses Style 1 END ------------*/
@@ -2362,7 +2362,7 @@ a.scfc-wrapper:hover .sc-text h4 {
   content: '';
   height: 15px;
   width: 15px;
-  background-color: #fe4646;
+  background-color: #F53C3C;
   top: 6px;
   left: 0;
 }
@@ -2586,11 +2586,11 @@ ul.course-info li span {
 }
 
 .educus-portfolio-filters .btn-shuffle:hover {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .educus-portfolio-filters .btn-shuffle.active {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .portfolio-shuffle {
@@ -2619,7 +2619,7 @@ ul.course-info li span {
   content: "";
   height: 100%;
   width: 100%;
-  background-color: #fe4646;
+  background-color: #F53C3C;
   opacity: .85;
   bottom: -100%;
   left: 0;
@@ -2716,7 +2716,7 @@ ul.course-info li span {
   content: "";
   height: 100%;
   width: 100%;
-  background-color: #fe4646;
+  background-color: #F53C3C;
   opacity: .85;
   bottom: -100%;
   left: 0;
@@ -2746,11 +2746,11 @@ ul.course-info li span {
 }
 
 .psV2 .ps-text h4:hover {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .psV2 .ps-text a:hover {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .psV2:hover .ps-text {
@@ -2807,7 +2807,7 @@ ul.course-info li span {
 
 .portfolio-details-single .pd-qoute {
   position: relative;
-  background-color: #fe4646;
+  background-color: #F53C3C;
   padding: 40px;
   margin-bottom: 50px;
 }
@@ -3015,7 +3015,7 @@ ul.course-info li span {
 }
 
 .single-blogV2 .sb-text h4 a:hover {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .single-blogV2 .sb-text p {
@@ -3041,7 +3041,7 @@ a.btn-style-2 {
 
 a.btn-style-2:hover {
   color: #fff;
-  background-color: #fe4646;
+  background-color: #F53C3C;
 }
 
 .single-blogV2 .sb-meta {
@@ -3184,7 +3184,7 @@ a.btn-style-2 svg {
 }
 
 .s-subscribe form button:hover {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 .sidebar-social {
@@ -3210,7 +3210,7 @@ a.btn-style-2 svg {
 .sidebar-social ul li a {
   font-size: 20px;
   display: block;
-  background-color: #fe4646;
+  background-color: #F53C3C;
   color: #fff;
   padding: 12px 5px;
   text-align: center;
@@ -3267,7 +3267,7 @@ a.btn-style-2 svg {
 }
 
 .single-f-post:hover .sfp-text a {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 ul.tag-lists {
@@ -3295,7 +3295,7 @@ ul.tag-lists li a {
 }
 
 ul.tag-lists li a:hover {
-  background-color: #fe4646;
+  background-color: #F53C3C;
   color: #fff;
 }
 
@@ -3330,8 +3330,8 @@ ul.tag-lists li a:hover {
 
 .edu-pagination nav ul li.active a,
 .edu-pagination nav ul li a:hover {
-  border: 1px solid #fe4646;
-  color: #fe4646;
+  border: 1px solid #F53C3C;
+  color: #F53C3C;
   background-color: #fff;
 }
 
@@ -3452,7 +3452,7 @@ ul.tag-lists li a:hover {
 .service-carousel .owl-nav [class*=owl-] {
   height: 50px;
   width: 50px;
-  background-color: #3d84c6;
+  background-color: #3853EC;
   border-radius: 50%;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -3465,7 +3465,7 @@ ul.tag-lists li a:hover {
 }
 
 .service-carousel .owl-nav [class*=owl-]:hover {
-  background-color: #fe4646;
+  background-color: #F53C3C;
 }
 
 .service-carousel .owl-nav .owl-prev {
@@ -3479,7 +3479,7 @@ ul.tag-lists li a:hover {
 .single-service {
   position: relative;
   max-width: 380px;
-  background-color: #fe4646;
+  background-color: #F53C3C;
   padding: 25px;
   z-index: 1;
   -webkit-transition: all 0.5s ease;
@@ -3603,7 +3603,7 @@ ul.tag-lists li a:hover {
 }
 
 .ssV2:hover {
-  background-color: #3d84c6;
+  background-color: #3853EC;
 }
 
 .ssV2:hover h4, .ssV2:hover p, .ssV2:hover a {
@@ -3715,7 +3715,7 @@ ul.tag-lists li a:hover {
 }
 
 .testimonial-carousel .owl-nav [class*=owl-] {
-  background-color: #3d84c6;
+  background-color: #3853EC;
   font-size: 30px;
   line-height: 30px;
   height: 50px;
@@ -3731,7 +3731,7 @@ ul.tag-lists li a:hover {
 }
 
 .testimonial-carousel .owl-nav [class*=owl-]:hover {
-  background-color: #fe4646;
+  background-color: #F53C3C;
 }
 
 .testimonial-carousel .owl-nav .owl-prev {
@@ -3919,8 +3919,8 @@ ul.tag-lists li a:hover {
 
 .contact-form form [type=submit] {
   width: 100%;
-  background-color: #fe4646;
-  border: 1px solid #fe4646;
+  background-color: #F53C3C;
+  border: 1px solid #F53C3C;
   font-size: 18px;
   letter-spacing: 0px;
   color: #fff;
@@ -3989,7 +3989,7 @@ textarea.cw-input {
   position: relative;
   width: 60px;
   height: 60px;
-  background-color: #fe4646;
+  background-color: #F53C3C;
   color: #fff;
   font-size: 24px;
   text-align: center;
@@ -4163,7 +4163,7 @@ ul.fsc-icon-list li a {
 }
 
 ul.fsc-icon-list li a:hover {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 /*----------- Footer Style END ------------*/
@@ -4234,7 +4234,7 @@ form.newsletter-form .nl-input button {
 }
 
 form.newsletter-form .nl-input button:hover {
-  color: #fe4646;
+  color: #F53C3C;
 }
 
 /*----------- Newsletter Style END ------------*/
