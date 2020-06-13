@@ -81,7 +81,9 @@ ul.tsc-icon-list {
 .single-courses {
     position: relative;
     max-width: 350px;
-    margin: 15px auto;
+    margin: 16px auto;
+    background-color: white;
+
     .sc-img {
         position: relative;
         max-height: 350px;
@@ -310,15 +312,19 @@ a.scfc-wrapper {
     max-width: 1366px;
     margin: 0 auto;
     overflow: hidden;
+    padding-top: 132px;
+
     .container-fluid {
         padding: 0px;
     }
 }
 
-.puc-single {
-    position: relative;
-    padding: 60px 0px;
-    img.puc-bg {
+.puc {
+    &-single {
+        position: relative;
+        padding: 60px 0px;
+    }
+    &-bg {
         position: absolute;
         height: 100%;
         width: 100%;
@@ -326,21 +332,21 @@ a.scfc-wrapper {
         top: 0;
         left: 0;
     }
-    .puc-text {
+
+    &-text {
         position: relative;
         z-index: 1;
         padding: 60px 40px;
         max-width: 400px;
         margin: 0px auto;
+
         h4 {
             color: $primaryColor;
             font-size: 30px;
             line-height: 40px;
             margin-bottom: 30px;
             letter-spacing: 0px;
-            font-weight: 100;
         }
-
     }
 }
 
@@ -367,7 +373,6 @@ a.scfc-wrapper {
         font-size: 48px;
         color: $primaryColor;
         letter-spacing: 0px;
-        font-weight: 100;
         line-height: 60px;
         margin-bottom: 120px;
         position: relative;

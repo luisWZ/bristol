@@ -11,7 +11,7 @@
     "css-prefix": "post-css --replace main-files/assets/css/style.css --use autoprefixer --map",
     "css": "npm run sass && npm run css-prefix",
     "docs": "browser-sync start --server documentation --logPrefix 'template documentation' --no-open --no-notify",
-    "server": "browser-sync main-files -w --logPrefix $npm_package_name --no-open --no-notify --directory",
+    "server": "browser-sync main-files -w --logPrefix $npm_package_name --no-open --no-notify",
     "watch": "onchange 'main-files/assets/**/*.scss' -- npm run sass",
     "dev": "concurrently --names 'sass,server' --prefix name 'npm run watch' 'npm run server'"
   },

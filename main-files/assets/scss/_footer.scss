@@ -19,7 +19,6 @@
         color: $primaryColor;
         font-size: 18px;
         letter-spacing: 0px;
-        font-weight: 100;
         margin-bottom: 20px;
     }
 }
@@ -80,7 +79,7 @@ ul.f-links {
 }
 .footer-copyright {
     position: relative;
-    background-color: $tertiaryColor;
+    background-color: $senaryLight;
     padding: 15px 0px 10px;
 }
 
@@ -124,62 +123,69 @@ ul.fsc-icon-list {
 /*----------------------------------------*/
 /*  Newsletter Style
 /*----------------------------------------*/
-.newsletter-area {
-    position: relative;
-    z-index: 1;
-    margin-bottom: -100px;
-}
-.newsletter-wrapper {
-    position: relative;
-    background-color: $tertiaryColor;
-    padding: 40px 25px;
-    text-align: center;
-    h4 {
-        font-size: 30px;
-        color: $primaryColor;
-        letter-spacing: 0px;
-        line-height: 40px;
-        font-weight: 100;
-        margin: 15px auto;
-    }
-}
 
-form.newsletter-form {
-    position: relative;
-    max-width: 767px;
-    margin: 15px auto;
-    .nl-input {
+.nl {
+    $backgroundColor: white;
+
+    &-newsletter {
         position: relative;
-        input {
-            width: 100%;
-            font-size: 16px;
+        z-index: 1;
+        margin-bottom: -100px;
+    }
+
+    &-wrapper {
+        background-color: $backgroundColor;
+        padding: 40px 25px;
+        text-align: center;
+
+        h4 {
+            font-size: 30px;
+            color: $primaryColor;
             letter-spacing: 0px;
-            font-weight: 100;
-            padding: 10px 15px;
-            padding-left: 0px;
-            color: $primaryColor;
-            background-color: $tertiaryColor;
-            border: none;
-            border-bottom: 1px solid #43505d;
-        }
-        button {
-            position: absolute;
-            right: 5px;
-            top: 15px;
-            background-color: $tertiaryColor;
-            color: $primaryColor;
-            border: none;
-            padding: 0px;
-            font-size: 24px;
-            z-index: 1;
-            @include transition(all, .5s, ease);
-            cursor: pointer;
-            &:hover {
-                color: $elementsColor;
-            }
+            line-height: 40px;
+            margin: 16px auto;
         }
     }
 
+    &-form {
+        position: relative;
+        max-width: 767px;
+        margin: 16px auto;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $grayBristol;
+    }
+
+    &-input {
+        flex: 1;
+        font-size: 16px;
+        letter-spacing: 0px;
+        padding: 10px 16px;
+        color: $grayBristol;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid $grayBristol;
+        transition: background-color .2s linear;
+
+        &:focus {
+            background-color: $grayLight;
+        }
+    }
+
+    &-button {
+        background-color: transparent;
+        color: $pinkBristol;
+        border: none;
+        padding: 0px 12px;
+        margin-left: -54px;
+        z-index: 1;
+        cursor: pointer;
+        @include transition(all, .5s, ease);
+
+        &:hover {
+            color: $elementsColor;
+        }
+    }
 }
 
 /*----------- Newsletter Style END ------------*/

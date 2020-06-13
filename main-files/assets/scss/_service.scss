@@ -74,10 +74,10 @@
         max-width: 60px;
         height: 60px;
         img {
-            margin: 15px auto;
+            margin: 16px auto;
             transition: .99s ease;
         }
-        
+
     }
     .ss-text {
         position: relative;
@@ -109,7 +109,7 @@
             }
         }
     }
-    
+
 }
 .ss-bg1 {
     background-color: #3d84c6;
@@ -142,7 +142,7 @@
         a {
             color: $tertiaryColor;
         }
-        
+
     }
     .ss-icon {
         img.hIcon {
@@ -157,11 +157,11 @@
         img.ss-hover-icon {
             opacity: 0;
         }
-    
+
         .ss-icon img {
             display: none;
         }
-    
+
         .ss-icon {
             img.hIcon {
                 display: block;
