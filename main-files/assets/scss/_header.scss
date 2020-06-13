@@ -32,8 +32,7 @@
             font-size: 14px !important;
             &:hover {
                 color: #ffff;
-                background-color: #3d84c6;
-                text-decoration: underline;
+                background-color: $senaryLight;
             }
         }
         a.has-submenu {
@@ -244,7 +243,7 @@ ul.sc-icon-list {
             position: relative;
             display: block;
             background-color: $primaryColor;
-            padding: 13px 5px;
+            padding: 15px 5px;
             font-size: 16px;
             line-height: 20px;
             width: 35px;
@@ -282,7 +281,7 @@ ul.sc-icon-list {
         right: 0;
         top: 18px;
 
-        @media (max-width: 80em) {
+        @media (max-width: 80em) { // 1280 / 16 = 80
             display: none;
         }
     }

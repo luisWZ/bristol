@@ -323,6 +323,20 @@ a.scfc-wrapper {
     &-single {
         position: relative;
         padding: 60px 0px;
+
+        .btn-style-a {
+            $_color: $elementsColor;
+            // transition: background-color .25s;
+            transition: none;
+            border: 4px solid $_color;
+            box-shadow: 0 2px 4px fade-out($color: adjust-color($color: $_color, $saturation: -40%, $lightness: -20%), $amount: 0.6);
+
+            &:hover {
+                // background-color: $pinkBristol;
+                border-color:white;
+                // box-shadow: 0 4px 0 white;
+            }
+        }
     }
     &-bg {
         position: absolute;

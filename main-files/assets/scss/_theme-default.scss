@@ -119,10 +119,10 @@ body {
     // background: $primaryColor; F2F4F8
     background: #F2F4F8;
     font-weight: normal;
-    font-size: 15px;
+    // font-size: 15px; // let the device set the default
     letter-spacing: 1.5px;
     color: #888;
-    line-height: 30px;
+    line-height: 1.875;
     -webkit-font-smoothing: antialiased;
     /* Fix for webkit rendering */
     -webkit-text-size-adjust: 100%;
@@ -175,14 +175,7 @@ h6, .h6 {
     font-weight: 700;
     color: $quaternary;
     letter-spacing: 1.5px;
-}
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
     a {
         font-weight: inherit;
         font-family: $headerFont;
@@ -210,7 +203,7 @@ h3, .h3 {
 
 h4, .h4 {
     font-size: 20px;
-    line-height: 27px;
+    line-height: 28px;
 }
 
 h5, .h5 {
@@ -226,9 +219,9 @@ h6, .h6 {
 p {
     font-family: $primaryFont;
     font-size: 14px;
-    font-weight: normal;
+    font-weight: $fontWeightNormal;
     letter-spacing: 0;
-    line-height: 28px;
+    line-height: 1.75;
     margin: 0;
 }
 
@@ -242,23 +235,21 @@ span {
     font-family: $primaryFont;
 }
 
-
 /* em and strong */
 
 em {
-    font: 15px/30px;
+    font: 16px/32px;
 }
 
 strong,
 b {
-    font: 15px/30px;
+    font: 16px/32px;
 }
 
 small {
-    font-size: 11px;
+    font-size: 12px;
     line-height: inherit;
 }
-
 
 /*  blockquotes */
 
@@ -310,7 +301,7 @@ blockquote {
 
 abbr {
     color: #444;
-    font-weight: 700;
+    font-weight: $fontWeightBold;
     font-variant: small-caps;
     text-transform: lowercase;
     letter-spacing: .6px;
@@ -325,8 +316,8 @@ a,
 a:visited {
     text-decoration: none;
     font-family: $primaryFont;
-    font-weight: normal;
-    font-size: 12px;
+    font-weight: $fontWeightNormal;
+    font-size: 14px;
     color: #111;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -407,18 +398,9 @@ ol {
 }
 
 li {
-    line-height: 18px;
+    line-height: 1.125;
     margin-bottom: 0px;
 }
-
-ul.large {
-    li {}
-}
-
-li {
-    p {}
-}
-
 
 /* definition list */
 
@@ -445,10 +427,6 @@ i[class^="flaticon-"] {
     }
 }
 
-.section-padding {
-    padding: 80px 0px;
-}
-
 .no-pad-top {
     padding-top: 0px;
 }
@@ -456,118 +434,113 @@ i[class^="flaticon-"] {
     padding-top: 0px;
 }
 
-.section-titleV1 {
-    position: relative;
-    margin: 16px auto 25px;
-    padding: 25px 0px;
-    max-width: 600px;
-    p {
-        font-size: 20px;
-        letter-spacing: 0px;
-        color: $elementsColor;
+.section {
+    &-padding {
+        padding: 80px 0px;
+    }
+    &-titleV1 {
+
+        position: relative;
+        margin: 16px auto 24px;
+        padding: 24px 0px;
+        max-width: 600px;
+        p {
+            font-size: 20px;
+            letter-spacing: 0px;
+            color: $elementsColor;
+            display: inline-block;
+            padding: 0px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        h3 {
+            font-size: 36px;
+            letter-spacing: 0px;
+            line-height: 44px;
+            color: $grayBristol;
+        }
+    }
+    &-titleV2 {
+        position: relative;
+        text-align: center;
+        max-width: 720px;
+        margin: 24px auto;
+        padding: 36px 0px;
+
+        p {
+            color: $secondaryColor;
+            font-size: 16px;
+            letter-spacing: 0px;
+            margin: 0 auto;
+            max-width: 500px;
+            line-height: 26px;
+        }
+
+        h3 {
+            font-size: 38px;
+            letter-spacing: 0px;
+            color: $tertiaryColor;
+            line-height: 46px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &-text {
+        position: relative;
+
+        p {
+            font-size: 16px;
+            letter-spacing: 0px;
+            color: $tertiaryColor;
+            line-height: 26px;
+            margin-bottom: 24px;
+            font-weight: $fontWeightNormal;
+        }
+    }
+}
+
+a.btn-style {
+    &-a {
+        position: relative;
         display: inline-block;
-        padding: 0px;
-        margin-bottom: 15px;
-        font-weight: 600;
-    }
-    h3 {
-        font-size: 36px;
+        background-color: $elementsColor;
+        color: $primaryColor;
+        font-size: 18px;
+        line-height: 28px;
         letter-spacing: 0px;
-        line-height: 44px;
-        color: $grayBristol;
+        padding: 16px 40px;
+        border-radius: $borderRadius;
+
+        &:hover {
+            background-color: $elementsColorIV;
+        }
     }
-}
-
-
-
-
-.section-titleV2 {
-    position: relative;
-    text-align: center;
-    max-width: 720px;
-    margin: 25px auto;
-    padding: 35px 0px;
-
-    p {
-        color: $secondaryColor;
-        font-size: 16px;
+    &-1 {
+        position: relative;
+        font-size: 18px;
         letter-spacing: 0px;
-        margin: 0 auto;
-        max-width: 500px;
-        line-height: 26px;
-    }
+        color: $primaryColor;
+        background-color: $elementsColor;
+        padding: 16px 30px;
+        display: inline-block;
 
-    h3 {
-        font-size: 38px;
+        &:hover {
+            background-color: $elementsColorIV;
+        }
+    }
+    &-1b {
+        position: relative;
+        font-size: 14px;
+        line-height: 20px;
         letter-spacing: 0px;
-        color: $tertiaryColor;
-        line-height: 46px;
-        margin-bottom: 15px;
-    }
-}
-
-.section-text {
-    position: relative;
-
-    p {
-        font-size: 16px;
-        letter-spacing: 0px;
-        color: $tertiaryColor;
-        line-height: 26px;
-        margin-bottom: 25px;
-        font-weight: 400;
-    }
-}
-
-a.btn-style-a {
-    $_color: $elementsColor;
-    position: relative;
-    display: inline-block;
-    background-color: $_color;
-    color: $primaryColor;
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: 0px;
-    padding: 16px 30px;
-    border-radius: $borderRadius;
-    box-shadow: 0 2px 4px fade-out($color: adjust-color($color: $_color, $saturation: -40%, $lightness: -20%), $amount: 0.6);
-    &:hover {
+        color: $primaryColor;
         background-color: $elementsColorIV;
-    }
-}
-a.btn-style-1 {
-    position: relative;
-    font-size: 18px;
-    letter-spacing: 0px;
-    color: $primaryColor;
-    background-color: $elementsColor;
-    padding: 16px 30px;
-    display: inline-block;
-    // &:hover {
-    //     -webkit-box-shadow: 0px 0px 13px -4px rgba(0,0,0,0.75);
-    //     -moz-box-shadow: 0px 0px 13px -4px rgba(0,0,0,0.75);
-    //     box-shadow: 0px 0px 13px -4px rgba(0,0,0,0.75);
-    // }
-    &:hover {
-        background-color: $elementsColorIV;
-    }
-}
-a.btn-style-1b {
-    position: relative;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0px;
-    color: $primaryColor;
-    background-color: $elementsColorIV;
-    padding: 8px 15px;
-    display: inline-block;
-    // &:hover {
-    //     -webkit-box-shadow: 0px 0px 13px -4px rgba(0,0,0,0.75);
-    //     -moz-box-shadow: 0px 0px 13px -4px rgba(0,0,0,0.75);
-    //     box-shadow: 0px 0px 13px -4px rgba(0,0,0,0.75);
-    // }
-    &:hover {
-        background-color: #d21616;
+        padding: 8px 16px;
+        display: inline-block;
+
+        &:hover {
+            background-color: #d21616;
+        }
     }
 }
 /* ---------- Theme default CSS END ---------- */
