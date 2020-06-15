@@ -33,10 +33,10 @@
 }
 
 @media only screen and (max-width: 1270px) {
-    ul.sc-icon-list li a {
-        padding: 13px 0px;
-        width: 30px;
-    }
+    // ul.sc-icon-list li a {
+    //     padding: 13px 0px;
+    //     width: 30px;
+    // }
     .service-carousel .owl-nav {
         display: none;
     }
@@ -88,10 +88,10 @@
     .educus-menu li a {
         padding-left: 10px !important;
     }
-    ul.sc-icon-list li a {
-        padding: 13px 0px;
-        width: 25px;
-    }
+    // ul.sc-icon-list li a {
+    //     padding: 13px 0px;
+    //     width: 25px;
+    // }
     .header-register-btn a {
         font-size: 14px;
         line-height: 22px;
@@ -102,12 +102,17 @@
         padding-top: 10px !important;
         padding-bottom: 10px !important;
     }
+
+    .hero-V2 .hero-content .hero-text h3 {
+        font-size: 34px;
+        line-height: 1.4;
+    }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .educus-menu li a {
-        font-size: 12px !important;
-    }
+    // .educus-menu li a {
+    //     font-size: 12px !important;
+    // }
     .hero-V1 .hero-content .hero-text h2 {
         font-size: 30px;
         line-height: 42px;
