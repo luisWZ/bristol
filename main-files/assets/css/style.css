@@ -462,7 +462,7 @@ i[class^="flaticon-"]:before {
 }
 
 .section-padding {
-  padding: 80px 0px;
+  padding: 64px 0px;
 }
 
 .section-titleV1 {
@@ -566,6 +566,7 @@ a.btn-style-1b {
   background-color: #0043CE;
   padding: 8px 16px;
   display: inline-block;
+  border-radius: 4px;
 }
 
 a.btn-style-1b:hover {
@@ -1991,7 +1992,6 @@ ul.tsc-icon-list li a:hover {
 
 .popular-courses-area {
   position: relative;
-  padding-bottom: 140px;
 }
 
 .popular-courses-area .section-titleV1 {
@@ -2005,104 +2005,6 @@ ul.tsc-icon-list li a:hover {
   background-color: white;
 }
 
-.single-courses .sc-img {
-  position: relative;
-  max-height: 350px;
-  overflow: hidden;
-}
-
-.single-courses .sc-img img {
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.single-courses .sc-text {
-  position: relative;
-  padding: 15px;
-  border: 1px solid #ebebeb;
-}
-
-.single-courses .sc-text ul.sc-ratings {
-  position: relative;
-  padding: 0;
-  list-style-type: none;
-  display: inline-block;
-}
-
-.single-courses .sc-text ul.sc-ratings li {
-  position: relative;
-  display: inline-block;
-  color: #ff6600;
-  letter-spacing: 0px;
-  font-size: 16px;
-}
-
-.single-courses .sc-text h4 {
-  color: #1d252d;
-  font-size: 24px;
-  letter-spacing: 0px;
-  line-height: 30px;
-  margin: 10px auto;
-}
-
-.single-courses .sc-text h4 a {
-  color: inherit;
-  font-size: inherit;
-  letter-spacing: inherit;
-  line-height: inherit;
-}
-
-.single-courses .sc-text p {
-  color: #5d6076;
-  font-size: 16px;
-  line-height: 26px;
-  font-weight: 400;
-  margin: 10px auto;
-}
-
-.single-courses .sc-text .sc-rBox span {
-  color: #5d6076;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 24px;
-  display: inline-block;
-  padding-left: 5px;
-}
-
-.single-courses .sc-text .sc-enroll ul {
-  position: relative;
-  padding: 0;
-  margin: 20px 5px 5px 0;
-  text-align: right;
-}
-
-.single-courses .sc-text .sc-enroll li {
-  position: relative;
-  list-style-type: none;
-  display: inline-block;
-  width: 50%;
-  margin-right: 0px;
-  font-size: 14px;
-  letter-spacing: 0px;
-  color: #5d6076;
-}
-
-.single-courses .sc-text .sc-enroll li svg {
-  font-size: 18px;
-  margin-right: 5px;
-  margin-left: 5px;
-  color: #DA1E28;
-}
-
-.single-courses .sc-text .sc-enroll li:last-child {
-  margin-right: 0px;
-  margin-left: -10px;
-  text-align: right;
-}
-
 .single-courses:hover .sc-img img {
   transform: scale(1.1);
 }
@@ -2113,6 +2015,122 @@ ul.tsc-icon-list li a:hover {
 
 .single-courses:hover h4 a {
   color: #DA1E28;
+}
+
+.sc-img {
+  position: relative;
+  max-height: 350px;
+  overflow: hidden;
+}
+
+.sc-img img {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.sc-ratings {
+  position: relative;
+  padding: 0;
+  list-style-type: none;
+  display: inline-block;
+}
+
+.sc-ratings li {
+  position: relative;
+  display: inline-block;
+  color: #ff6600;
+  letter-spacing: 0px;
+  font-size: 16px;
+}
+
+.sc-text {
+  position: relative;
+  padding: 16px;
+  border: 1px solid #ebebeb;
+  clear: both;
+}
+
+.sc-text h4 {
+  color: #1d252d;
+  font-size: 24px;
+  letter-spacing: 0px;
+  line-height: 30px;
+  margin: 10px auto;
+}
+
+.sc-text h4 a {
+  color: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
+.sc-text--date {
+  font-size: 16px;
+  line-height: 26px;
+  color: #5d6076;
+}
+
+.sc-text--date + .sc-text--date {
+  margin-bottom: 20px;
+}
+
+.sc-text--button {
+  float: right;
+}
+
+@media (min-width: 1200px) {
+  .sc-text--button {
+    float: none;
+    bottom: 16px;
+    right: 16px;
+  }
+  .sc-text--button.sc-text--button {
+    position: absolute;
+  }
+}
+
+.sc-text .sc-rBox span {
+  color: #5d6076;
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 24px;
+  display: inline-block;
+  padding-left: 5px;
+}
+
+.sc-text .sc-enroll ul {
+  position: relative;
+  padding: 0;
+  margin: 20px 5px 5px 0;
+  text-align: right;
+}
+
+.sc-text .sc-enroll li {
+  position: relative;
+  list-style-type: none;
+  display: inline-block;
+  width: 50%;
+  margin-right: 0px;
+  font-size: 14px;
+  letter-spacing: 0px;
+  color: #5d6076;
+}
+
+.sc-text .sc-enroll li svg {
+  font-size: 18px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #DA1E28;
+}
+
+.sc-text .sc-enroll li:last-child {
+  margin-right: 0px;
+  margin-left: -10px;
+  text-align: right;
 }
 
 .most-effective-course-area {
@@ -3565,7 +3583,6 @@ ul.tag-lists li a:hover {
 
 .popular-learning-area {
   position: relative;
-  padding-top: 70px;
 }
 
 .popular-learning-area .section-titleV2 {

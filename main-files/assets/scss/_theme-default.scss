@@ -436,7 +436,7 @@ i[class^="flaticon-"] {
 
 .section {
     &-padding {
-        padding: 80px 0px;
+        padding: 64px 0px;
     }
     &-titleV1 {
 
@@ -500,6 +500,7 @@ i[class^="flaticon-"] {
 }
 
 a.btn-style {
+// .btn-style {
     &-a {
         position: relative;
         display: inline-block;
@@ -537,6 +538,7 @@ a.btn-style {
         background-color: $elementsColorIV;
         padding: 8px 16px;
         display: inline-block;
+        border-radius: $borderRadius;
 
         &:hover {
             background-color: #d21616;
