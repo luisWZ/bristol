@@ -151,7 +151,6 @@
             line-height: 26px;
             letter-spacing: 0px;
             color: $secondaryColor;
-            font-style: italic;
 
             &:before {
                 content: "« ";
@@ -183,8 +182,8 @@
                 color: $tertiaryColor;
                 font-size: 22px;
                 letter-spacing: 0px;
-                font-weight: 600;
                 line-height: 30px;
+
                 a {
                     color: inherit;
                     font-size: inherit;
@@ -206,7 +205,7 @@
         position: absolute;
         content: '\f10e';
         font-family: fontAwesome;
-        color: #ffe6e6;
+        color: $elementsColorII;
         font-size: 100px;
         line-height: 100px;
         top: 35px;

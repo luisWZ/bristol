@@ -95,7 +95,9 @@
         // position: relative;
         // margin-top: 94px;
 
-        min-height: 100vh;
+        height: 100vh;
+        min-height: 640px;
+        max-height: 860px;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -129,7 +129,8 @@
             display: block;
             line-height: 20px;
             &:hover {
-                color: $elementsColor;
+                // background-color: $elementsColorIV;
+                color: $pinkBristol;
             }
         }
     }

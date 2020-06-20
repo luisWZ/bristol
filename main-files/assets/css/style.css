@@ -954,7 +954,9 @@ ul.sc-icon-list li a:hover {
 }
 
 .hero-V2--hero-content {
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 640px;
+  max-height: 860px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1995,7 +1997,7 @@ ul.tsc-icon-list li a:hover {
 }
 
 .popular-courses-area .section-titleV1 {
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 }
 
 .single-courses {
@@ -2023,7 +2025,15 @@ ul.tsc-icon-list li a:hover {
   overflow: hidden;
 }
 
-.sc-img img {
+.sc-img--link {
+  display: block;
+  height: 0;
+  padding-bottom: 70%;
+}
+
+.sc-img--img {
+  width: 100%;
+  object-fit: cover;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
@@ -3040,7 +3050,7 @@ ul.course-info li span {
 a.btn-style-2 {
   position: relative;
   display: inline-block;
-  background-color: #f3f3f3;
+  background-color: #DDE1E6;
   padding: 12px 25px;
   color: #424254;
   font-size: 14px;
@@ -3229,7 +3239,7 @@ a.btn-style-2 svg {
 }
 
 .sidebar-social ul li a:hover {
-  background-color: #f3f3f3;
+  background-color: #DDE1E6;
   color: #343A3F;
 }
 
@@ -3542,9 +3552,8 @@ ul.tag-lists li a:hover {
   font-size: 30px;
   letter-spacing: 0px;
   color: #fff;
-  line-height: 40px;
-  font-weight: 300;
-  margin: 12px auto;
+  line-height: 34px;
+  margin: 0 auto 16px;
 }
 
 .single-service .ss-text p {
@@ -3552,8 +3561,7 @@ ul.tag-lists li a:hover {
   letter-spacing: 0px;
   line-height: 24px;
   color: #fff;
-  font-weight: 300;
-  margin: 12px auto;
+  margin: 0 auto 24px;
 }
 
 .single-service .ss-text a {
@@ -3590,21 +3598,9 @@ ul.tag-lists li a:hover {
 }
 
 .ssV2 {
-  background-color: #fff;
-  border: 1px solid #e1e1e1;
+  background-color: #0F62FE;
+  border: 1px solid #DDE1E6;
   margin-bottom: 30px;
-}
-
-.ssV2 .ss-text h4 {
-  color: #1d252d;
-}
-
-.ssV2 .ss-text p {
-  color: #5d6076;
-}
-
-.ssV2 .ss-text a {
-  color: #1d252d;
 }
 
 .ssV2 .ss-icon img.hIcon {
@@ -3633,6 +3629,12 @@ ul.tag-lists li a:hover {
 
 .ss-icon img {
   display: block;
+}
+
+.sc-icon--icon {
+  width: 60px;
+  height: auto;
+  margin-bottom: 24px;
 }
 
 /*--------- Service Style 1 END ------------*/
@@ -3816,7 +3818,6 @@ ul.tag-lists li a:hover {
   line-height: 26px;
   letter-spacing: 0px;
   color: #5d6076;
-  font-style: italic;
 }
 
 .single-testimonialV2 .t-text p:before {
@@ -3852,7 +3853,6 @@ ul.tag-lists li a:hover {
   color: #1d252d;
   font-size: 22px;
   letter-spacing: 0px;
-  font-weight: 600;
   line-height: 30px;
 }
 
@@ -3876,7 +3876,7 @@ ul.tag-lists li a:hover {
   position: absolute;
   content: '\f10e';
   font-family: fontAwesome;
-  color: #ffe6e6;
+  color: #DDE1E6;
   font-size: 100px;
   line-height: 100px;
   top: 35px;
@@ -4117,7 +4117,7 @@ textarea.cw-input {
 .f-links li a {
   font-size: 16px;
   line-height: 20px;
-  color: #f3f3f3;
+  color: #DDE1E6;
   font-weight: 400;
   letter-spacing: 0px;
 }
@@ -4173,13 +4173,13 @@ textarea.cw-input {
 
 .fsc-icon-list li a {
   font-size: 20px;
-  color: #f3f3f3;
+  color: #DDE1E6;
   display: block;
   line-height: 20px;
 }
 
 .fsc-icon-list li a:hover {
-  color: #DA1E28;
+  color: #E85B5C;
 }
 
 /*----------- Footer Style END ------------*/
