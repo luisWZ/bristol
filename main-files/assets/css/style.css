@@ -775,7 +775,7 @@ a.btn-style-1b:hover {
   position: relative;
   display: inline-block;
   margin: 0;
-  padding: 10px 15px;
+  padding: 10px 12px;
   border-right: 1px solid #e1e1e1;
   padding-right: 20px;
 }
@@ -792,7 +792,7 @@ a.btn-style-1b:hover {
 
 .topbar-contact ul li i,
 .topbar-contact ul li svg {
-  margin-right: 5px;
+  margin-right: 0;
   color: #E85B5C;
 }
 
@@ -954,14 +954,25 @@ ul.sc-icon-list li a:hover {
 }
 
 .hero-V2--hero-content {
-  height: 100vh;
-  min-height: 640px;
-  max-height: 860px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 103px;
-  padding-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .hero-V2--hero-content {
+    height: 100vh;
+    min-height: 640px;
+    max-height: 860px;
+    padding-bottom: 24px;
+  }
+}
+
+@media (max-width: 499px) {
+  .hero-V2--hero-content {
+    padding-top: 24px;
+  }
 }
 
 .hero-V2--hero-text {
@@ -1996,6 +2007,13 @@ ul.tsc-icon-list li a:hover {
   position: relative;
 }
 
+@media (max-width: 991px) and (min-width: 768px) {
+  .popular-courses-area .col-md-4 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
 .popular-courses-area .section-titleV1 {
   margin-bottom: 24px;
 }
@@ -2061,6 +2079,21 @@ ul.tsc-icon-list li a:hover {
   padding: 16px;
   border: 1px solid #ebebeb;
   clear: both;
+}
+
+@media (max-width: 1199px) {
+  .sc-text {
+    padding-bottom: 52px;
+  }
+  .sc-text p:last-of-type {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .sc-text {
+    padding-bottom: 48px;
+  }
 }
 
 .sc-text h4 {
@@ -4084,6 +4117,7 @@ textarea.cw-input {
 
 .footer-logos--outer {
   display: flex;
+  overflow: hidden;
 }
 
 .footer-logos--logos {
@@ -4633,7 +4667,7 @@ html[dir="rtl"] .single-team .st-text {
 /* Tablet Layout: 768px. */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .topbar-contact ul li {
-    padding: 10px;
+    padding: 10px 4px;
   }
   .topbar-contact ul li a, .topbar-contact ul li p {
     font-size: 12px;
@@ -4781,11 +4815,6 @@ html[dir="rtl"] .single-team .st-text {
   .mfc-title a.btn-style-a {
     left: 24px;
   }
-  a.btn-style-a {
-    font-size: 14px;
-    padding: 8px 16px;
-    line-height: 18px;
-  }
   .reg-form {
     margin-top: -25px;
   }
@@ -4896,7 +4925,8 @@ html[dir="rtl"] .single-team .st-text {
     padding: 12px;
   }
   .educus-menu li a {
-    padding: 8px !important;
+    padding: 14px 8px !important;
+    font-size: 13px !important;
   }
   .educus-menu li a.has-submenu {
     padding-right: 15px !important;
@@ -4906,12 +4936,6 @@ html[dir="rtl"] .single-team .st-text {
   }
   ul.sc-icon-list li a {
     padding: 13px 0px;
-    width: 25px;
-  }
-  .header-register-btn a {
-    font-size: 13px;
-    line-height: 16px;
-    padding: 10px;
   }
   .logo-wrapper a {
     margin: 5px auto;
@@ -4920,24 +4944,19 @@ html[dir="rtl"] .single-team .st-text {
     width: 160px;
   }
   .topbar-contact ul li a, .topbar-contact ul li p {
-    font-size: 10px;
+    font-size: 12px;
   }
-  .educus-menu li a {
-    font-size: 12px !important;
-    padding-left: 5px !important;
+  .topbar-contact ul li i, .topbar-contact ul li svg {
+    width: 16px;
+    margin-right: 0;
   }
   .header-register-btn a {
     font-size: 13px;
-    line-height: 16px;
-    padding: 10px 5px;
-    min-width: 140px;
-    margin-left: -12px;
+    margin-top: 4px;
+    padding: 12px;
   }
   .educusMenuV1-btn {
     margin-bottom: 0px;
-  }
-  .topbar-social {
-    margin-left: -30px;
   }
 }
 
@@ -4984,6 +5003,8 @@ html[dir="rtl"] .single-team .st-text {
   }
   .hero-V2 {
     overflow: hidden;
+    margin-top: 125px;
+    padding-bottom: 60px;
   }
   .mfc-title {
     max-width: 370px;
@@ -5087,6 +5108,7 @@ html[dir="rtl"] .single-team .st-text {
   }
   .educus-menu-wrapper label.educusMenuV1-btn {
     right: 10px;
+    bottom: 5px;
   }
   ul#educusMenuV1 {
     max-height: 250px;
@@ -5132,6 +5154,7 @@ html[dir="rtl"] .single-team .st-text {
     font-size: 14px;
     padding: 5px 12px;
     border-radius: 5px;
+    margin-top: 7px;
   }
   .logo-wrapper a {
     padding-bottom: 5px;
@@ -5165,6 +5188,9 @@ html[dir="rtl"] .single-team .st-text {
   html[dir="rtl"] .educus-menu-wrapper label.educusMenuV1-btn {
     left: 10px;
     right: unset;
+  }
+  .topbar-contact ul li i, .topbar-contact ul li svg {
+    width: 14px;
   }
 }
 

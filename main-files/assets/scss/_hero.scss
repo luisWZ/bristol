@@ -92,17 +92,21 @@
     background-color: white;
 
     &--hero-content {
-        // position: relative;
-        // margin-top: 94px;
-
-        height: 100vh;
-        min-height: 640px;
-        max-height: 860px;
         display: flex;
         justify-content: center;
         align-items: center;
         padding-top: $headerHeight;
-        padding-bottom: 24px;
+
+        @media (min-width:768px) {
+            height: 100vh;
+            min-height: 640px;
+            max-height: 860px;
+            padding-bottom: 24px;
+        }
+
+        @media (max-width:499px) {
+            padding-top: 24px;
+        }
     }
 
     &--hero-text {

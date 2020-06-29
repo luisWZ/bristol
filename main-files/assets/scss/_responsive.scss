@@ -131,7 +131,7 @@
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .topbar-contact ul li {
-        padding: 10px;
+        padding: 10px 4px;
     }
 
     .topbar-contact ul li a,.topbar-contact ul li p {
@@ -197,6 +197,8 @@
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+    $fontSize: 13px;
+
     .wwa-text {
         margin: 25px auto;
     }
@@ -312,11 +314,11 @@
         left: 24px;
     }
 
-    a.btn-style-a {
-        font-size: 14px;
-        padding: 8px 16px;
-        line-height: 18px;
-    }
+    // a.btn-style-a {
+    //     font-size: 14px;
+    //     padding: 8px 16px;
+    //     line-height: 18px;
+    // }
 
     .reg-form {
         margin-top: -25px;
@@ -453,7 +455,8 @@
         padding: 12px;
     }
     .educus-menu li a {
-        padding: 8px !important;
+        padding: 14px 8px !important;
+        font-size: $fontSize !important;
     }
 
     .educus-menu li a.has-submenu {
@@ -465,13 +468,13 @@
     }
     ul.sc-icon-list li a {
         padding: 13px 0px;
-        width: 25px;
+        // width: 25px;
     }
-    .header-register-btn a {
-        font-size: 13px;
-        line-height: 16px;
-        padding: 10px;
-    }
+    // .header-register-btn a {
+    //     font-size: 13px;
+    //     line-height: 16px;
+    //     padding: 10px;
+    // }
     .logo-wrapper a {
         margin: 5px auto;
     }
@@ -479,25 +482,30 @@
         width: 160px;
     }
     .topbar-contact ul li a, .topbar-contact ul li p {
-        font-size: 10px;
+        font-size: 12px;
     }
-    .educus-menu li a {
-        font-size: 12px !important;
-        padding-left: 5px !important;
+    .topbar-contact ul li i, .topbar-contact ul li svg {
+        width: 16px;
+        margin-right: 0;
     }
+    // .educus-menu li a {
+    //     font-size: 12px !important;
+    //     padding-left: 5px !important;
+    // }
     .header-register-btn a {
-        font-size: 13px;
-        line-height: 16px;
-        padding: 10px 5px;
-        min-width: 140px;
-        margin-left: -12px;
+        font-size: $fontSize;
+        margin-top: 4px;
+        padding: 12px;
+        // min-width: 140px;
+        // line-height: 16px;
+        // margin-left: -12px;
     }
     .educusMenuV1-btn {
         margin-bottom: 0px;
     }
-    .topbar-social {
-        margin-left: -30px;
-    }
+    // .topbar-social {
+    //     margin-left: -30px;
+    // }
 
 }
 /* Mobile Layout: 320px. */
@@ -552,6 +560,8 @@
     }
     .hero-V2 {
         overflow: hidden;
+        margin-top: 125px;
+        padding-bottom: 60px;
     }
     .mfc-title {
         max-width: 370px;
@@ -679,6 +689,7 @@
     }
     .educus-menu-wrapper label.educusMenuV1-btn {
         right: 10px;
+        bottom: 5px;
     }
     ul#educusMenuV1 {
         max-height: 250px;
@@ -740,6 +751,7 @@
         font-size: 14px;
         padding: 5px 12px;
         border-radius: 5px;
+        margin-top: 7px;
     }
 
     .logo-wrapper a {
@@ -781,6 +793,10 @@
             left: 10px;
             right: unset;
         }
+    }
+
+    .topbar-contact ul li i, .topbar-contact ul li svg {
+        width: 14px;
     }
 }
 

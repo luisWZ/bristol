@@ -40,6 +40,7 @@
     &-logos {
         &--outer {
             display: flex;
+            overflow: hidden;
         }
         &--logos {
             flex-wrap: wrap;

@@ -71,6 +71,13 @@ ul.tsc-icon-list {
 .popular-courses-area {
     position: relative;
 
+    @media (max-width:991px) and (min-width: 768px) {
+        .col-md-4 {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
+
     .section-titleV1 {
         margin-bottom: 24px;
     }
@@ -137,6 +144,18 @@ ul.tsc-icon-list {
     border: 1px solid #ebebeb;
     clear: both;
 
+    @media (max-width:1199px) {
+        padding-bottom: 52px;
+
+        p:last-of-type {
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width:991px) and (min-width: 768px) {
+        padding-bottom: 48px;
+    }
+
     h4 {
         color: $tertiaryColor;
         font-size: 24px;
@@ -163,6 +182,7 @@ ul.tsc-icon-list {
 
     &--button {
         float: right;
+
         @media (min-width:1200px) {
             float: none;
             bottom: $padding;
