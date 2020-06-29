@@ -6,6 +6,7 @@
   "engineStrict": true,
   "version": "1.0.0",
   "description": "bristol template",
+  "buildDir": "main-files/assets",
   "scripts": {
     "sass": "node-sass --output-style expanded -o main-files/assets/css main-files/assets/scss --source-map true --source-map-contents true",
     "css-prefix": "post-css --replace main-files/assets/css/style.css --use autoprefixer --map",
@@ -13,11 +14,14 @@
     "docs": "browser-sync start --server documentation --logPrefix 'template documentation' --no-open --no-notify",
     "server": "browser-sync main-files -w --ignore 'main-files/assets/**/*.scss' --logPrefix $npm_package_name --no-open --no-notify",
     "watch": "onchange 'main-files/assets/**/*.scss' -- npm run sass",
-    "dev": "concurrently --names 'sass,server' --prefix name 'npm run watch' 'npm run server'"
+    "dev": "concurrently --names 'sass,server' --prefix name 'npm run watch' 'npm run server'",
+    "concat": "node concat.js"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.0",
     "browser-sync": "^2.26.7",
+    "clean-css": "^4.2.3",
+    "concat": "^1.0.3",
     "concurrently": "^5.2.0",
     "node-sass": "^4.14.1",
     "onchange": "^7.0.2",

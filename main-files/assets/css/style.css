@@ -762,7 +762,7 @@ a.btn-style-1b:hover {
   position: relative;
   border: 1px solid #e1e1e1;
   margin-right: -15px;
-  border-right: none;
+  border-width: 0 0 1px 1px;
 }
 
 .topbar-contact ul {
@@ -816,7 +816,7 @@ ul.sc-icon-list li a {
   position: relative;
   display: block;
   background-color: #fff;
-  padding: 15px 5px;
+  padding: 12.65px 5px;
   font-size: 16px;
   line-height: 20px;
   width: 35px;
