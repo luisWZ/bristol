@@ -4115,15 +4115,38 @@ textarea.cw-input {
   text-align: right;
 }
 
+@media (max-width: 575px) {
+  .footer-social {
+    text-align: center;
+  }
+}
+
 .footer-logos--outer {
   display: flex;
   overflow: hidden;
+}
+
+@media (max-width: 575px) {
+  .footer-logos--outer {
+    flex-direction: column;
+  }
 }
 
 .footer-logos--logos {
   flex-wrap: wrap;
   flex-basis: 360px;
   display: flex;
+  align-content: flex-start;
+}
+
+@media (max-width: 575px) {
+  .footer-logos--logos {
+    flex-basis: auto;
+    justify-content: center;
+  }
+  .footer-logos--logos svg:last-of-type {
+    flex-basis: 100%;
+  }
 }
 
 .footer-logos--logos svg:nth-of-type(2) {
@@ -4132,25 +4155,34 @@ textarea.cw-input {
 }
 
 .footer-logos--sitemap {
-  padding-top: 24px;
+  margin-top: 24px;
+}
+
+@media (max-width: 575px) {
+  .footer-logos--sitemap {
+    margin-top: 56px;
+    text-align: center;
+  }
 }
 
 .f-links {
-  position: relative;
   padding: 0;
   list-style-type: none;
   display: grid;
-  gap: 0 24px;
+  gap: 8px 24px;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.f-links li {
-  position: relative;
+@media (max-width: 767px) {
+  .f-links {
+    grid-template-columns: 1fr;
+  }
 }
 
 .f-links li a {
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.4;
+  display: block;
   color: #DDE1E6;
   font-weight: 400;
   letter-spacing: 0px;
@@ -5077,9 +5109,6 @@ html[dir="rtl"] .single-team .st-text {
   .copyright-text {
     text-align: center;
     margin-bottom: 15px;
-  }
-  .footer-social {
-    text-align: center;
   }
   .single-blog-V1 {
     max-width: 420px;

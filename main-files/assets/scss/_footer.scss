@@ -2,6 +2,8 @@
 /*  Footer Style 1
 /*----------------------------------------*/
 .footer {
+    $mobileBreak: 575px;
+
     &-area {
         position: relative;
     }
@@ -35,43 +37,72 @@
     &-social {
         position: relative;
         text-align: right;
+
+        @media (max-width:$mobileBreak) {
+            text-align: center;
+        }
     }
 
     &-logos {
         &--outer {
             display: flex;
             overflow: hidden;
+
+            @media (max-width:$mobileBreak) {
+                flex-direction: column;
+            }
         }
         &--logos {
             flex-wrap: wrap;
             flex-basis: 360px;
             display: flex;
+            align-content: flex-start;
+
+            @media (max-width:$mobileBreak) {
+                flex-basis: auto;
+                justify-content: center;
+
+                svg:last-of-type {
+                    flex-basis: 100%;
+                }
+            }
 
             svg:nth-of-type(2) {
                 margin-left: 24px;
                 margin-bottom: 48px;
             }
         }
+
         &--sitemap {
-            padding-top: 24px;
+            margin-top: 24px;
+
+            @media (max-width:$mobileBreak) {
+                margin-top: 56px;
+                text-align: center;
+
+            }
         }
     }
 }
 
 .f-links {
-    position: relative;
     padding: 0;
     list-style-type: none;
     display: grid;
-    gap: 0 24px;
+    gap: 8px 24px;
     grid-template-columns: repeat(2, 1fr);
 
+    @media (max-width:767px) {
+        grid-template-columns: 1fr;
+    }
+
     li {
-        position: relative;
+        // position: relative;
 
         a {
             font-size: 16px;
-            line-height: 20px;
+            line-height: 1.4;
+            display: block;
             color: $elementsColorII;
             font-weight: $fontWeightNormal;
             letter-spacing: 0px;
