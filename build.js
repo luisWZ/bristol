@@ -56,7 +56,7 @@ const jsFiles = {
 
 (async function uglifyingJs() {
     try {
-        await fs.mkdir('main-files/build', { recursive: true });
+        // await fs.mkdir('main-files/build', { recursive: true });
         const source = uglifyJs.minify( jsFiles, { toplevel: true });
         const bundle = await fs.writeFile(`${buildDir}/js/${name}.min.js`, source.code);
         console.log('js bundle listo papi ⚡');
