@@ -25,6 +25,7 @@
     "concurrently": "^5.2.0",
     "node-sass": "^4.14.1",
     "onchange": "^7.0.2",
-    "post-cli": "^1.0.5"
+    "post-cli": "^1.0.5",
+    "uglify-js": "^3.10.0"
   }
 }

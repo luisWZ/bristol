@@ -756,6 +756,12 @@ a.btn-style-1b:hover {
 
 .logo-wrapper a {
   display: block;
+  text-align: center;
+}
+
+.logo-wrapper img {
+  max-width: 216px;
+  width: 100%;
 }
 
 .topbar-contact {
@@ -5183,7 +5189,7 @@ html[dir="rtl"] .single-team .st-text {
     font-size: 14px;
     padding: 5px 12px;
     border-radius: 5px;
-    margin-top: 7px;
+    margin-top: 2px;
   }
   .logo-wrapper a {
     padding-bottom: 5px;

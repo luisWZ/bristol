@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <!--  Basic Page Needs  -->
     <meta charset="utf-8">
@@ -13,10 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Fonts -->
-    <!-- <link href="assets/fonts/Circlular-STD/stylesheet.css" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
     <!-- CSS -->
+    <!-- <link rel="stylesheet" href="assets/fonts/Circlular-STD/stylesheet.css"> -->
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
     <!-- Jquery ui CSS -->
@@ -45,39 +44,24 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
+
+</head>
 <body>
+    <!-- Your Chat Plugin code -->
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v7.0'
-        });
-      };
+        window.fbAsyncInit = function() { FB.init({ xfbml: true, version: 'v7.0' }) };
 
-      (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-    <!-- Your Chat Plugin code -->
-    <div class="fb-customerchat"
-        attribution=setup_tool
-        page_id="126610007388768"
-        theme_color="#3853EC"
-        logged_in_greeting="Hola ¿cómo podemos ayudarte?">
-    </div>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="fb-customerchat" attribution=setup_tool page_id="126610007388768" theme_color="#3853EC" logged_in_greeting="Hola ¿cómo podemos ayudarte?"></div>
     <!-- facebook chat plugin ends -->
 
     <div id="preloader"></div>
@@ -702,36 +686,39 @@
 
     <!-- Scripts -->
     <!-- jQuery Plugin -->
-    <script src="assets/js/jquery-3.2.0.min.js"></script>
+    <!-- <script src="assets/js/jquery-3.2.0.min.js"></script> -->
     <!-- Jquery UI -->
-    <script src="assets/js/jquery-ui.js"></script>
+    <!-- <script src="assets/js/jquery-ui.js"></script> -->
     <!-- Smart Menu Plugin -->
-    <script src="assets/js/jquery.smartmenus.min.js"></script>
+    <!-- <script src="assets/js/jquery.smartmenus.min.js"></script> -->
     <!-- Owl Carousel Plugin -->
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/OwlCarousel2Thumbs.min.js"></script>
+    <!-- <script src="assets/js/owl.carousel.min.js"></script> -->
+    <!-- <script src="assets/js/OwlCarousel2Thumbs.min.js"></script> -->
     <!-- Main Counterup Plugin-->
-    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!-- <script src="assets/js/jquery.counterup.min.js"></script> -->
     <!-- Countdown Plugin-->
-    <script src="assets/js/countdown.js"></script>
+    <!-- <script src="assets/js/countdown.js"></script> -->
     <!-- ScrollUp Plugin -->
-    <script src="assets/js/jquery.scrollUp.js"></script>
+    <!-- <script src="assets/js/jquery.scrollUp.js"></script> -->
     <!-- Waypoints plugin -->
-    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <!-- <script src="assets/js/jquery.waypoints.min.js"></script> -->
     <!-- Waypoints plugin -->
-    <script src="assets/js/shuffle.min.js"></script>
+    <!-- <script src="assets/js/shuffle.min.js"></script> -->
     <!-- Fancybox JS -->
-    <script src="assets/js/jquery.fancybox.min.js"></script>
+    <!-- <script src="assets/js/jquery.fancybox.min.js"></script> -->
     <!-- Font Awesome 5 JS -->
-    <script src="assets/fonts/fontawesome-5/js/all.min.js"></script>
+    <!-- <script src="assets/fonts/fontawesome-5/js/all.min.js"></script> -->
     <!-- WoW JS -->
-    <script src="assets/js/wow.min.js"></script>
+    <!-- <script src="assets/js/wow.min.js"></script> -->
     <!-- Typed JS Plugin -->
-    <script src="assets/js/typed.js"></script>
+    <!-- <script src="assets/js/typed.js"></script> -->
     <!-- Bootstrap JS -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- <script src="assets/js/bootstrap.min.js"></script> -->
     <!-- Main Script -->
-    <script src="assets/js/theme.js"></script>
+    <!-- <script src="assets/js/theme.js"></script> -->
+
+    <!-- Minifyed version -->
+    <script src="assets/js/bristol.min.js"></script>
 
 </body>
 </html>
