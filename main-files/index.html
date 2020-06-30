@@ -40,30 +40,13 @@
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 
     <!-- Minifyed styles -->
-    <link rel="stylesheet" href="assets/css/project.min.css">
+    <link rel="stylesheet" href="assets/css/bristol.min.css">
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon.ico">
 
 </head>
 <body>
-    <!-- Your Chat Plugin code -->
-    <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
-    <script>
-        window.fbAsyncInit = function() { FB.init({ xfbml: true, version: 'v7.0' }) };
-
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <div class="fb-customerchat" attribution=setup_tool page_id="126610007388768" theme_color="#3853EC" logged_in_greeting="Hola ¿cómo podemos ayudarte?"></div>
-    <!-- facebook chat plugin ends -->
-
     <div id="preloader"></div>
 
     <!-- Header Area -->
@@ -719,6 +702,27 @@
 
     <!-- Minifyed version -->
     <script src="assets/js/bristol.min.js"></script>
+
+    <!-- Your Chat Plugin code -->
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() { FB.init({ xfbml: true, version: 'v7.0' }) };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="126610007388768"
+        theme_color="#3853EC"
+        logged_in_greeting="Hola ¿cómo podemos ayudarte?"></div>
+    <!-- facebook chat plugin ends -->
 
 </body>
 </html>
