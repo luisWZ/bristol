@@ -1,0 +1,25 @@
+{
+  "name": "template",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Gatsby, the template engine for bristol website",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "gatsby": "^2.23.14",
+    "gatsby-plugin-sass": "^2.3.9",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "prettier": "^2.0.5"
+  }
+}
