@@ -1,0 +1,11 @@
+- service:
+  title:
+    Servicio Uno
+  text:
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+
+- service:
+  title:
+    Servicio Dos
+  text:
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.

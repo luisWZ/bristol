@@ -1,0 +1,27 @@
+- course:
+  tag:
+    Curso general
+  title:
+    Niños
+  dates:
+    Martes, miércoles y jueves
+  time:
+    8:00 a 9:40 AM
+  start:
+    17 de septiembre 2020
+  location:
+    Xalapa
+
+- course:
+  tag:
+    Curso de certificación
+  title:
+    IELTS
+  dates:
+    Martes y jueves
+  time:
+    8:00 a 9:40 AM
+  start:
+    26 de diciembre 2020
+  location:
+    Coatepec

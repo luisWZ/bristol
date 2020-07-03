@@ -26,9 +26,10 @@ const cssFiles = [
     try {
         await fs.mkdir(`${buildDir}/css`, { recursive: true });
         const source = await concat(cssFiles);
-        const bundle = await new cleanCss({ returnPromise: true }).minify(source);
-        if (bundle.errors.length > 0) console.error(bundle.errors);
-        await fs.writeFile(`${buildDir}/css/${name}.min.css`, bundle.styles);
+        await fs.writeFile(`gatsby/src/assets/css/${name}.css`, source);
+        // const bundle = await new cleanCss({ returnPromise: true }).minify(source);
+        // if (bundle.errors.length > 0) console.error(bundle.errors);
+        // await fs.writeFile(`${buildDir}/css/${name}.min.css`, bundle.styles);
         console.log('Ahí va el css lord ⚡');
     } catch(error) {
         console.error(error);
