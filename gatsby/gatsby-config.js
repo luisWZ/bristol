@@ -13,6 +13,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
