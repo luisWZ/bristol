@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 
+import styles from './header.module.scss'
+
 import { FaFacebookF, FaInstagram } from 'react-icons/fa'
 import SvgBristolLogo from '../assets/svgs/bristol-logo'
 import SvgInglesMuyIngles from '../assets/svgs/ingles-muy-ingles'
@@ -32,97 +34,63 @@ const socialAnchor = css`
 
 export default function Header() {
     return (
-        <header css={css`
-            display: flex;
-            background-color: white;
-            flex-wrap: wrap;
-            border-left: 4px solid red;
-            border-top: 1px solid lightgray;
-            box-shadow: 0 1px 2px rgba(162,169,176,.4);
-            position: fixed;
-            z-index: 2;
-        `}>
-
-            <div css={css`
-                flex: 0 0 18%;
-                align-self: center;
-                text-align: center;
-            `}>
-
+        <header className={styles.wrapper}>
+            <div className={styles.logoBox}>
                 <SvgBristolLogo />
             </div>
 
-            <div css={css`
-                flex: 0 0 70%;
-                border-style: solid;
-                border-color: lightgray;
-                border-width: 0px 1px;
-                display: flex;
-                flex-flow: wrap row;
-                justify-content: space-between;
-            `}>
+            <div className={styles.mainBox}>
 
-                <ul css={css`
-                    display: flex;
-                    border-bottom: 1px solid lightgray;
-                    flex: 0 0 100%;
-                `}>
+                <ul className={styles.contactList}>
                     <li>
-                        <a href="mailto:hola@bristolingles.com"
-                            css={contactAnchor}>
-                            <SvgEnvelope />&ensp;hola@bristolingles.com
+                        <a href="mailto:hola@bristolingles.com">
+                            <SvgEnvelope />
+                            &ensp;
+                            hola@bristolingles.com
                         </a>
                     </li>
                     <li>
-                        <a href="tel:2288405791"
-                            css={contactAnchor}>
-                            <SvgPhone />&nbsp;Xalapa&emsp;2288 40 57 91
+                        <a href="tel:2288405791">
+                            <SvgPhone />
+                            &nbsp;
+                            Xalapa&emsp;
+                            2288 40 57 91
                         </a>
                     </li>
                     <li>
-                        <a href="tel:2288160543"
-                            css={contactAnchor}>
-                            <SvgPhone />&nbsp;Coatepec&emsp;2288 16 05 43
+                        <a href="tel:2288160543">
+                            <SvgPhone />
+                            &nbsp;
+                            Coatepec&emsp;
+                            2288 16 05 43
                         </a>
                     </li>
                 </ul>
-                <nav css={css`display: inline-flex;`}>
+                <nav className={styles.navBox}>
 
-                    <Link css={navAnchor} to="/">Home</Link>
-                    <Link css={navAnchor} to="/nosotros">Nosotros</Link>
-                    <Link css={navAnchor} to="/cursos">Cursos</Link>
-                    <Link css={navAnchor} to="/examenes">Exámenes</Link>
-                    <Link css={navAnchor} to="/centro-examinador">Centro Examinador</Link>
-                    <Link css={navAnchor} to="/contacto">Contacto</Link>
+                    <Link to="/">Home</Link>
+                    <Link to="/nosotros">Nosotros</Link>
+                    <Link to="/cursos">Cursos</Link>
+                    <Link to="/examenes">Exámenes</Link>
+                    <Link to="/centro-examinador">Centro Examinador</Link>
+                    <Link to="/contacto">Contacto</Link>
                 </nav>
                 <SvgInglesMuyIngles />
             </div>
-            <div css={css`
-                flex: 0 0 12%;
-                flex-direction: column;
-                display: flex;
-            `}>
-                <ul css={css`display: flex;`}>
+            <div className={styles.rightBox}>
+                <ul className={styles.social}>
                     <li>
-                        <a href="https://www.facebook.com/bristolinglesprofesional/"
-                            css={socialAnchor}>
+                        <a href="https://www.facebook.com/bristolinglesprofesional/">
                             <FaFacebookF />
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/bristolingles/"
-                            css={socialAnchor}>
+                        <a href="https://www.instagram.com/bristolingles/">
                             <FaInstagram />
                         </a>
                     </li>
                 </ul>
-                <button css={css`
-                    flex-grow: 1;
-                    border: none;
-                    border-radius: 0;
-                    background-color: #0043ce;
-                    color: white;
-                `}>Contáctanos</button>
+                <button className={styles.contactBtn}>Contáctanos</button>
             </div>
         </header>
     )

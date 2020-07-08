@@ -2,11 +2,15 @@
   "name": "bristol",
   "private": true,
   "engineStrict": true,
-  "engines": { "node": "^14.0.0" },
+  "engines": {
+    "node": "^14.0.0"
+  },
   "version": "1.0.0",
   "description": "bristol template",
   "buildDir": "main-files/assets",
-  "workspaces": ["gatsby"],
+  "workspaces": [
+    "gatsby"
+  ],
   "scripts": {
     "sass": "node-sass --output-style expanded -o main-files/assets/css main-files/assets/scss --source-map true --source-map-contents true",
     "css-prefix": "post-css --replace main-files/assets/css/style.css --use autoprefixer --map",
@@ -30,5 +34,8 @@
     "onchange": "^7.0.2",
     "post-cli": "^1.0.5",
     "uglify-js": "^3.10.0"
+  },
+  "dependencies": {
+    "cpy-cli": "^3.1.1"
   }
 }
