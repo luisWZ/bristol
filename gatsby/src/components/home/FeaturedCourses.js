@@ -1,21 +1,23 @@
 import React from "react";
 import { Link } from 'gatsby'
-
 import { css } from '@emotion/core'
-// import styled from '@emotion/styled'
-import styled from 'styled-components'
+import imgCursos from '../../images/home-cursos-generales.webp'
+import imgExamenes from '../../images/home-examenes-internacionales.webp'
 
-import imgCursos from '../../assets/imgs/home-cursos-generales.webp'
-import imgExamenes from '../../assets/imgs/home-examenes-internacionales.webp'
-
-const Cursos = styled.div({
-  flexBasis: '46%',
-  height: '350px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-},
-props => ({backgroundImage: `url(${props.img})`})
+const Course = ({ course }) => (
+  <div css={css`
+    flex-basis: 46%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(${course.image});
+  `}>
+    <div css={css`width: 50%;`}>
+      <h1>{course.name}</h1>
+      <Link to={`/${course.link}`}>Conoce más</Link>
+    </div>
+  </div>
 )
 
 export default function FeaturedCourses() {
@@ -25,27 +27,14 @@ export default function FeaturedCourses() {
         display: flex;
         justify-content: space-between;
         padding-top: 2rem;
-      `}
-    >
-      {["Cursos Generales", "Exámenes Internacionales"].map((title, index) => {
-        const { link, img } =
+    `}>
+      {['Cursos Generales', 'Exámenes Internacionales'].map((name, index) => {
+        const course =
           index === 0
-            ? { link: "cursos", img: imgCursos }
-            : { link: "examenes", img: imgExamenes };
-        return (
-          <Cursos img={img} key={`main_products${index}`}>
-            <div
-              css={css`
-                width: 50%;
-              `}
-            >
-              <h1>{title}</h1>
-              <Link className="bristol-btn" to={`/${link}`}>
-                Conoce más
-              </Link>
-            </div>
-          </Cursos>
-        );
+            ? { link: 'cursos', image: imgCursos ,name: name}
+            : { link: 'examenes', image: imgExamenes ,name: name}
+
+        return <Course course={course} key={`main_products${index}`} />
       })}
     </section>
   );

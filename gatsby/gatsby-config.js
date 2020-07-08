@@ -11,9 +11,9 @@ module.exports = {
     keywords: `inglés, ingles, veracruz, xalapa, coatepec, adolescentes, niños, estudiar, aprender, cambridgem, esol, certificaciones, internacional, intercambios, universidad, bristol, english, canada, londres, london, england, inglaterra`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    // `gatsby-plugin-sass`,
+    // `gatsby-plugin-styled-components`,
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

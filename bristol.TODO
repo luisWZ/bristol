@@ -1,7 +1,9 @@
-agregar año cpoyright con javascript
-agragar descripción y keywords SEO
-Poppins para todos los headers
-Usar un static content generator para todas las páginas
+✔ Usar un static content generator para todas las páginas @done(20-07-08 13:58)
+✔ agregar año cpoyright con javascript @done(20-07-08 13:57)
+✔ Poppins para todos los headers @done(20-07-08 13:58)
+
+☐ agregar descripción y keywords SEO
+☐ poner referencias de url de facebook e instagram en un solo lugar
 
 react-animate-on-scroll
 https://github.com/dbramwell/react-animate-on-scroll
@@ -12,6 +14,8 @@ https://www.react-reveal.com/
 https://github.com/rnosov/react-reveal
 https://www.react-reveal.com/docs/when/
 
-
 stand-alone libraries
 https://github.com/matthieua/WOW
+
+react articles
+https://www.freecodecamp.org/news/the-react-cheatsheet-for-2020/

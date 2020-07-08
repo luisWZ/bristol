@@ -21,6 +21,7 @@
     "static:serve": "browser-sync main-files -w --ignore 'main-files/assets/**/*.scss' --logPrefix $npm_package_name --no-open --no-notify",
     "static:dev": "concurrently --names 'sass,server' --prefix name 'yarn run watch' 'yarn run static:serve'",
     "dev": "yarn workspace template run develop",
+    "clean": "yarn workspace template run clean",
     "serve": "yarn workspace template run serve",
     "build": "yarn workspace template run build"
   },

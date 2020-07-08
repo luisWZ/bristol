@@ -1,24 +1,22 @@
 import React from 'react'
-// import styled from '@emotion/styled'
-// import styled from 'styled-components'
-// TO BE REMOVED
-import styles from '../../assets/styles/bristol.module.scss'
+import { Container, TitleCenter } from '../CssHelpers'
 import testimonials from '../../content/home-testimonials.yaml'
+
+const Testimonial = ({ testimony }) => (
+  <div>
+    <p>{testimony.text}</p>
+    <h4>{testimony.name}</h4>
+    <span className='img'></span>
+  </div>
+)
 
 export default function Testimonials() {
   return (
-    <section className={styles.container}>
-        <h1>Testimonios</h1>
-        {testimonials.map((testimonial, index) => {
-            const { text, name } = testimonial
-            return (
-                <div key={`home_testimonial${index}`}>
-                    <p>{text}</p>
-                    <h4>{name}</h4>
-                    <span className="img"></span>
-                </div>
-            )
-        })}
-    </section>
+    <Container>
+      <TitleCenter>Testimonios</TitleCenter>
+      {testimonials.map((testimony, index) => (
+        <Testimonial testimony={testimony} key={`home_testimonial${index}`} />
+      ))}
+    </Container>
   )
 }
