@@ -9,7 +9,7 @@ const color = 'white'
 
 export default function Footer() {
   return (
-    <footer css={css`background-color: #0043ce;`}>
+    <footer css={theme => css`background-color: ${theme.colors.bristolBlue};`}>
       <div>
         <div>
           <SvgFooterBrand fill={color} />
@@ -28,7 +28,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div>
+      <div css={theme => css`background-color: ${theme.colors.blueLight};`}>
         <p>Bristol Inglés Profesional ©{new Date().getFullYear()}</p>
         <SocialLinks css={css`svg { fill: ${color}; }`} />
       </div>

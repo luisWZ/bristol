@@ -1,22 +1,27 @@
 import React from 'react'
-import styled from '@emotion/styled'
-import Header from './Header'
-import Footer from './Footer'
-import CssModernReset from './CssModernReset'
-// import CssScaffolding from './CssScaffolding'
+import { Global } from '@emotion/core'
+import { ThemeProvider } from 'emotion-theming'
 
-const Main = styled.main`
-  background-color: #f2f4f8;
-  padding-top: 90px;
-`
+import Header from './Header'
+import Main from './Main'
+import Footer from './Footer'
+
+import CssModernReset from './CssModernReset'
+import CssScaffolding from './CssScaffolding'
+import CssTheme from './CssTheme'
+import CssVariables from './CssVariables'
 
 export default function Layout({ children }) {
   return (
     <>
-      <CssModernReset />
-      <Header />
-      <Main>{children}</Main>
-      <Footer />
+      <Global styles={CssModernReset} />
+      <Global styles={CssScaffolding} />
+      <ThemeProvider theme={CssVariables}>
+        <CssTheme />
+        <Header />
+        <Main>{children}</Main>
+        <Footer />
+      </ThemeProvider>
     </>
   )
 }
