@@ -7,6 +7,7 @@
   },
   "version": "1.0.0",
   "description": "bristol template",
+  "staticFolder": "main-files",
   "buildDir": "main-files/assets",
   "workspaces": [
     "gatsby"
@@ -18,12 +19,14 @@
     "docs": "browser-sync start --server documentation --logPrefix 'template documentation' --no-open --no-notify",
     "watch": "onchange 'main-files/assets/**/*.scss' -- yarn run sass",
     "static:build": "node build.js",
-    "static:serve": "browser-sync main-files -w --ignore 'main-files/assets/**/*.scss' --logPrefix $npm_package_name --no-open --no-notify",
+    "static:serve": "browser-sync $npm_package_staticFolder -w --ignore 'main-files/assets/**/*.scss' --logPrefix $npm_package_name --no-open --no-notify",
+    "static:serveStatic": "browser-sync start -s $npm_package_staticFolder --logPrefix $npm_package_name --no-open --no-notify",
     "static:dev": "concurrently --names 'sass,server' --prefix name 'yarn run watch' 'yarn run static:serve'",
     "dev": "yarn workspace template run develop",
     "clean": "yarn workspace template run clean",
     "serve": "yarn workspace template run serve",
-    "build": "yarn workspace template run build"
+    "build": "yarn workspace template run build",
+    "both": "concurrently --names 'static, gatsby' --prefix name 'yarn run static:serveStatic' 'yarn run dev'"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.0",

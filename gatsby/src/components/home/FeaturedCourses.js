@@ -1,21 +1,22 @@
 import React from "react";
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
+import { Button } from '../CssHelpers'
 import imgCursos from '../../images/home-cursos-generales.webp'
 import imgExamenes from '../../images/home-examenes-internacionales.webp'
 
 const Course = ({ course }) => (
   <div css={css`
     flex-basis: 46%;
-    height: 350px;
+    height: 25rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url(${course.image});
   `}>
-    <div css={css`width: 50%;`}>
-      <h1>{course.name}</h1>
-      <Link to={`/${course.link}`}>Conoce más</Link>
+    <div css={css`width: 45%;`}>
+      <h2 css={css`color: white;`}>{course.name}</h2>
+      <Button as={Link} to={`/${course.link}`}>Conoce más</Button>
     </div>
   </div>
 )

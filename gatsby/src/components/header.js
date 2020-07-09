@@ -9,14 +9,22 @@ import SvgEnvelope from './SvgEnvelope'
 import SvgPhone from './SvgPhone'
 
 // CSS Styles =========================================
-const height = `2.5rem`
+const height = `2.8rem`
+
+const hover = (theme, color) => {
+  return `
+    &:hover {
+      background-color: ${theme.colors.bgGray};
+      color: ${color === undefined ? theme.colors.grayDark : theme.colors.bristolBlue};
+    }
+  `
+}
 
 const Wrapper = styled.header`
   display: flex;
-  background-color: ${props => props.theme.colors.bgWhite};
+  background-color: ${({ theme }) => theme.colors.bgWhite};
   flex-wrap: wrap;
-  border-left: 4px solid ${props => props.theme.colors.bristolRed};
-  border-top: 1px solid ${props => props.theme.colors.grayLight};
+  border-left: 4px solid ${({ theme }) => theme.colors.bristolRed};
   box-shadow: 0 1px 2px rgba(162, 169, 176, 0.4);
   position: fixed;
   z-index: 2;
@@ -32,32 +40,35 @@ const Logo = styled(SvgBristolLogo)`
 `
 const MainColumn = styled.div`
   flex: 0 0 70%;
-  border-style: solid;
-  border-color: ${props => props.theme.colors.grayLight};
-  border-width: 0 1px;
+  border-left: 1px solid ${({ theme }) => theme.colors.grayLight};
   display: flex;
   flex-flow: wrap row;
   justify-content: space-between;
 `
 const ContactList = styled.ul`
   display: flex;
-  border-bottom: 1px solid ${props => props.theme.colors.grayLight};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.grayLight};
   flex: 0 0 100%;
 `
 const ContactListLink = styled.a`
   display: flex;
   padding: 0 1rem;
-  border-right: 1px solid ${props => props.theme.colors.grayLight};
-  height: ${height};
+  border-right: 1px solid ${({ theme }) => theme.colors.grayLight};
+  line-height: ${height};
   align-items: center;
   font-size: 0.875rem;
+  ${({theme}) => hover(theme)}
 `
 const Nav = styled.nav`
   display: inline-flex;
 `
 const NavLink = styled(Link)`
   padding: 0 1rem;
-  line-height: 3rem;
+  line-height: 3.2rem;
+  &:hover {
+    color: white;
+    background-color: ${({ theme }) => theme.colors.blueLight};
+  }
 `
 const RightColumn = styled.div`
   flex: 0 0 12%;
@@ -67,6 +78,7 @@ const RightColumn = styled.div`
 const SocialLinksFixHeight = styled(SocialLinks)`
   a {
     line-height: ${height};
+    ${({theme}) => hover(theme, 'blue')}
   }
 `
 const Slogan = styled(SvgInglesMuyIngles)`
@@ -76,8 +88,10 @@ const Slogan = styled(SvgInglesMuyIngles)`
 const Button = styled.button`
   flex-grow: 1;
   border-radius: 0;
-  background-color: ${props => props.theme.colors.bristolBlue};
-  color: white;
+  background-color: ${({ theme }) => theme.colors.bristolBlue};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.bristolRed};
+  }
 `
 // Component ==========================================
 export default function Header() {

@@ -11,13 +11,22 @@ module.exports = {
     keywords: `inglés, ingles, veracruz, xalapa, coatepec, adolescentes, niños, estudiar, aprender, cambridgem, esol, certificaciones, internacional, intercambios, universidad, bristol, english, canada, londres, london, england, inglaterra`,
   },
   plugins: [
-    // `gatsby-plugin-sass`,
-    // `gatsby-plugin-styled-components`,
     `gatsby-plugin-emotion`,
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       `poppins:700`,
+    //       `roboto:400`
+    //     ],
+    //     display: 'swap',
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`
+        pathToConfigModule: `src/utils/typography`,
+        // omitGoogleFont: true,
       },
     },
   ],

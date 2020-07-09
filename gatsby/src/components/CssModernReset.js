@@ -16,11 +16,11 @@ export default function CssModernReset() {
     }
     /* Remove default margin */
     body,
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
+    /* h1, */
+    /* h2, */
+    /* h3, */
+    /* h4, */
+    /* p, */
     ul[class],
     ol[class],
     li,

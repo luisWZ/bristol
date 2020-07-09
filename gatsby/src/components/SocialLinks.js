@@ -3,12 +3,7 @@ import { css } from '@emotion/core'
 import { FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 const Facebook = () => (
-  <a
-    href='https://www.facebook.com/bristolinglesprofesional/'
-    css={css`
-      margin-right: 0.5rem;
-    `}
-  >
+  <a href='https://www.facebook.com/bristolinglesprofesional/'>
     <FaFacebookF />
   </a>
 )
@@ -23,16 +18,16 @@ export default function SocialLinks(props) {
   return (
     <ul
       {...props}
-      css={css`
+      css={theme => css`
         display: flex;
+
         a {
-          padding: 0 0.5rem;
+          padding: 0 0.7rem;
           display: block;
-          line-height: 32px;
+          line-height: 2.4rem;
         }
-        svg {
-          vertical-align: middle;
-        }
+
+        svg { vertical-align: middle; }
       `}
     >
       <li>
