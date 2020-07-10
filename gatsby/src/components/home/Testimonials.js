@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, TitleCenter } from '../CssHelpers'
+import { Container, Title } from '../CssHelpers'
 import testimonials from '../../content/home-testimonials.yaml'
 
 const Testimonial = ({ testimony }) => (
@@ -13,7 +13,7 @@ const Testimonial = ({ testimony }) => (
 export default function Testimonials() {
   return (
     <Container>
-      <TitleCenter>Testimonios</TitleCenter>
+      <Title>Testimonios</Title>
       {testimonials.map((testimony, index) => (
         <Testimonial testimony={testimony} key={`home_testimonial${index}`} />
       ))}

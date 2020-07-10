@@ -33,21 +33,9 @@ export default function CssModernReset() {
       text-rendering: optimizeSpeed;
       line-height: 1.5;
     }
-    /* Remove list styles on ul, ol elements with a class attribute */
-    /* Remove default padding */
-    ul,
-    ol {
-      padding: 0;
-      list-style: none;
-    }
     /* A elements that don't have a class get default styles */
     a:not([class]) {
       text-decoration-skip-ink: auto;
-    }
-    /* Make images easier to work with */
-    img {
-      max-width: 100%;
-      display: block;
     }
     /* Natural flow and rhythm in articles by default */
     article > * + * {

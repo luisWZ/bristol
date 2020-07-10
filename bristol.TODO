@@ -5,6 +5,13 @@
 ☐ agregar descripción y keywords SEO
 ☐ poner referencias de url de facebook e instagram en un solo lugar
 ☐ arreglar el color base, mirar como lo hacen los frameworks,checar que anchors y p y demas tenga el color inicia;l y checar el contraste del mismo
+
+  Macros
+☐ hacer macros con snippets para mediaqueries
+☐ hacer macros para dejar espacio en { aqui }
+☐ { object } =>
+☐ macros para coma al final
+
 react-animate-on-scroll
 https://github.com/dbramwell/react-animate-on-scroll
 https://dbramwell.github.io/react-animate-on-scroll/

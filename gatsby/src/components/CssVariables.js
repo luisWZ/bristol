@@ -16,12 +16,27 @@ export default {
   radius: '4px',
   newsletterOffset: '7rem',
   gutter: '4vw',
-  mq: { // media queries
+  mq: {
+    // media queries
     _960: '60em',
     _864: '54em',
     _704: '44em',
     _640: '40em',
     _480: '30em',
     _400: '25em',
+    min560: 'min-width: 35em',
+    min640: 'min-width: 40em',
+    min960: 'min-width: 60em',
+    min1200: 'min-width: 75em',
+  },
+  _mq: {
+    min: {
+      _960: '60em',
+      _864: '54em',
+      _704: '44em',
+      _640: '40em',
+      _480: '30em',
+      _400: '25em',
+    },
   },
 }

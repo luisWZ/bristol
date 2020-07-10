@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, TitleCenter } from '../CssHelpers'
+import { Container, Title } from '../CssHelpers'
 import courses from '../../content/home-courses.yaml'
 
 const Course = ({ course }) => {
@@ -21,7 +21,7 @@ const Course = ({ course }) => {
 export default function ComingCourses() {
   return (
     <Container>
-      <TitleCenter>Próximos cursos</TitleCenter>
+      <Title>Próximos cursos</Title>
       {courses.map((course, index) => (
         <Course course={course} key={`home_course${index}`} />
       ))}

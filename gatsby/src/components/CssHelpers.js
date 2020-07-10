@@ -5,18 +5,16 @@ export const Container = styled.section`
   margin-left: ${({ theme }) => theme.gutter};
   margin-right: ${({ theme }) => theme.gutter};
 
-  /* @media (min-width: 768px) {
-    margin-left: auto;
-    margin-right: auto;
-  } */
-  @media (min-width: 1200px) {
-    max-width: 1140px;
+  @media (${({ theme }) => theme.mq.min1200}) {
+    max-width: 1152px; // 72rem
   }
 `
-export const TitleCenter = styled.h1`
-  text-align: center;
+export const Title = styled.h1`
+  /* text-align: center; */
+  &:hover {
+    color: ${({ theme }) => theme.colors.bristolBlue};
+  }
 `
-
 export const Button = styled.a`
   color: white;
   font-size: 1.2rem;
@@ -25,8 +23,4 @@ export const Button = styled.a`
   border-radius: ${({ theme }) => theme.radius};
   background-color: ${({ blue, theme }) =>
     blue ? theme.colors.bristolBlue : theme.colors.bristolRed};
-  /* &:hover {
-    background-color: ${({ blue, theme }) =>
-      blue ? theme.colors.bristolRed : theme.colors.bristolBlue};
-  } */
 `
