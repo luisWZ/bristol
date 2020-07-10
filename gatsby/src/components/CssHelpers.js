@@ -1,5 +1,12 @@
 import styled from '@emotion/styled'
 
+// import { css } from '@emotion/core'
+// import { useTheme } from 'emotion-theming'
+// export const padding = css`
+//   margin-left: ${theme_.gutter};
+//   margin-right: ${theme_.gutter};
+// `
+
 export const Container = styled.section`
   margin-bottom: 6rem;
   margin-left: ${({ theme }) => theme.gutter};

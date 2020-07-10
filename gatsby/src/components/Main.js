@@ -1,14 +1,10 @@
 import React from 'react'
-import { css } from '@emotion/core'
+import styled from '@emotion/styled'
 
+const Main_ = styled.main`
+  background-color: ${({ theme }) => theme.colors.bgGray};
+  /* padding-top: ${props => props.height ? props.height : '90px'}; */
+`
 export default function Main(props) {
-  return (
-    <main
-      css={theme => css`
-        background-color: ${theme.colors.bgGray};
-        padding-top: 90px;
-      `}
-      {...props}
-    />
-  )
+  return <Main_ {...props} />
 }

@@ -5,6 +5,7 @@ import { Button } from '../CssHelpers'
 import imgCursos from '../../images/home-cursos-generales.webp'
 import imgExamenes from '../../images/home-examenes-internacionales.webp'
 
+// Styles definitions =================================
 const mediaQuery = 'min-width: 40em'
 
 const Section = styled.section`
@@ -25,7 +26,6 @@ const Section = styled.section`
       &:first-of-type { margin-bottom: 0; }
     }
   }
-
 `
 const CourseBox = styled.div`
   height: 32vw;
@@ -36,8 +36,9 @@ const CourseBox = styled.div`
   align-items: center;
   background-position: center;
   background-size: cover;
-  background-color: ${({ theme }) => theme.colors.bristolBlue};
-  background-image: url(${({ image }) => image});
+  background-color: ${({ theme }) => theme.colors.bristolBlue };
+  background-image: url(${({ image }) => image });
+
   > div {
     max-width: 250px;
   }
@@ -46,6 +47,12 @@ const CourseBox = styled.div`
     text-shadow: 4px 3px 3px hsla(220, 50%, 20%, 0.6);
   }
 `
+// Components =========================================
+const courses = [
+  { link: 'cursos', image: imgCursos , name: 'Cursos Generales'},
+  { link: 'examenes', image: imgExamenes , name: 'Exámenes Internacionales'},
+]
+
 const Course = ({ course }) => (
   <CourseBox image={course.image}>
     <div>
@@ -54,18 +61,12 @@ const Course = ({ course }) => (
     </div>
   </CourseBox>
 )
-
 export default function FeaturedCourses() {
   return (
     <Section>
-      {['Cursos Generales', 'Exámenes Internacionales'].map((name, index) => {
-        const course =
-          index === 0
-            ? { link: 'cursos', image: imgCursos ,name: name}
-            : { link: 'examenes', image: imgExamenes ,name: name}
-
-        return <Course course={course} key={`featured_products${index}`} />
-      })}
+      {courses.map((course, index) => (
+        <Course course={course} key={`featured_courses${index}`} />
+      ))}
     </Section>
   );
 }

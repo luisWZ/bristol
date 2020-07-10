@@ -66,7 +66,7 @@ export default function OurServices() {
       <Title>Nuestros servicios</Title>
       <ServicesWrapper>
         {services.map((service, index) => (
-          <Service service={service} key={`home_service${index}`} />
+          <Service service={service} key={`our_services${index}`} />
         ))}
       </ServicesWrapper>
     </Container>

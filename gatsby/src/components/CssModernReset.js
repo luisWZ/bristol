@@ -16,6 +16,7 @@ export default function CssModernReset() {
     /* h3, */
     /* h4, */
     /* p, */
+    img,
     ul,
     ol,
     li,

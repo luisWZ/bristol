@@ -1,35 +1,29 @@
-- service:
-  title:
+- title:
     Servicio Uno
   text:
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
 
-- service:
-  title:
+- title:
     Servicio Dos
   text:
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
 
-- service:
-  title:
+- title:
     Servicio Tres
   text:
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
 
-- service:
-  title:
+- title:
     Servicio Cuatro
   text:
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
 
-- service:
-  title:
+- title:
     Servicio Cinco
   text:
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
 
-- service:
-  title:
+- title:
     Servicio Seis
   text:
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.

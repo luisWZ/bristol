@@ -8,7 +8,7 @@ export default {
     bgGray: '#f2f4f8',
     bgWhite: 'white',
     grayLight: '#e1e1e1',
-    gray: '#666',
+    gray: '#777',
     grayDark: '#444',
     black: '#111',
     white: 'white',
@@ -26,8 +26,10 @@ export default {
     _400: '25em',
     min560: 'min-width: 35em',
     min640: 'min-width: 40em',
+    min720: 'min-width: 45em',
     min960: 'min-width: 60em',
     min1200: 'min-width: 75em',
+    max720: 'max-width: 44.9375em', // 719px
   },
   _mq: {
     min: {

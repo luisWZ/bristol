@@ -15,7 +15,7 @@ export default function CssModernReset() {
       font-size: calc(1.8rem + 0.6vw);
     }
     h3 {
-      font-size: calc(1.5rem + 0.5vw);
+      font-size: calc(1.4rem + 0.5vw);
     }
     /* Remove list styles on ul, ol elements with a class attribute */
     /* Remove default padding */
