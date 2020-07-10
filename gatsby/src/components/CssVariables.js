@@ -2,6 +2,7 @@ export default {
   colors: {
     bristolBlue: '#0043CE',
     bristolRed: '#DA1E28',
+    blueDark: '#394551',
     blueLight: '#0f62fe',
     pink: '#FA4D56',
     bgGray: '#f2f4f8',
@@ -13,4 +14,14 @@ export default {
     white: 'white',
   },
   radius: '4px',
+  newsletterOffset: '7rem',
+  gutter: '4vw',
+  mq: { // media queries
+    _960: '60em',
+    _864: '54em',
+    _704: '44em',
+    _640: '40em',
+    _480: '30em',
+    _400: '25em',
+  },
 }

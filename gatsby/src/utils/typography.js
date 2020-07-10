@@ -6,7 +6,7 @@ const overrides = {
   bodyFontFamily: [`Roboto`, `sans-serif`],
   headerFontFamily: [`Poppins`, `sans-serif`],
   includeNormalize: false,
-  headerColor: '#343a3f',
+  headerColor: '#394551',
   googleFonts: [
     {
       name: `Roboto`,

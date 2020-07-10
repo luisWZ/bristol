@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
+
 import SocialLinks from './SocialLinks'
 import SvgBristolLogo from './SvgBristolLogo'
 import SvgInglesMuyIngles from './SvgInglesMuyIngles'
@@ -11,23 +12,24 @@ import SvgPhone from './SvgPhone'
 // CSS Styles =========================================
 const height = `2.8rem`
 
-const hover = (theme, color) => {
+const hover = ({ colors }, color) => {
   return `
     &:hover {
-      background-color: ${theme.colors.bgGray};
-      color: ${color === undefined ? theme.colors.grayDark : theme.colors.bristolBlue};
+      background-color: ${colors.bgGray};
+      color: ${color === undefined ? colors.grayDark : colors.bristolBlue};
     }
   `
 }
 
 const Wrapper = styled.header`
-  display: flex;
   background-color: ${({ theme }) => theme.colors.bgWhite};
   flex-wrap: wrap;
   border-left: 4px solid ${({ theme }) => theme.colors.bristolRed};
   box-shadow: 0 1px 2px rgba(162, 169, 176, 0.4);
   position: fixed;
   z-index: 2;
+  display: flex;
+  display: none; /* mobile styles */
 `
 const LogoBox = styled.div`
   flex: 0 0 18%;
@@ -78,7 +80,7 @@ const RightColumn = styled.div`
 const SocialLinksFixHeight = styled(SocialLinks)`
   a {
     line-height: ${height};
-    ${({theme}) => hover(theme, 'blue')}
+    ${({ theme }) => hover(theme, 'blue')}
   }
 `
 const Slogan = styled(SvgInglesMuyIngles)`

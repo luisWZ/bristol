@@ -9,11 +9,6 @@ export default function CssModernReset() {
     *::after {
       box-sizing: border-box;
     }
-    /* Remove default padding */
-    ul[class],
-    ol[class] {
-      padding: 0;
-    }
     /* Remove default margin */
     body,
     /* h1, */
@@ -21,8 +16,8 @@ export default function CssModernReset() {
     /* h3, */
     /* h4, */
     /* p, */
-    ul[class],
-    ol[class],
+    ul,
+    ol,
     li,
     figure,
     figcaption,
@@ -39,8 +34,10 @@ export default function CssModernReset() {
       line-height: 1.5;
     }
     /* Remove list styles on ul, ol elements with a class attribute */
-    ul[class],
-    ol[class] {
+    /* Remove default padding */
+    ul,
+    ol {
+      padding: 0;
       list-style: none;
     }
     /* A elements that don't have a class get default styles */

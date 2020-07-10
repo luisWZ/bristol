@@ -12,7 +12,11 @@ import Newsletter from '../components/Newsletter'
 
 const BottomImage = (
   <img src={imgBottom} alt='Mujer leyendo recostada'
-    css={css`margin: 8rem auto;`} />
+    css={css`
+      margin: 6rem auto;
+      width: 80%;
+      max-width: 566px;
+    `} />
 )
 
 export default function Home() {

@@ -4,7 +4,7 @@ import { Global, css } from '@emotion/core'
 export default function CssTheme() {
   return (
     <Global
-      styles={theme => css`
+      styles={(theme) => css`
         a {
           display: inline-block;
           transition: all 0.26s ease-in-out;

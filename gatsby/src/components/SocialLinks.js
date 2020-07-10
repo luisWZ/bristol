@@ -17,8 +17,7 @@ const Instagram = () => (
 export default function SocialLinks(props) {
   return (
     <ul
-      {...props}
-      css={theme => css`
+    css={theme => css`
         display: flex;
 
         a {
@@ -29,6 +28,7 @@ export default function SocialLinks(props) {
 
         svg { vertical-align: middle; }
       `}
+      {...props}
     >
       <li>
         <Facebook />
