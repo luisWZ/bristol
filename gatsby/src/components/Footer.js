@@ -1,12 +1,35 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
+
+import { AiOutlineRight } from 'react-icons/ai';
 import SocialLinks from './SocialLinks'
 import SvgCambridgeLogo from './SvgCambridgeLogo'
 import SvgFooterBrand from './SvgFooterBrand'
 
-const mqMin640 = 'min-width: 40em'
-const mqMin768 = 'min-width: 48em'
+const Li = props => (
+  <li
+  css={theme => css`
+    svg { display: none; }
+
+    @media (${theme.mq.min768}) { order: ${props.order}; }
+    @media(${theme.mq.max768}) {
+      a {
+        position: relative;
+      }
+      svg {
+        display: block;
+        position: absolute;
+        width: 1.25rem;
+        right: 1.25rem;
+        font-size: 1.25rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  `}
+  {...props} />
+)
 
 export default function Footer() {
   return (
@@ -17,8 +40,8 @@ export default function Footer() {
         color: white;
       }
     `}>
-      <div css={css`
-        @media (${mqMin640}) {
+      <div css={theme => css`
+        @media (${theme.mq.min640}) {
           display: flex;
         }
       `}>
@@ -28,7 +51,7 @@ export default function Footer() {
           max-width: 360px;
           width: 72vw;
 
-          @media (${mqMin640}) {
+          @media (${theme.mq.min640}) {
             margin-right: 0;
             padding-right: 5rem;
           }
@@ -48,13 +71,13 @@ export default function Footer() {
                 padding: 1rem;
               }
             }
-          @media (${mqMin640}) {
+          @media (${theme.mq.min640}) {
             padding-top: 6rem;
             flex-grow: 1;
             h4 { padding-left: 0; }
             a { padding: 0.8rem 0; }
           }
-          @media (${mqMin768}) {
+          @media (${theme.mq.min768}) {
             flex: 0 23rem;
             a {
               width: 10.5rem;
@@ -68,20 +91,34 @@ export default function Footer() {
             padding-left: ${theme.gutter};
             margin-bottom: 1rem;
           `}>Mapa del sitio</h4>
-          <ul css={css`
-            @media (${mqMin768}) {
+          <ul css={theme => css`
+            @media (${theme.mq.min768}) {
               display: flex;
               flex-wrap: wrap;
               justify-content: space-between;
             }
           `}>
-              <li css={css`@media (${mqMin768}) { order:1; }`}><Link to='/'>Home</Link></li>
-              <li css={css`@media (${mqMin768}) { order:3; }`}><Link to='/nosotros'>Nosotros</Link></li>
-              <li css={css`@media (${mqMin768}) { order:5; }`}><Link to='/cursos'>Cursos generales</Link></li>
-              <li css={css`@media (${mqMin768}) { order:7; }`}><Link to='/examenes'>Exámenes internacionales</Link></li>
-              <li css={css`@media (${mqMin768}) { order:2; }`}><Link to='/centro-examinador'>Centro examinador</Link></li>
-              <li css={css`@media (${mqMin768}) { order:4; }`}><Link to='/contacto'>Contacto</Link></li>
-              <li css={css`@media (${mqMin768}) { order:6; }`}><Link to='/'>Aviso de privacidad</Link></li>
+              <Li order='1'>
+                <Link to='/'>Home
+                <AiOutlineRight /></Link></Li>
+              <Li order='3'>
+                <Link to='/nosotros'>Nosotros
+                <AiOutlineRight /></Link></Li>
+              <Li order='5'>
+                <Link to='/cursos'>Cursos generales
+                <AiOutlineRight /></Link></Li>
+              <Li order='7'>
+                <Link to='/examenes'>Exámenes internacionales
+                <AiOutlineRight /></Link></Li>
+              <Li order='2'>
+                <Link to='/centro-examinador'>Centro examinador
+                <AiOutlineRight /></Link></Li>
+              <Li order='4'>
+                <Link to='/contacto'>Contacto
+                <AiOutlineRight /></Link></Li>
+              <Li order='6'>
+                <Link to='/'>Aviso de privacidad
+                <AiOutlineRight /></Link></Li>
           </ul>
         </div>
       </div>

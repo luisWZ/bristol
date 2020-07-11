@@ -1,19 +1,13 @@
 import styled from '@emotion/styled'
 
-// import { css } from '@emotion/core'
-// import { useTheme } from 'emotion-theming'
-// export const padding = css`
-//   margin-left: ${theme_.gutter};
-//   margin-right: ${theme_.gutter};
-// `
-
 export const Container = styled.section`
-  margin-bottom: 6rem;
   margin-left: ${({ theme }) => theme.gutter};
   margin-right: ${({ theme }) => theme.gutter};
 
   @media (${({ theme }) => theme.mq.min1200}) {
-    max-width: 1152px; // 72rem
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70rem; // 1120px
   }
 `
 export const Title = styled.h1`
@@ -27,7 +21,8 @@ export const Button = styled.a`
   font-size: 1.2rem;
   padding: 1rem 2.2rem;
   text-align: center;
-  border-radius: ${({ theme }) => theme.radius};
+  border-radius: ${({ noRadius, theme }) => noRadius ? '0' : theme.radius};
+  width: ${({ widthFull }) => widthFull ? '100%' : 'auto'};
   background-color: ${({ blue, theme }) =>
     blue ? theme.colors.bristolBlue : theme.colors.bristolRed};
 `

@@ -6,8 +6,9 @@ import imgHero from '../../images/home-temporal.webp'
 
 const Section = styled.section`
   background-color: white;
-  min-height: 540px;
-  max-height: 900px;
+  min-height: 544px;
+  max-height: 832;
+  /* max-height: 900px; */
   height: 100vh;
   display: flex;
   justify-content: space-around;
@@ -24,7 +25,7 @@ const Container_ = styled(Container)`
     flex-grow: 1;
 
     > div {
-      flex-basis: 50%;
+      flex-basis: 53%;
     }
     > img {
       max-width: 40%;
@@ -41,13 +42,13 @@ const Image = styled.img`
   max-width: 80%;
 `
 const Slogan = styled.h1`
-  font-size: calc(1.2rem + 0.5vw);
+  font-size: calc(1rem + 1vw * 1.5);
   line-height: 1.4;
   letter-spacing: 1.4px;
-  max-width: 420px;
+  /* max-width: 420px; */
 `
 const Description = styled.p`
-  font-size: calc(0.94rem + 0.3vw);
+  font-size: calc(0.91rem + 0.3vw * 1.5);
   margin-bottom: 2rem;
   max-width: 576px;
 `

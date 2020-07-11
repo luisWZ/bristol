@@ -6,25 +6,27 @@ import imgCursos from '../../images/home-cursos-generales.webp'
 import imgExamenes from '../../images/home-examenes-internacionales.webp'
 
 // Styles definitions =================================
-const mediaQuery = 'min-width: 40em'
-
 const Section = styled.section`
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
   padding-top: 2rem;
-
-  > div:first-of-type {
-    margin-bottom: 2rem;
-  }
-  @media(${mediaQuery}) {
+  @media(${({ theme }) => theme.mq.min640}) {
     flex-direction: row;
 
     > div {
-      flex-basis: 48vw;
+      flex-basis: 48%;
 
       &:first-of-type { margin-bottom: 0; }
     }
+  }
+  @media(${({ theme }) => theme.mq.min640}) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 86rem;
+  }
+  > div:first-of-type {
+    margin-bottom: 2rem;
   }
 `
 const CourseBox = styled.div`

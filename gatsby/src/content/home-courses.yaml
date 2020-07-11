@@ -1,8 +1,7 @@
-- course:
+- title:
+    Niños
   tag:
     Curso general
-  title:
-    Niños
   dates:
     Martes, miércoles y jueves
   time:
@@ -12,11 +11,62 @@
   location:
     Xalapa
 
-- course:
+- title:
+    IELTS
   tag:
     Curso de certificación
-  title:
-    IELTS
+  dates:
+    Martes y jueves
+  time:
+    8:00 a 9:40 AM
+  start:
+    26 de diciembre 2020
+  location:
+    Coatepec
+
+- title:
+    Adolecentes
+  tag:
+    Curso general
+  dates:
+    Martes, miércoles y jueves
+  time:
+    8:00 a 9:40 AM
+  start:
+    5 de octubre 2020
+  location:
+    Xalapa
+
+- title:
+    Adulto Intensivo
+  tag:
+    Curso de certificación
+  dates:
+    Lune, miércoles y viernes
+  time:
+    7:00 a 9:40 AM
+  start:
+    29 de noviembre 2020
+  location:
+    Coatepec
+
+- title:
+    PET for Schools
+  tag:
+    Curso general
+  dates:
+    sábado
+  time:
+    8:00 AM a 2:00 PM
+  start:
+    13 de agosto 2020
+  location:
+    Xalapa
+
+- title:
+    CAE
+  tag:
+    Curso de certificación
   dates:
     Martes y jueves
   time:

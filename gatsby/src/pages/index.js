@@ -7,8 +7,8 @@ import FeaturedCourses from '../components/home/FeaturedCourses'
 import ComingCourses from '../components/home/ComingCourses'
 import OurServices from '../components/home/OurServices'
 import Testimonials from '../components/home/Testimonials'
-import imgBottom from '../images/footer-hero.webp'
 import Newsletter from '../components/Newsletter'
+import imgBottom from '../images/footer-hero.webp'
 
 const BottomImage = (
   <img src={imgBottom} alt='Mujer leyendo recostada'

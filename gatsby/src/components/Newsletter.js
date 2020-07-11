@@ -2,22 +2,24 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 import { Container } from './CssHelpers'
-
 import IconArrow from './SvgIconArrow'
 
 export default function Newsletter() {
   return (
     <Container css={(theme) => css`
         background-color: white;
-        padding: 2.5rem ${theme.gutter};
         position: relative;
         z-index: 1;
-        margin-bottom: -${theme.newsletterOffset}; // covers the footer
+        padding: 2.5rem ${theme.gutter};
+        margin-bottom: -${theme.newsletterOffset};
       `}>
       <h3 css={css`text-align: center;`}>Suscríbete a nuestro newsletter</h3>
       <form css={({ colors }) => css`
-        border-bottom: 2px solid ${colors.blueDark};
         display: flex;
+        max-width: 48rem;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom: 2px solid ${colors.blueDark};
       `}>
         <input id='newsletter' type='text' placeholder='Escribe tu correo electrónico'
           css={theme => css`
