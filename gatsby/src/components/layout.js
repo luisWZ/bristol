@@ -11,12 +11,12 @@ import CssModernReset from './CssModernReset'
 import CssScaffolding from './CssScaffolding'
 import CssTheme from './CssTheme'
 import CssVariables from './CssVariables'
-
+// Emotion configs ====================================
 const disablePrefix = createCache({
   key: 'bristol',
   prefix: false, // take out for production
 })
-
+// Basically our root Component =======================
 export default function Layout({ children }) {
   return (
     <>

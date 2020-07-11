@@ -4,11 +4,11 @@ import { Global, css } from '@emotion/core'
 export default function CssTheme() {
   return (
     <Global
-      styles={(theme) => css`
+      styles={theme => css`
         a {
           display: inline-block;
           transition: all 0.26s ease-in-out;
-          color: ${theme.colors.gray};
+          color: ${theme.gray};
         }
 
         button {
@@ -16,7 +16,7 @@ export default function CssTheme() {
           border: none;
           color: white;
           cursor: pointer;
-          background-color: ${theme.colors.bristolBlue};
+          background-color: ${theme.bristolBlue};
           transition: background-color .26s ease-in-out;
         }
 

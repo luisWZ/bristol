@@ -12,24 +12,23 @@ import SvgPhone from './SvgPhone'
 // CSS Styles =========================================
 const height = `2.8rem`
 
-const hover = ({ colors }, color) => {
+const hover = (theme, color) => {
   return `
     &:hover {
-      background-color: ${colors.bgGray};
-      color: ${color === undefined ? colors.grayDark : colors.bristolBlue};
+      background-color: ${theme.bgGray};
+      color: ${color === undefined ? theme.grayDark : theme.bristolBlue};
     }
   `
 }
-
 const Wrapper = styled.header`
-  background-color: ${({ theme }) => theme.colors.bgWhite};
+  background-color: ${props => props.theme.bgWhite};
   flex-wrap: wrap;
-  border-left: 4px solid ${({ theme }) => theme.colors.bristolRed};
+  border-left: 4px solid ${props => props.theme.bristolRed};
   box-shadow: 0 1px 2px rgba(162, 169, 176, 0.4);
   position: fixed;
   z-index: 2;
   display: flex;
-  display: none; /* mobile styles */
+  /*display: none; /* mobile styles */
 `
 const LogoBox = styled.div`
   flex: 0 0 18%;
@@ -42,24 +41,24 @@ const Logo = styled(SvgBristolLogo)`
 `
 const MainColumn = styled.div`
   flex: 0 0 70%;
-  border-left: 1px solid ${({ theme }) => theme.colors.grayLight};
+  border-left: 1px solid ${props => props.theme.grayLight};
   display: flex;
   flex-flow: wrap row;
   justify-content: space-between;
 `
 const ContactList = styled.ul`
   display: flex;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.grayLight};
+  border-bottom: 1px solid ${props => props.theme.grayLight};
   flex: 0 0 100%;
 `
 const ContactListLink = styled.a`
   display: flex;
   padding: 0 1rem;
-  border-right: 1px solid ${({ theme }) => theme.colors.grayLight};
+  border-right: 1px solid ${props => props.theme.grayLight};
   line-height: ${height};
   align-items: center;
   font-size: 0.875rem;
-  ${({theme}) => hover(theme)}
+  ${({ theme }) => hover(theme)}
 `
 const Nav = styled.nav`
   display: inline-flex;
@@ -69,7 +68,7 @@ const NavLink = styled(Link)`
   line-height: 3.2rem;
   &:hover {
     color: white;
-    background-color: ${({ theme }) => theme.colors.blueLight};
+    background-color: ${props => props.theme.blueLight};
   }
 `
 const RightColumn = styled.div`
@@ -90,14 +89,15 @@ const Slogan = styled(SvgInglesMuyIngles)`
 const Button = styled.button`
   flex-grow: 1;
   border-radius: 0;
-  background-color: ${({ theme }) => theme.colors.bristolBlue};
+  background-color: ${props => props.theme.bristolBlue};
   &:hover {
-    background-color: ${({ theme }) => theme.colors.bristolRed};
+    background-color: ${props => props.theme.bristolRed};
   }
 `
 // Component ==========================================
 export default function Header() {
-  const theme = useTheme()
+  // hook to listen theme provider for svg fills
+  const color = useTheme().pink
   return (
     <Wrapper>
       <LogoBox>
@@ -107,19 +107,19 @@ export default function Header() {
         <ContactList>
           <li>
             <ContactListLink href='mailto:hola@bristolingles.com'>
-              <SvgEnvelope fill={theme.colors.pink} />
+              <SvgEnvelope fill={color} />
               &ensp;hola@bristolingles.com
             </ContactListLink>
           </li>
           <li>
             <ContactListLink href='tel:2288405791'>
-              <SvgPhone fill={theme.colors.pink} />
+              <SvgPhone fill={color} />
               &nbsp;Xalapa&emsp;2288 40 57 91
             </ContactListLink>
           </li>
           <li>
             <ContactListLink href='tel:2288160543'>
-              <SvgPhone fill={theme.colors.pink} />
+              <SvgPhone fill={color} />
               &nbsp;Coatepec&emsp;2288 16 05 43
             </ContactListLink>
           </li>

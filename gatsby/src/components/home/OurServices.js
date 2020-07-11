@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+
 import { Container, Title } from '../CssHelpers'
 import services from '../../content/home-services.yaml'
 
@@ -13,20 +14,20 @@ const ServiceBox = styled.div`
     margin-bottom: 1.5rem;
     padding: 6vw;
     transition: background-color .24s ease-in-out;
-    background-color: ${({ theme }) => theme.colors.blueLight};
+    background-color: ${props => props.theme.blueLight};
 
-    @media (${({ theme }) => theme.mq.min640}) {
+    @media (${props => props.theme.min640}) {
       flex-basis: 48%;
       padding: 3vw;
     }
-    @media (${({ theme }) => theme.mq.min960}) {
+    @media (${props => props.theme.min960}) {
       flex-basis: 31%;
       padding: 1.5rem;
     }
 
     &:hover {
       cursor: pointer;
-      background-color: ${({ theme }) => theme.colors.bristolBlue};
+      background-color: ${props => props.theme.bristolBlue};
     }
     /* paint all elements white */
     > * { color: white; }
@@ -38,9 +39,9 @@ const IconFaux = styled.span`
   border-radius: 50%;
   float: right;
   margin-bottom: 1rem;
-  background-color: ${({ theme }) => theme.colors.pink};
+  background-color: ${props => props.theme.pink};
 
-  @media (${({ theme }) => theme.mq.min640}) {
+  @media (${props => props.theme.min640}) {
     float: none;
   }
 `
@@ -51,7 +52,7 @@ const Header = styled.h3`
 const Anchor = styled.a`
   text-decoration: underline;
 `
-// Component ==========================================
+// Components =========================================
 const Service = ({ service }) => (
   <ServiceBox>
     <IconFaux></IconFaux>

@@ -26,7 +26,8 @@
     "clean": "yarn workspace template run clean",
     "serve": "yarn workspace template run serve",
     "build": "yarn workspace template run build",
-    "both": "concurrently --names 'static, gatsby' --prefix name 'yarn run static:serveStatic' 'yarn run dev'"
+    "both": "concurrently --names 'static, gatsby' --prefix name 'yarn run static:serveStatic' 'yarn run dev'",
+    "start": "npm run both"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.0",

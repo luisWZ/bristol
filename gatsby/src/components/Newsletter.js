@@ -1,9 +1,11 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
+
 import { Container } from './CssHelpers'
 import IconArrow from './SvgIconArrow'
 
+// components =========================================
 export default function Newsletter() {
   return (
     <Container css={(theme) => css`
@@ -14,12 +16,12 @@ export default function Newsletter() {
         margin-bottom: -${theme.newsletterOffset};
       `}>
       <h3 css={css`text-align: center;`}>Suscríbete a nuestro newsletter</h3>
-      <form css={({ colors }) => css`
+      <form css={({ blueDark }) => css`
         display: flex;
         max-width: 48rem;
         margin-left: auto;
         margin-right: auto;
-        border-bottom: 2px solid ${colors.blueDark};
+        border-bottom: 2px solid ${blueDark};
       `}>
         <input id='newsletter' type='text' placeholder='Escribe tu correo electrónico'
           css={theme => css`
@@ -34,7 +36,7 @@ export default function Newsletter() {
           background-color: transparent;
           svg {vertical-align: middle;}
         `}>
-          <IconArrow fill={useTheme().colors.pink} />
+          <IconArrow fill={useTheme().pink} />
         </button>
       </form>
     </Container>

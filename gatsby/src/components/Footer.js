@@ -12,8 +12,8 @@ const Li = props => (
   css={theme => css`
     svg { display: none; }
 
-    @media (${theme.mq.min768}) { order: ${props.order}; }
-    @media(${theme.mq.max768}) {
+    @media (${theme.min768}) { order: ${props.order}; }
+    @media(${theme.max768}) {
       a {
         position: relative;
       }
@@ -34,14 +34,14 @@ const Li = props => (
 export default function Footer() {
   return (
     <footer css={theme => css`
-      background-color: ${theme.colors.bristolBlue};
+      background-color: ${theme.bristolBlue};
       padding-top: ${theme.newsletterOffset};
       * {
         color: white;
       }
     `}>
       <div css={theme => css`
-        @media (${theme.mq.min640}) {
+        @media (${theme.min640}) {
           display: flex;
         }
       `}>
@@ -51,7 +51,7 @@ export default function Footer() {
           max-width: 360px;
           width: 72vw;
 
-          @media (${theme.mq.min640}) {
+          @media (${theme.min640}) {
             margin-right: 0;
             padding-right: 5rem;
           }
@@ -71,13 +71,13 @@ export default function Footer() {
                 padding: 1rem;
               }
             }
-          @media (${theme.mq.min640}) {
+          @media (${theme.min640}) {
             padding-top: 6rem;
             flex-grow: 1;
             h4 { padding-left: 0; }
             a { padding: 0.8rem 0; }
           }
-          @media (${theme.mq.min768}) {
+          @media (${theme.min768}) {
             flex: 0 23rem;
             a {
               width: 10.5rem;
@@ -92,7 +92,7 @@ export default function Footer() {
             margin-bottom: 1rem;
           `}>Mapa del sitio</h4>
           <ul css={theme => css`
-            @media (${theme.mq.min768}) {
+            @media (${theme.min768}) {
               display: flex;
               flex-wrap: wrap;
               justify-content: space-between;
@@ -128,7 +128,7 @@ export default function Footer() {
         flex-direction: column;
         align-items: start;
         padding: 0.8rem ${theme.gutter} 0;
-        background-color: ${theme.colors.blueLight};
+        background-color: ${theme.blueLight};
 
         @media(min-width: 370px) {
           flex-direction: row;

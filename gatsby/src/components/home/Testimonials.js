@@ -1,13 +1,17 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Container, Title } from '../CssHelpers'
-// import { MdFormatQuote } from 'react-icons/md';
 import { BsChatSquareQuote } from 'react-icons/bs';
+// import { MdFormatQuote } from 'react-icons/md';
+
+import { Container, Title } from '../CssHelpers'
 import testimonials from '../../content/home-testimonials.yaml'
 import imgTmp from '../../images/nuestros-servicios.png'
 
+// Styles =============================================
 const TestimoniesWrapper = styled.div`
   overflow: hidden;
+  display: flex;
+  justify-content: space-around;
 `
 const Testimony = styled.div`
   padding: 1.5rem;
@@ -15,8 +19,8 @@ const Testimony = styled.div`
   z-index: 1;
   overflow: hidden;
   max-width: 28.5rem;
-  border-radius: ${({ theme }) => theme.radius};
-  border: 1px solid ${({ theme }) => theme.colors.blueGray};
+  border-radius: ${props => props.theme.radius};
+  border: 1px solid ${props => props.theme.blueGray};
   h4 {
     float: right;
   }
@@ -38,6 +42,7 @@ const Icon = styled(BsChatSquareQuote)`
   fill: #dee3ed;
   z-index: -1;
 `
+// Components =========================================
 const Testimonial = ({ testimony }) => (
   <Testimony>
     <p>{testimony.text}</p>

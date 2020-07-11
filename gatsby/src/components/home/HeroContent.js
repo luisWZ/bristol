@@ -21,7 +21,7 @@ const Container_ = styled(Container)`
   flex-direction: row;
   justify-content: space-around;
   flex: 0 1 25rem;
-  @media(${({ theme }) => theme.mq.min720}) {
+  @media(${props => props.theme.min720 }) {
     flex-grow: 1;
 
     > div {
@@ -33,7 +33,7 @@ const Container_ = styled(Container)`
   }
 `
 const TextBox = styled.div`
-  @media(${({ theme }) => theme.mq.max720}) {
+  @media(${props => props.theme.max720 }) {
     flex-basis: 380px;
     text-align: center;
   }
@@ -42,7 +42,7 @@ const Image = styled.img`
   max-width: 80%;
 `
 const Slogan = styled.h1`
-  font-size: calc(1rem + 1vw * 1.5);
+  font-size: calc(1rem + 1vw * 2.3);
   line-height: 1.4;
   letter-spacing: 1.4px;
   /* max-width: 420px; */
@@ -53,7 +53,7 @@ const Description = styled.p`
   max-width: 576px;
 `
 const Button_ = styled(Button)`
-  @media(${({ theme }) => theme.mq.max720}) { width: 100%; }
+  @media(${props => props.theme.max720 }) { width: 100%; }
 `
 export default function HeroContent() {
   return (

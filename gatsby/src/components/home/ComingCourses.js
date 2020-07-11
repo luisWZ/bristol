@@ -1,30 +1,32 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
+
 import { Container, Title, Button } from '../CssHelpers'
 import courses from '../../content/home-courses.yaml'
 import imgTmp from '../../images/bristol-ninos.webp'
+
 // Styles definitions =================================
 const CoursesWrapper = styled.div`
-  @media (${({ theme }) => theme.mq.max560}) {
+  @media (${props => props.theme.max560}) {
     max-width: 20rem;
   }
-  @media (${({ theme }) => theme.mq.min560}) {
+  @media (${props => props.theme.min560}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: ${({ theme }) => theme.gutter};
+    gap: ${props => props.theme};
   }
-  @media (${({ theme }) => theme.mq.min848}) {
+  @media (${props => props.theme.min848}) {
     grid-template-columns: repeat(3, 1fr);
     gap: 3vw;
   }
 `
 const Button_ = styled(Button)`
-  @media (${({ theme }) => theme.mq.min848}) {
+  @media (${props => props.theme.min848}) {
     margin: 0.5rem 1rem 1rem;
     padding: 0.6rem 1.4rem;
     width: calc(100% - 2rem);
-    border-radius: ${({ theme }) => theme.radius};
+    border-radius: ${props => props.theme};
   }
 `
 const TextBox = styled.div`
@@ -34,7 +36,7 @@ const TextBox = styled.div`
     margin-bottom: calc(.75rem + 0.1vw);
 
     + p {
-      color: ${({ theme }) => theme.colors.black};
+      color: ${props => props.theme.black};
     }
   }
   p {
@@ -59,17 +61,17 @@ const ImageLink = styled(Link)`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background-color: ${({ theme }) => theme.colors.bristolBlue};
+    background-color: ${props => props.theme.bristolBlue};
   }
 `
 const CourseBox = styled.div`
   background-color: white;
-  @media (${({ theme }) => theme.mq.max560}) {
+  @media (${props => props.theme.max560}) {
     margin-bottom: 1.5rem;
   }
 `
 const Small = styled.p`
-  color: ${({ theme }) => theme.colors.gray};
+  color: ${props => props.theme.gray};
   && { font-size: 90%; }
 `
 // Components =========================================

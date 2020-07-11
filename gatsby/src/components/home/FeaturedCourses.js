@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
+
 import { Button } from '../CssHelpers'
 import imgCursos from '../../images/home-cursos-generales.webp'
 import imgExamenes from '../../images/home-examenes-internacionales.webp'
@@ -11,7 +12,7 @@ const Section = styled.section`
   flex-flow: column wrap;
   justify-content: space-between;
   padding-top: 2rem;
-  @media(${({ theme }) => theme.mq.min640}) {
+  @media(${props => props.theme.min640}) {
     flex-direction: row;
 
     > div {
@@ -20,7 +21,7 @@ const Section = styled.section`
       &:first-of-type { margin-bottom: 0; }
     }
   }
-  @media(${({ theme }) => theme.mq.min640}) {
+  @media(${props => props.theme.min640}) {
     margin-right: auto;
     margin-left: auto;
     max-width: 86rem;
@@ -38,7 +39,7 @@ const CourseBox = styled.div`
   align-items: center;
   background-position: center;
   background-size: cover;
-  background-color: ${({ theme }) => theme.colors.bristolBlue };
+  background-color: ${props => props.theme.bristolBlue };
   background-image: url(${({ image }) => image });
 
   > div {
