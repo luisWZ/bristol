@@ -2,40 +2,32 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { FaFacebookF, FaInstagram } from 'react-icons/fa'
 
-const Facebook = () => (
-  <a href='https://www.facebook.com/bristolinglesprofesional/'>
-    <FaFacebookF />
-  </a>
+// components =========================================
+const socialLink = (url, children) => (
+  function SocialLink() {
+    return <a href={url}>{children}</a>
+  }
 )
-
-const Instagram = () => (
-  <a href='https://www.instagram.com/bristolingles/'>
-    <FaInstagram />
-  </a>
+const Facebook = socialLink('https://www.facebook.com/bristolinglesprofesional/', <FaFacebookF />)
+const Instagram = socialLink('https://www.instagram.com/bristolingles/', <FaInstagram />)
+const List = (props) => (
+  <ul className={props.className} css={theme => css`
+    display: flex;
+    a {
+      padding: 0 0.7rem;
+      display: block;
+      height: 2.4rem;
+      display: inline-flex;
+      align-items: center;
+    }
+  `}
+  {...props} />
 )
-
-export default function SocialLinks(props) {
+export default function SocialLinks({ className }) {
   return (
-    <ul
-    css={theme => css`
-        display: flex;
-
-        a {
-          padding: 0 0.7rem;
-          display: block;
-          line-height: 2.4rem;
-        }
-
-        svg { vertical-align: middle; }
-      `}
-      {...props}
-    >
-      <li>
-        <Facebook />
-      </li>
-      <li>
-        <Instagram />
-      </li>
-    </ul>
+    <List className={className}>
+      <Facebook />
+      <Instagram />
+    </List>
   )
 }

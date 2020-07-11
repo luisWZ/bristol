@@ -17,12 +17,15 @@ export const Title = styled.h1`
   }
 `
 export const Button = styled.a`
-  color: white;
+  color: ${props => props.noBg ? props.theme.black : 'white'};
   font-size: 1.2rem;
   padding: 1rem 2.2rem;
   text-align: center;
   border-radius: ${({ noRadius, theme }) => noRadius ? '0' : theme.radius};
   width: ${({ widthFull }) => widthFull && '100%'};
-  background-color: ${({ blue, theme }) =>
-    blue ? theme.bristolBlue : theme.bristolRed};
+  background-color: ${({ noBg, blue, theme }) =>
+    noBg ? 'transparent' :
+    blue ? theme.bristolBlue :
+    theme.bristolRed
+  };
 `
