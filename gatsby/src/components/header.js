@@ -29,33 +29,47 @@ const Header_ = styled.header`
   /* grid-template-rows: 2.75rem 2.75rem auto; */
   /* grid-template-areas: "contact contact contact" "logo slogan button" "menu menu menu"; */
   display: grid;
-  align-items: center;
+  /* align-items: center; */
+  align-items: stretch;
   width: 100%;
   z-index: 2;
   position: fixed;
   box-shadow: 0 1px 2px hsla(220, 11%, 15%, 0.15);
   background-color: ${props => props.theme.bgWhite};
+  @media (${props => props.theme.min848}) {
+    grid-template-columns: max-content 1fr;
+  }
   `
 const LogoBox = styled.div`
-  grid-column-end: 1;
+  /* grid-column-end: 1; */
   padding-left: ${props => props.theme.gutter};
+  @media (${props => props.theme.min848}) {
+    padding: 0 0.8rem;
+    display: flex;
+    align-items: center;
+    grid-row: 1 / 3;
+    border-right: 1px solid ${props => props.theme.grayLight};
+  }
 `
 const ButtonBox = styled.div`
   /* grid-column: 3 / span 2; */
   justify-self: end;
 `
 const Logo = styled(SvgBristolLogo)`
-  /* margin-left: ${props => props.theme.gutter}; */
   width: auto;
   max-height: 48px;
 `
 const ContactList = styled.ul`
-  /* border-bottom: 1px solid ${props => props.theme.grayLight}; */
-  grid-row: 2 /3;
-  grid-column: -2 / 2;
   display: grid;
+  grid-row: 2 / 3;
+  grid-column: -2 / 2;
   grid-template-columns: repeat(auto-fit, minmax(100px , 1fr));
   border-top: 1px solid ${props => props.theme.grayLight};
+  @media (${props => props.theme.min848}) {
+    border-top: none;
+    grid-row: 1 / 2;
+    grid-column: initial;
+  }
   `
 const ContactListLi = styled.li`
   span {
@@ -87,23 +101,21 @@ const ContactListLi = styled.li`
   }
 `
 const ContactListLink = styled.a`
-  /* padding: 0 1rem; */
-  /* line-height: ${height}; */
-  /* flex: 1; */
   height: 2.5rem;
+  font-size: 0.875rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
-  font-size: 0.875rem;
   ${props => hover(props.theme)}
+
   svg {
     margin-right: 0.5em;
   }
-    /* @media(max-width: 27em) {  432px */
-    /* } */
-  }
 `
 const MenuButton = styled(Button)`
+  @media (${props => props.theme.min848}) {
+    display: none;
+  }
   /* padding: 0.5rem 1.2rem; */
   /* display: inline-flex; */
   /* justify-content: space-evenly; */
@@ -118,25 +130,23 @@ const Nav = styled.nav`
   /* flex-direction: column; */
   /* border-top: 1px solid ${props => props.theme.grayLight}; */
   /* border-left: 4px solid ${props => props.theme.bristolRed}; */
-  display: none;
+  /* display: none; */
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  border-top: 1px solid ${props => props.theme.grayLight};
 `
 const NavLink = styled(Link)`
-  /* padding: 0 1rem; */
-  /* line-height: 3.2rem; */
-  /* display: inline-flex; */
-  /* justify-content: space-between; */
-  /* border-top: 1px solid ${props => props.theme.grayLight}; */
-  /* padding-left: ${props => props.theme.gutter}; */
-  /* padding-right: ${props => props.theme.gutter}; */
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   svg {
     display: none;
   }
-  &:first-of-type {
-    /* border-top: none; */
-  }
   &:hover {
-    /* color: white; */
-    /* background-color: ${props => props.theme.blueLight}; */
+    color: white;
+    background-color: ${props => props.theme.blueLight};
   }
 `
 const SocialLinks_ = styled(SocialLinks)`
@@ -218,8 +228,8 @@ export default function Header() {
   return (
     <Header_>
       <LogoBox_ />
-      <ContactList_ color={color} />
       <Nav_ />
+      <ContactList_ color={color} />
       <SocialLinks_ />
       <Slogan />
       <ButtonBox_ />
