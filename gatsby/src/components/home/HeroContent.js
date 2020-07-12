@@ -6,12 +6,13 @@ import imgHero from '../../images/home-temporal.webp'
 
 const Section = styled.section`
   background-color: white;
-  min-height: 544px;
-  max-height: 832;
-  /* max-height: 900px; */
-  height: 100vh;
+  min-height: 640px;
+  /* max-height: 832px; */
+  /* height: 100vh; */
   display: flex;
   justify-content: space-around;
+  padding-top: 7rem;
+  padding-bottom: 1rem;
 `
 const Container_ = styled(Container)`
   margin-bottom: 0;

@@ -14,7 +14,7 @@ const CoursesWrapper = styled.div`
   @media (${props => props.theme.min560}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: ${props => props.theme};
+    gap: ${props => props.theme.gutter};
   }
   @media (${props => props.theme.min848}) {
     grid-template-columns: repeat(3, 1fr);

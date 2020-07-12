@@ -31,6 +31,11 @@ export default function CssModernReset() {
       height: auto;
       display: block;
     }
+    svg {
+      button > & {
+        display: initial;
+      }
+    }
     address {
       margin-bottom: 0;
       font-style: normal;

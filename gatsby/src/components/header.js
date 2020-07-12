@@ -21,154 +21,172 @@ const hover = (theme, color) => {
     }
   `
 }
-// legacy =============================================
-const RightColumn = styled.div`
-  flex: 0 0 12%;
-  flex-direction: column;
-  display: flex;
-`
-const MainColumn = styled.div`
-  flex: 0 0 70%;
-  border-left: 1px solid ${props => props.theme.grayLight};
-  display: flex;
-  flex-flow: wrap row;
-  justify-content: space-between;
-`
 // styles =============================================
 const Header_ = styled.header`
-  /* flex-wrap: wrap; */
   /* border-left: 4px solid ${props => props.theme.bristolRed}; */
-  /* display: flex; */
+  /* display: grid; */
+  /* grid-template-columns: auto 1fr auto; */
+  /* grid-template-rows: 2.75rem 2.75rem auto; */
+  /* grid-template-areas: "contact contact contact" "logo slogan button" "menu menu menu"; */
   display: grid;
-  grid-template-areas: "contact contact" "logo button" "menu menu";
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2.75rem 2.75rem auto;
+  align-items: center;
   width: 100%;
   z-index: 2;
   position: fixed;
   box-shadow: 0 1px 2px hsla(220, 11%, 15%, 0.15);
   background-color: ${props => props.theme.bgWhite};
-`
+  `
 const LogoBox = styled.div`
-  /* flex: 0 0 18%;
-  align-self: center;
-  text-align: center; */
-  grid-area: logo;
-  display: flex;
+  grid-column-end: 1;
+  padding-left: ${props => props.theme.gutter};
+`
+const ButtonBox = styled.div`
+  /* grid-column: 3 / span 2; */
+  justify-self: end;
 `
 const Logo = styled(SvgBristolLogo)`
-  /* max-width: 80%; */
-  max-width: 50%;
-  margin-left: ${props => props.theme.gutter};
+  /* margin-left: ${props => props.theme.gutter}; */
+  width: auto;
+  max-height: 48px;
 `
 const ContactList = styled.ul`
-  /* display: flex; */
-  /* flex: 0 0 100%; */
-  /* justify-items: center; */
-  grid-area: contact;
+  /* border-bottom: 1px solid ${props => props.theme.grayLight}; */
+  grid-row: 2 /3;
+  grid-column: -2 / 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid ${props => props.theme.grayLight};
-  li {
-    display: flex;
-    border-right: 1px solid ${props => props.theme.grayLight};
+  grid-template-columns: repeat(auto-fit, minmax(100px , 1fr));
+  border-top: 1px solid ${props => props.theme.grayLight};
+  `
+const ContactListLi = styled.li`
+  span {
     &:last-of-type {
-      border-right: none;
-    }
-    &:first-of-type {
+      margin-left: 1em;
       display: none;
+
+      @media (${props => props.theme.min640}) {
+        display: initial;
+      }
     }
+  }
+  &:first-of-type {
+    border-right: 1px solid ${props => props.theme.grayLight};
+
+    @media (${props => props.theme.min640}) {
+      span {
+        &:first-of-type {
+          display: none;
+        }
+        &:last-of-type {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  &:last-of-type {
+    border-left: 1px solid ${props => props.theme.grayLight};
   }
 `
 const ContactListLink = styled.a`
   /* padding: 0 1rem; */
   /* line-height: ${height}; */
-  flex: 1;
-  display: flex;
+  /* flex: 1; */
+  height: 2.5rem;
   align-items: center;
   justify-content: center;
+  display: flex;
   font-size: 0.875rem;
   ${props => hover(props.theme)}
   svg {
-    display: none;
+    margin-right: 0.5em;
+  }
+    /* @media(max-width: 27em) {  432px */
+    /* } */
   }
 `
 const MenuButton = styled(Button)`
-  padding: 0.5rem 1.2rem;
-  display: inline-flex;
-  justify-content: space-evenly;
-  align-items: center;
-  grid-area: button;
-  place-self: stretch end;
-  margin-right: ${props => props.theme.gutter};
+  /* padding: 0.5rem 1.2rem; */
+  /* display: inline-flex; */
+  /* justify-content: space-evenly; */
+  /* align-items: center; */
+  /* grid-area: button; */
+  /* place-self: stretch end; */
+  /* margin-right: ${props => props.theme.gutter}; */
 `
 const Nav = styled.nav`
-  /* display: inline-flex; */
-  grid-area: menu;
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid ${props => props.theme.grayLight};
-  border-left: 4px solid ${props => props.theme.bristolRed};
+  /* grid-area: menu; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* border-top: 1px solid ${props => props.theme.grayLight}; */
+  /* border-left: 4px solid ${props => props.theme.bristolRed}; */
   display: none;
 `
 const NavLink = styled(Link)`
   /* padding: 0 1rem; */
-  line-height: 3.2rem;
-  display: inline-flex;
-  justify-content: space-between;
-  border-top: 1px solid ${props => props.theme.grayLight};
-  padding-left: ${props => props.theme.gutter};
-  padding-right: ${props => props.theme.gutter};
+  /* line-height: 3.2rem; */
+  /* display: inline-flex; */
+  /* justify-content: space-between; */
+  /* border-top: 1px solid ${props => props.theme.grayLight}; */
+  /* padding-left: ${props => props.theme.gutter}; */
+  /* padding-right: ${props => props.theme.gutter}; */
+  svg {
+    display: none;
+  }
   &:first-of-type {
-    border-top: none;
+    /* border-top: none; */
   }
   &:hover {
-    color: white;
-    background-color: ${props => props.theme.blueLight};
+    /* color: white; */
+    /* background-color: ${props => props.theme.blueLight}; */
   }
 `
 const SocialLinks_ = styled(SocialLinks)`
   display: none;
   a {
-    height: ${height};
-    ${props => hover(props.theme, 'blue')}
+    /* height: ${height}; */
+    /* ${props => hover(props.theme, 'blue')} */
   }
 `
 const Slogan = styled(SvgInglesMuyIngles)`
-  /* align-self: center;
-  margin-right: 0.75rem; */
   display: none;
+  /* max-width: 16rem; */
+  /* margin-right: 1.5rem; */
+  /* grid-area: slogan; */
+  /* place-self: center end; */
+  @media (${props => props.theme.max480}) {
+    /* display: none; */
+  }
 `
-const Button_ = styled.button`
-  /* flex-grow: 1;
-  border-radius: 0;
-  background-color: ${props => props.theme.bristolBlue};
-  &:hover {
-    background-color: ${props => props.theme.bristolRed};
-  } */
+const Contactanos = styled(Button)`
   display: none;
+  &:hover {
+    /* background-color: ${props => props.theme.bristolRed}; */
+  }
+  /* display: none; */
 `
 // Components =========================================
 const ContactList_ = ({ color }) => (
   <ContactList>
-    <li>
+    <ContactListLi>
       <ContactListLink href='mailto:hola@bristolingles.com'>
         <SvgEnvelope fill={color} />
-        &ensp;hola@bristolingles.com
+        <span>Email</span>
+        <span>hola@bristolingles.com</span>
       </ContactListLink>
-    </li>
-    <li>
+    </ContactListLi>
+    <ContactListLi>
       <ContactListLink href='tel:2288405791'>
         <SvgPhone fill={color} />
-        &nbsp;Xalapa&emsp;2288 40 57 91
+        <span>Xalapa</span>
+        <span>2288 40 57 91</span>
       </ContactListLink>
-    </li>
-    <li>
+    </ContactListLi>
+    <ContactListLi>
       <ContactListLink href='tel:2288160543'>
         <SvgPhone fill={color} />
-        &nbsp;Coatepec&emsp;2288 16 05 43
+        <span>Coatepec</span>
+        <span>2288 16 05 43</span>
       </ContactListLink>
-    </li>
+    </ContactListLi>
   </ContactList>
 )
 const Nav_ = () => (
@@ -181,11 +199,16 @@ const Nav_ = () => (
     <NavLink to='/contacto'>Contacto<AiOutlineRight /></NavLink>
   </Nav>
 )
-const MenuButton_ = () => (
-  <MenuButton as='button' noBg noRadius>
-    <AiOutlineMenu />
-    &ensp;Menú
-  </MenuButton>
+const ButtonBox_ = () => (
+  <ButtonBox>
+    <Contactanos as='button' noRadius blue>
+      Contáctanos
+    </Contactanos>
+    <MenuButton as='button' noBg noRadius>
+      <AiOutlineMenu />
+      &ensp;Menú
+    </MenuButton>
+  </ButtonBox>
 )
 const LogoBox_ = () => <LogoBox><Logo /></LogoBox>
 
@@ -197,10 +220,9 @@ export default function Header() {
       <LogoBox_ />
       <ContactList_ color={color} />
       <Nav_ />
-      <Slogan />
       <SocialLinks_ />
-      <MenuButton_ />
-      <Button_>Contáctanos</Button_>
+      <Slogan />
+      <ButtonBox_ />
     </Header_>
   )
 }
