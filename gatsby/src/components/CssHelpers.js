@@ -17,15 +17,17 @@ export const Title = styled.h1`
   }
 `
 export const Button = styled.a`
-  color: ${props => props.noBg ? props.theme.black : 'white'};
   font-size: 1.2rem;
   padding: 1rem 2.2rem;
-  text-align: center;
-  border-radius: ${({ noRadius, theme }) => noRadius ? '0' : theme.radius};
-  width: ${({ widthFull }) => widthFull && '100%'};
-  background-color: ${({ noBg, blue, theme }) =>
-    noBg ? 'transparent' :
-    blue ? theme.bristolBlue :
-    theme.bristolRed
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: ${props => props.noBg ? props.theme.black : 'white'};
+  border-radius: ${props => props.noRadius ? '0' : props.theme.radius};
+  width: ${props => props.widthFull && '100%'};
+  background-color: ${props =>
+    props.noBg ? 'transparent' :
+    props.blue ? props.theme.bristolBlue :
+    props.theme.bristolRed
   };
 `

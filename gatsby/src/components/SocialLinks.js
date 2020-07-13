@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram } from 'react-icons/fa'
 // components =========================================
 const socialLink = (url, children) => (
   function SocialLink() {
-    return <a href={url}>{children}</a>
+    return <li><a href={url}>{children}</a></li>
   }
 )
 const Facebook = socialLink('https://www.facebook.com/bristolinglesprofesional/', <FaFacebookF />)
