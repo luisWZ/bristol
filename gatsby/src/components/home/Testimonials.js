@@ -1,17 +1,67 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { BsChatSquareQuote } from 'react-icons/bs';
-// import { MdFormatQuote } from 'react-icons/md';
+import { css } from '@emotion/core'
+import { BsChevronLeft, BsChevronRight, BsChatSquareQuote } from 'react-icons/bs';
+
+import Carousel from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
 
 import { Container, Title } from '../CssHelpers'
-import testimonials from '../../content/home-testimonials.yaml'
+import testimonialData from '../../content/home-testimonials.yaml'
 import imgTmp from '../../images/nuestros-servicios.png'
 
 // Styles =============================================
-const TestimoniesWrapper = styled.div`
-  overflow: hidden;
-  display: flex;
-  justify-content: space-around;
+const arrowSize = 3.4;
+const ContainerWithCarouselStyles = styled(Container)`
+  .BrainhubCarousel {
+    overflow: visible;
+
+    &__container {
+      position: relative;
+      padding: 0 ${arrowSize / 2}rem;
+    }
+    &Item {
+      opacity: 0.4;
+      &--active {
+        opacity: initial;
+      }
+    }
+    &__custom {
+      &Arrows {
+        cursor: pointer;
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background-color .24s ease-in-out;
+        width: ${arrowSize}rem;
+        height: ${arrowSize}rem;
+        background: ${props => props.theme.blueLight};
+        &:hover {
+          background: ${props => props.theme.bristolBlue};
+        }
+        svg {
+          width: 60%;
+          color: white;
+        }
+      }
+      &-arrowLeft {
+        left: 0;
+
+        svg {
+          margin-left: -4px;
+        }
+      }
+      &-arrowRight {
+        right: 0;
+
+        svg {
+          margin-right: -4px;
+        }
+      }
+    }
+  }
 `
 const Testimony = styled.div`
   padding: 1.5rem;
@@ -53,15 +103,32 @@ const Testimonial = ({ testimony }) => (
 )
 export default function Testimonials() {
   return (
-    <Container>
+    <ContainerWithCarouselStyles>
       <Title>Testimonios</Title>
-      <TestimoniesWrapper>
-        {/* {testimonials.map((testimony, index) => (
+      <Carousel
+        slidesPerPage={2}
+        arrowLeft={<BsChevronLeft />}
+        arrowRight={<BsChevronRight />}
+        addArrowClickHandler
+        infinite
+        arrows
+        centered
+        breakpoints={{
+          960: {
+            slidesPerPage: 1,
+            infinite: true,
+          },
+          640: {
+            slidesPerPage: 1,
+            infinite: true,
+            arrows: false,
+          },
+        }}
+      >
+        {testimonialData.map((testimony, index) => (
           <Testimonial testimony={testimony} key={`home_testimonial${index}`} />
-        ))} */}
-        <Testimonial testimony={testimonials[0]} key={`home_testimonial${0}`} />
-        <Testimonial testimony={testimonials[1]} key={`home_testimonial${1}`} />
-      </TestimoniesWrapper>
-    </Container>
+        ))}
+      </Carousel>
+    </ContainerWithCarouselStyles>
   )
 }

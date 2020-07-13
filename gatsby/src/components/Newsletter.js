@@ -8,7 +8,7 @@ import IconArrow from './SvgIconArrow'
 // components =========================================
 export default function Newsletter() {
   return (
-    <Container css={(theme) => css`
+    <Container css={theme => css`
         background-color: white;
         position: relative;
         z-index: 1;
@@ -16,15 +16,15 @@ export default function Newsletter() {
         margin-bottom: -${theme.newsletterOffset};
       `}>
       <h3 css={css`text-align: center;`}>Suscríbete a nuestro newsletter</h3>
-      <form css={({ blueDark }) => css`
+      <form css={theme => css`
         display: flex;
         max-width: 48rem;
         margin-left: auto;
         margin-right: auto;
-        border-bottom: 2px solid ${blueDark};
+        border-bottom: 2px solid ${theme.blueDark};
       `}>
         <input id='newsletter' type='text' placeholder='Escribe tu correo electrónico'
-          css={theme => css`
+          css={css`
             outline: 0;
             border: none;
             padding: 0.8rem 0.5rem;

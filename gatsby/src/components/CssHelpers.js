@@ -11,9 +11,9 @@ export const Container = styled.section`
   }
 `
 export const Title = styled.h1`
-  /* text-align: center; */
+  transition: color .24s ease-in;
   &:hover {
-    color: ${props => props.theme.bristolBlue};
+    color: ${props => props.theme.black};
   }
 `
 export const Button = styled.a`
@@ -30,4 +30,11 @@ export const Button = styled.a`
     props.blue ? props.theme.bristolBlue :
     props.theme.bristolRed
   };
+  &:hover {
+    background-color: ${props =>
+      props.noBg ? 'transparent' :
+      props.blue ? props.theme.bristolRed :
+      props.theme.pink
+    };
+  }
 `

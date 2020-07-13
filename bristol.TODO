@@ -1,10 +1,17 @@
 ✔ Usar un static content generator para todas las páginas @done(20-07-08 13:58)
 ✔ agregar año cpoyright con javascript @done(20-07-08 13:57)
 ✔ Poppins para todos los headers @done(20-07-08 13:58)
-
-☐ agregar descripción y keywords SEO
-☐ poner referencias de url de facebook e instagram en un solo lugar
-☐ arreglar el color base, mirar como lo hacen los frameworks,checar que anchors y p y demas tenga el color inicia;l y checar el contraste del mismo
+✔ poner referencias de url de facebook e instagram en un solo lugar @done(20-07-13 10:47)
+✔ agregar descripción y keywords SEO @done(20-07-13 10:47)
+✔ slider testimonials @done(20-07-13 13:03)
+☐ animation opacity a hero content
+☐ focus bg a newsletter
+☐ hover social links footer
+☐ agregar implementacion SEO
+☐ investigar gatsby images
+☐ estilo para menu items mobile
+☐ implementar menu mobile
+☐ implementacion newsletter
 
   Macros
 ☐ hacer macros con snippets para mediaqueries

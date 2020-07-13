@@ -16,7 +16,7 @@ const hover = (theme, color) => {
   return `
     &:hover {
       background-color: ${theme.bgGray};
-      color: ${color === undefined ? theme.grayDark : theme.bristolBlue};
+      color: ${color === undefined ? theme.grayDark : theme.blueDark};
     }
   `
 }
@@ -36,16 +36,26 @@ const LogoBox = styled.div`
   align-items: center;
   padding-left: calc(${props => props.theme.gutter} - 4px);
   border-left: 4px solid ${props => props.theme.bristolRed};
+  transition: padding .4s ease-out;
 
   @media (${props => props.theme.min848}) {
     padding: 0 0.8rem;
     grid-area: 1 / 1 / 3 / 2;
     border-right: 1px solid ${props => props.theme.grayLight};
   }
+  @media (${props => props.theme.min1200}) {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
 `
 const Logo = styled(SvgBristolLogo)`
   width: auto;
   max-height: 44px;
+  transition: max-height .4s ease-out;
+
+  @media (${props => props.theme.min1200}) {
+    max-height: 60px;
+  }
 `
 // Made for the navigation menu in desktop size
 const _1wordNav = `minmax(max-content , 100px)`
@@ -159,7 +169,7 @@ const SocialLinksBox_ = styled(SocialLinks)`
   }
   a {
     height: 100%;
-    ${props => hover(props.theme)}
+    ${props => hover(props.theme, true)}
 
     svg {
       width: 1.2rem;
@@ -196,9 +206,7 @@ const SloganInglesMuyInglesBox = styled.div`
 `
 const ContactanosButton = styled(Button)`
   display: none;
-  &:hover {
-    background-color: ${props => props.theme.bristolRed};
-  }
+
   @media (${props => props.theme.min848}) {
     padding: 0rem 1.2rem;
     height: 100%;
@@ -206,8 +214,13 @@ const ContactanosButton = styled(Button)`
   }
 `
 // Components =========================================
-const LogoBox_ = () => <LogoBox><Logo /></LogoBox>
-
+const LogoBox_ = () => (
+  <LogoBox>
+    <Link to='/'>
+      <Logo />
+    </Link>
+  </LogoBox>
+)
 const Nav_ = () => (
   <NavBox>
     <NavAnchor to='/'>Home<AiOutlineRight /></NavAnchor>

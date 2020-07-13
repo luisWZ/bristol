@@ -13,6 +13,7 @@
     "develop": "nodemon --exec 'kill-port --port 8000 && gatsby develop' --watch gatsby-node.js --watch package.json --watch gatsby-config.js --watch gatsby-browser.js"
   },
   "dependencies": {
+    "@brainhubeu/react-carousel": "^1.19.16",
     "@emotion/cache": "^10.0.29",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
@@ -27,6 +28,7 @@
     "gatsby-plugin-typography": "^2.5.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-elastic-carousel": "^0.6.4",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.10.0",
     "react-typography": "^0.16.19",

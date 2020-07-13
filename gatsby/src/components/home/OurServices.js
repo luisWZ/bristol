@@ -25,12 +25,17 @@ const ServiceBox = styled.div`
       padding: 1.5rem;
     }
 
+    > * { color: white; }
+
     &:hover {
       cursor: pointer;
       background-color: ${props => props.theme.bristolBlue};
+
+      a {
+        background-color: white;
+        color: ${props => props.theme.bristolBlue};
+      }
     }
-    /* paint all elements white */
-    > * { color: white; }
 `
 const IconFaux = styled.span`
   width: calc(54px + 2vw);
@@ -50,7 +55,10 @@ const Header = styled.h3`
   margin-bottom: 0.8rem;
 `
 const Anchor = styled.a`
-  text-decoration: underline;
+  border: 1px solid white;
+  padding: 0.6rem;
+  float: right;
+  border-radius: ${props => props.theme.radius}
 `
 // Components =========================================
 const Service = ({ service }) => (

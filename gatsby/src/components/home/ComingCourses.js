@@ -8,25 +8,43 @@ import imgTmp from '../../images/bristol-ninos.webp'
 
 // Styles definitions =================================
 const CoursesWrapper = styled.div`
-  @media (${props => props.theme.max560}) {
-    max-width: 20rem;
-  }
-  @media (${props => props.theme.min560}) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: ${props => props.theme.gutter};
-  }
-  @media (${props => props.theme.min848}) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px , 320px));
+  gap: 3vw;
+
+  @media (${props => props.theme.min960}) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 3vw;
   }
 `
-const Button_ = styled(Button)`
-  @media (${props => props.theme.min848}) {
-    margin: 0.5rem 1rem 1rem;
-    padding: 0.6rem 1.4rem;
-    width: calc(100% - 2rem);
-    border-radius: ${props => props.theme};
+const CourseBox = styled.div`
+  background-color: white;
+  @media (${props => props.theme.max560}) {
+    margin-bottom: 1.5rem;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+    h3 {
+      color: ${props => props.theme.pink};
+    }
+  }
+`
+const ImageLink = styled(Link)`
+  display: block;
+  position: relative;
+  padding-bottom: 70%;
+  height: 0;
+  overflow: hidden;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+    background-color: ${props => props.theme.bristolBlue};
   }
 `
 const TextBox = styled.div`
@@ -34,6 +52,7 @@ const TextBox = styled.div`
 
   h3 {
     margin-bottom: calc(.75rem + 0.1vw);
+    transition: color .24s ease;
 
     + p {
       color: ${props => props.theme.black};
@@ -49,30 +68,17 @@ const TextBox = styled.div`
     }
   }
 `
-const ImageLink = styled(Link)`
-  display: block;
-  position: relative;
-  padding-bottom: 70%;
-  height: 0;
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-color: ${props => props.theme.bristolBlue};
-  }
-`
-const CourseBox = styled.div`
-  background-color: white;
-  @media (${props => props.theme.max560}) {
-    margin-bottom: 1.5rem;
-  }
-`
 const Small = styled.p`
   color: ${props => props.theme.gray};
   && { font-size: 90%; }
+`
+const Button_ = styled(Button)`
+  @media (${props => props.theme.min768}) {
+    margin: 0.5rem 1rem 1rem;
+    padding: 0.6rem 1.4rem;
+    width: calc(100% - 2rem);
+    border-radius: ${props => props.theme.radius};
+  }
 `
 // Components =========================================
 const Course = ({ course }) => {
