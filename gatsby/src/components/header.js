@@ -20,6 +20,7 @@ const hover = (theme, color) => {
     }
   `
 }
+const borderTop = (theme) => `border-top: 1px solid ${theme.grayLight};`
 // styles =============================================
 const Header_ = styled.header`
   display: grid;
@@ -27,12 +28,8 @@ const Header_ = styled.header`
   z-index: 2;
   position: fixed;
   box-shadow: 0 1px 2px hsla(220, 11%, 15%, 0.15);
-  grid-template-columns: 1fr max-content max-content;
+  grid-template-columns: max-content 1fr max-content max-content;
   background-color: ${props => props.theme.bgWhite};
-
-  @media (${props => props.theme.min848}) {
-    grid-template-columns: max-content 1fr;
-  }
   `
 const LogoBox = styled.div`
   display: flex;
@@ -42,7 +39,7 @@ const LogoBox = styled.div`
 
   @media (${props => props.theme.min848}) {
     padding: 0 0.8rem;
-    grid-row: 1 / 3;
+    grid-area: 1 / 1 / 3 / 2;
     border-right: 1px solid ${props => props.theme.grayLight};
   }
 `
@@ -50,13 +47,22 @@ const Logo = styled(SvgBristolLogo)`
   width: auto;
   max-height: 44px;
 `
-const NavBox = styled.nav`
+// Made for the navigation menu in desktop size
+const _1wordNav = `minmax(max-content , 100px)`
+const _2wordNav = `minmax(max-content , 168px)`
+//
+const NavBox = styled.div`
   display: grid;
   grid-template-columns: repeat(6, auto);
-  border-top: 1px solid ${props => props.theme.grayLight};
+  ${props => borderTop(props.theme)}
 
-  @media (${props => props.theme.max848}) {
+  @media (${props => props.theme.max848}) { /* to be removed */
     display: none;
+  }
+  @media (${props => props.theme.min848}) {
+    grid-row: 2 / 3;
+    grid-auto-flow: column;
+    grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_1wordNav} ${_2wordNav} ${_1wordNav}`}
   }
 `
 const NavAnchor = styled(Link)`
@@ -76,14 +82,17 @@ const NavAnchor = styled(Link)`
 const ContactBox = styled.ul`
   display: grid;
   grid-row: 2 / 3;
-  grid-column: 1 / 4;
+  grid-column: 1 / -1;
   grid-template-columns: repeat(auto-fit, minmax(100px , 1fr));
   border-top: 1px solid ${props => props.theme.grayLight};
 
   @media (${props => props.theme.min848}) {
     border-top: none;
     grid-row: 1 / 2;
-    grid-column: 2 / 4;
+    grid-column: 2 / -2;
+  }
+  @media (${props => props.theme.min960}) {
+    grid-template-columns: repeat(3, minmax(208px , 256px));
   }
   `
 const ContactLi = styled.li`
@@ -113,6 +122,10 @@ const ContactLi = styled.li`
   }
   &:last-of-type {
     border-left: 1px solid ${props => props.theme.grayLight};
+
+    @media (${props => props.theme.min848}) {
+      border-right: 1px solid ${props => props.theme.grayLight};
+    }
   }
 `
 const ContactAnchor = styled.a`
@@ -125,32 +138,24 @@ const ContactAnchor = styled.a`
 
   svg {
     margin-right: 0.5em;
-  }
-`
-const ButtonsBox = styled.div`
-  grid-column-end: 4;
-  justify-self: end;
-`
-const MenuButton = styled(Button)`
-  padding-left: 1.6rem;
-  padding-right: 1.6em;
 
-  @media (${props => props.theme.min848}) {
-    display: none;
+    @media (${props => props.theme.min848}) and (${props => props.theme.max960}) {
+      display: none;
+    }
   }
 `
-const ContactanosButton = styled(Button)`
-  display: none;
-  &:hover {
-    background-color: ${props => props.theme.bristolRed};
-  }
-`
-const SocialLinks_ = styled(SocialLinks)`
-  grid-column-end: 3;
+const SocialLinksBox_ = styled(SocialLinks)`
   display: none;
 
   @media (${props => props.theme.min480}) and (${props => props.theme.max848}) {
+    grid-column-end: 3;
     display: flex;
+    justify-self: end;
+  }
+  @media (${props => props.theme.min848}) {
+    display: flex;
+    grid-column-end: -1;
+    grid-row: 1 / 2;
   }
   a {
     height: 100%;
@@ -161,11 +166,58 @@ const SocialLinks_ = styled(SocialLinks)`
     }
   }
 `
-const Slogan = styled(SvgInglesMuyIngles)`
+const ButtonsBox = styled.div`
+  grid-column-end: -1;
+  justify-self: end;
+`
+const MenuButton = styled(Button)`
+  padding-left: 1.6rem;
+  padding-right: 1.6em;
+
+  @media (${props => props.theme.min848}) {
+    display: none;
+  }
+`
+const SloganInglesMuyInglesBox = styled.div`
   display: none;
-  /* @media (${props => props.theme.max480}) {} */
+  @media (${props => props.theme.min1200}) {
+    align-self: stretch;
+    grid-column-end: -2;
+    display: flex;
+    justify-content: flex-end;
+    ${props => borderTop(props.theme)}
+
+    svg {
+      max-width: 209px;
+      width: 80%;
+      margin-right: calc(1rem + 0.25vw);
+    }
+  }
+`
+const ContactanosButton = styled(Button)`
+  display: none;
+  &:hover {
+    background-color: ${props => props.theme.bristolRed};
+  }
+  @media (${props => props.theme.min848}) {
+    padding: 0rem 1.2rem;
+    height: 100%;
+    display: initial;
+  }
 `
 // Components =========================================
+const LogoBox_ = () => <LogoBox><Logo /></LogoBox>
+
+const Nav_ = () => (
+  <NavBox>
+    <NavAnchor to='/'>Home<AiOutlineRight /></NavAnchor>
+    <NavAnchor to='/nosotros'>Nosotros<AiOutlineRight /></NavAnchor>
+    <NavAnchor to='/cursos'>Cursos<AiOutlineRight /></NavAnchor>
+    <NavAnchor to='/examenes'>Exámenes<AiOutlineRight /></NavAnchor>
+    <NavAnchor to='/centro-examinador'>Centro Examinador<AiOutlineRight /></NavAnchor>
+    <NavAnchor to='/contacto'>Contacto<AiOutlineRight /></NavAnchor>
+  </NavBox>
+)
 const ContactBox_ = ({ color }) => (
   <ContactBox>
     <ContactLi>
@@ -191,16 +243,6 @@ const ContactBox_ = ({ color }) => (
     </ContactLi>
   </ContactBox>
 )
-const Nav_ = () => (
-  <NavBox>
-    <NavAnchor to='/'>Home<AiOutlineRight /></NavAnchor>
-    <NavAnchor to='/nosotros'>Nosotros<AiOutlineRight /></NavAnchor>
-    <NavAnchor to='/cursos'>Cursos<AiOutlineRight /></NavAnchor>
-    <NavAnchor to='/examenes'>Exámenes<AiOutlineRight /></NavAnchor>
-    <NavAnchor to='/centro-examinador'>Centro Examinador<AiOutlineRight /></NavAnchor>
-    <NavAnchor to='/contacto'>Contacto<AiOutlineRight /></NavAnchor>
-  </NavBox>
-)
 const ButtonsBox_ = () => (
   <ButtonsBox>
     <ContactanosButton as='button' noRadius blue>
@@ -212,8 +254,11 @@ const ButtonsBox_ = () => (
     </MenuButton>
   </ButtonsBox>
 )
-const LogoBox_ = () => <LogoBox><Logo /></LogoBox>
-
+const SloganInglesMuyInglesBox_ = () => (
+  <SloganInglesMuyInglesBox>
+    <SvgInglesMuyIngles />
+  </SloganInglesMuyInglesBox>
+)
 export default function Header() {
   // hook to listen theme provider for svg fills
   const color = useTheme().pink
@@ -222,8 +267,8 @@ export default function Header() {
       <LogoBox_ />
       <Nav_ />
       <ContactBox_ color={color} />
-      <SocialLinks_ />
-      <Slogan />
+      <SocialLinksBox_ />
+      <SloganInglesMuyInglesBox_ />
       <ButtonsBox_ />
     </Header_>
   )
