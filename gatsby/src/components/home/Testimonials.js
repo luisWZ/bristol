@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
 import { BsChevronLeft, BsChevronRight, BsChatSquareQuote } from 'react-icons/bs';
 
 import Carousel from '@brainhubeu/react-carousel';

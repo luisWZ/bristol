@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
+
+import Fade from 'react-reveal/Fade'
+
 import { Container, Button } from '../CssHelpers'
 import imgHero from '../../images/home-temporal.webp'
 
@@ -25,11 +28,13 @@ const Container_ = styled(Container)`
   @media(${props => props.theme.min720 }) {
     flex-grow: 1;
 
-    > div {
+    > div:first-of-type {
       flex-basis: 53%;
     }
-    > img {
-      max-width: 40%;
+    /* > img { */
+    > div:last-of-type {
+      flex-basis: 40%;
+      /* max-width: 40%; */
     }
   }
 `
@@ -61,15 +66,21 @@ export default function HeroContent() {
     <Section>
       <Container_ as='div'>
         <TextBox>
-          <Slogan>Speak a new language, discover a new world</Slogan>
-          <Description>
-            Somos profesionales en la enseñanza de inglés, nuestros maestros
-            cuentan con grados académicos y certificaciones internacionales como
-            maestros de inglés así como con una gran experiencia
-          </Description>
-          <Button_ as={Link} to='/cursos'>Nuestros cursos</Button_>
+          <Fade delay={500} duration={500}>
+            <Slogan>Speak a new language, discover a new world</Slogan>
+            <Description>
+              Somos profesionales en la enseñanza de inglés, nuestros maestros
+              cuentan con grados académicos y certificaciones internacionales como
+              maestros de inglés así como con una gran experiencia
+            </Description>
+          </Fade>
+          <Fade delay={700} duration={400} bottom distance={'20px'}>
+            <Button_ as={Link} to='/cursos'>Nuestros cursos</Button_>
+          </Fade>
         </TextBox>
-        <Image src={imgHero} alt='Persona estudiando inglés' />
+        <Fade delay={800} right duration={800} distance={'70px'}>
+          <Image src={imgHero} alt='Persona estudiando inglés' />
+        </Fade>
       </Container_>
     </Section>
   )

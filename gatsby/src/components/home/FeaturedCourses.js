@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
+import Fade from 'react-reveal/Fade'
+
 import { Button } from '../CssHelpers'
 import imgCursos from '../../images/home-cursos-generales.webp'
 import imgExamenes from '../../images/home-examenes-internacionales.webp'
@@ -59,8 +61,10 @@ const courses = [
 const Course = ({ course }) => (
   <CourseBox image={course.image}>
     <div>
-      <h2>{course.name}</h2>
-      <Button as={Link} to={`/${course.link}`}>Conoce más</Button>
+      <Fade>
+        <h2>{course.name}</h2>
+        <Button as={Link} to={`/${course.link}`}>Conoce más</Button>
+      </Fade>
     </div>
   </CourseBox>
 )
