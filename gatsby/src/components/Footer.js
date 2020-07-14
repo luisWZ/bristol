@@ -5,6 +5,7 @@ import { css } from '@emotion/core'
 import { AiOutlineRight } from 'react-icons/ai';
 import SocialLinks from './SocialLinks'
 import SvgCambridgeLogo from './SvgCambridgeLogo'
+import { Container } from './CssHelpers'
 import SvgFooterBrand from './SvgFooterBrand'
 
 const Li = props => (
@@ -40,7 +41,7 @@ export default function Footer() {
         color: white;
       }
     `}>
-      <div css={theme => css`
+      <Container css={theme => css`
         @media (${theme.min640}) {
           display: flex;
         }
@@ -121,7 +122,7 @@ export default function Footer() {
                 <AiOutlineRight /></Link></Li>
           </ul>
         </div>
-      </div>
+      </Container>
       <div css={theme => css`
         display: flex;
         justify-content: space-between;

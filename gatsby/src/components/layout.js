@@ -4,6 +4,7 @@ import { Global } from '@emotion/core'
 // import createCache from '@emotion/cache'
 import { ThemeProvider } from 'emotion-theming'
 import SEO from '../utils/SEO'
+import FacebookMessenger from '../utils/FacebookMessenger'
 
 // Template Components ================================
 import Header from './Header'
@@ -36,7 +37,10 @@ export default function Layout({ children }) {
           <Footer />
         </ThemeProvider>
       {/* </CacheProvider> */}
-      <SEO />
+      <SEO>
+        <script defer src='/facebook-messenger.js' />
+      </SEO>
+      <FacebookMessenger />
     </>
   )
 }
