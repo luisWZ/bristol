@@ -10,6 +10,7 @@ import Testimonials from '../components/home/Testimonials'
 import Newsletter from '../components/Newsletter'
 import imgBottom from '../images/footer-hero.webp'
 
+// components =========================================
 const BottomImage = (
   <img src={imgBottom} alt='Mujer leyendo recostada'
     css={css`
@@ -18,7 +19,6 @@ const BottomImage = (
       max-width: 566px;
     `} />
 )
-
 export default function Home() {
   return (
     <Layout>

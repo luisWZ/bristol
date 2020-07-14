@@ -17,7 +17,7 @@ import CssVariables from './CssVariables'
 // Emotion configs ====================================
 const disablePrefix = createCache({
   key: 'bristol',
-  prefix: false, // take out for production
+  prefix: true, // take out for production
 })
 
 // Basically our root Component =======================

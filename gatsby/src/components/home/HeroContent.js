@@ -1,17 +1,16 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
-
 import Fade from 'react-reveal/Fade'
 
 import { Container, Button } from '../CssHelpers'
 import imgHero from '../../images/home-temporal.webp'
 
 const Section = styled.section`
-  background-color: white;
-  min-height: 640px;
   /* max-height: 832px; */
   /* height: 100vh; */
+  background-color: white;
+  min-height: 640px;
   display: flex;
   justify-content: space-around;
   padding-top: 7rem;
@@ -31,10 +30,8 @@ const Container_ = styled(Container)`
     > div:first-of-type {
       flex-basis: 53%;
     }
-    /* > img { */
     > div:last-of-type {
       flex-basis: 40%;
-      /* max-width: 40%; */
     }
   }
 `
@@ -51,7 +48,6 @@ const Slogan = styled.h1`
   font-size: calc(1rem + 1vw * 2.3);
   line-height: 1.4;
   letter-spacing: 1.4px;
-  /* max-width: 420px; */
 `
 const Description = styled.p`
   font-size: calc(0.91rem + 0.3vw * 1.5);

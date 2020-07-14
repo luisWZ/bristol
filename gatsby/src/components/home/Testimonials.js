@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { BsChevronLeft, BsChevronRight, BsChatSquareQuote } from 'react-icons/bs';
-
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
 import { Container, Title } from '../CssHelpers'
-import testimonialData from '../../content/home-testimonials.yaml'
+import testimonials from '../../content/home-testimonials.yaml'
 import imgTmp from '../../images/nuestros-servicios.png'
 
 // Styles =============================================
@@ -92,14 +91,6 @@ const Icon = styled(BsChatSquareQuote)`
   z-index: -1;
 `
 // Components =========================================
-const Testimonial = ({ testimony }) => (
-  <Testimony>
-    <p>{testimony.text}</p>
-    <h4>{testimony.name}</h4>
-    <img src={imgTmp} alt='' />
-    <Icon />
-  </Testimony>
-)
 export default function Testimonials() {
   return (
     <ContainerWithCarouselStyles>
@@ -124,8 +115,13 @@ export default function Testimonials() {
           },
         }}
       >
-        {testimonialData.map((testimony, index) => (
-          <Testimonial testimony={testimony} key={`home_testimonial${index}`} />
+        {testimonials.map((testimony, index) => (
+          <Testimony key={`home_testimonial${index}`}>
+            <p>{testimony.text}</p>
+            <h4>{testimony.name}</h4>
+            <img src={imgTmp} alt='' />
+            <Icon />
+          </Testimony>
         ))}
       </Carousel>
     </ContainerWithCarouselStyles>

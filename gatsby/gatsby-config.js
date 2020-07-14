@@ -1,9 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
   siteMetadata: {
     title: `Bristol Inglés Profesional`,
@@ -12,16 +6,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-emotion`,
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       `poppins:700`,
-    //       `roboto:400`
-    //     ],
-    //     display: 'swap',
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
