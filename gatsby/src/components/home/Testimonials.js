@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { BsChevronLeft, BsChevronRight, BsChatSquareQuote } from 'react-icons/bs';
+import {
+  BsChevronLeft, BsChevronRight,
+  BsChatSquareQuote } from 'react-icons/bs';
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
@@ -9,20 +11,20 @@ import testimonials from '../../content/home-testimonials.yaml'
 import imgTmp from '../../images/nuestros-servicios.png'
 
 // Styles =============================================
-const arrowSize = 3.4;
+const arrowSize = 3;
 const ContainerWithCarouselStyles = styled(Container)`
   .BrainhubCarousel {
-    overflow: visible;
+    /* overflow: visible; */
 
     &__container {
       position: relative;
-      padding: 0 ${arrowSize / 2}rem;
+      /* padding: 0 ${arrowSize / 2}rem; */
     }
     &Item {
-      opacity: 0.4;
+      /* opacity: 0.4;
       &--active {
         opacity: initial;
-      }
+      } */
     }
     &__custom {
       &Arrows {
@@ -36,6 +38,10 @@ const ContainerWithCarouselStyles = styled(Container)`
         width: ${arrowSize}rem;
         height: ${arrowSize}rem;
         background: ${props => props.theme.blueLight};
+        @media (${props => props.theme.max640}) {
+          display: none;
+          z-index: -1;
+        }
         &:hover {
           background: ${props => props.theme.bristolBlue};
         }
@@ -58,6 +64,9 @@ const ContainerWithCarouselStyles = styled(Container)`
           margin-right: -4px;
         }
       }
+    }
+    &__arrow--disable {
+      background: gray;
     }
   }
 `
@@ -87,7 +96,7 @@ const Icon = styled(BsChatSquareQuote)`
   top: 0.8rem;
   right: 1.8rem;
   width: 6.6rem;
-  fill: #dee3ed;
+  fill: hsla(220, 29%, 90%, .6);
   z-index: -1;
 `
 // Components =========================================
@@ -96,24 +105,12 @@ export default function Testimonials() {
     <ContainerWithCarouselStyles>
       <Title>Testimonios</Title>
       <Carousel
-        slidesPerPage={2}
         arrowLeft={<BsChevronLeft />}
         arrowRight={<BsChevronRight />}
         addArrowClickHandler
-        infinite
         arrows
         centered
-        breakpoints={{
-          960: {
-            slidesPerPage: 1,
-            infinite: true,
-          },
-          640: {
-            slidesPerPage: 1,
-            infinite: true,
-            arrows: false,
-          },
-        }}
+        clickToChange
       >
         {testimonials.map((testimony, index) => (
           <Testimony key={`home_testimonial${index}`}>

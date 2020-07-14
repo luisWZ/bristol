@@ -9,6 +9,7 @@
   "description": "bristol template",
   "staticFolder": "main-files",
   "buildDir": "main-files/assets",
+  "publishDir": "./gatsby/public/",
   "workspaces": [
     "gatsby"
   ],
@@ -22,12 +23,14 @@
     "static:serve": "browser-sync $npm_package_staticFolder -w --ignore 'main-files/assets/**/*.scss' --logPrefix $npm_package_name --no-open --no-notify",
     "static:serveStatic": "browser-sync start -s $npm_package_staticFolder --logPrefix $npm_package_name --no-open --no-notify",
     "static:dev": "concurrently --names 'sass,server' --prefix name 'yarn run watch' 'yarn run static:serve'",
-    "dev": "yarn workspace template run develop",
+    "start": "npm run dev",
     "clean": "yarn workspace template run clean",
-    "serve": "yarn workspace template run serve",
     "build": "yarn workspace template run build",
+    "serve": "yarn workspace template run serve --host 0.0.0.0 --port $process_argv",
     "both": "concurrently --names 'static, gatsby' --prefix name 'yarn run static:serveStatic' 'yarn run dev'",
-    "start": "npm run both"
+    "dev": "yarn workspace template run develop",
+    "public": "yarn run clean && yarn run build && yarn run serve",
+    "publish": "cp ./CNAME $npm_package_publishDir && surge $npm_package_publishDir"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.0",

@@ -1,7 +1,9 @@
 import React from 'react'
-import { Global, CacheProvider } from '@emotion/core'
-import createCache from '@emotion/cache'
+import { Global } from '@emotion/core'
+// import { Global, CacheProvider } from '@emotion/core'
+// import createCache from '@emotion/cache'
 import { ThemeProvider } from 'emotion-theming'
+import SEO from '../utils/SEO'
 
 // Template Components ================================
 import Header from './Header'
@@ -14,11 +16,11 @@ import CssScaffolding from './CssScaffolding'
 import CssTheme from './CssTheme'
 import CssVariables from './CssVariables'
 
-// Emotion configs ====================================
-const disablePrefix = createCache({
-  key: 'bristol',
-  prefix: true, // take out for production
-})
+// // Emotion configs ====================================
+// const disablePrefix = createCache({
+//   key: 'bristol',
+//   prefix: true, // take out for production
+// })
 
 // Basically our root Component =======================
 export default function Layout({ children }) {
@@ -26,14 +28,15 @@ export default function Layout({ children }) {
     <>
       <Global styles={CssModernReset} />
       <Global styles={CssScaffolding} />
-      <CacheProvider value={disablePrefix}>
+      {/* <CacheProvider value={disablePrefix}> */}
         <ThemeProvider theme={CssVariables}>
           <CssTheme />
           <Header />
           <Main>{children}</Main>
           <Footer />
         </ThemeProvider>
-      </CacheProvider>
+      {/* </CacheProvider> */}
+      <SEO />
     </>
   )
 }
