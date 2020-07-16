@@ -6,6 +6,7 @@
 ✔ slider testimonials @done(20-07-13 13:03)
 ✔ add facebook messenger @done(20-07-14 11:24)
 ✔ agregar implementacion SEO @done(20-07-14 11:24)
+☐ Implementar gatsby images, lectura abajo
 ☐ focus bg a newsletter
 ☐ hover social links footer
 ☐ investigar gatsby images
@@ -19,11 +20,11 @@
 ☐ { object } =>
 ☐ macros para coma al final
 
-react-animate-on-scroll
+- react-animate-on-scroll
 https://github.com/dbramwell/react-animate-on-scroll
 https://dbramwell.github.io/react-animate-on-scroll/
 
-react-reveal
+- react-reveal
 https://www.react-reveal.com/
 https://github.com/rnosov/react-reveal
 https://www.react-reveal.com/docs/when/
@@ -31,18 +32,33 @@ https://www.react-reveal.com/docs/when/
 https://github.com/civiccc/react-waypoint
 https://markoskon.com/scroll-reveal-animations-with-react-spring/
 
-stand-alone libraries
+- stand-alone libraries
 https://github.com/matthieua/WOW
 
-react articles
+- react articles
 https://www.freecodecamp.org/news/the-react-cheatsheet-for-2020/
 https://react-hooks-cheatsheet.com/
 
-Own Carousel Implementation
+- Own Carousel Implementation
 https://annacoding.com/article/5HmwrAkFcdC6MxVJ9q8tOv/React-Multiple-Items-Carousel-with-Server-Side-Rendering-Implementation-Part-two
 
-Animaciones
+- Animaciones
 https://blog.bitsrc.io/how-to-implement-smooth-transitions-in-react-bd0497b06b8
 
-Facebook Chat Component
+- Facebook Chat Component
 https://levelup.gitconnected.com/integrating-facebook-customer-chat-into-a-react-js-app-5b7c21343048
+
+- On Configuring Emotion theme provider and cache
+- The first one saved my ass
+https://github.com/gatsbyjs/gatsby/issues/17894
+https://github.com/zslabs/zslabs.com/blob/master/gatsby-ssr.js
+- Emotion theme more about the topic
+https://github.com/emotion-js/emotion/issues/1883
+https://www.gitmemory.com/issue/gatsbyjs/gatsby/17370/529110125
+https://emotion.sh/docs/css-prop
+- On using the wrapperElement
+https://www.gatsbyjs.org/docs/browser-apis/#wrapPageElement
+https://github.com/gatsbyjs/gatsby/blob/master/examples/using-i18n/src/components/layout.js
+
+- Gatsby images
+https://www.gatsbyjs.org/docs/gatsby-image/

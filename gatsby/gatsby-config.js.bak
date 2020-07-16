@@ -5,7 +5,7 @@ module.exports = {
     //   options: {
     //     name: `Bristol Escuela de Inglés`,
     //     short_name: `Bristol`,
-    //     lang: `es`,
+    //     lang: `es-MX`,
     //     start_url: `/`,
     //     background_color: `#0043CE`,
     //     theme_color: `#0043CE`,
