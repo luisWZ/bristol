@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
-import { Container, Title, Button } from '../CssHelpers'
+import { Container, Title, Button } from '../styles/CssHelpers'
 import courses from '../../content/home-courses.yaml'
 import imgTmp from '../../images/bristol-ninos.webp'
 

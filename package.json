@@ -28,7 +28,7 @@
     "build": "yarn workspace template run build",
     "serve": "yarn workspace template run serve --host 0.0.0.0 --port $process_argv",
     "both": "concurrently --names 'static, gatsby' --prefix name 'yarn run static:serveStatic' 'yarn run dev'",
-    "dev": "yarn workspace template run develop",
+    "dev": "yarn workspace template start",
     "public": "yarn run clean && yarn run build && yarn run serve",
     "publish": "cp ./CNAME $npm_package_publishDir && surge $npm_package_publishDir"
   },

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
-
 import { AiOutlineRight } from 'react-icons/ai';
+
+import { Container } from './styles/CssHelpers'
+import SvgCambridgeLogo from './svgs/SvgCambridgeLogo'
+import SvgFooterBrand from './svgs/SvgFooterBrand'
 import SocialLinks from './SocialLinks'
-import SvgCambridgeLogo from './SvgCambridgeLogo'
-import { Container } from './CssHelpers'
-import SvgFooterBrand from './SvgFooterBrand'
 
 const Li = props => (
   <li

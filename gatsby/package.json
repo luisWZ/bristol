@@ -9,8 +9,8 @@
     "clean": "gatsby clean",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "start": "npm run develop",
-    "develop": "nodemon --exec 'kill-port --port 8000 && npx gatsby develop' --watch gatsby-node.js --watch package.json --watch gatsby-config.js --watch gatsby-browser.js"
+    "start": "yarn run develop",
+    "develop": "nodemon --exec 'kill-port --port 8000 && gatsby develop' --watch gatsby-node.js --watch package.json --watch gatsby-config.js --watch gatsby-browser.js"
   },
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.19.16",
@@ -37,6 +37,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^3.10.0",
     "react-reveal": "^1.2.2",
+    "react-transition-group": "^4.4.1",
     "react-typography": "^0.16.19",
     "styled-components": "^5.1.1",
     "typography": "^0.16.19",

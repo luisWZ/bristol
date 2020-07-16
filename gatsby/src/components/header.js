@@ -4,12 +4,12 @@ import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
 
 import { AiOutlineRight, AiOutlineMenu } from 'react-icons/ai';
-import { Button } from './CssHelpers'
+import { Button } from './styles/CssHelpers'
+import SvgBristolLogo from './svgs/SvgBristolLogo'
+import SvgInglesMuyIngles from './svgs/SvgInglesMuyIngles'
+import SvgEnvelope from './svgs/SvgEnvelope'
+import SvgPhone from './svgs/SvgPhone'
 import SocialLinks from './SocialLinks'
-import SvgBristolLogo from './SvgBristolLogo'
-import SvgInglesMuyIngles from './SvgInglesMuyIngles'
-import SvgEnvelope from './SvgEnvelope'
-import SvgPhone from './SvgPhone'
 
 // CSS Helpers ========================================
 const hover = (theme, color) => {
@@ -25,6 +25,8 @@ const borderTop = (theme) => `border-top: 1px solid ${theme.grayLight};`
 const Header_ = styled.header`
   display: grid;
   width: 100%;
+  top: 0;
+  left: 0;
   z-index: 2;
   position: fixed;
   box-shadow: 0 1px 2px hsla(220, 11%, 15%, 0.15);

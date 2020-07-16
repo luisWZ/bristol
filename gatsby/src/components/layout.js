@@ -1,46 +1,52 @@
 import React from 'react'
-import { Global } from '@emotion/core'
-// import { Global, CacheProvider } from '@emotion/core'
+import styled from '@emotion/styled'
+// import { ThemeProvider } from 'emotion-theming'
 // import createCache from '@emotion/cache'
-import { ThemeProvider } from 'emotion-theming'
-import SEO from '../utils/SEO'
-import FacebookMessenger from '../utils/FacebookMessenger'
+// import { Global, CacheProvider } from '@emotion/core'
 
-// Template Components ================================
+// UI Components ======================================
 import Header from './Header'
-import Main from './Main'
 import Footer from './Footer'
 
 // Style Definitions ==================================
-import CssModernReset from './CssModernReset'
-import CssScaffolding from './CssScaffolding'
-import CssTheme from './CssTheme'
-import CssVariables from './CssVariables'
+// import CssModernReset from './src/components/styles/CssModernReset'
+// import CssScaffolding from './src/components/styles/CssScaffolding'
+// import CssVariables from './src/components/styles/CssVariables'
+// import CssTheme from './src/components/styles/CssTheme'
 
-// // Emotion configs ====================================
-// const disablePrefix = createCache({
+// Emotion configs ====================================
+// const configProvider = createCache({
 //   key: 'bristol',
-//   prefix: true, // take out for production
+//   prefix: process.env.NODE_ENV === 'develop' ? false : true,
 // })
 
-// Basically our root Component =======================
+// Main UI Layout =====================================
 export default function Layout({ children }) {
   return (
     <>
-      <Global styles={CssModernReset} />
-      <Global styles={CssScaffolding} />
-      {/* <CacheProvider value={disablePrefix}> */}
-        <ThemeProvider theme={CssVariables}>
-          <CssTheme />
-          <Header />
-          <Main>{children}</Main>
-          <Footer />
-        </ThemeProvider>
-      {/* </CacheProvider> */}
-      <SEO>
-        <script defer src='/facebook-messenger.js' />
-      </SEO>
-      <FacebookMessenger />
+      <Header />
+      <Main>{children}</Main>
+      <Footer />
     </>
   )
 }
+
+// styles =============================================
+const Main = styled.main`
+  min-height: 100vh;
+  background-color: ${props => props.theme.bgGray};
+  > h1 {
+    padding: 7rem 2vw 0;
+  }
+`
+
+// <Global styles={CssModernReset} />
+//       <Global styles={CssScaffolding} />
+//       {/* <CacheProvider value={configProvider}> */}
+//         <ThemeProvider theme={CssVariables}>
+//           <CssTheme />
+//           <Layout {...props}>{element}</Layout>
+//         </ThemeProvider>
+//       {/* </CacheProvider> */}
+//       <SEO />
+//       <FacebookMessenger />

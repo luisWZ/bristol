@@ -1,10 +1,5 @@
 import React from 'react'
-import Layout from '../components/Layout'
 
 export default function Nosotros() {
-    return (
-        <Layout>
-            <h1>Nosotros</h1>
-        </Layout>
-    )
+  return <h1>Nosotros</h1>
 }

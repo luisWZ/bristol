@@ -1,8 +1,23 @@
-import React from 'react'
-// just inserts the element
-// the script is inserted by helmet in Layout
-// this way react doesnt wait for the chat to load
+import React, { useEffect } from 'react'
+
 export default function FacebookMessenger() {
+  useEffect(() => {
+    window.fbAsyncInit = function () {
+      /*global FB*/
+      FB.init({ xfbml: true, version: 'v7.0' })
+    }
+    ;(function (d, s, id) {
+      let js
+      // const fjs = d.getElementsByTagName(s)[0]
+      if (d.getElementById(id)) return
+      js = d.createElement(s)
+      js.id = id
+      js.defer = true
+      js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js'
+      // fjs.parentNode.insertBefore(js, fjs)
+      d.body.appendChild(js)
+    })(document, 'script', 'facebook-jssdk')
+  }, [])
   return (
     <>
       <div id='fb-root' />

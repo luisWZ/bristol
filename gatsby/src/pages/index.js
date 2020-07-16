@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 
-import Layout from '../components/Layout'
+// elements
 import HeroContent from '../components/home/HeroContent'
 import FeaturedCourses from '../components/home/FeaturedCourses'
 import ComingCourses from '../components/home/ComingCourses'
@@ -21,7 +21,7 @@ const BottomImage = (
 )
 export default function Home() {
   return (
-    <Layout>
+    <>
       <HeroContent />
       <FeaturedCourses />
       <ComingCourses />
@@ -29,6 +29,6 @@ export default function Home() {
       <Testimonials />
       {BottomImage}
       <Newsletter />
-    </Layout>
+    </>
   )
 }

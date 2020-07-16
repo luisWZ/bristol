@@ -2,8 +2,8 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 
-import { Container } from './CssHelpers'
-import IconArrow from './SvgIconArrow'
+import { Container } from './styles/CssHelpers'
+import IconArrow from './svgs/SvgIconArrow'
 
 // components =========================================
 export default function Newsletter() {

@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 
 import Fade from 'react-reveal/Fade'
 
-import { Button } from '../CssHelpers'
+import { Button } from '../styles/CssHelpers'
 import imgCursos from '../../images/home-cursos-generales.webp'
 import imgExamenes from '../../images/home-examenes-internacionales.webp'
 

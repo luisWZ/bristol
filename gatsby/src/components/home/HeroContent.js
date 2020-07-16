@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
-import { Container, Button } from '../CssHelpers'
+import { Container, Button } from '../styles/CssHelpers'
 import imgHero from '../../images/home-temporal.webp'
 
+//  styles ============================================
 const Section = styled.section`
   /* max-height: 832px; */
   /* height: 100vh; */
@@ -29,9 +30,6 @@ const Container_ = styled(Container)`
     > div:first-of-type {
       flex-basis: 53%;
     }
-    /* > div:last-of-type {
-      flex-basis: 40%;
-    } */
     > img {
       max-width: 40%;
     }
