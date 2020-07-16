@@ -1,39 +1,25 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { ThemeProvider } from 'emotion-theming'
-import { Global } from '@emotion/core'
-// import createCache from '@emotion/cache'
-// import { Global, CacheProvider } from '@emotion/core'
-
-// Elements
-import Layout from './src/components/Layout'
-import FacebookMessenger from './src/utils/FacebookMessenger'
+import { CacheProvider } from '@emotion/core'
+import { myCache } from './create-emotion-cache'
+import bristolTheme from './src/components/styles/CssVariables'
+import Layout from './src/components/layout'
 import SEO from './src/utils/SEO'
+import FacebookMessenger from './src/utils/FacebookMessenger'
 
-// Style Definitions ==================================
-import CssModernReset from './src/components/styles/CssModernReset'
-import CssScaffolding from './src/components/styles/CssScaffolding'
-import CssVariables from './src/components/styles/CssVariables'
-import CssTheme from './src/components/styles/CssTheme'
+export const wrapRootElement = ({ element, props }) => (
+  <>
+    <CacheProvider value={myCache}>
+      <ThemeProvider theme={bristolTheme}>
+        <Layout {...props}>{element}</Layout>
+      </ThemeProvider>
+    </CacheProvider>
+    <SEO />
+    <FacebookMessenger />
+  </>
+)
 
-// Emotion configs ====================================
-// const configProvider = createCache({
-//   key: 'bristol',
-//   prefix: process.env.NODE_ENV === 'develop' ? false : true,
-// })
-
-export function wrapPageElement({ element, props }) {
-  return (
-    <>
-      <Global styles={CssModernReset} />
-      <Global styles={CssScaffolding} />
-      {/* <CacheProvider value={configProvider}> */}
-        <ThemeProvider theme={CssVariables}>
-          <CssTheme />
-          <Layout {...props}>{element}</Layout>
-        </ThemeProvider>
-      {/* </CacheProvider> */}
-      <SEO />
-      <FacebookMessenger />
-    </>
-  )
+wrapRootElement.propTypes = {
+  element: PropTypes.node.isRequired,
 }
