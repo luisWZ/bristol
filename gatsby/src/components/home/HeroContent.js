@@ -1,9 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from '@emotion/styled'
-
 import { Container, Button } from '../styles/CssHelpers'
-import imgHero from '../../images/home-temporal.webp'
 
 //  styles ============================================
 const Section = styled.section`
@@ -14,7 +13,7 @@ const Section = styled.section`
   display: flex;
   justify-content: space-around;
   padding-top: 7rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 `
 const Container_ = styled(Container)`
   margin-bottom: 0;
@@ -24,26 +23,27 @@ const Container_ = styled(Container)`
   flex-direction: row;
   justify-content: space-around;
   flex: 0 1 25rem;
+
   @media(${props => props.theme.min720 }) {
     flex-grow: 1;
-
-    > div:first-of-type {
-      flex-basis: 53%;
-    }
-    > img {
-      max-width: 40%;
-    }
   }
 `
 const TextBox = styled.div`
   @media(${props => props.theme.max720 }) {
     flex-basis: 380px;
     text-align: center;
+    margin-bottom: 2rem;
+  }
+  @media(${props => props.theme.min720 }) {
+    flex-basis: 53%;
   }
 `
-const Image = styled.img`
-  max-width: 80%;
-  margin: 2rem auto;
+const Image = styled(Img)`
+  flex-basis: 80%;
+
+  @media(${props => props.theme.min720 }) {
+    flex-basis: 40%;
+  }
 `
 const Slogan = styled.h1`
   font-size: calc(1rem + 1vw * 2.3);
@@ -59,6 +59,20 @@ const Button_ = styled(Button)`
   @media(${props => props.theme.max720 }) { width: 100%; }
 `
 export default function HeroContent() {
+  const heroImg = useStaticQuery(graphql`
+    query {
+      file(relativePath: {eq: "home-hero.png"}) {
+        childImageSharp {
+          fluid(
+            maxWidth: 448
+            traceSVG: { background: "#fff", color: "#f2f4f8" }
+            ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
+    }
+  `).file.childImageSharp.fluid
   return (
     <Section>
       <Container_ as='div'>
@@ -73,7 +87,9 @@ export default function HeroContent() {
             Nuestros cursos
           </Button_>
         </TextBox>
-        <Image src={imgHero} alt='Persona estudiando inglés' />
+        <Image
+          fluid={heroImg}
+          alt='Persona estudiando inglés' />
       </Container_>
     </Section>
   )

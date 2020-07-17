@@ -12,6 +12,7 @@ export const Container = styled.section`
 `
 export const Title = styled.h1`
   transition: color .24s ease-in;
+  margin-top: 4rem;
   &:hover {
     color: ${props => props.theme.black};
   }

@@ -1,15 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+// Needed for emotion =================================
 import { ThemeProvider } from 'emotion-theming'
 import { CacheProvider } from '@emotion/core'
 import createEmotionServer from 'create-emotion-server'
 import { renderToString } from 'react-dom/server'
 import bristolTheme from './src/components/styles/CssVariables'
 import { myCache } from './create-emotion-cache'
+// Persisiting UI Elements ============================
 import Layout from './src/components/Layout'
 import SEO from './src/utils/SEO'
 import FacebookMessenger from './src/utils/FacebookMessenger'
-
+// Rendering ==========================================
 export const replaceRenderer = ({
   replaceBodyHTMLString,
   bodyComponent,

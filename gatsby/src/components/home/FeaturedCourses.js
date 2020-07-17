@@ -1,12 +1,9 @@
 import React from "react";
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from '@emotion/styled'
-
 import Fade from 'react-reveal/Fade'
-
 import { Button } from '../styles/CssHelpers'
-import imgCursos from '../../images/home-cursos-generales.webp'
-import imgExamenes from '../../images/home-examenes-internacionales.webp'
 
 // Styles definitions =================================
 const Section = styled.section`
@@ -39,14 +36,19 @@ const CourseBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-position: center;
-  background-size: cover;
+  position: relative;
   background-color: ${props => props.theme.bristolBlue };
-  background-image: url(${({ image }) => image });
+`
+const ImageBox = {
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
+  top: '0',
+  left: '0',
+}
+const TextBox = styled.div`
+  max-width: 250px;
 
-  > div {
-    max-width: 250px;
-  }
   h2 {
     color: white;
     text-shadow: 4px 3px 3px hsla(220, 50%, 20%, 0.6);
@@ -54,25 +56,49 @@ const CourseBox = styled.div`
 `
 // Components =========================================
 const courses = [
-  { link: 'cursos', image: imgCursos , name: 'Cursos Generales'},
-  { link: 'examenes', image: imgExamenes , name: 'Exámenes Internacionales'},
+  { link: 'cursos', name: 'Cursos Generales'},
+  { link: 'examenes', name: 'Exámenes Internacionales'},
 ]
 
-const Course = ({ course }) => (
-  <CourseBox image={course.image}>
-    <div>
+const Course = ({ course, image }) => (
+  <CourseBox>
+    <Img fluid={image} style={ImageBox} />
+    <TextBox>
       <Fade>
         <h2>{course.name}</h2>
-        <Button as={Link} to={`/${course.link}`}>Conoce más</Button>
+        <Button as={Link} to={`/${course.link}`}>
+          Conoce más
+        </Button>
       </Fade>
-    </div>
+    </TextBox>
   </CourseBox>
 )
+
 export default function FeaturedCourses() {
+  const images = useStaticQuery(graphql`
+    query {
+      cursos: file(relativePath: { eq: "home-cursos-generales.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 660) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      examenes: file(relativePath: { eq: "home-examenes-internacionales.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 660) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+    }
+  `)
   return (
     <Section>
       {courses.map((course, index) => (
-        <Course course={course} key={`featured_courses${index}`} />
+        <Course key={`featured_courses${index}`} course={course}
+          image={images[course.link].childImageSharp.fluid}
+        />
       ))}
     </Section>
   );

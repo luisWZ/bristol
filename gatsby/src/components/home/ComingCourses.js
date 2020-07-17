@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 
 import { Container, Title, Button } from '../styles/CssHelpers'
 import courses from '../../content/home-courses.yaml'
-import imgTmp from '../../images/bristol-ninos.webp'
-
 // Styles definitions =================================
 const CoursesWrapper = styled.div`
   display: grid;
@@ -36,17 +35,17 @@ const ImageLink = styled(Link)`
   padding-bottom: 70%;
   height: 0;
   overflow: hidden;
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .5s ease;
-    background-color: ${props => props.theme.bristolBlue};
-  }
 `
+const ImageBox = {
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+  transition: 'transform .5s ease',
+  backgroundColor: '#b6bdca',
+}
 const TextBox = styled.div`
   padding: 1rem 1rem 0.5rem;
 
@@ -81,12 +80,15 @@ const Button_ = styled(Button)`
   }
 `
 // Components =========================================
+let image = {}
+
 const Course = ({ course }) => {
   const { tag, title, dates, time, start, location } = course
+
   return (
     <CourseBox>
       <ImageLink to='/'>
-        <img alt='' src={imgTmp} />
+        <Img fixed={image} style={ImageBox} />
       </ImageLink>
       <TextBox>
         <Small>{tag}</Small>
@@ -105,7 +107,21 @@ const Course = ({ course }) => {
   )
 }
 export default function ComingCourses() {
-  return (
+  image = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "bristol-ninos.png" }) {
+        childImageSharp {
+          fixed(
+            width: 340
+            height: 240
+            ) {
+            ...GatsbyImageSharpFixed_withWebp
+          }
+        }
+      }
+    }
+  `).file.childImageSharp.fixed
+  return(
     <Container>
       <Title>Próximos cursos</Title>
       <CoursesWrapper>

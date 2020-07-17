@@ -1,9 +1,18 @@
 module.exports = {
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images/`,
+        name: 'images'
+      },
+    },
     {
       resolve: 'gatsby-plugin-emotion',
       options: {
-        // sourceMap: false,
+        sourceMap: process.env.NODE_ENV === 'development' ? true : false,
       },
     },
     {
