@@ -6,7 +6,7 @@ import { CacheProvider } from '@emotion/core'
 import { myCache } from './create-emotion-cache'
 import bristolTheme from './src/components/styles/CssVariables'
 // Persisiting UI Elements ============================
-import Layout from './src/components/layout'
+import Layout from './src/components/Layout'
 import SEO from './src/utils/SEO'
 import FacebookMessenger from './src/utils/FacebookMessenger'
 // Rendering ==========================================

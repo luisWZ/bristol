@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
+
 // components =========================================
 export default function BottomImage() {
   const image = useStaticQuery(graphql`

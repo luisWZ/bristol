@@ -7,8 +7,8 @@ import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
 import { Container, Title } from '../styles/CssHelpers'
-import testimonials from '../../content/home-testimonials.yaml'
 import imgTmp from '../../images/nuestros-servicios.png'
+import testimonials from '../../data/home-testimonials.yaml'
 
 // Styles =============================================
 const arrowSize = 3;

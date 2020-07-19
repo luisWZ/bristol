@@ -1,10 +1,6 @@
 {
   "name": "bristol",
   "private": true,
-  "engineStrict": true,
-  "engines": {
-    "node": "^14.0.0"
-  },
   "version": "1.0.0",
   "description": "bristol template",
   "staticFolder": "main-files",

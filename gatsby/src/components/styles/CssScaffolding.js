@@ -8,17 +8,10 @@ export default function CssModernReset() {
       -moz-osx-font-smoothing: grayscale;
     }
     /* custom color hightlight */
-    ::-moz-selection { color: white; background: #0f62fe; }
-    ::selection { color: white; background: #0f62fe; }
+    /* ::-moz-selection { color: white; background: #0f62fe; } */
+    /* ::selection { color: white; background: #0f62fe; } */
     a {
       text-decoration: none;
-    }
-    /* Dynamic size for titles */
-    h1 {
-      font-size: calc(1.8rem + 0.6vw);
-    }
-    h3 {
-      font-size: calc(1.4rem + 0.5vw);
     }
     /* Remove list styles on ul, ol elements with a class attribute */
     /* Remove default padding */

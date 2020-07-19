@@ -4,7 +4,8 @@ import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 
 import { Container, Title, Button } from '../styles/CssHelpers'
-import courses from '../../content/home-courses.yaml'
+import courses from '../../data/home-courses.yaml'
+
 // Styles definitions =================================
 const CoursesWrapper = styled.div`
   display: grid;

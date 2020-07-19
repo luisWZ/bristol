@@ -39,3 +39,13 @@ export const Button = styled.a`
     };
   }
 `
+export const hoverStyle = (theme, color) => {
+  return `
+    &:hover {
+      background-color: ${theme.bgGray};
+      color: ${color === undefined ? theme.grayDark : theme.blueDark};
+    }
+  `
+}
+
+export const borderTopStyle = (theme) => `border-top: 1px solid ${theme.grayLight};`

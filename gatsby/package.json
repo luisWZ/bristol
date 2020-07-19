@@ -10,7 +10,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "start": "yarn run develop",
-    "develop": "nodemon --exec 'kill-port --port 8000 && gatsby develop' --watch gatsby-node.js --watch package.json --watch gatsby-config.js --watch gatsby-browser.js"
+    "develop": "nodemon --exec 'kill-port --port 8000 && gatsby develop -H 0.0.0.0' --watch gatsby-node.js --watch package.json --watch gatsby-config.js --watch gatsby-browser.js"
   },
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.19.16",

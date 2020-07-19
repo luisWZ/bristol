@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 import { Container, Title } from '../styles/CssHelpers'
-import services from '../../content/home-services.yaml'
+import services from '../../data/home-services.yaml'
 
 // Styles =============================================
 const ServicesWrapper = styled.div`
