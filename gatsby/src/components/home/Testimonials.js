@@ -1,83 +1,111 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import {
-  BsChevronLeft, BsChevronRight,
-  BsChatSquareQuote } from 'react-icons/bs';
-import Carousel from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
+import { BsChevronLeft, BsChevronRight, BsChatSquareQuote } from 'react-icons/bs'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import "slick-carousel/slick/slick-theme.css"
 
 import { Container, Title } from '../styles/CssHelpers'
-import imgTmp from '../../images/nuestros-servicios.png'
+import CssVariables from '../styles/CssVariables'
 import testimonials from '../../data/home-testimonials.yaml'
+import imgTmp from '../../images/nuestros-servicios.png'
 
+// Components =========================================
+export default function Testimonials() {
+  return (
+    <Container_>
+      <Title>Testimonios</Title>
+        <Slider {...settings}>
+          {testimonials.map((testimony, index) => (
+            <Testimony
+              key={`home_testimonial${index}`}
+              {...{ testimony }}
+            />
+          ))}
+        </Slider>
+    </Container_>
+  )
+}
+const Testimony = ({ testimony }) => (
+  <Testimony_>
+    <p>{testimony.text}</p>
+    <h4>{testimony.name}</h4>
+    <img src={imgTmp} alt='' />
+    <Icon />
+  </Testimony_>
+)
+const CustomArrowLeft = (props) => (
+  <BsChevronLeft {...props} />
+)
+const CustomArrowRight = (props) => (
+  <BsChevronRight {...props} />
+)
+const settings = {
+  slidesToShow: 2,
+  slidesToScroll: 2,
+  // adaptiveHeight: true,
+  prevArrow: <CustomArrowLeft />,
+  nextArrow: <CustomArrowRight />,
+  responsive: [
+    {
+      breakpoint: (CssVariables.max848.split(' ')).slice(-1).pop(),
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false
+      },
+    },
+  ],
+}
 // Styles =============================================
-const arrowSize = 3;
-const ContainerWithCarouselStyles = styled(Container)`
-  .BrainhubCarousel {
-    /* overflow: visible; */
-
-    &__container {
-      position: relative;
-      /* padding: 0 ${arrowSize / 2}rem; */
+const width = `40px`
+const Container_ = styled(Container)`
+  .slick {
+    &-arrow {
+      background: transparent;
+      border-radius: 50%;
+      padding: 10px;
+      transition: background-color .24s ease-in-out;
+      width: ${width};
+      height: ${width};
+      fill: ${props => props.theme.blueLight};
+      border: 1px solid ${props => props.theme.blueLight};
     }
-    &Item {
-      /* opacity: 0.4;
-      &--active {
-        opacity: initial;
-      } */
+    &-next {
+      padding-right: 8px;
     }
-    &__custom {
-      &Arrows {
-        cursor: pointer;
-        position: absolute;
-        z-index: 1;
-        display: flex;
-        justify-content: center;
-        border-radius: 50%;
-        transition: background-color .24s ease-in-out;
-        width: ${arrowSize}rem;
-        height: ${arrowSize}rem;
-        background: ${props => props.theme.blueLight};
-        @media (${props => props.theme.max640}) {
-          display: none;
-          z-index: -1;
-        }
-        &:hover {
-          background: ${props => props.theme.bristolBlue};
-        }
-        svg {
-          width: 60%;
-          color: white;
-        }
-      }
-      &-arrowLeft {
-        left: 0;
-
-        svg {
-          margin-left: -4px;
-        }
-      }
-      &-arrowRight {
-        right: 0;
-
-        svg {
-          margin-right: -4px;
-        }
-      }
+    &-prev {
+      padding-left: 8px;
     }
-    &__arrow--disable {
-      background: gray;
+    &-prev,
+    &-next {
+      &:hover,
+      &:focus {
+        fill: ${props => props.theme.bgGray};
+        background-color: ${props => props.theme.blueLight};
+      }
     }
   }
 `
-const Testimony = styled.div`
+const maxWidth = `28.5rem`
+const Testimony_ = styled.div`
   padding: 1.5rem;
   position: relative;
-  z-index: 1;
-  overflow: hidden;
-  max-width: 28.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${maxWidth};
   border-radius: ${props => props.theme.radius};
-  border: 1px solid ${props => props.theme.blueGray};
+
+  @media (${props => props.theme.min560}) {
+    border: 1px solid ${props => props.theme.blueGray};
+  }
+  @media (${props => props.theme.min848}) {
+    max-width: 90%;
+  }
+  @media (${props => props.theme.min1200}) {
+    max-width: ${maxWidth};
+  }
+
   h4 {
     float: right;
   }
@@ -99,28 +127,3 @@ const Icon = styled(BsChatSquareQuote)`
   fill: hsla(220, 29%, 90%, .6);
   z-index: -1;
 `
-// Components =========================================
-export default function Testimonials() {
-  return (
-    <ContainerWithCarouselStyles>
-      <Title>Testimonios</Title>
-      <Carousel
-        arrowLeft={<BsChevronLeft />}
-        arrowRight={<BsChevronRight />}
-        addArrowClickHandler
-        arrows
-        centered
-        clickToChange
-      >
-        {testimonials.map((testimony, index) => (
-          <Testimony key={`home_testimonial${index}`}>
-            <p>{testimony.text}</p>
-            <h4>{testimony.name}</h4>
-            <img src={imgTmp} alt='' />
-            <Icon />
-          </Testimony>
-        ))}
-      </Carousel>
-    </ContainerWithCarouselStyles>
-  )
-}

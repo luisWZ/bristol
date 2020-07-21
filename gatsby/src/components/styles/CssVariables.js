@@ -34,8 +34,8 @@ export default {
   min1600: 'min-width: 100em', // stop any property with vw value
   // ======== max-width
   max480: 'max-width: 29.9375em',
-  max640: 'max-width: 39.9375em',
   max560: 'max-width: 34.9375em', // 559px
+  max640: 'max-width: 39.9375em',
   max720: 'max-width: 44.9375em', // 719px
   max768: 'max-width: 47.9375em', // 767px
   max848: 'max-width: 52.9375em',
