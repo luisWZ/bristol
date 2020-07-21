@@ -2,7 +2,6 @@ import React from "react";
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
-import Fade from 'react-reveal/Fade'
 import { Button } from '../styles/CssHelpers'
 
 // Styles definitions =================================
@@ -48,6 +47,7 @@ const ImageBox = {
 }
 const TextBox = styled.div`
   max-width: 250px;
+  z-index: 1;
 
   h2 {
     color: white;
@@ -63,13 +63,16 @@ const courses = [
 const Course = ({ course, image }) => (
   <CourseBox>
     <Img fluid={image} style={ImageBox} />
-    <TextBox>
-      <Fade>
-        <h2>{course.name}</h2>
-        <Button as={Link} to={`/${course.link}`}>
-          Conoce más
-        </Button>
-      </Fade>
+    <TextBox
+      data-sal='slide-up'
+      data-sal-duration='600'
+      data-sal-delay='300'
+      data-sal-easing='easeOutQuad'
+    >
+      <h2>{course.name}</h2>
+      <Button as={Link} to={`/${course.link}`}>
+        Conoce más
+      </Button>
     </TextBox>
   </CourseBox>
 )

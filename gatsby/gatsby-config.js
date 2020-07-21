@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    title: `Bristol Inglés Profesional`,
+    description: `Nos comprometemos con la calidad y la innovación, manteniéndonos a la vanguardia en la enseñanza de inglés. Contamos con docentes profesionales con los más altos grados académicos y certificaciones internacionales en lengua inglesa.`,
+    keywords: `inglés, ingles, veracruz, xalapa, coatepec, adolescentes, niños, estudiar, aprender, cambridgem, esol, certificaciones, internacional, intercambios, universidad, bristol, english, canada, londres, london, england, inglaterra`,
+  },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -34,5 +39,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-scroll-reveal`,
   ],
 }

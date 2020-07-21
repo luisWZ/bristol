@@ -6,7 +6,8 @@ import Navigation from './Navigation'
 import ContactInfo from './ContactInfo'
 import SocialLinksList from './SocialLinksList'
 import Slogan from './Slogan'
-import MenuContactButtonsBox from './MenuContactButtonsBox'
+import ButtonsBox from './ButtonsBox'
+import MenuButton from './MenuButton'
 
 // Component ==========================================
 export default function Header() {
@@ -17,7 +18,9 @@ export default function Header() {
       <ContactInfo />
       <SocialLinksList />
       <Slogan />
-      <MenuContactButtonsBox />
+      <ButtonsBox>
+        <MenuButton />
+      </ButtonsBox>
     </HeaderBox>
   )
 }

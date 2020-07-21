@@ -77,19 +77,36 @@ export default function HeroContent() {
     <Section>
       <Container_ as='div'>
         <TextBox>
-          <Slogan>Speak a new language, discover a new world</Slogan>
-          <Description>
+          <Slogan
+            data-sal='fade'
+            data-sal-duration='500'
+            data-sal-delay='100'
+            data-sal-easing='easeOutSine'
+          >
+            Speak a new language, discover a new world
+          </Slogan>
+          <Description
+            data-sal='slide-up'
+            data-sal-duration='600'
+            data-sal-delay='300'
+            data-sal-easing='easeOutQuart'
+          >
             Somos profesionales en la enseñanza de inglés, nuestros maestros
             cuentan con grados académicos y certificaciones internacionales como
             maestros de inglés así como con una gran experiencia
           </Description>
-          <Button_ as={Link} to='/cursos'>
+          <Button_
+            as={Link}
+            to='/cursos'
+            data-sal='fade'
+            data-sal-duration='800'
+            data-sal-delay='800'
+            data-sal-easing='easeInOutCubic'
+          >
             Nuestros cursos
           </Button_>
         </TextBox>
-        <Image
-          fluid={heroImg}
-          alt='Persona estudiando inglés' />
+        <Image fluid={heroImg} alt='Persona estudiando inglés' />
       </Container_>
     </Section>
   )
