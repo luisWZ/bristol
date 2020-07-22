@@ -14,12 +14,14 @@ module.exports = {
         name: 'images'
       },
     },
-    {
-      resolve: 'gatsby-plugin-emotion',
-      options: {
-        sourceMap: process.env.NODE_ENV === 'development' ? true : false,
-      },
-    },
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-layout',
+    // {
+    //   resolve: 'gatsby-plugin-emotion',
+    //   options: {
+    //     sourceMap: process.env.NODE_ENV === 'development' ? true : false,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-typography`,
       options: { pathToConfigModule: `./src/utils/typography` },

@@ -7,6 +7,7 @@ export default function CssTheme() {
       /* custom color hightlight */
       ::-moz-selection { color: white; background: ${theme.blueLight}; }
       ::selection { color: white; background: ${theme.blueLight}; }
+
       /* Dynamic size for titles */
       h1 {
         font-size: calc(1.8rem + 0.6vw);

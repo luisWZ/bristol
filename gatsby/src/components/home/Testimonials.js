@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick.css'
 import "slick-carousel/slick/slick-theme.css"
 
 import { Container, Title } from '../styles/CssHelpers'
+import { getRandomInt } from '../../utils/helpers'
 import CssVariables from '../styles/CssVariables'
 import testimonials from '../../data/home-testimonials.yaml'
 import imgTmp from '../../images/nuestros-servicios.png'
@@ -34,18 +35,16 @@ const Testimony = ({ testimony }) => (
     <Icon />
   </Testimony_>
 )
-const CustomArrowLeft = (props) => (
-  <BsChevronLeft {...props} />
-)
-const CustomArrowRight = (props) => (
-  <BsChevronRight {...props} />
+const CustomArrow = ({ currentSlide, slideCount, children, ...props }) => (
+  <span {...props}>{children}</span>
 )
 const settings = {
   slidesToShow: 2,
   slidesToScroll: 2,
   // adaptiveHeight: true,
-  prevArrow: <CustomArrowLeft />,
-  nextArrow: <CustomArrowRight />,
+  initialSlide: getRandomInt(testimonials.length),
+  prevArrow: <CustomArrow><BsChevronLeft /></CustomArrow>,
+  nextArrow: <CustomArrow><BsChevronRight /></CustomArrow>,
   responsive: [
     {
       breakpoint: (CssVariables.max848.split(' ')).slice(-1).pop(),
@@ -62,14 +61,21 @@ const width = `40px`
 const Container_ = styled(Container)`
   .slick {
     &-arrow {
+      &:before {
+        content: none;
+      }
       background: transparent;
       border-radius: 50%;
       padding: 10px;
-      transition: background-color .24s ease-in-out;
+      transition: background-color 0.24s ease-in-out;
       width: ${width};
       height: ${width};
-      fill: ${props => props.theme.blueLight};
       border: 1px solid ${props => props.theme.blueLight};
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: ${props => props.theme.blueLight};
+      }
     }
     &-next {
       padding-right: 8px;
@@ -81,8 +87,10 @@ const Container_ = styled(Container)`
     &-next {
       &:hover,
       &:focus {
-        fill: ${props => props.theme.bgGray};
         background-color: ${props => props.theme.blueLight};
+        svg {
+          fill: ${props => props.theme.bgGray};
+        }
       }
     }
   }

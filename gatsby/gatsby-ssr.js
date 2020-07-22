@@ -1,16 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 // Needed for emotion =================================
-import { ThemeProvider } from 'emotion-theming'
 import { CacheProvider } from '@emotion/core'
 import createEmotionServer from 'create-emotion-server'
 import { renderToString } from 'react-dom/server'
-import bristolTheme from './src/components/styles/CssVariables'
 import { myCache } from './create-emotion-cache'
 // Persisiting UI Elements ============================
-import Layout from './src/components/Layout'
-import SEO from './src/utils/SEO'
-import FacebookMessenger from './src/utils/FacebookMessenger'
+// import PropTypes from 'prop-types'
+// import bristolTheme from './src/components/styles/CssVariables'
+// import { ThemeProvider } from 'emotion-theming'
+// import Layout from './src/components/Layout'
+// import SEO from './src/utils/SEO'
+// import FacebookMessenger from './src/utils/FacebookMessenger'
 // Rendering ==========================================
 export const replaceRenderer = ({
   replaceBodyHTMLString,
@@ -21,7 +21,9 @@ export const replaceRenderer = ({
 
   const element = (
     <CacheProvider value={myCache}>
-      <ThemeProvider theme={bristolTheme}>{bodyComponent}</ThemeProvider>
+      {/* <ThemeProvider theme={bristolTheme}> */}
+        {bodyComponent}
+      {/* </ThemeProvider> */}
     </CacheProvider>
   )
 
@@ -39,14 +41,12 @@ export const replaceRenderer = ({
   replaceBodyHTMLString(html)
 }
 
-export const wrapRootElement = ({ element, props }) => (
-  <>
-    <Layout {...props}>{element}</Layout>
-    <SEO />
-    <FacebookMessenger />
-  </>
-)
+// export const wrapRootElement = ({ element, props }) => (
+//   <>
+//     <Layout {...props}>{element}</Layout>
+//   </>
+// )
 
-wrapRootElement.propTypes = {
-  element: PropTypes.node.isRequired,
-}
+// wrapRootElement.propTypes = {
+//   element: PropTypes.node.isRequired,
+// }
