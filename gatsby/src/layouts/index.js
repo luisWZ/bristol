@@ -16,15 +16,15 @@ export default function Layout({ children }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-      <MenuProvider value={{menuOpen, setMenuOpen}}>
-        <ThemeProvider theme={bristolTheme}>
-          <GlobalStyles />
-          <Header />
-          <Main>{children}</Main>
-          <Footer />
-        </ThemeProvider>
-        <SEO />
-        {process.env.NODE_ENV !== 'development' && <FacebookMessenger />}
+    <ThemeProvider theme={bristolTheme}>
+      <GlobalStyles />
+      <MenuProvider value={{ menuOpen, setMenuOpen }}>
+        <Header />
+        <Main>{children}</Main>
+        <Footer />
       </MenuProvider>
+      <SEO />
+      {process.env.NODE_ENV !== 'development' && <FacebookMessenger />}
+    </ThemeProvider>
   )
 }

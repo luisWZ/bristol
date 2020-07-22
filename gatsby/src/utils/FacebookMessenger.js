@@ -20,7 +20,7 @@ const FacebookMessenger = React.memo(function FacebookMessenger() {
 
         FB.XFBML.parse()
 
-      }, 800)
+      }, 100)
     }
   }
 
