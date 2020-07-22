@@ -1,32 +1,57 @@
 import React, { useEffect } from 'react'
 
-export default function FacebookMessenger() {
-  useEffect(() => {
-    window.fbAsyncInit = function () {
-      /*global FB*/
-      FB.init({ xfbml: true, version: 'v7.0' })
+let promise
+
+const FacebookMessenger = React.memo(function FacebookMessenger() {
+  const timeoutRef = React.useRef()
+
+  const callBack = FB => {
+    if (timeoutRef.current !== null) {
+      timeoutRef.current = setTimeout(() => {
+        const el = document.createElement('div')
+        el.className = 'fb-customerchat'
+        el.setAttribute('attribution', 'setup_tool')
+        el.setAttribute('page_id', '126610007388768')
+        el.setAttribute('theme_color', '#0043CE')
+        el.setAttribute('logged_in_greeting', 'Hola ¿cómo podemos ayudarte?');
+        el.setAttribute('logged_out_greeting', 'Hola ¿cómo podemos ayudarte?');
+        el.setAttribute('minimized', 'true');
+        document.body.appendChild(el)
+
+        FB.XFBML.parse()
+
+      }, 800)
     }
-    ;(function (d, s, id) {
-      let js
-      if (d.getElementById(id)) return
-      js = d.createElement(s)
-      js.id = id
-      js.defer = true
-      js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js'
-      d.body.appendChild(js)
-    })(document, 'script', 'facebook-jssdk')
+  }
+
+  useEffect(() => {
+    if (promise) {
+      promise.then(callBack);
+
+    } else {
+
+      promise = new Promise(resolve => {
+            window.fbAsyncInit = () => {
+              window.FB.init({
+                appId: '252840179154396',
+                xfbml: false,
+                status: true,
+                cookie: true,
+                version: 'v7.0',
+              })
+              resolve(window.FB)
+            }
+
+            const js = document.createElement('script')
+            js.id = 'facebook-jssdk'
+            // js.async = true
+            js.src = `https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js`
+            document.body.appendChild(js)
+    })
+    promise.then(callBack);
+    }
   }, [])
-  return (
-    <>
-      <div id='fb-root' />
-      <div
-        className='fb-customerchat'
-        attribution='setup_tool'
-        page_id='126610007388768'
-        theme_color='#0043CE'
-        logged_in_greeting='Hola ¿cómo podemos ayudarte?'
-        logged_out_greeting='Hola ¿cómo podemos ayudarte?'
-      />
-    </>
-  )
-}
+  return null
+})
+
+export default FacebookMessenger
