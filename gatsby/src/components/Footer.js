@@ -75,7 +75,7 @@ export default function Footer() {
           @media (${theme.min640}) {
             padding-top: 6rem;
             flex-grow: 1;
-            h4 { padding-left: 0; }
+            h1 { padding-left: 0; }
             a { padding: 0.8rem 0; }
           }
           @media (${theme.min768}) {
@@ -88,10 +88,10 @@ export default function Footer() {
             }
           }
         `}>
-          <h4 css={theme => css`
+          <h1 className='h4' css={theme => css`
             padding-left: ${theme.gutter};
             margin-bottom: 1rem;
-          `}>Mapa del sitio</h4>
+          `}>Mapa del sitio</h1>
           <ul css={theme => css`
             @media (${theme.min768}) {
               display: flex;

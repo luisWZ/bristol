@@ -36,5 +36,37 @@ export default function CssModernReset() {
       margin-bottom: 0;
       font-style: normal;
     }
+    .h1 {
+      font-size: 2.25rem;
+      line-height: 3rem;
+    }
+    .h2 {
+      font-size: 1.83712rem;
+      line-height: 2.25rem;
+    }
+    .h3 {
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+    }
+    .h4 {
+      font-size: 1.14471rem;
+      line-height: 1.5rem;
+    }
+    .h5 {
+      font-size: 0.87358rem;
+      line-height: 1.5rem;
+    }
+    .h6 {
+      font-size: 0.76314rem;
+      line-height: 1.5rem;
+    }
+    /* use aria-label instead */
+    .screen-reader-text {
+      clip: rect(1px, 1px, 1px, 1px);
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+    }
   `
 }

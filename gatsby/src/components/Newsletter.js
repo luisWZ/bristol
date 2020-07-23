@@ -15,7 +15,7 @@ export default function Newsletter() {
         padding: 2.5rem ${theme.gutter};
         margin-bottom: -${theme.newsletterOffset};
       `}>
-      <h3 css={css`text-align: center;`}>Suscríbete a nuestro newsletter</h3>
+      <h1 className='h3' css={css`text-align: center;`}>Suscríbete a nuestro newsletter</h1>
       <form css={theme => css`
         display: flex;
         max-width: 48rem;

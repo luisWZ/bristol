@@ -12,14 +12,20 @@ export default function SocialLinks({ className }) {
   )
 }
 
-const socialLink = (url, children) => (
+const socialLink = (url, children, domain) => (
   function SocialLink() {
-    return <li><a href={url}>{children}</a></li>
+    return (
+      <li>
+        <a href={url} aria-label={`Página de ${domain}`}>
+          {children}
+        </a>
+      </li>
+    )
   }
 )
 
-const Facebook = socialLink('https://www.facebook.com/bristolinglesprofesional/', <FaFacebookF />)
-const Instagram = socialLink('https://www.instagram.com/bristolingles/', <FaInstagram />)
+const Facebook = socialLink('https://www.facebook.com/bristolinglesprofesional/', <FaFacebookF />, 'facebook')
+const Instagram = socialLink('https://www.instagram.com/bristolingles/', <FaInstagram />, 'instagram')
 
 const List = (props) => (
   <ul className={props.className} css={theme => css`

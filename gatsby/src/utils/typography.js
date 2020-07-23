@@ -1,12 +1,13 @@
 import Typography from 'typography'
 import bootstrapTheme from 'typography-theme-bootstrap'
+import CssVariables from '../styles/CssVariables'
 
 const overrides = {
   headerWeight: 700,
   bodyFontFamily: [`Roboto`, `sans-serif`],
   headerFontFamily: [`Poppins`, `sans-serif`],
   includeNormalize: false,
-  headerColor: '#394551',
+  headerColor: CssVariables.blueDark,
   googleFonts: [
     {
       name: `Roboto`,
@@ -19,7 +20,7 @@ const overrides = {
   ],
   overrideThemeStyles: () => ({
     p: {
-      color: '#5d6076',
+      color: CssVariables.black,
     },
   }),
 }

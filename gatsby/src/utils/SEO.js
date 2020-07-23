@@ -9,8 +9,8 @@ export default function SEO({ children }) {
       <title>{title}</title>
       <meta name='description' content={description} />
       <meta name='keywords' content={keywords} />
-      <link rel="preconnect" href='https://facebook.com' />
-      <link rel="dns-prefetch" href='https://facebook.com' />
+      <link rel="preconnect" href='https://connect.facebook.net' />
+      <link rel="preconnect" href='https://scontent.fmid4-1.fna.fbcdn.net' />
       {children}
     </Helmet>
   )

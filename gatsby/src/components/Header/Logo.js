@@ -6,7 +6,7 @@ import SvgBristolLogo from '../svgs/SvgBristolLogo'
 export default function Logo() {
   return (
     <LogoBox>
-      <Link to='/'>
+      <Link to='/' aria-label='Bristol Inglés Profesional Logo'>
         <LogoBristol />
       </Link>
     </LogoBox>

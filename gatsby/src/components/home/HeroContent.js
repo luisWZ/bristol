@@ -4,6 +4,60 @@ import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import { Container, Button } from '../styles/CssHelpers'
 
+// Components =========================================
+export default function HeroContent() {
+  const heroImg = useStaticQuery(graphql`
+    query {
+      file(relativePath: {eq: "home-hero.png"}) {
+        childImageSharp {
+          fluid(
+            maxWidth: 448
+            traceSVG: { background: "#fff", color: "#f2f4f8" }
+            ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
+    }
+  `).file.childImageSharp.fluid
+  return (
+    <Section>
+      <Container_ as='div'>
+        <TextBox>
+          <Slogan
+            data-sal='fade'
+            data-sal-duration='500'
+            data-sal-delay='100'
+            data-sal-easing='easeOutSine'
+          >
+            Speak a new language, discover a new world
+          </Slogan>
+          <Description
+            data-sal='slide-up'
+            data-sal-duration='600'
+            data-sal-delay='300'
+            data-sal-easing='easeOutQuart'
+          >
+            Somos profesionales en la enseñanza de inglés, nuestros maestros
+            cuentan con grados académicos y certificaciones internacionales como
+            maestros de inglés así como con una gran experiencia
+          </Description>
+          <Button_
+            as={Link}
+            to='/cursos'
+            data-sal='fade'
+            data-sal-duration='800'
+            data-sal-delay='800'
+            data-sal-easing='easeInOutCubic'
+          >
+            Nuestros cursos
+          </Button_>
+        </TextBox>
+        <Image fluid={heroImg} alt='Persona estudiando inglés' />
+      </Container_>
+    </Section>
+  )
+}
 //  styles ============================================
 const Section = styled.section`
   /* max-height: 832px; */
@@ -58,56 +112,3 @@ const Description = styled.p`
 const Button_ = styled(Button)`
   @media(${props => props.theme.max720 }) { width: 100%; }
 `
-export default function HeroContent() {
-  const heroImg = useStaticQuery(graphql`
-    query {
-      file(relativePath: {eq: "home-hero.png"}) {
-        childImageSharp {
-          fluid(
-            maxWidth: 448
-            traceSVG: { background: "#fff", color: "#f2f4f8" }
-            ) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
-        }
-      }
-    }
-  `).file.childImageSharp.fluid
-  return (
-    <Section>
-      <Container_ as='div'>
-        <TextBox>
-          <Slogan
-            data-sal='fade'
-            data-sal-duration='500'
-            data-sal-delay='100'
-            data-sal-easing='easeOutSine'
-          >
-            Speak a new language, discover a new world
-          </Slogan>
-          <Description
-            data-sal='slide-up'
-            data-sal-duration='600'
-            data-sal-delay='300'
-            data-sal-easing='easeOutQuart'
-          >
-            Somos profesionales en la enseñanza de inglés, nuestros maestros
-            cuentan con grados académicos y certificaciones internacionales como
-            maestros de inglés así como con una gran experiencia
-          </Description>
-          <Button_
-            as={Link}
-            to='/cursos'
-            data-sal='fade'
-            data-sal-duration='800'
-            data-sal-delay='800'
-            data-sal-easing='easeInOutCubic'
-          >
-            Nuestros cursos
-          </Button_>
-        </TextBox>
-        <Image fluid={heroImg} alt='Persona estudiando inglés' />
-      </Container_>
-    </Section>
-  )
-}

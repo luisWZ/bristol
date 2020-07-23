@@ -11,20 +11,31 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/images/`,
-        name: 'images'
+        name: 'images',
       },
     },
     'gatsby-plugin-emotion',
     'gatsby-plugin-layout',
-    // {
-    //   resolve: 'gatsby-plugin-emotion',
-    //   options: {
-    //     sourceMap: process.env.NODE_ENV === 'development' ? true : false,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-typography`,
-      options: { pathToConfigModule: `./src/utils/typography` },
+      options: {
+        pathToConfigModule: `./src/utils/typography`,
+        omitGoogleFont: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        classes: false,
+        events: false,
+        google: {
+          families: [
+            'Roboto',
+            'Poppins:700',
+          ],
+          // 'Poppins:700&display=swap',
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -39,7 +50,7 @@ module.exports = {
         icon: `static/bristol.png`,
       },
     },
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-scroll-reveal`,
   ],

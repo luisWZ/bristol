@@ -4,6 +4,28 @@ import styled from '@emotion/styled'
 import { Container, Title } from '../styles/CssHelpers'
 import services from '../../data/home-services.yaml'
 
+// Components =========================================
+const Service = ({ service }) => (
+  <ServiceBox>
+    <IconFaux></IconFaux>
+    <Header className='h3'>{service.title}</Header>
+    <p>{service.text}</p>
+    <Anchor href='/'>Saber más</Anchor>
+  </ServiceBox>
+)
+export default function OurServices() {
+  return (
+    <Container>
+      <Title>Nuestros servicios</Title>
+      <ServicesWrapper>
+        {services.map((service, index) => (
+          <Service service={service} key={`our_services${index}`} />
+        ))}
+      </ServicesWrapper>
+    </Container>
+  )
+}
+
 // Styles =============================================
 const ServicesWrapper = styled.div`
   display: flex;
@@ -50,7 +72,7 @@ const IconFaux = styled.span`
     float: none;
   }
 `
-const Header = styled.h3`
+const Header = styled.h1`
   margin-top: 1.25rem;
   margin-bottom: 0.8rem;
 `
@@ -60,24 +82,3 @@ const Anchor = styled.a`
   float: right;
   border-radius: ${props => props.theme.radius};
 `
-// Components =========================================
-const Service = ({ service }) => (
-  <ServiceBox>
-    <IconFaux></IconFaux>
-    <Header>{service.title}</Header>
-    <p>{service.text}</p>
-    <Anchor href='/'>Saber más</Anchor>
-  </ServiceBox>
-)
-export default function OurServices() {
-  return (
-    <Container>
-      <Title>Nuestros servicios</Title>
-      <ServicesWrapper>
-        {services.map((service, index) => (
-          <Service service={service} key={`our_services${index}`} />
-        ))}
-      </ServicesWrapper>
-    </Container>
-  )
-}

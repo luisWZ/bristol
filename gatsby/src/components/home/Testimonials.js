@@ -30,7 +30,7 @@ export default function Testimonials() {
 const Testimony = ({ testimony }) => (
   <Testimony_>
     <p>{testimony.text}</p>
-    <h4>{testimony.name}</h4>
+    <h1 className='h4'>{testimony.name}</h1>
     <img src={imgTmp} alt='' />
     <Icon />
   </Testimony_>
@@ -114,7 +114,7 @@ const Testimony_ = styled.div`
     max-width: ${maxWidth};
   }
 
-  h4 {
+  h1 {
     float: right;
   }
   p {

@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react'
+import CssVariables from '../styles/CssVariables'
 
 let promise
+const greeting = `Hola ¿cómo podemos ayudarte?`
+const config = {
+  appId: `252840179154396`,
+  page_id: `126610007388768`,
+}
 
 const FacebookMessenger = React.memo(function FacebookMessenger() {
   const timeoutRef = React.useRef()
@@ -10,12 +16,11 @@ const FacebookMessenger = React.memo(function FacebookMessenger() {
       timeoutRef.current = setTimeout(() => {
         const el = document.createElement('div')
         el.className = 'fb-customerchat'
-        el.setAttribute('attribution', 'setup_tool')
-        el.setAttribute('page_id', '126610007388768')
-        el.setAttribute('theme_color', '#0043CE')
-        el.setAttribute('logged_in_greeting', 'Hola ¿cómo podemos ayudarte?');
-        el.setAttribute('logged_out_greeting', 'Hola ¿cómo podemos ayudarte?');
-        el.setAttribute('minimized', 'true');
+        el.setAttribute('page_id', config.page_id)
+        el.setAttribute('theme_color', CssVariables.bristolBlue)
+        el.setAttribute('logged_in_greeting', greeting);
+        el.setAttribute('logged_out_greeting', greeting);
+        el.setAttribute('greeting_dialog_display', 'hide')
         document.body.appendChild(el)
 
         FB.XFBML.parse()
@@ -33,7 +38,7 @@ const FacebookMessenger = React.memo(function FacebookMessenger() {
       promise = new Promise(resolve => {
             window.fbAsyncInit = () => {
               window.FB.init({
-                appId: '252840179154396',
+                appId: config.appId,
                 xfbml: false,
                 status: true,
                 cookie: true,
