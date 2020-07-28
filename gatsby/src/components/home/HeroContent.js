@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { Container, Button } from '../styles/CssHelpers'
-import SvgHeroContent from '../svgs/SvgHeroContent'
+import SvgHomeHeroContent from '../svgs/SvgHomeHeroContent'
 
 // Components =========================================
 export default function HeroContent() {
@@ -79,7 +79,7 @@ const TextBox = styled.div`
     flex-basis: 53%;
   }
 `
-const Image = styled(SvgHeroContent)`
+const Image = styled(SvgHomeHeroContent)`
   flex-basis: 80%;
 
   @media(${props => props.theme.min720 }) {
