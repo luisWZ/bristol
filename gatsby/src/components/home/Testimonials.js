@@ -41,7 +41,6 @@ const CustomArrow = ({ currentSlide, slideCount, children, ...props }) => (
 const settings = {
   slidesToShow: 2,
   slidesToScroll: 2,
-  // adaptiveHeight: true,
   initialSlide: getRandomInt(testimonials.length),
   prevArrow: <CustomArrow><BsChevronLeft /></CustomArrow>,
   nextArrow: <CustomArrow><BsChevronRight /></CustomArrow>,
@@ -64,12 +63,13 @@ const Container_ = styled(Container)`
       &:before {
         content: none;
       }
-      background: transparent;
       border-radius: 50%;
       padding: 10px;
       transition: background-color 0.24s ease-in-out;
+      z-index: 1;
       width: ${width};
       height: ${width};
+      background-color: ${props => props.theme.bgGray};
       border: 1px solid ${props => props.theme.blueLight};
       svg {
         width: 100%;

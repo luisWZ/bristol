@@ -20,38 +20,37 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `./src/utils/typography`,
-        omitGoogleFont: true,
+        // omitGoogleFont: true,
       },
     },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        classes: false,
-        events: false,
-        google: {
-          families: [
-            'Roboto',
-            'Poppins:700',
-          ],
-          // 'Poppins:700&display=swap',
-        },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Bristol Escuela de Inglés`,
-        short_name: `Bristol`,
-        lang: `es-MX`,
-        start_url: `/`,
-        background_color: `#0043CE`,
-        theme_color: `#0043CE`,
-        display: `standalone`,
-        icon: `static/bristol.png`,
-      },
-    },
-    // `gatsby-plugin-offline`,
+    // {
+    //   resolve: 'gatsby-plugin-web-font-loader',
+    //   options: {
+    //     classes: false,
+    //     events: false,
+    //     google: {
+    //       families: [
+    //         'Roboto',
+    //         'Poppins:700',
+    //       ],
+    //     },
+    //   },
+    // },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-scroll-reveal`,
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Bristol Escuela de Inglés`,
+    //     short_name: `Bristol`,
+    //     lang: `es-MX`,
+    //     start_url: `/`,
+    //     background_color: `#0043CE`,
+    //     theme_color: `#0043CE`,
+    //     display: `standalone`,
+    //     icon: `static/bristol.png`,
+    //   },
+    // },
+    // `gatsby-plugin-offline`,
   ],
 }

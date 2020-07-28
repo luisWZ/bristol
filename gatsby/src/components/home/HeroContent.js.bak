@@ -1,11 +1,25 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import { Container, Button } from '../styles/CssHelpers'
-import SvgHeroContent from '../svgs/SvgHeroContent'
 
 // Components =========================================
 export default function HeroContent() {
+  const heroImg = useStaticQuery(graphql`
+    query {
+      file(relativePath: {eq: "home-hero.png"}) {
+        childImageSharp {
+          fluid(
+            maxWidth: 448
+            traceSVG: { background: "#fff", color: "#f2f4f8" }
+            ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
+    }
+  `).file.childImageSharp.fluid
   return (
     <Section>
       <Container_ as='div'>
@@ -39,8 +53,7 @@ export default function HeroContent() {
             Nuestros cursos
           </Button_>
         </TextBox>
-        <Image />
-
+        <Image fluid={heroImg} alt='Persona estudiando inglés' />
       </Container_>
     </Section>
   )
@@ -79,7 +92,7 @@ const TextBox = styled.div`
     flex-basis: 53%;
   }
 `
-const Image = styled(SvgHeroContent)`
+const Image = styled(Img)`
   flex-basis: 80%;
 
   @media(${props => props.theme.min720 }) {
