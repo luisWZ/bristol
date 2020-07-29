@@ -4,56 +4,6 @@ import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import { Button } from '../styles/CssHelpers'
 
-// Styles definitions =================================
-const Section = styled.section`
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-between;
-  padding-top: 2rem;
-  @media(${props => props.theme.min640}) {
-    flex-direction: row;
-
-    > div {
-      flex-basis: 48%;
-
-      &:first-of-type { margin-bottom: 0; }
-    }
-  }
-  @media(${props => props.theme.min640}) {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 86rem;
-  }
-  > div:first-of-type {
-    margin-bottom: 2rem;
-  }
-`
-const CourseBox = styled.div`
-  height: 32vw;
-  min-height: 320px;
-  max-height: 420px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background-color: ${props => props.theme.bristolBlue };
-`
-const ImageBox = {
-  position: 'absolute',
-  width: '100%',
-  height: '100%',
-  top: '0',
-  left: '0',
-}
-const TextBox = styled.div`
-  max-width: 250px;
-  z-index: 1;
-
-  h2 {
-    color: white;
-    text-shadow: 4px 3px 3px hsla(220, 50%, 20%, 0.6);
-  }
-`
 // Components =========================================
 const courses = [
   { link: 'cursos', name: 'Cursos Generales'},
@@ -106,3 +56,53 @@ export default function FeaturedCourses() {
     </Section>
   );
 }
+// Styles definitions =================================
+const Section = styled.section`
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  padding-top: 5rem;
+  @media(${props => props.theme.min640}) {
+    flex-direction: row;
+
+    > div {
+      flex-basis: 48%;
+
+      &:first-of-type { margin-bottom: 0; }
+    }
+  }
+  @media(${props => props.theme.min640}) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 86rem;
+  }
+  > div:first-of-type {
+    margin-bottom: 2rem;
+  }
+`
+const CourseBox = styled.div`
+  height: 32vw;
+  min-height: 320px;
+  max-height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: ${props => props.theme.bristolBlue };
+`
+const ImageBox = {
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
+  top: '0',
+  left: '0',
+}
+const TextBox = styled.div`
+  max-width: 250px;
+  z-index: 1;
+
+  h2 {
+    color: white;
+    text-shadow: 4px 3px 3px hsla(220, 50%, 20%, 0.6);
+  }
+`
