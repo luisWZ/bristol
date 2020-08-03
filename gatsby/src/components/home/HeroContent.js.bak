@@ -53,7 +53,7 @@ export default function HeroContent() {
             Nuestros cursos
           </Button_>
         </TextBox>
-        <Image fluid={heroImg} alt='Persona estudiando inglés' />
+        <Image fluid={heroImg} alt='Mujer sentada con lentes en un jardín' />
       </Container_>
     </Section>
   )

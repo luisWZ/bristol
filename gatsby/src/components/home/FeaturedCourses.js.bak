@@ -1,19 +1,18 @@
 import React from "react";
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import { Button } from '../styles/CssHelpers'
-import cursosSvg from '../../images/home-cursos-generales.svg'
-import examenesSvg from '../../images/home-examenes-internacionales.svg'
 
 // Components =========================================
 const courses = [
-  { link: 'cursos', name: 'Cursos Generales', image: cursosSvg},
-  { link: 'examenes', name: 'Exámenes Internacionales', image: examenesSvg},
+  { link: 'cursos', name: 'Cursos Generales'},
+  { link: 'examenes', name: 'Exámenes Internacionales'},
 ]
 
 const Course = ({ course, image }) => (
   <CourseBox>
-    <img src={course.image} style={ImageBox} alt='' />
+    <Img fluid={image} style={ImageBox} />
     <TextBox
       data-sal='slide-up'
       data-sal-duration='600'
@@ -29,11 +28,29 @@ const Course = ({ course, image }) => (
 )
 
 export default function FeaturedCourses() {
+  const images = useStaticQuery(graphql`
+    query {
+      cursos: file(relativePath: { eq: "home-cursos-generales.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 660) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      examenes: file(relativePath: { eq: "home-examenes-internacionales.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 660) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+    }
+  `)
   return (
     <Section>
       {courses.map((course, index) => (
         <Course key={`featured_courses${index}`} course={course}
-          image={course.link}
+          image={images[course.link].childImageSharp.fluid}
         />
       ))}
     </Section>
@@ -71,7 +88,7 @@ const CourseBox = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: ${props => props.theme.purple };
+  background-color: ${props => props.theme.bristolBlue };
 `
 const ImageBox = {
   position: 'absolute',

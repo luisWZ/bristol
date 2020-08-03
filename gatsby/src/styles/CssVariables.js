@@ -11,6 +11,7 @@ export default {
   blueDark: '#394551',
   blueLight: '#0f62fe',
   blueGray: '#b6bdca',
+  purple: '#2A2DA1',
   pink: '#FA4D56',
   bgGray: '#f2f4f8',
   bgWhite: 'white',

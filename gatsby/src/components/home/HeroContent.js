@@ -39,7 +39,12 @@ export default function HeroContent() {
             Nuestros cursos
           </Button_>
         </TextBox>
-        <Image />
+        <Image
+          data-sal='fade'
+          data-sal-duration='1000'
+          data-sal-delay='300'
+          data-sal-easing='easeInOutCubic'
+         />
 
       </Container_>
     </Section>
