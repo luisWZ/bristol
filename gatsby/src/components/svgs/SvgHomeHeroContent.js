@@ -19,7 +19,7 @@ export default function SvgHomeHeroContent(props) {
       />
       <mask
         id='mask0'
-        maskType='alpha'
+        mask-type='alpha'
         maskUnits='userSpaceOnUse'
         x='561'
         y='0'
@@ -292,7 +292,7 @@ export default function SvgHomeHeroContent(props) {
       />
       <mask
         id='mask1'
-        maskType='alpha'
+        mask-type='alpha'
         maskUnits='userSpaceOnUse'
         x='239'
         y='497'

@@ -1,25 +1,39 @@
 import React from 'react'
 import styled from '@emotion/styled'
-
+import { graphql, useStaticQuery } from 'gatsby'
 import { Container, Title } from '../styles/CssHelpers'
-import services from '../../data/home-services.yaml'
 
 // Components =========================================
 const Service = ({ service }) => (
   <ServiceBox>
-    <IconFaux></IconFaux>
+    <Icon src={service.svg.publicURL}></Icon>
     <Header className='h3'>{service.title}</Header>
     <p>{service.text}</p>
     <Anchor href='/'>Saber más</Anchor>
   </ServiceBox>
 )
 export default function OurServices() {
+  const data = useStaticQuery(graphql`
+    query HOME_SERVICES_QUERY {
+      allHomeServicesYaml {
+        edges {
+          node {
+            svg {
+              publicURL
+            }
+            text
+            title
+          }
+        }
+      }
+    }
+  `).allHomeServicesYaml.edges
   return (
     <Container>
       <Title>Nuestros servicios</Title>
       <ServicesWrapper>
-        {services.map((service, index) => (
-          <Service service={service} key={`our_services${index}`} />
+        {data.map((service, index) => (
+          <Service service={service.node} key={`our_services${index}`} />
         ))}
       </ServicesWrapper>
     </Container>
@@ -59,14 +73,12 @@ const ServiceBox = styled.div`
       }
     }
 `
-const IconFaux = styled.span`
+const Icon = styled.img`
   width: calc(54px + 2vw);
   height: calc(54px + 2vw); /* // once an image will be auto */
   display: block;
-  border-radius: 50%;
   float: right;
   margin-bottom: 1rem;
-  background-color: ${props => props.theme.pink};
 
   @media (${props => props.theme.min640}) {
     float: none;

@@ -1,6 +1,8 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
-import { BsChevronLeft, BsChevronRight, BsChatSquareQuote } from 'react-icons/bs'
+// import { BsChevronLeft, BsChevronRight, BsChatSquareQuote } from 'react-icons/bs'
+import { BsChatSquareQuote } from 'react-icons/bs'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import "slick-carousel/slick/slick-theme.css"
@@ -8,22 +10,33 @@ import "slick-carousel/slick/slick-theme.css"
 import { Container, Title } from '../styles/CssHelpers'
 import { getRandomInt } from '../../utils/helpers'
 import CssVariables from '../styles/CssVariables'
-import testimonials from '../../data/home-testimonials.yaml'
-import imgTmp from '../../images/nuestros-servicios.png'
+import testimonyImg from '../../images/nuestros-servicios.png'
 
 // Components =========================================
 export default function Testimonials() {
+  const data = useStaticQuery(graphql`
+    query HOME_TESTIMONIALS_QUERY {
+      allHomeTestimonialsYaml {
+        edges {
+          node {
+            name
+            text
+          }
+        }
+      }
+    }
+  `).allHomeTestimonialsYaml.edges
   return (
     <Container_>
       <Title>Testimonios</Title>
-        <Slider {...settings}>
-          {testimonials.map((testimony, index) => (
-            <Testimony
-              key={`home_testimonial${index}`}
-              {...{ testimony }}
-            />
-          ))}
-        </Slider>
+      <Slider {...{ ...settings, initialSlide: getRandomInt(data.length) }}>
+        {data.map((testimony, index) => (
+          <Testimony
+            key={`home_testimonial${index}`}
+            testimony={testimony.node}
+          />
+        ))}
+      </Slider>
     </Container_>
   )
 }
@@ -31,19 +44,19 @@ const Testimony = ({ testimony }) => (
   <Testimony_>
     <p>{testimony.text}</p>
     <h1 className='h4'>{testimony.name}</h1>
-    <img src={imgTmp} alt='' />
+    <img src={testimonyImg} alt='' />
     <Icon />
   </Testimony_>
 )
-const CustomArrow = ({ currentSlide, slideCount, children, ...props }) => (
-  <span {...props}>{children}</span>
-)
+// const CustomArrow = ({ currentSlide, slideCount, children, ...props }) => (
+//   <span {...props}>{children}</span>
+// )
 const settings = {
   slidesToShow: 2,
   slidesToScroll: 2,
-  initialSlide: getRandomInt(testimonials.length),
-  prevArrow: <CustomArrow><BsChevronLeft /></CustomArrow>,
-  nextArrow: <CustomArrow><BsChevronRight /></CustomArrow>,
+  arrows: false,
+  // prevArrow: <CustomArrow><BsChevronLeft /></CustomArrow>,
+  // nextArrow: <CustomArrow><BsChevronRight /></CustomArrow>,
   responsive: [
     {
       breakpoint: (CssVariables.max848.split(' ')).slice(-1).pop(),

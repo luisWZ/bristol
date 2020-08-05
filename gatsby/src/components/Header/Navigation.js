@@ -15,7 +15,6 @@ export default function Navigation() {
       <NavAnchor to='/cursos'>Cursos<AiOutlineRight /></NavAnchor>
       <NavAnchor to='/examenes'>Exámenes<AiOutlineRight /></NavAnchor>
       <NavAnchor to='/centro-examinador'>Centro Examinador<AiOutlineRight /></NavAnchor>
-      <NavAnchor to='/contacto'>Contacto<AiOutlineRight /></NavAnchor>
     </NavBox>
   )
 }
