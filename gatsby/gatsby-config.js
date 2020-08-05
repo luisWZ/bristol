@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.contentful`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Bristol Inglés Profesional`,
@@ -46,19 +50,19 @@ module.exports = {
     // },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-scroll-reveal`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `Bristol Escuela de Inglés`,
-    //     short_name: `Bristol`,
-    //     lang: `es-MX`,
-    //     start_url: `/`,
-    //     background_color: `#0043CE`,
-    //     theme_color: `#0043CE`,
-    //     display: `standalone`,
-    //     icon: `static/bristol.png`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Bristol Escuela de Inglés`,
+        short_name: `Bristol`,
+        lang: `es-MX`,
+        start_url: `/`,
+        background_color: `#0043CE`,
+        theme_color: `#0043CE`,
+        display: `standalone`,
+        icon: `static/bristol.png`,
+      },
+    },
     // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-react-svg`,
@@ -66,6 +70,13 @@ module.exports = {
         rule: {
           include: /\.inline\.svg$/,
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],

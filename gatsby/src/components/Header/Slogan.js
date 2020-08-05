@@ -13,7 +13,7 @@ export default function Slogan() {
 
 const SloganInglesMuyInglesBox = styled.div`
   display: none;
-  @media (${props => props.theme.min1200}) {
+  @media (${props => props.theme.min960}) {
     align-self: stretch;
     grid-column-end: -2;
     display: flex;

@@ -14,7 +14,8 @@
 ☐ focus bg a newsletter
 ☐ implementacion newsletter
 ☐ useOnClickOutside need some work
-☐ Parsear los yaml por GraphQl
+✔ Parsear los yaml por GraphQl @done(20-08-05 12:49)
+☐ webHook for contenful & bitbucket
 
   Macros
 ☐ hacer macros con snippets para mediaqueries

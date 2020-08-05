@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import "slick-carousel/slick/slick-theme.css"
+import { FaQuoteRight } from 'react-icons/fa'
 
 import { Container, Title } from '../styles/CssHelpers'
 import { getRandomInt } from '../../utils/helpers'
@@ -47,6 +48,7 @@ const Testimony = ({ testimony }) => (
       {testimony.icon === 'girl' ? <IconGirl /> : <IconBoy />}
       <h1 className='h4'>{testimony.name}</h1>
     </Cite>
+    <Icon />
   </Testimony_>
 )
 const settings = {
@@ -130,6 +132,8 @@ const Testimony_ = styled.div`
   }
   p {
     width: 90%;
+    position: relative;
+    z-index: 1;
     /* min-height: 120px; */
 
     &:before {
@@ -143,4 +147,12 @@ const Testimony_ = styled.div`
 const Cite = styled.div`
   display: flex;
   align-items: center;
+`
+const Icon = styled(FaQuoteRight)`
+  position: absolute;
+  top: 0.8rem;
+  right: 1.8rem;
+  width: 5.8rem;
+  transform: scaleY(-1);
+  fill: hsla(220, 29%, 90%, .4);
 `

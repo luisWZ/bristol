@@ -1,40 +1,30 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 import styled from '@emotion/styled'
-
 import { Container, Title, Button } from '../styles/CssHelpers'
-import courses from '../../data/home-courses.yaml'
-import CssVariables from '../../styles/CssVariables'
 
 // Components =========================================
-let image = {}
 
 const Course = ({ course }) => {
-  const { tag, title, dates, time, start, location } = course
+  const { courseType, courseName, sessionDate, sessionTime, startingDate, campus, image } = course
 
   return (
     <CourseBox>
-      <ImageLink to='/' aria-label={`Curso: ${title}`}>
-        <Img
-          fixed={image}
-          style={ImageBox}
-          imgStyle={ImageImage}
-          Tag='span'
-        />
+      <ImageLink to='/' aria-label={`Curso: ${courseName}`}>
+        <Image src={image.file.url} alt='' />
       </ImageLink>
       <TextBox>
-        <Small>{tag}</Small>
-        <h1 className='h3'>{title}</h1>
+        <Small>{courseType}</Small>
+        <h1 className='h3'>{courseName}</h1>
         <p>
-          {dates}
+          {sessionDate}
           <br />
-          {time}
+          {sessionTime}
         </p>
         <Small>
-          Inicio: {start}
+          Inicio: {startingDate}
           <br />
-          Campus: {location}
+          Campus: {campus}
         </Small>
       </TextBox>
       <Button_ noRadius widthFull blue href='/'>
@@ -44,26 +34,33 @@ const Course = ({ course }) => {
   )
 }
 export default function ComingCourses() {
-  image = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "bristol-ninos.png" }) {
-        childImageSharp {
-          fixed(
-            width: 340
-            height: 240
-            ) {
-            ...GatsbyImageSharpFixed_withWebp
+  const data = useStaticQuery(graphql`
+    query CONTENFUL_COURSES_QUERY {
+      allContentfulCourses(limit: 9, sort: { fields: startingDate }) {
+        nodes {
+          id
+          courseType
+          courseName
+          sessionDate
+          sessionTime
+          startingDate(formatString: "D [de] MMMM YYYY", locale: "es-MX")
+          campus
+          image {
+            file {
+              url
+            }
           }
         }
       }
     }
-  `).file.childImageSharp.fixed
-  return(
+  `).allContentfulCourses.nodes
+
+  return (
     <Container>
       <Title>Próximos cursos</Title>
       <CoursesWrapper>
-        {courses.map((course, index) => (
-          <Course course={course} key={`home_course${index}`} />
+        {data.map(course => (
+          <Course {...{ course }} key={course.id} />
         ))}
       </CoursesWrapper>
     </Container>
@@ -72,8 +69,9 @@ export default function ComingCourses() {
 // Styles definitions =================================
 const CoursesWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px , 320px));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
   gap: 3vw;
+  justify-content: center;
 
   @media (${props => props.theme.min960}) {
     grid-template-columns: repeat(3, 1fr);
@@ -101,24 +99,18 @@ const ImageLink = styled(Link)`
   height: 0;
   overflow: hidden;
 `
-const ImageBox = {
-  position: 'absolute',
-  top: '0',
-  left: '0',
-  width: '100%',
-  height: '100%',
-  objectFit: 'cover',
-  backgroundColor: CssVariables.blueGray,
-}
-const ImageImage = {
-  transition: 'transform .32s ease-in-out'
-}
+const Image = styled.img`
+  object-fit: cover;
+  width: 100%;
+  transition: transform .32s ease-in-out;
+  background-color: ${props => props.theme.blueGray};
+`
 const TextBox = styled.div`
   padding: 1rem 1rem 0.5rem;
 
   h1 {
-    margin-bottom: calc(.75rem + 0.1vw);
-    transition: color .24s ease;
+    margin-bottom: calc(0.75rem + 0.1vw);
+    transition: color 0.24s ease;
 
     + p {
       color: ${props => props.theme.black};
@@ -136,7 +128,9 @@ const TextBox = styled.div`
 `
 const Small = styled.p`
   color: ${props => props.theme.gray};
-  && { font-size: 90%; }
+  && {
+    font-size: 90%;
+  }
 `
 const Button_ = styled(Button)`
   @media (${props => props.theme.min768}) {
