@@ -11,6 +11,7 @@ export const Container = styled.section`
   }
 `
 export const Title = styled.h1`
+  text-align: center;
   transition: color .24s ease-in;
   margin-top: 4rem;
   &:hover {

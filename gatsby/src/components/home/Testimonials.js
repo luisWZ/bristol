@@ -1,8 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
-// import { BsChevronLeft, BsChevronRight, BsChatSquareQuote } from 'react-icons/bs'
-import { BsChatSquareQuote } from 'react-icons/bs'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import "slick-carousel/slick/slick-theme.css"
@@ -10,7 +8,8 @@ import "slick-carousel/slick/slick-theme.css"
 import { Container, Title } from '../styles/CssHelpers'
 import { getRandomInt } from '../../utils/helpers'
 import CssVariables from '../styles/CssVariables'
-import testimonyImg from '../../images/nuestros-servicios.png'
+import IconBoy from '../../images/testimonial-boy.inline.svg'
+import IconGirl from '../../images/testimonial-girl.inline.svg'
 
 // Components =========================================
 export default function Testimonials() {
@@ -21,6 +20,7 @@ export default function Testimonials() {
           node {
             name
             text
+            icon
           }
         }
       }
@@ -43,20 +43,16 @@ export default function Testimonials() {
 const Testimony = ({ testimony }) => (
   <Testimony_>
     <p>{testimony.text}</p>
-    <h1 className='h4'>{testimony.name}</h1>
-    <img src={testimonyImg} alt='' />
-    <Icon />
+    <Cite>
+      {testimony.icon === 'girl' ? <IconGirl /> : <IconBoy />}
+      <h1 className='h4'>{testimony.name}</h1>
+    </Cite>
   </Testimony_>
 )
-// const CustomArrow = ({ currentSlide, slideCount, children, ...props }) => (
-//   <span {...props}>{children}</span>
-// )
 const settings = {
   slidesToShow: 2,
   slidesToScroll: 2,
   arrows: false,
-  // prevArrow: <CustomArrow><BsChevronLeft /></CustomArrow>,
-  // nextArrow: <CustomArrow><BsChevronRight /></CustomArrow>,
   responsive: [
     {
       breakpoint: (CssVariables.max848.split(' ')).slice(-1).pop(),
@@ -114,6 +110,7 @@ const Testimony_ = styled.div`
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  background-color: white;
   max-width: ${maxWidth};
   border-radius: ${props => props.theme.radius};
 
@@ -128,10 +125,13 @@ const Testimony_ = styled.div`
   }
 
   h1 {
-    float: right;
+    margin-left: 1rem;
+    margin-bottom: 0;
   }
   p {
     width: 90%;
+    /* min-height: 120px; */
+
     &:before {
         content: "« ";
     }
@@ -140,11 +140,7 @@ const Testimony_ = styled.div`
     }
   }
 `
-const Icon = styled(BsChatSquareQuote)`
-  position: absolute;
-  top: 0.8rem;
-  right: 1.8rem;
-  width: 6.6rem;
-  fill: hsla(220, 29%, 90%, .6);
-  z-index: -1;
+const Cite = styled.div`
+  display: flex;
+  align-items: center;
 `
