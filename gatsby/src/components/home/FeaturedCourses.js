@@ -11,7 +11,7 @@ const courses = [
   { link: 'examenes', name: 'Exámenes Internacionales', image: examenesSvg},
 ]
 
-const Course = ({ course, image }) => (
+const Course = ({ course }) => (
   <CourseBox>
     <img src={course.image} style={ImageBox} alt='' />
     <TextBox

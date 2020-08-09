@@ -9,8 +9,8 @@ import { FaQuoteRight } from 'react-icons/fa'
 import { Container, Title } from '../styles/CssHelpers'
 import { getRandomInt } from '../../utils/helpers'
 import CssVariables from '../styles/CssVariables'
-import IconBoy from '../../images/testimonial-boy.inline.svg'
-import IconGirl from '../../images/testimonial-girl.inline.svg'
+import IconBoy from '../../inline-svg/testimonial-boy.svg'
+import IconGirl from '../../inline-svg/testimonial-girl.svg'
 
 // Components =========================================
 export default function Testimonials() {

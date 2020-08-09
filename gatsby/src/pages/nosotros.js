@@ -1,5 +1,12 @@
 import React from 'react'
+import ComingCourses from '../components/ComingCourses'
+import NosotrosPage from '../components/nosotros'
 
 export default function Nosotros() {
-  return <h1 style={{padding: '7rem 2vw 0'}}>Nosotros</h1>
+  return (
+  <>
+    <NosotrosPage />
+    <ComingCourses />
+  </>
+  )
 }

@@ -14,6 +14,7 @@ export default function Navigation() {
       <NavAnchor to='/nosotros'>Nosotros<AiOutlineRight /></NavAnchor>
       <NavAnchor to='/cursos'>Cursos<AiOutlineRight /></NavAnchor>
       <NavAnchor to='/examenes'>Centro Examinador<AiOutlineRight /></NavAnchor>
+      <NavAnchor to='/cursos/course-detail'>Course Detail<AiOutlineRight /></NavAnchor>
     </NavBox>
   )
 }
@@ -44,7 +45,8 @@ const NavBox = styled.div`
   @media (${props => props.theme.min848}) {
     grid-row: 2 / 3;
     grid-auto-flow: column;
-    grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_1wordNav} ${_2wordNav} ${_1wordNav}`}
+    grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_2wordNav} ${_2wordNav}`}
+    /* grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_1wordNav} ${_2wordNav} ${_1wordNav}`} */
   }
 `
 const NavAnchor = styled(Link)`

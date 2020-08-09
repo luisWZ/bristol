@@ -52,12 +52,9 @@ export default function HeroContent() {
 }
 //  styles ============================================
 const Section = styled.section`
-  /* max-height: 832px; */
-  /* height: 100vh; */
   background-color: white;
   min-height: 640px;
   display: flex;
-  justify-content: space-around;
   padding-top: 7rem;
   padding-bottom: 2rem;
 `

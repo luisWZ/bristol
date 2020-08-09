@@ -1,13 +1,13 @@
 import React from 'react'
 import {graphql, useStaticQuery } from 'gatsby'
-import { Container, Title } from '../styles/CssHelpers'
-import Courses from '../Courses'
+import { Container, Title } from './styles/CssHelpers'
+import Courses from './Courses'
 
 // Components =========================================
-export default function ComingCoursesHome() {
+export default function ComingCourses() {
   const data = useStaticQuery(graphql`
-    query COMING_COURSES_HOME_QUERY {
-      allContentfulCourses(limit: 9, sort: { fields: startingDate }) {
+    query COMING_COURSES_QUERY {
+      allContentfulCourses(limit: 3, sort: { fields: startingDate }) {
         nodes {
           id
           courseType

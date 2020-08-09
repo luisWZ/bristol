@@ -5,6 +5,8 @@ export default {
   // common ===========================================
   radius: '4px',
   gutter: '4vw',
+  gap: '3vw',
+  sectionSpace: '5rem',
   // colors ===========================================
   bristolBlue: '#0043CE',
   bristolRed: '#DA1E28',

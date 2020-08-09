@@ -75,7 +75,7 @@ const ServiceBox = styled.div`
 `
 const Icon = styled.img`
   width: calc(54px + 2vw);
-  height: calc(54px + 2vw); /* // once an image will be auto */
+  height: calc(54px + 2vw);
   display: block;
   float: right;
   margin-bottom: 1rem;
