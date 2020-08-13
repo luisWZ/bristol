@@ -1,6 +1,8 @@
 import React from 'react'
-import { Container } from '../styles/CssHelpers'
+import HeroContent from '../HeroContent'
+import { Section, Container } from '../styles/CssHelpers'
 import ContainerWhite from '../styles/ContainerWhite'
+
 import IlustracionBicicleta from '../../inline-svg/ilustracion-bicicleta.svg'
 import PictogramaFilosofiaInstitucional from '../../inline-svg/pictograma-filosofia-institucional.svg'
 import PictogramaConversacion from '../../inline-svg/pictograma-conversacion.svg'
@@ -15,17 +17,15 @@ import LogoCambridgeAssesmentEnglish from '../../inline-svg/logo-cambridge-asses
 import LogoCambridgePreparationCentre from '../../inline-svg/logo-cambridge-preparation-centre.svg'
 import LogoTheAnglo from '../../inline-svg/logo-the-anglo.svg'
 import LogoGreatPlaceToWork from '../../inline-svg/logo-great-place-to-work.svg'
-import Diagram from '../../images/cefr-diagram-december-2020.png'
+// import Diagram from '../../images/cefr-diagram-december-2020.png'
 
 export default function NosotrosPage() {
   return (
     <>
-      <section>
-        <h1>
-          Una de las principales fortalezas de Bristol es su personal académico
-        </h1>
-        <IlustracionBicicleta />
-      </section>
+      <HeroContent
+        mainText='Una de las principales fortalezas de Bristol es su personal académico'
+        image={IlustracionBicicleta}
+      />
       <Container>
         <div>
           <h1 className='h3'>
@@ -102,7 +102,7 @@ export default function NosotrosPage() {
             idiomas que se hablan en el mundo.
           </p>
         </div>
-        <Diagram />
+        {/* <Diagram /> */}
         <img src='' alt='' />
         <div>
           <h1>Nuestros docentes</h1>

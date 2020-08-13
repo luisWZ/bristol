@@ -1,12 +1,33 @@
 require('dotenv').config({
   path: `.env.contentful`,
 })
+const loadOnProduction = () => {
+  if (!process.env !== 'development') {
+    return {
+      resolve: `gatsby-plugin-web-font-loader`,
+      options: {
+        classes: false,
+        events: false,
+        google: {
+          families: [
+            'Roboto',
+            'Poppins:700',
+          ],
+        },
+      },
+    }
+  }
+  return null
+}
+const { title, description, keywords, lang, short_name } = require('./siteConfig')
+const { bristolBlue } = require('./src/components/styles/CssVariables')
 
 module.exports = {
   siteMetadata: {
-    title: `Bristol Inglés Profesional`,
-    description: `Nos comprometemos con la calidad y la innovación, manteniéndonos a la vanguardia en la enseñanza de inglés. Contamos con docentes profesionales con los más altos grados académicos y certificaciones internacionales en lengua inglesa.`,
-    keywords: `inglés, ingles, veracruz, xalapa, coatepec, adolescentes, niños, estudiar, aprender, cambridgem, esol, certificaciones, internacional, intercambios, universidad, bristol, english, canada, londres, london, england, inglaterra`,
+    title,
+    description,
+    keywords,
+    lang,
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -32,33 +53,21 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `./src/utils/typography`,
-        // omitGoogleFont: true,
+        omitGoogleFont: process.env.NODE_ENV !== 'development',
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-web-font-loader',
-    //   options: {
-    //     classes: false,
-    //     events: false,
-    //     google: {
-    //       families: [
-    //         'Roboto',
-    //         'Poppins:700',
-    //       ],
-    //     },
-    //   },
-    // },
+    loadOnProduction(),
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-scroll-reveal`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Bristol Escuela de Inglés`,
-        short_name: `Bristol`,
-        lang: `es-MX`,
+        name: title,
+        short_name,
+        lang,
         start_url: `/`,
-        background_color: `#0043CE`,
-        theme_color: `#0043CE`,
+        background_color: bristolBlue,
+        theme_color: bristolBlue,
         display: `standalone`,
         icon: `static/bristol.png`,
       },

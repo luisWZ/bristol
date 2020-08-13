@@ -1,5 +1,15 @@
 import styled from '@emotion/styled'
 
+export const Section = styled.section`
+  background-color: white;
+  ${props => props.top && `
+      min-height: 640px;
+      display: flex;
+      padding-top: 7rem;
+      padding-bottom: 2rem;
+    `
+  }
+`
 export const Container = styled.section`
   margin-left: ${props => props.theme.gutter};
   margin-right: ${props => props.theme.gutter};

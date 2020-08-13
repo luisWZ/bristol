@@ -5,7 +5,7 @@ import { MenuProvider } from '../utils/menuContext'
 import GlobalStyles, { Main } from './GlobalStyles'
 
 import bristolTheme from '../styles/CssVariables'
-import SEO from '../utils/SEO'
+import HtmlHeader from '../utils/HtmlHeader'
 import FacebookMessenger from '../utils/FacebookMessenger'
 
 import Header from '../components/Header'
@@ -23,7 +23,7 @@ export default function Layout({ children }) {
         <Main>{children}</Main>
         <Footer />
       </MenuProvider>
-      <SEO />
+      <HtmlHeader />
       {process.env.NODE_ENV !== 'development' && <FacebookMessenger />}
     </ThemeProvider>
   )

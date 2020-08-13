@@ -2,10 +2,10 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useSiteMetadata } from './UseSiteMetadata'
 
-export default function SEO({ children }) {
-  const { title, description, keywords } = useSiteMetadata()
+export default function HtmlHeader({ children }) {
+  const { title, description, keywords, lang } = useSiteMetadata()
   return (
-    <Helmet htmlAttributes={{ lang: 'es-MX' }}>
+    <Helmet htmlAttributes={{ lang }}>
       <title>{title}</title>
       <meta name='description' content={description} />
       <meta name='keywords' content={keywords} />
