@@ -1,5 +1,6 @@
 import React from 'react'
 import {graphql, useStaticQuery } from 'gatsby'
+import { css } from '@emotion/core'
 import { Container, Title } from './styles/CssHelpers'
 import Courses from './Courses'
 
@@ -27,9 +28,9 @@ export default function ComingCourses() {
   `).allContentfulCourses.nodes
 
   return (
-    <Container>
+    <Container css={css`margin-bottom: 4rem;`}>
       <Title>Próximos cursos</Title>
-      <Courses {...{ data }} />
+      <Courses {...{ data }} commingCourses />
     </Container>
   )
 }

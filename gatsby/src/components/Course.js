@@ -5,7 +5,15 @@ import { Button } from './styles/CssHelpers'
 
 // Component ==========================================
 export default function Course({ course }) {
-  const { courseType, courseName, sessionDate, sessionTime, startingDate, campus, image } = course
+  const {
+    courseType,
+    courseName,
+    sessionDate,
+    sessionTime,
+    startingDate,
+    campus,
+    image,
+  } = course
 
   return (
     <CourseBox>

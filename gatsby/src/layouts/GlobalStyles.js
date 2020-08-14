@@ -17,6 +17,8 @@ export default function GlobalStyles() {
 export const Main = styled.main`
   min-height: 100vh;
   background-color: ${props => props.theme.bgGray};
+  padding-bottom: ${props => props.theme.newsletterOffset};
+  margin-bottom: -${props => props.theme.newsletterOffset};
 `
 export const Overlay = styled.div`
   position: absolute;

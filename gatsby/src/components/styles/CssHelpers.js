@@ -1,18 +1,17 @@
+import React from 'react'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 export const Section = styled.section`
   background-color: white;
-  ${props => props.top && `
-      min-height: 640px;
-      display: flex;
-      padding-top: 7rem;
-      padding-bottom: 2rem;
-    `
-  }
 `
 export const Container = styled.section`
   margin-left: ${props => props.theme.gutter};
   margin-right: ${props => props.theme.gutter};
+  ${props => props.padding && `
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  `}
 
   @media (${props => props.theme.min1200}) {
     margin-left: auto;
@@ -20,12 +19,27 @@ export const Container = styled.section`
     max-width: 70rem; // 1120px
   }
 `
+export function ContainerWhite({ children }) {
+  return (
+    <section css={css`background-color: white;`}>
+      <Container as='div'>{children}</Container>
+    </section>
+  )
+}
 export const Title = styled.h1`
   text-align: center;
   transition: color .24s ease-in;
   margin-top: 4rem;
   &:hover {
     color: ${props => props.theme.black};
+  }
+`
+export const Subtitle = styled.h1`
+  margin-top: 2rem;
+
+  @media (${props => props.theme.max480}) {
+    font-size:1.25rem;
+    line-height: 1.25;
   }
 `
 export const Button = styled.a`

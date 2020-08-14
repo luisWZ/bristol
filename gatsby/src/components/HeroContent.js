@@ -9,11 +9,12 @@ export default function HeroContent({mainText, image, description, button, butto
     flex-basis: 80%;
 
     @media(${props => props.theme.min720 }) {
-      flex-basis: 40%;
+      flex-basis: 0;
+      flex-grow: 1;
     }
   `
   return (
-    <Section top>
+    <Section_>
       <Container_ as='div'>
         <TextBox>
           <Slogan
@@ -52,11 +53,20 @@ export default function HeroContent({mainText, image, description, button, butto
           data-sal-easing='easeInOutCubic'
          />
       </Container_>
-    </Section>
+    </Section_>
   )
 }
 //  styles ============================================
+const Section_ = styled(Section)`
+  display: flex;
+  padding-top: 7rem;
+  padding-bottom: 2rem;
+  justify-content: space-around;
 
+  @media(${props => props.theme.min720 }) {
+    min-height: 640px;
+  }
+`
 const Container_ = styled(Container)`
   margin-bottom: 0;
   display: flex;
@@ -83,7 +93,6 @@ const TextBox = styled.div`
 const Slogan = styled.h1`
   font-size: calc(1rem + 1vw * 2.3);
   line-height: 1.4;
-  letter-spacing: 1.4px;
 `
 const Description = styled.p`
   font-size: calc(0.91rem + 0.3vw * 1.5);
