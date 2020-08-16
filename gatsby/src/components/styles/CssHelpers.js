@@ -16,7 +16,7 @@ export const Container = styled.section`
   @media (${props => props.theme.min1200}) {
     margin-left: auto;
     margin-right: auto;
-    max-width: 70rem; // 1120px
+    max-width: ${props => !props.slim ? '70rem' : '58rem'}; // 1120px || 928
   }
 `
 export function ContainerWhite({ children }) {

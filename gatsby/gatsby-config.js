@@ -89,5 +89,14 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-alias-imports`,
+      options: {
+        aliases: {
+          styles: `src/components/styles`,
+          svgs: `src/inline-svg`,
+        }
+      }
+    },
   ],
 }
