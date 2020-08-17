@@ -95,6 +95,7 @@ module.exports = {
         aliases: {
           styles: `src/components/styles`,
           svgs: `src/inline-svg`,
+          components: `src/components`,
         }
       }
     },

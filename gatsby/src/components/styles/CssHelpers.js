@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import { Link } from 'gatsby'
 
 export const Section = styled.section`
   background-color: white;
@@ -16,7 +17,7 @@ export const Container = styled.section`
   @media (${props => props.theme.min1200}) {
     margin-left: auto;
     margin-right: auto;
-    max-width: ${props => !props.slim ? '70rem' : '58rem'}; // 1120px || 928
+    max-width: ${props => !props.slim ? '70rem' : '58rem'}; // 1120px || 928px
   }
 `
 export function ContainerWhite({ children }) {
@@ -74,3 +75,9 @@ export const hoverStyle = (theme, color) => {
 }
 
 export const borderTopStyle = (theme) => `border-top: 1px solid ${theme.grayLight};`
+
+export const Underline = styled(Link)`
+  text-decoration: underline;
+  color: ${props => props.theme.bristolBlue};
+  font-weight: bold;
+`

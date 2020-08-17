@@ -4,6 +4,7 @@
     "paths": {
       "styles/*": ["./src/components/styles/*"],
       "svgs/*": ["./src/inline-svg/*"],
+      "components/*": ["./src/components/*"],
     }
   }
 }
