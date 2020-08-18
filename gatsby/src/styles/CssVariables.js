@@ -18,7 +18,7 @@ export default {
   bgGray: '#f2f4f8',
   bgWhite: 'white',
   grayLight: '#e1e1e1',
-  gray: '#757575',
+  gray: '#A2A9B0',
   grayDark: '#444',
   black: '#586174', // works on text
   white: 'white',
@@ -42,6 +42,7 @@ export default {
   max720: 'max-width: 44.9375em', // 719px
   max768: 'max-width: 47.9375em', // 767px
   max848: 'max-width: 52.9375em',
+  max880: 'max-width: 54.9375em',
   max960: 'max-width: 59.9375em',
   max1040: 'max-width: 64.9375em', // 1039px
   max1120: 'max-width: 69.9375em', // 1119px

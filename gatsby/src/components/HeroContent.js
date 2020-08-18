@@ -1,10 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { Section, Container, Button } from './styles/CssHelpers'
 
 // Components =========================================
-export default function HeroContent({mainText, image, description, button, buttonLink }) {
+const HeroContent = ({mainText, image, description, button, buttonLink }) => {
   const Image = styled(image)`
     flex-basis: 80%;
 
@@ -56,6 +57,14 @@ export default function HeroContent({mainText, image, description, button, butto
     </Section_>
   )
 }
+
+HeroContent.propTypes = {
+  mainText: PropTypes.string.isRequired,
+  image: PropTypes.element.isRequired,
+}
+
+export default HeroContent
+
 //  styles ============================================
 const Section_ = styled(Section)`
   display: flex;

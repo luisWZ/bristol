@@ -91,7 +91,7 @@ const Section = styled.section`
     background-color: white;
   `}
   ${props => props.border && `
-    border-bottom: 1px solid #A2A9B0;
+    border-bottom: 1px solid ${props.theme.gray};
   `}
 `
 const Grid = styled.div`

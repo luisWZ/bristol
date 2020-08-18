@@ -4,7 +4,7 @@ import { css } from '@emotion/core'
 import { Title, Subtitle } from 'styles/FontStyles'
 import TempIlus from 'svgs/_temp-ilus.svg'
 
-export default function TextIlustration({children, title, subtitle, subheader, textRight = false }) {
+export default function TextIlustration({children, title, subtitle, subheader, textRight }) {
   return (
     <Flex>
       <Text {...{textRight}}>
