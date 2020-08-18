@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import CssVariables from '../components/styles/CssVariables'
+import CssVariables from 'styles/CssVariables'
 
 export default (node, setMenuOpen) => {
   useEffect(() => {

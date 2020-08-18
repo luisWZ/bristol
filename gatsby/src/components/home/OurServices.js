@@ -1,33 +1,13 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Container, Title } from '../styles/CssHelpers'
+
+import { Container, Title } from 'styles/CssHelpers'
 
 // Components =========================================
-const Service = ({ service }) => (
-  <ServiceBox>
-    <Icon src={service.svg.publicURL}></Icon>
-    <Header className='h3'>{service.title}</Header>
-    <p>{service.text}</p>
-    <Anchor href='/'>Saber más</Anchor>
-  </ServiceBox>
-)
 export default function OurServices() {
-  const data = useStaticQuery(graphql`
-    query HOME_SERVICES_QUERY {
-      allHomeServicesYaml {
-        edges {
-          node {
-            svg {
-              publicURL
-            }
-            text
-            title
-          }
-        }
-      }
-    }
-  `).allHomeServicesYaml.edges
+  const data = useStaticQuery(HOME_SERVICES_QUERY).allHomeServicesYaml.edges
+
   return (
     <Container>
       <Title>Nuestros servicios</Title>
@@ -40,6 +20,30 @@ export default function OurServices() {
   )
 }
 
+const Service = ({ service }) => (
+  <ServiceBox>
+    <Icon src={service.svg.publicURL}></Icon>
+    <Header className='h3'>{service.title}</Header>
+    <p>{service.text}</p>
+    <Anchor href='/'>Saber más</Anchor>
+  </ServiceBox>
+)
+// query ==============================================
+const HOME_SERVICES_QUERY = graphql`
+  query HOME_SERVICES_QUERY {
+    allHomeServicesYaml {
+      edges {
+        node {
+          svg {
+            publicURL
+          }
+          text
+          title
+        }
+      }
+    }
+  }
+`
 // Styles =============================================
 const ServicesWrapper = styled.div`
   display: flex;

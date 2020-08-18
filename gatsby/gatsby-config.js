@@ -20,7 +20,7 @@ const loadOnProduction = () => {
   return null
 }
 const { title, description, keywords, lang, short_name } = require('./siteConfig')
-const { bristolBlue } = require('./src/components/styles/CssVariables')
+const { bristolBlue } = require('./src/styles/CssVariables')
 
 module.exports = {
   siteMetadata: {
@@ -75,10 +75,10 @@ module.exports = {
     // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-react-svg`,
+      // exclude: /^home-.*\.svg$/,
       options: {
         rule: {
           include: /inline-svg/,
-          // include: /\.inline\.svg$/,
         },
       },
     },
@@ -93,9 +93,10 @@ module.exports = {
       resolve: `gatsby-alias-imports`,
       options: {
         aliases: {
-          styles: `src/components/styles`,
+          styles: `src/styles`,
           svgs: `src/inline-svg`,
           components: `src/components`,
+          utils: `src/utils`,
         }
       }
     },

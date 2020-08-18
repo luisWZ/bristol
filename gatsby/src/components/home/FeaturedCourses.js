@@ -1,44 +1,49 @@
 import React from "react";
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
-import { Button } from '../styles/CssHelpers'
-import cursosSvg from '../../images/home-cursos-generales.svg'
-import examenesSvg from '../../images/home-examenes-internacionales.svg'
+
+import { Button } from 'styles/CssHelpers'
 
 // Components =========================================
+export default function FeaturedCourses() {
+  const data = useStaticQuery(FEATURED_COURSE_IMAGE)
+  return (
+    <Section>
+      {courses.map((course, index) => (
+        <Course key={`featured_courses${index}`}
+          course={{ ...course, image: data[course.link].publicURL }}
+        />
+      ))}
+    </Section>
+  )
+}
 const courses = [
-  { link: 'cursos', name: 'Cursos Generales', image: cursosSvg},
-  { link: 'examenes', name: 'Exámenes Internacionales', image: examenesSvg},
+  { link: 'cursos', name: 'Cursos Generales' },
+  { link: 'examenes', name: 'Exámenes Internacionales' },
 ]
-
-const Course = ({ course }) => (
+const Course = ({ course: { image, name, link } }) => (
   <CourseBox>
-    <img src={course.image} style={ImageBox} alt='' />
+    <img src={image} style={ImageBox} alt='' />
     <TextBox
       data-sal='slide-up'
       data-sal-duration='600'
       data-sal-delay='300'
       data-sal-easing='easeOutQuad'
     >
-      <h2>{course.name}</h2>
-      <Button as={Link} to={`/${course.link}`}>
+      <h2>{name}</h2>
+      <Button as={Link} to={`/${link}`}>
         Conoce más
       </Button>
     </TextBox>
   </CourseBox>
 )
-
-export default function FeaturedCourses() {
-  return (
-    <Section>
-      {courses.map((course, index) => (
-        <Course key={`featured_courses${index}`} course={course}
-          image={course.link}
-        />
-      ))}
-    </Section>
-  );
-}
+// query ==============================================
+const FEATURED_COURSE_IMAGE = graphql`
+  query FEATURED_COURSE_IMAGE {
+    cursos: file(relativePath: { eq: "home-cursos-generales.svg" }) { publicURL }
+    examenes: file(relativePath: { eq: "home-examenes-internacionales.svg" }) { publicURL }
+  }
+`
 // Styles definitions =================================
 const Section = styled.section`
   display: flex;

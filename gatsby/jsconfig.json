@@ -2,9 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "styles/*": ["./src/components/styles/*"],
+      "styles/*": ["./src/styles/*"],
       "svgs/*": ["./src/inline-svg/*"],
       "components/*": ["./src/components/*"],
+      "utils/*": ["./src/utils/*"],
     }
   }
 }

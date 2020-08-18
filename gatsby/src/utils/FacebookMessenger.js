@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import CssVariables from '../styles/CssVariables'
+
+import CssVariables from 'styles/CssVariables'
 
 let promise
 const greeting = `Hola ¿cómo podemos ayudarte?`
@@ -36,22 +37,22 @@ const FacebookMessenger = React.memo(function FacebookMessenger() {
     } else {
 
       promise = new Promise(resolve => {
-            window.fbAsyncInit = () => {
-              window.FB.init({
-                appId: config.appId,
-                xfbml: false,
-                status: true,
-                cookie: true,
-                version: 'v7.0',
-              })
-              resolve(window.FB)
-            }
+        window.fbAsyncInit = () => {
+          window.FB.init({
+            appId: config.appId,
+            xfbml: false,
+            status: true,
+            cookie: true,
+            version: 'v7.0',
+          })
+          resolve(window.FB)
+        }
 
-            const js = document.createElement('script')
-            js.id = 'facebook-jssdk'
-            // js.async = true
-            js.src = `https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js`
-            document.body.appendChild(js)
+        const js = document.createElement('script')
+        js.id = 'facebook-jssdk'
+        // js.async = true
+        js.src = `https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js`
+        document.body.appendChild(js)
     })
     promise.then(callBack);
     }

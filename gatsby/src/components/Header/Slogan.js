@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import SvgInglesMuyIngles from '../svgs/SvgInglesMuyIngles'
-import { borderTopStyle } from '../styles/CssHelpers'
+
+import SvgInglesMuyIngles from '../Svg/SvgInglesMuyIngles'
+import { borderTopStyle } from 'styles/CssHelpers'
 
 export default function Slogan() {
   return (
@@ -10,7 +11,7 @@ export default function Slogan() {
     </SloganInglesMuyInglesBox>
   )
 }
-
+// styles =============================================
 const SloganInglesMuyInglesBox = styled.div`
   display: none;
   @media (${props => props.theme.min960}) {

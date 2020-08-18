@@ -1,4 +1,5 @@
 import React from 'react'
+
 import CourseDescription from 'components/cursos/CourseDescription'
 import TextIlustration from 'components/TextIlustration'
 

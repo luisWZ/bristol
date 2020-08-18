@@ -6,27 +6,16 @@ import 'slick-carousel/slick/slick.css'
 import "slick-carousel/slick/slick-theme.css"
 import { FaQuoteRight } from 'react-icons/fa'
 
-import { Container, Title } from '../styles/CssHelpers'
-import { getRandomInt } from '../../utils/helpers'
-import CssVariables from '../styles/CssVariables'
-import IconBoy from '../../inline-svg/testimonial-boy.svg'
-import IconGirl from '../../inline-svg/testimonial-girl.svg'
+import { Container, Title } from 'styles/CssHelpers'
+import CssVariables from 'styles/CssVariables'
+import { getRandomInt } from 'utils/helpers'
+import IconBoy from 'svgs/testimonial-boy.svg'
+import IconGirl from 'svgs/testimonial-girl.svg'
 
 // Components =========================================
 export default function Testimonials() {
-  const data = useStaticQuery(graphql`
-    query HOME_TESTIMONIALS_QUERY {
-      allHomeTestimonialsYaml {
-        edges {
-          node {
-            name
-            text
-            icon
-          }
-        }
-      }
-    }
-  `).allHomeTestimonialsYaml.edges
+  const data = useStaticQuery(HOME_TESTIMONIALS_QUERY).allHomeTestimonialsYaml.edges
+
   return (
     <Container_>
       <Title>Testimonios</Title>
@@ -66,6 +55,20 @@ const settings = {
     },
   ],
 }
+// query ==============================================
+const HOME_TESTIMONIALS_QUERY = graphql`
+  query HOME_TESTIMONIALS_QUERY {
+    allHomeTestimonialsYaml {
+      edges {
+        node {
+          name
+          text
+          icon
+        }
+      }
+    }
+  }
+`
 // Styles =============================================
 const width = `40px`
 const Container_ = styled(Container)`

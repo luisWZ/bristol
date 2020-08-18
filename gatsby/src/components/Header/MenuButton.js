@@ -2,9 +2,9 @@ import React, { useContext, useRef } from 'react'
 import styled from '@emotion/styled'
 import { AiOutlineMenu } from 'react-icons/ai'
 
-import MenuContext from '../../utils/menuContext'
-import useMobileListener from '../../utils/useMobileListener'
-import { Button } from '../styles/CssHelpers'
+import MenuContext from 'utils/menuContext'
+import useMobileListener from 'utils/useMobileListener'
+import { Button } from 'styles/CssHelpers'
 
 export default function MenuButton() {
   const { menuOpen, setMenuOpen } = useContext(MenuContext)
@@ -24,6 +24,7 @@ export default function MenuButton() {
     </MenuButton_>
   )
 }
+// styles =============================================
 const MenuButton_ = styled(Button)`
   padding-left: 1.6rem;
   padding-right: 1.6em;

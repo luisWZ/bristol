@@ -1,12 +1,22 @@
 import React from 'react'
-import ComingCourses from '../components/ComingCourses'
-import NosotrosPage from '../components/nosotros'
+
+import HeroContent from 'components/HeroContent'
+import IlustracionBicicleta from 'svgs/ilustracion-bicicleta.svg'
+import Benefits from 'components/nosotros/Benefits'
+import Us from 'components/nosotros/Us'
+import Recognitions from 'components/nosotros/Recognitions'
+import ComingCourses from 'components/ComingCourses'
 
 export default function Nosotros() {
   return (
-  <>
-    <NosotrosPage />
-    <ComingCourses />
-  </>
+    <>
+      <HeroContent
+        mainText='Una de las principales fortalezas de Bristol es su personal académico'
+        image={IlustracionBicicleta}/>
+      <Benefits />
+      <Us />
+      <Recognitions />
+      <ComingCourses />
+    </>
   )
 }

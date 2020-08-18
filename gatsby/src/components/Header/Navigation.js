@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { AiOutlineRight } from 'react-icons/ai'
-import { borderTopStyle } from '../styles/CssHelpers'
-import MenuContext from '../../utils/menuContext'
+
+import { borderTopStyle } from 'styles/CssHelpers'
+import MenuContext from 'utils/menuContext'
 
 export default function Navigation() {
   const { menuOpen } = useContext(MenuContext)
@@ -18,7 +19,7 @@ export default function Navigation() {
     </NavBox>
   )
 }
-
+// styles =============================================
 // Made for the navigation menu in desktop size
 const _1wordNav = `minmax(max-content , 100px)`
 const _2wordNav = `minmax(max-content , 168px)`

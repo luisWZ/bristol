@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 import { ThemeProvider } from 'emotion-theming'
 
-import { MenuProvider } from '../utils/menuContext'
+import bristolTheme from 'styles/CssVariables'
 import GlobalStyles, { Main } from './GlobalStyles'
-
-import bristolTheme from '../styles/CssVariables'
-import HtmlHeader from '../utils/HtmlHeader'
-import FacebookMessenger from '../utils/FacebookMessenger'
-
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import { MenuProvider } from 'utils/menuContext'
+import HtmlHeader from 'utils/HtmlHeader'
+import FacebookMessenger from 'utils/FacebookMessenger'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 // Components =========================================
 export default function Layout({ children }) {

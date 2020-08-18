@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+
 import { Title, Subtitle } from 'styles/FontStyles'
 import TempIlus from 'svgs/_temp-ilus.svg'
 
@@ -17,6 +18,7 @@ export default function TextIlustration({children, title, subtitle, subheader, t
     </Flex>
   )
 }
+// styles =============================================
 const ilustrationStyles = theme => css`
   flex-grow: 0;
 

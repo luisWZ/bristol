@@ -10,15 +10,17 @@
 ✔ investigar gatsby images @done(20-07-18 18:34)
 ✔ estilo para menu items mobile @done(20-07-18 18:34)
 ✔ implementar menu mobile @done(20-07-18 18:34)
+✔ Parsear los yaml por GraphQl @done(20-08-05 12:49)
+✔ webHook for contenful & bitbucket @done(20-08-18 12:32)
 ☐ hover social links footer
 ☐ focus bg a newsletter
 ☐ implementacion newsletter
-☐ useOnClickOutside need some work
-✔ Parsear los yaml por GraphQl @done(20-08-05 12:49)
-☐ webHook for contenful & bitbucket
+☐ agregat pictogramas educacion continua
+☐ Agregar script para correr contentful offline
+☐ Crear un archivo con configuraciones de facebook
 
   Macros
-☐ hacer macros con snippets para mediaqueries
+✔ hacer macros con snippets para mediaqueries @done(20-08-18 12:32)
 ☐ hacer macros para dejar espacio en { aqui }
 ☐ { object } =>
 ☐ macros para coma al final

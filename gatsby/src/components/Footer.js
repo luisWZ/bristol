@@ -3,9 +3,9 @@ import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { AiOutlineRight } from 'react-icons/ai';
 
-import { Container } from './styles/CssHelpers'
-import SvgCambridgeLogo from './svgs/SvgCambridgeLogo'
-import SvgFooterBrand from './svgs/SvgFooterBrand'
+import { Container } from 'styles/CssHelpers'
+import SvgCambridgeLogo from './Svg/SvgCambridgeLogo'
+import SvgFooterBrand from './Svg/SvgFooterBrand'
 import SocialLinks from './SocialLinks'
 import Newsletter from './Newsletter'
 
@@ -121,7 +121,7 @@ export default function Footer() {
                   <Link to='/contacto'>Contacto
                   <AiOutlineRight /></Link></Li>
                 <Li order='6'>
-                  <Link to='/'>Aviso de privacidad
+                  <Link to='/aviso-privacidad'>Aviso de privacidad
                   <AiOutlineRight /></Link></Li>
             </ul>
           </div>

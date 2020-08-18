@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
-import { Section, Container, Button } from './styles/CssHelpers'
+
+import { Section, Container, Button } from 'styles/CssHelpers'
 
 // Components =========================================
 const HeroContent = ({mainText, image, description, button, buttonLink }) => {

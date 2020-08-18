@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import SvgBristolLogo from '../svgs/SvgBristolLogo'
+
+import SvgBristolLogo from '../Svg/SvgBristolLogo'
 
 export default function Logo() {
   return (
@@ -12,7 +13,7 @@ export default function Logo() {
     </LogoBox>
   )
 }
-
+// styles =============================================
 const LogoBox = styled.div`
   display: flex;
   align-items: center;

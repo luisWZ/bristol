@@ -1,6 +1,7 @@
 import Typography from 'typography'
 import bootstrapTheme from 'typography-theme-bootstrap'
-import CssVariables from '../styles/CssVariables'
+
+import CssVariables from 'styles/CssVariables'
 
 const overrides = {
   headerWeight: 700,

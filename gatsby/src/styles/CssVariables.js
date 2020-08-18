@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   // --------------------------------------------------
   // elements ===========================================
   newsletterOffset: '9rem',
@@ -16,12 +16,12 @@ export default {
   purple: '#2A2DA1',
   pink: '#FA4D56',
   bgGray: '#f2f4f8',
-  bgWhite: 'white',
+  // bgWhite: 'white',
   grayLight: '#e1e1e1',
   gray: '#A2A9B0',
   grayDark: '#444',
   black: '#586174', // works on text
-  white: 'white',
+  // white: 'white',
   // mediaqueries =====================================
   // ======== min-width
   min400: 'min-width: 25em',
@@ -37,14 +37,14 @@ export default {
   min1600: 'min-width: 100em', // stop any property with vw value
   // ======== max-width
   max480: 'max-width: 29.9375em',
-  max560: 'max-width: 34.9375em', // 559px
+  max560: 'max-width: 34.9375em',
   max640: 'max-width: 39.9375em',
-  max720: 'max-width: 44.9375em', // 719px
-  max768: 'max-width: 47.9375em', // 767px
+  max720: 'max-width: 44.9375em',
+  max768: 'max-width: 47.9375em',
   max848: 'max-width: 52.9375em',
   max880: 'max-width: 54.9375em',
   max960: 'max-width: 59.9375em',
-  max1040: 'max-width: 64.9375em', // 1039px
-  max1120: 'max-width: 69.9375em', // 1119px
+  max1040: 'max-width: 64.9375em',
+  max1120: 'max-width: 69.9375em',
   // --------------------------------------------------
 }

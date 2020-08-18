@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
-import SocialLinks from '../SocialLinks'
-import { hoverStyle } from '../styles/CssHelpers'
+
+import SocialLinks from 'components/SocialLinks'
+import { hoverStyle } from 'styles/CssHelpers'
 
 const SocialLinksList = styled(SocialLinks)`
   > li {

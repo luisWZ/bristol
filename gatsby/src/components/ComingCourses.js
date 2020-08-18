@@ -1,7 +1,8 @@
 import React from 'react'
 import {graphql, useStaticQuery } from 'gatsby'
 import { css } from '@emotion/core'
-import { Container, Title } from './styles/CssHelpers'
+
+import { Container, Title } from 'styles/CssHelpers'
 import Courses from './Courses'
 
 // Components =========================================

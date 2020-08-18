@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
-import SvgEnvelope from '../svgs/SvgEnvelope'
-import SvgPhone from '../svgs/SvgPhone'
-import { hoverStyle } from '../styles/CssHelpers'
+
+import { hoverStyle } from 'styles/CssHelpers'
+import SvgEnvelope from '../Svg/SvgEnvelope'
+import SvgPhone from '../Svg/SvgPhone'
 
 export default function ContactInfo() {
   const color = useTheme().pink

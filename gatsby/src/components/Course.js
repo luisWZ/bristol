@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
-import { Button } from './styles/CssHelpers'
+
+import { Button } from 'styles/CssHelpers'
 
 // Component ==========================================
 export default function Course({ course }) {
@@ -40,7 +41,6 @@ export default function Course({ course }) {
     </CourseBox>
   )
 }
-
 // Styles definitions =================================
 export const CoursesWrapper = styled.div`
   display: grid;

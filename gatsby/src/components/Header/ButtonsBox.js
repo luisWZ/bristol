@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Button } from '../styles/CssHelpers'
+
+import { Button } from 'styles/CssHelpers'
 
 export default function ButtonsBox({children}) {
   return (
@@ -12,7 +13,7 @@ export default function ButtonsBox({children}) {
     </ButtonsBox_>
   )
 }
-
+// styles =============================================
 const ButtonsBox_ = styled.div`
   grid-column-end: -1;
   justify-self: end;

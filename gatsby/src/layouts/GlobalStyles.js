@@ -1,9 +1,10 @@
 import React from 'react'
 import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
-import CssModernReset from '../styles/CssModernReset'
-import CssScaffolding from '../styles/CssScaffolding'
-import CssTheme from '../styles/CssTheme'
+
+import CssModernReset from 'styles/CssModernReset'
+import CssScaffolding from 'styles/CssScaffolding'
+import CssTheme from 'styles/CssTheme'
 
 export default function GlobalStyles() {
   return (
@@ -14,6 +15,7 @@ export default function GlobalStyles() {
     </>
   )
 }
+// styles =============================================
 export const Main = styled.main`
   min-height: 100vh;
   background-color: ${props => props.theme.bgGray};

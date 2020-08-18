@@ -1,11 +1,12 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import SvgHomeBottomImage from '../svgs/SvgHomeBottomImage'
+
+import IlustracionFallingGirl from 'svgs/ilustracion-falling-girl.svg'
 
 // components =========================================
 export default function BottomImage() {
   return (
-    <SvgHomeBottomImage
+    <IlustracionFallingGirl
       css={css`
         margin: 6rem auto;
         width: 80%;
