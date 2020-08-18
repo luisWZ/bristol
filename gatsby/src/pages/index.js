@@ -1,18 +1,23 @@
 import React from 'react'
 
-// elements
-import HeroContent from '../components/home/HeroContent'
-import FeaturedCourses from '../components/home/FeaturedCourses'
-import ComingCoursesHome from '../components/home/ComingCourses'
-import OurServices from '../components/home/OurServices'
-import Testimonials from '../components/home/Testimonials'
-import BottomImage from '../components/home/BottomImage'
+import HeroContent from 'components/HeroContent'
+import FeaturedCourses from 'components/home/FeaturedCourses'
+import ComingCoursesHome from 'components/home/ComingCourses'
+import OurServices from 'components/home/OurServices'
+import Testimonials from 'components/home/Testimonials'
+import BottomImage from 'components/home/BottomImage'
+import IlustracionFallingGirl from 'svgs/ilustracion-falling-girl.svg'
 
-// components =========================================
 export default function Home() {
   return (
     <>
-      <HeroContent />
+      <HeroContent
+        mainText='Speak a new language, discover a new world'
+        image={IlustracionFallingGirl}
+        description='Somos profesionales en la enseñanza de inglés, nuestros maestros cuentan con grados académicos y certificaciones internacionales como maestros de inglés así como con una gran experiencia'
+        button='Nuestros cursos'
+        buttonLink='/cursos'
+      />
       <FeaturedCourses />
       <ComingCoursesHome />
       <OurServices />

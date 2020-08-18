@@ -1,14 +1,14 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
-import { Container, Button } from 'styles/CssHelpers'
 
-import SvgDias from 'svgs/pictograma-dias.svg'
-import SvgDuracion from 'svgs/pictograma-duracion.svg'
-import SvgFechaInicio from 'svgs/pictograma-fecha-inicio.svg'
-import SvgHorario from 'svgs/pictograma-horario.svg'
-import SvgModalidad from 'svgs/pictograma-modalidad.svg'
+import { Container, Button } from 'styles/CssHelpers'
 import SvgThumbnail from 'svgs/thumbnail-course-detail.svg'
+import PictogramaDias from 'svgs/pictograma-dias.svg'
+import PictogramaDuracion from 'svgs/pictograma-duracion.svg'
+import PictogramaFechaInicio from 'svgs/pictograma-fecha-inicio.svg'
+import PictogramaHorario from 'svgs/pictograma-horario.svg'
+import PictogramaModalidad from 'svgs/pictograma-modalidad.svg'
 
 export default function CourseDetails() {
   return (
@@ -32,35 +32,35 @@ export default function CourseDetails() {
               border-bottom: 4px solid ${theme.black};
           `}>
             <Detail>
-              <SvgDuracion />
+              <PictogramaDuracion />
               <p>
                 <strong>Duración</strong>
                 30 horas por nivel
               </p>
             </Detail>
             <Detail>
-              <SvgDias />
+              <PictogramaDias />
               <p>
                 <strong>Duración</strong>
                 30 horas por nivel
               </p>
             </Detail>
             <Detail>
-              <SvgFechaInicio />
+              <PictogramaFechaInicio />
               <p>
                 <strong>Duración</strong>
                 30 horas por nivel
               </p>
             </Detail>
             <Detail>
-              <SvgHorario />
+              <PictogramaHorario />
               <p>
                 <strong>Duración</strong>
                 30 horas por nivel
               </p>
             </Detail>
             <Detail>
-              <SvgModalidad />
+              <PictogramaModalidad />
               <p>
                 <strong>Duración</strong>
                 30 horas por nivel

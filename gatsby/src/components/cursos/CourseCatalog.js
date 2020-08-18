@@ -1,17 +1,10 @@
 import React from 'react'
-import HeroContent from 'components/HeroContent'
 import CourseDescription from 'components/cursos/CourseDescription'
 import TextIlustration from 'components/TextIlustration'
 
-import Ilustration from 'svgs/ilustracion-sitting-girl.svg'
-
-export default function Cursos() {
+export default function CourseCatalog() {
   return (
     <>
-      <HeroContent
-        mainText={'Una de las principales fortalezas de Bristol es su personal académico.'}
-        image={Ilustration}
-      />
       <CourseDescription kids>
         <TextIlustration
           title='Kids'

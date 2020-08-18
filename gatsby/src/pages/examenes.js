@@ -1,7 +1,17 @@
 import React from 'react'
-// import ExamanesPage from '../components/examanes'
-import ExamanesPage from '../components/examenes'
+import HeroContent from 'components/HeroContent'
+import Cambridge from 'components/examenes/Cambridge'
+import ExamanesGrid from 'components/examenes/ExamanesGrid'
+import IlustracionFallingGirl from 'svgs/ilustracion-falling-girl.svg'
 
 export default function Examenes() {
-  return <ExamanesPage />
+  return (
+    <>
+      <HeroContent
+        mainText='Obtén una certificación y acredita tu nivel de inglés a nivel internacional'
+        image={IlustracionFallingGirl} />
+      <Cambridge />
+      <ExamanesGrid />
+    </>
+  )
 }
