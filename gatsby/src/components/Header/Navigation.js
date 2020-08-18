@@ -14,7 +14,7 @@ export default function Navigation() {
       <NavAnchor to='/nosotros'>Nosotros<AiOutlineRight /></NavAnchor>
       <NavAnchor to='/cursos'>Cursos<AiOutlineRight /></NavAnchor>
       <NavAnchor to='/examenes'>Centro Examinador<AiOutlineRight /></NavAnchor>
-      <NavAnchor to='/cursos/course-detail'>Course Detail<AiOutlineRight /></NavAnchor>
+      <NavAnchor to='/course-detail'>Course Detail<AiOutlineRight /></NavAnchor>
     </NavBox>
   )
 }
