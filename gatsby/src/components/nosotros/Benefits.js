@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 import { Container } from 'styles/CssHelpers'
+import TextIlustration from 'components/TextIlustration'
 import PictogramaFilosofiaInstitucional from 'svgs/pictograma-filosofia-institucional.svg'
 import PictogramaConversacion from 'svgs/pictograma-conversacion.svg'
 import PictogramaAlumno from 'svgs/pictograma-alumno.svg'
@@ -11,21 +12,11 @@ import PictogramaDesarrollo from 'svgs/pictograma-desarrollo.svg'
 
 export default function Benefits() {
   return (
-    <Container padding>
-      <div>
-        <H1 className='h3'>
-          El prestigio ganado a lo largo de más de 25 años ha hecho de Bristol
-          Inglés Profesional un referente de calidad y excelencia en la
-          enseñanza del inglés.
-        </H1>
-        <p>
-          Más importante aún, es el resultado de los miles de alumnos que han
-          pasado por nuestras aulas que no sólo aprendieron inglés, sino que
-          aprendieron de otras culturas, desarrollaron otras habilidades e
-          hicieron amistades estrechas y duraderas.
-        </p>
-      </div>
-      <tempImg src='' alt='' />
+    <Container paddingBig>
+      <TextIlustration ilus2
+        subtitle='El prestigio ganado a lo largo de más de 25 años ha hecho de Bristol Inglés Profesional un referente de calidad y excelencia en la enseñanza del inglés'>
+          <p>Más importante aún, es el resultado de los miles de alumnos que han pasado por nuestras aulas que no sólo aprendieron inglés, sino que aprendieron de otras culturas, desarrollaron otras habilidades e hicieron amistades estrechas y duraderas.</p>
+      </TextIlustration>
       <H1 className='h3'>Beneficios de nuestros cursos</H1>
       <BenefitsBox>
         <Benefit>
@@ -79,11 +70,6 @@ export default function Benefits() {
   )
 }
 // styles =============================================
-const tempImg = styled.img`
-  background-color: ${props => props.theme.gray};
-  width: 100%;
-  height: 250px;
-`
 const H1 = styled.h1`
   font-size: 1.25rem;
   line-height: 1.4;
@@ -100,26 +86,29 @@ const H1 = styled.h1`
   }
 `
 const BenefitsBox = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  grid-gap: 3rem;
 `
 const Benefit = styled.div`
-  flex-basis: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 
-  @media (${props => props.theme.max480}) {
-    flex-basis: 100%;
+  svg {
+    flex-basis: 4.375rem;
+    margin-right: 2rem;
+  }
+  p {
+    flex-grow: 1;
+    flex-basis: 0;
+    margin-bottom: 0;
+  }
 
-    svg {
-      float: left;
-      width: 3rem;
-      margin-right: 1rem;
-      margin-bottom: 0.4rem;
-    }
+  @media (${props => props.theme.max420}) {
     p {
-      margin-top: -0.8rem;
-      margin-bottom: 2rem;
+      flex-basis: 100%;
+      margin-top: 1rem;
     }
   }
 `
-
-export { tempImg }

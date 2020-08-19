@@ -9,7 +9,7 @@ import Courses from './Courses'
 export default function ComingCourses() {
   const data = useStaticQuery(COMING_COURSES_QUERY).allContentfulCourses.nodes
   return (
-    <Container css={css`margin-bottom: 4rem;`}>
+    <Container css={css`margin-bottom: 3rem; padding-bottom: 0;`}>
       <Title>Próximos cursos</Title>
       <Courses {...{ data }} commingCourses />
     </Container>

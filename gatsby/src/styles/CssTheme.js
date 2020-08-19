@@ -18,15 +18,18 @@ export default function CssTheme() {
       a {
         display: inline-block;
         transition: all 0.26s ease-in-out;
-        color: ${theme.gray};
+        color: ${theme.black};
       }
       button {
         outline: 0;
         border: none;
         color: white;
         cursor: pointer;
-        background-color: ${theme.bristolBlue};
         transition: background-color .26s ease-in-out;
+        background-color: ${theme.bristolBlue};
+      }
+      li {
+        color: ${theme.black};
       }
   `}/>
   )

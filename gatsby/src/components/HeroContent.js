@@ -9,6 +9,8 @@ import { Section, Container, Button } from 'styles/CssHelpers'
 const HeroContent = ({mainText, image, description, button, buttonLink }) => {
   const Image = styled(image)`
     flex-basis: 80%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
 
     @media(${props => props.theme.min720 }) {
       flex-basis: 0;
@@ -36,7 +38,7 @@ const HeroContent = ({mainText, image, description, button, buttonLink }) => {
             {description}
           </Description>
           }
-          {button && <Button_
+          {button && <Button_ red='true'
             as={Link}
             to={buttonLink}
             data-sal='fade'
@@ -61,7 +63,7 @@ const HeroContent = ({mainText, image, description, button, buttonLink }) => {
 
 HeroContent.propTypes = {
   mainText: PropTypes.string.isRequired,
-  image: PropTypes.element.isRequired,
+  image: PropTypes.any.isRequired,
 }
 
 export default HeroContent

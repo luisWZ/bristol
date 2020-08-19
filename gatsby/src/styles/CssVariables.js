@@ -36,6 +36,7 @@ module.exports = {
   min1200: 'min-width: 75em',
   min1600: 'min-width: 100em', // stop any property with vw value
   // ======== max-width
+  max420: 'max-width: 26.1875em',
   max480: 'max-width: 29.9375em',
   max560: 'max-width: 34.9375em',
   max640: 'max-width: 39.9375em',

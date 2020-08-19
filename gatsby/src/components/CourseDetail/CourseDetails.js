@@ -17,20 +17,17 @@ export default function CourseDetails() {
         background-color: white;
       `}
     >
-      <Container as='div' css={ContainerGrid}>
+      <ContainerGrid as='div'>
         <TitleBox>
           <TitleText>
             <h1>Pet for Schools</h1>
             <p>Preliminary English Test</p>
           </TitleText>
-          <Button_ blue>Inscríbete</Button_>
+          <Button_>Inscríbete</Button_>
         </TitleBox>
         <Sidebar>
           <SvgThumbnail css={css`width: 100%;`} />
-          <div css={theme => css`
-              border-top: 4px solid ${theme.black};
-              border-bottom: 4px solid ${theme.black};
-          `}>
+          <InfoGrid>
             <Detail>
               <PictogramaDuracion />
               <p>
@@ -71,7 +68,7 @@ export default function CourseDetails() {
                 Costo <strong>$1,234.56</strong>
               </p>
             </Cost>
-          </div>
+          </InfoGrid>
         </Sidebar>
         <Main>
           <h1 className='h3'>
@@ -96,20 +93,31 @@ export default function CourseDetails() {
             Estudios con validez oficial Clave SEP 30PBT0437R y 30PBT0259E
           </p>
         </Main>
-      </Container>
+      </ContainerGrid>
     </section>
   )
 }
 // styles =============================================
 const margin = `1.5rem`
 
-const ContainerGrid = theme => css`
+const ContainerGrid = styled(Container)`
   padding-top: 10rem;
   padding-bottom: 5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: 'title title title' 'sidebar main main';
-  grid-gap: 0 ${theme.gap};
+  grid-gap: 0 ${props => props.theme.gap};
+
+  @media (${props => props.theme.max768}) {
+    grid-template-areas: 'title title title' 'sidebar sidebar sidebar' 'main main main';
+    grid-gap: 2rem 0;
+  }
+`
+const InfoGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  border-top: 4px solid ${props => props.theme.black};
+  border-bottom: 4px solid ${props => props.theme.black};
 `
 const TitleBox = styled.div`
   grid-area: title;
@@ -117,8 +125,12 @@ const TitleBox = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid ${props => props.theme.gray};
   margin-bottom: ${margin};
+
+  @media (${props => props.theme.max480}) {
+    border-bottom: none;
+  }
 `
 const TitleText = styled.div`
   flex-basis: 0;
@@ -162,6 +174,7 @@ const Detail = styled.div`
 `
 const Cost = styled.div`
   padding-top: 1rem;
+  grid-column: 1 / -1;
   border-top: 1px solid ${props => props.theme.black};
 
   p {

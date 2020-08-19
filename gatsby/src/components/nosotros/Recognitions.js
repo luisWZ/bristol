@@ -13,7 +13,7 @@ import PictogramaEscuela from 'svgs/pictograma-escuela.svg'
 export default function Recognitions() {
   return (
     <Section>
-      <RecognitionBox as='div'>
+      <RecognitionBox as='div' paddingBigTop>
         <RecognitionTitle>
           Acreditaciones, Reconocimientos y Alianzas
         </RecognitionTitle>
@@ -81,11 +81,9 @@ export default function Recognitions() {
 }
 // styles =============================================
 const RecognitionBox = styled(Container)`
-  padding-top: 0.1rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   grid-gap: 2rem;
-  padding-top: 4rem;
 
   @media (${props => props.theme.max560}) {
     display: block;

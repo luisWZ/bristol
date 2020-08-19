@@ -97,4 +97,9 @@ const Anchor = styled.a`
   padding: 0.6rem;
   float: right;
   border-radius: ${props => props.theme.radius};
+
+  @media (${props => props.theme.max480}) {
+    width: 100%;
+    text-align: center;
+  }
 `

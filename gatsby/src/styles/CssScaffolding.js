@@ -7,9 +7,6 @@ export default function CssModernReset() {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    /* custom color hightlight */
-    /* ::-moz-selection { color: white; background: #0f62fe; } */
-    /* ::selection { color: white; background: #0f62fe; } */
     a {
       text-decoration: none;
     }

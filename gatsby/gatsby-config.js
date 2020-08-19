@@ -19,7 +19,7 @@ const loadOnProduction = () => {
   }
   return null
 }
-const { title, description, keywords, lang, short_name } = require('./siteConfig')
+const { title, description, keywords, lang, short_name } = require('./sitedefaults')
 const { bristolBlue } = require('./src/styles/CssVariables')
 
 module.exports = {
@@ -58,7 +58,12 @@ module.exports = {
     },
     loadOnProduction(),
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-scroll-reveal`,
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+        once: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -75,7 +80,6 @@ module.exports = {
     // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-react-svg`,
-      // exclude: /^home-.*\.svg$/,
       options: {
         rule: {
           include: /inline-svg/,

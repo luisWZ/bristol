@@ -31,7 +31,7 @@ const Course = ({ course: { image, name, link } }) => (
       data-sal-easing='easeOutQuad'
     >
       <h2>{name}</h2>
-      <Button as={Link} to={`/${link}`}>
+      <Button red='true' as={Link} to={`/${link}`}>
         Conoce más
       </Button>
     </TextBox>

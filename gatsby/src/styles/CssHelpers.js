@@ -3,13 +3,28 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
+import theme from './CssVariables'
+
+const borderBottomStyle = `border-bottom: 1px solid ${theme.gray};`
+
+export const Main = styled.main`
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: ${props => props.theme.bgGray};
+  padding-bottom: ${props => (parseInt(props.theme.newsletterOffset.split('rem')) + 4) + 'rem'};
+  margin-bottom: -${props => props.theme.newsletterOffset};
+`
 export const Section = styled.section`
   background-color: white;
+  ${props => props.borderBottom && borderBottomStyle}
 `
 export const Container = styled.section`
   margin-left: ${props => props.theme.gutter};
   margin-right: ${props => props.theme.gutter};
-  ${props => props.padding && `
+  padding-top: ${props => props.paddingBig || props.paddingBigTop ? '6rem' : '3rem'};
+  padding-bottom: ${props => props.paddingBig || props.paddingBigBottom ? '6rem' : '3rem'};
+
+  ${props => props.paddingSmall && `
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   `}
@@ -20,9 +35,12 @@ export const Container = styled.section`
     max-width: ${props => !props.slim ? '70rem' : '58rem'}; // 1120px || 928px
   }
 `
-export function ContainerWhite({ children }) {
+export function ContainerWhite({ children, borderBottom = false }) {
   return (
-    <section css={css`background-color: white;`}>
+    <section css={theme => css`
+      background-color: white;
+      ${borderBottom && borderBottomStyle}
+    `}>
       <Container as='div'>{children}</Container>
     </section>
   )
@@ -54,8 +72,8 @@ export const Button = styled.a`
   width: ${props => props.widthFull && '100%'};
   background-color: ${props =>
     props.noBg ? 'transparent' :
-    props.blue ? props.theme.bristolBlue :
-    props.theme.bristolRed
+    props.red ? props.theme.bristolRed :
+    props.theme.bristolBlue
   };
   &:hover {
     background-color: ${props =>

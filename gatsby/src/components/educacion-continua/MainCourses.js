@@ -5,7 +5,7 @@ import { Grid_3_Columns, Column } from './Grid_3_Columns'
 export default function MainCourses() {
   return (
     <Grid_3_Columns>
-      <Column pictogram='' title='One to One' subtitle='Curso Individual'
+      <Column pictogram='one-to-one' title='One to One' subtitle='Curso Individual'
         subheader='Para ti que tienes necesidades especiales y que deseas que el curso se adapte a tu ritmo'>
         <p>Los cursos One-To-One están pensados para aquellas personas que necesitan cubrir necesidades especiales de aprendizaje del idioma ya sea por requerimientos académicos o profesionales;  necesitan alcanzar el objetivo en un corto tiempo, o bien, les gusta que el curso se adapte a su ritmo y no sentirse presionado por el avance de un grupo.</p>
         <p>Ideales también para niños o adolescentes que requieren de un apoyo escolar. El contenido y la duración del curso se planean con base en el análisis de necesidades del alumno.</p>

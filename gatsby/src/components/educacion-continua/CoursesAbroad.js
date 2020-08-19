@@ -4,15 +4,16 @@ import { Section, Container, Button } from 'styles/CssHelpers'
 import { Body2 } from 'styles/FontStyles'
 import TextIlustration from 'components/TextIlustration'
 import { Grid_3_Columns, Column } from './Grid_3_Columns'
+import { css } from '@emotion/core'
 
 export default function CoursesAbroad() {
   return (
     <>
-      <Section>
+      <Section css={theme => css`border-bottom: 1px solid ${theme.gray};`}>
         <Container>
-          <TextIlustration
+          <TextIlustration textRight
             title='Cursos de inglés en el extranjero'
-            subheader='¿Te interesa vivir la experiencia de estudiar en el extranjero y a la vez mejorar tu nivel de inglés y conocer otras culturas? Tenemos varias opciones para ti'
+            subtitle='¿Te interesa vivir la experiencia de estudiar en el extranjero y a la vez mejorar tu nivel de inglés y conocer otras culturas? Tenemos varias opciones para ti'
           >
             <Body2>Cursos de verano en Inglaterra y Canadá</Body2>
             <p>Vivir día a día en un país angloparlante es una experiencia enriquecedora que sin duda influirá positivamente en tu desarrollo personal y profesional. Te permite aprender la cultura y las costumbres, no sólo del país que visites, si no de muchas otras culturas a través de la convivencia diaria con compañeros de todo el mundo.</p>
