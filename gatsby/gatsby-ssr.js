@@ -29,7 +29,3 @@ export const replaceRenderer = ({
 
   replaceBodyHTMLString(html)
 }
-
-// wrapRootElement.propTypes = {
-//   element: PropTypes.node.isRequired,
-// }
