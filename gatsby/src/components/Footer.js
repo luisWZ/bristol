@@ -109,19 +109,19 @@ export default function Footer() {
                   <Link to='/nosotros'>Nosotros
                   <AiOutlineRight /></Link></Li>
                 <Li order='5'>
-                  <Link to='/cursos'>Cursos generales
+                  <Link to='/cursos'>Cursos Generales
                   <AiOutlineRight /></Link></Li>
                 <Li order='7'>
-                  <Link to='/examenes'>Exámenes internacionales
+                  <Link to='/examenes'>Exámenes Internacionales
                   <AiOutlineRight /></Link></Li>
                 <Li order='2'>
-                  <Link to='/centro-examinador'>Centro examinador
+                  <Link to='/educacion-continua'>Educación Continua
                   <AiOutlineRight /></Link></Li>
-                <Li order='4'>
+                {/* <Li order='4'>
                   <Link to='/contacto'>Contacto
-                  <AiOutlineRight /></Link></Li>
+                  <AiOutlineRight /></Link></Li> */}
                 <Li order='6'>
-                  <Link to='/aviso-privacidad'>Aviso de privacidad
+                  <Link to='/aviso-privacidad'>Aviso de Privacidad
                   <AiOutlineRight /></Link></Li>
             </ul>
           </div>
