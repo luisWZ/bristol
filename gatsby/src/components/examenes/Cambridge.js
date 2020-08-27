@@ -2,13 +2,13 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { Container } from 'styles/CssHelpers'
-import LogoCambridgePreparationCentre from 'svgs/logo-cambridge-preparation-centre.svg'
+import LogoCambridgeAssesmentEnglish from 'svgs/logo-cambridge-assesment-english.svg'
 
 export default function Cambridge() {
   return (
     <Container css={css`padding-top: 9rem;`}>
       <Flex>
-        <LogoCambridgePreparationCentre />
+        <LogoCambridgeAssesmentEnglish />
         <div>
           <p>Desde 2008, Bristol Inglés Profesional es Centro Examinador Autorizado por Cambridge Assessment English para la administración y aplicación de sus exámenes de inglés en el Estado de Veracruz y la región de Tampico en el Estado de Tamaulipas.</p>
           <p>Somos un Centro Examinador abierto, es decir, que estamos autorizados para llevar a cabo exámenes para candidatos que se preparan en otros colegios así como candidatos independientes.</p>

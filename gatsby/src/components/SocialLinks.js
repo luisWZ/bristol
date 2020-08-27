@@ -30,7 +30,7 @@ const Facebook = socialLink( facebook, <FaFacebookF />, 'facebook')
 const Instagram = socialLink( instagram, <FaInstagram />, 'instagram')
 
 const List = (props) => (
-  <ul className={props.className} css={theme => css`
+  <ul className={props.className} css={css`
     display: flex;
     a {
       padding: 0 0.7rem;
@@ -38,9 +38,6 @@ const List = (props) => (
       height: 2.4rem;
       display: inline-flex;
       align-items: center;
-    }
-    svg {
-      fill: ${props => props.theme.bristolBlue}
     }
   `}
   {...props} />

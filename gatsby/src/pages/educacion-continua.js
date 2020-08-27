@@ -34,7 +34,7 @@ export const query = graphql`
     }
     imageEmpresa: file(relativePath: { eq: "image-empresa.png" }) {
       childImageSharp {
-        fluid(maxWidth: 447) {
+        fluid(maxWidth: 563) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }

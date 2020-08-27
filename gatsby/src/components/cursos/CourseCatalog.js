@@ -60,7 +60,7 @@ export default function CourseCatalog() {
 }
 // query ==============================================
 const COURSE_IMAGES_QUERY = graphql`
-  fragment childImageSharpFragment on File {
+  fragment courseImageSharpFragment on File {
     childImageSharp {
       fluid(maxWidth: 447) {
         ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -68,9 +68,9 @@ const COURSE_IMAGES_QUERY = graphql`
     }
   }
   query COURSE_IMAGES_QUERY {
-    kids: file(relativePath: { eq: "image-kids.png" }) { ...childImageSharpFragment }
-    teens: file(relativePath: { eq: "image-teens.png" }) { ...childImageSharpFragment }
-    adultos: file(relativePath: { eq: "image-adultos.png" }) { ...childImageSharpFragment }
-    examenesInternacionales: file(relativePath: { eq: "image-examenes-internacionales.png" }) { ...childImageSharpFragment }
+    kids: file(relativePath: { eq: "image-kids.png" }) { ...courseImageSharpFragment }
+    teens: file(relativePath: { eq: "image-teens.png" }) { ...courseImageSharpFragment }
+    adultos: file(relativePath: { eq: "image-adultos.png" }) { ...courseImageSharpFragment }
+    examenesInternacionales: file(relativePath: { eq: "image-examenes-internacionales.png" }) { ...courseImageSharpFragment }
   }
 `

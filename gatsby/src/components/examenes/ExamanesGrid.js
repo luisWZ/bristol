@@ -8,39 +8,25 @@ import { Title2 } from 'styles/FontStyles'
 
 // component ==========================================
 export default function ExamanesGrid() {
-  const data = useStaticQuery(EXAMENES_QUERY).allFile.edges
+  const data = useStaticQuery(EXAMENES_QUERY)
+
   return (
     <Container>
       <Title2 css={css`text-align: center;`}>Calendarios de Exámenes Internacionales</Title2>
       <Filter>
         <li className='selected'>Todos los exámenes</li>
-        <li>CAE</li>
-        <li>CPE</li>
-        <li>FCE</li>
-        <li>KET</li>
-        <li>PET</li>
-        <li>LINGUASKILL</li>
-        <li>IELTS</li>
-        <li>TKT</li>
-        <li>YLE</li>
+        {filters.map(exam => <li key={exam}>{exam}</li>)}
       </Filter>
       <FilterMobile>
         <option value="all">Todos los exámenes</option>
-        <option value="CAE">CAE</option>
-        <option value="CPE">CPE</option>
-        <option value="FCE">FCE</option>
-        <option value="KET">KET</option>
-        <option value="PET">PET</option>
-        <option value="LINGUASKILL">LINGUASKILL</option>
-        <option value="IELTS">IELTS</option>
-        <option value="TKT">TKT</option>
-        <option value="YLE">YLE</option>
+        {filters.map(exam => <option key={exam} value={exam}>{exam}</option>)}
       </FilterMobile>
       <Grid>
-        {data.map(({ node: { examen } }) => (
+        {Object.entries(data).map(([ key, exam ]) => (
           <Img
-            key={examen.id}
-            fluid={examen.fluid}
+            data-exam={exam.name}
+            key={key}
+            fluid={exam.childImageSharp.fluid}
             imgStyle={{ objectFit: 'contain', objectPosition: 'top center' }}
           />
         ))}
@@ -48,26 +34,39 @@ export default function ExamanesGrid() {
     </Container>
   )
 }
+const filters = [
+  'KET',
+  'PET',
+  'FCE',
+  'CAE',
+  'CPE',
+  'LINGUASKILL',
+  'IELTS',
+  'TKT',
+  'YLE',
+]
 // Query ==============================================
 const EXAMENES_QUERY = graphql`
-  query EXAMENES_QUERY {
-    allFile(
-      filter: {
-        sourceInstanceName: { eq: "images" }
-        relativeDirectory: { eq: "centro-examinador" }
-      }
-    ) {
-      edges {
-        node {
-          examen: childImageSharp {
-            fluid(maxWidth: 576) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-            id
-          }
-        }
+  fragment examenesImageSharpFragment on File {
+    childImageSharp {
+      fluid(maxWidth: 576) {
+        ...GatsbyImageSharpFluid_withWebp_noBase64
       }
     }
+  }
+  query EXAMENES_QUERY {
+    cae: file(relativePath: { eq: "centro-examinador/cae.png" }) { name ...examenesImageSharpFragment }
+    cpe: file(relativePath: { eq: "centro-examinador/cpe.png" }) { name ...examenesImageSharpFragment }
+    fce: file(relativePath: { eq: "centro-examinador/fce.png" }) { name ...examenesImageSharpFragment }
+    fceschools: file(relativePath: { eq: "centro-examinador/fce-schools.png" }) { name ...examenesImageSharpFragment }
+    ket: file(relativePath: { eq: "centro-examinador/ket.png" }) { name ...examenesImageSharpFragment }
+    ketschools: file(relativePath: { eq: "centro-examinador/ket-schools.png" }) { name ...examenesImageSharpFragment }
+    pet: file(relativePath: { eq: "centro-examinador/pet.png" }) { name ...examenesImageSharpFragment }
+    petschools: file(relativePath: { eq: "centro-examinador/pet-schools.png" }) { name ...examenesImageSharpFragment }
+    linguaskill: file(relativePath: { eq: "centro-examinador/linguaskill.png" }) { name ...examenesImageSharpFragment }
+    ielts: file(relativePath: { eq: "centro-examinador/ielts.png" }) { name ...examenesImageSharpFragment }
+    tkt: file(relativePath: { eq: "centro-examinador/tkt.png" }) { name ...examenesImageSharpFragment }
+    yle: file(relativePath: { eq: "centro-examinador/yle.png" }) { name ...examenesImageSharpFragment }
   }
 `
 // styles =============================================

@@ -4,21 +4,18 @@ import SocialLinks from 'components/SocialLinks'
 import { hoverStyle } from 'styles/CssHelpers'
 
 const SocialLinksList = styled(SocialLinks)`
-  > li {
-    display: none;
-  }
+  display: flex;
 
-  @media (${props => props.theme.min480}) and (${props => props.theme.max848}) {
-    grid-column-end: 3;
-    display: flex;
-    justify-content: flex-end;
-
+  @media (${props => props.theme.max420}) {
     > li {
-      display: initial;
+      display: none;
     }
   }
+  @media (${props => props.theme.max848}) {
+    grid-column-end: 3;
+    justify-content: flex-end;
+  }
   @media (${props => props.theme.min848}) {
-    display: flex;
     grid-column-end: -1;
     grid-row: 1 / 2;
   }
