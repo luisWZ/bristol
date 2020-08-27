@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 import { Button } from 'styles/CssHelpers'
+import { Legal, Subtitle } from 'styles/FontStyles'
 
 // Component ==========================================
 export default function Course({ course }) {
@@ -22,8 +24,8 @@ export default function Course({ course }) {
         <Image src={image.file.url} alt='' />
       </ImageLink>
       <TextBox>
-        <Small>{courseType}</Small>
-        <h1 className='h3'>{courseName}</h1>
+        <Small css={css`text-transform: uppercase;`}>{courseType}</Small>
+        <Subtitle as='h1'>{courseName}</Subtitle>
         <p>
           {sessionDate}
           <br />
@@ -84,7 +86,7 @@ const TextBox = styled.div`
   padding: 1rem 1rem 0.5rem;
 
   h1 {
-    margin-bottom: calc(0.75rem + 0.1vw);
+    margin-bottom: 0.8rem;
     transition: color 0.24s ease;
 
     + p {
@@ -92,20 +94,15 @@ const TextBox = styled.div`
     }
   }
   p {
-    line-height: 2;
-    margin-bottom: calc(0.5rem + 0.1vw);
-    font-size: calc(0.96rem + 0.2vw);
+    margin-bottom: 0.7rem;
 
     &:last-of-type {
       margin-bottom: 0;
     }
   }
 `
-const Small = styled.p`
-  color: ${props => props.theme.gray};
-  && {
-    font-size: 90%;
-  }
+const Small = styled(Legal)`
+  color: ${props => props.theme.grayDark};
 `
 const Button_ = styled(Button)`
   @media (${props => props.theme.min768}) {

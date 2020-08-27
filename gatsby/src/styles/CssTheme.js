@@ -9,12 +9,12 @@ export default function CssTheme() {
       ::selection { color: white; background: ${theme.blueLight}; }
 
       /* Dynamic size for titles */
-      h1 {
+      /* h1 {
         font-size: calc(1.8rem + 0.6vw);
       }
       h3 {
         font-size: calc(1.4rem + 0.5vw);
-      }
+      } */
       a {
         display: inline-block;
         transition: all 0.26s ease-in-out;

@@ -47,8 +47,8 @@ export default function Footer() {
                 padding: ${theme.gutter};
                 display: block;
                 border-top: 1px solid white;
-                @media (min-width: 25em) {
-                  padding: 1rem;
+                @media (${theme.min400}) {
+                  padding: 1rem 3.5rem 1rem 1rem;
                 }
               }
             @media (${theme.min640}) {
@@ -67,7 +67,9 @@ export default function Footer() {
               }
             }
           `}>
-            <h1 className='h4' css={theme => css`
+            <h1 css={theme => css`
+              font-size: 1.125rem;
+              line-height: 1.5;
               padding-left: ${theme.gutter};
               margin-bottom: 1rem;
             `}>Mapa del sitio</h1>

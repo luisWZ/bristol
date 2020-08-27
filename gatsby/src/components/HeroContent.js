@@ -114,6 +114,9 @@ const Description = styled.p`
   font-size: calc(0.91rem + 0.3vw * 1.5);
   margin-bottom: 2rem;
   max-width: 576px;
+  @media (${props => props.theme.min1200}) {
+    font-size: 1.25rem;
+  }
 `
 const Button_ = styled(Button)`
   @media(${props => props.theme.max720 }) { width: 100%; }

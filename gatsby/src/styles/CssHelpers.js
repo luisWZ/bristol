@@ -38,7 +38,7 @@ export const Container = styled.section`
 `
 export function ContainerWhite({ children, borderBottom = false }) {
   return (
-    <section css={theme => css`
+    <section css={css`
       background-color: white;
       ${borderBottom && borderBottomStyle}
     `}>
@@ -46,20 +46,12 @@ export function ContainerWhite({ children, borderBottom = false }) {
     </section>
   )
 }
-export const Title = styled.h1`
+export const title = css`
   text-align: center;
   transition: color .24s ease-in;
   margin-top: 4rem;
   &:hover {
-    color: ${props => props.theme.black};
-  }
-`
-export const Subtitle = styled.h1`
-  margin-top: 2rem;
-
-  @media (${props => props.theme.max480}) {
-    font-size:1.25rem;
-    line-height: 1.25;
+    color: ${theme.black};
   }
 `
 export const Button = styled.a`

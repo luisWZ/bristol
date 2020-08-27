@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 import { Button } from 'styles/CssHelpers'
+import { Title2 } from 'styles/FontStyles'
 
 // Components =========================================
 export default function FeaturedCourses() {
@@ -30,7 +32,7 @@ const Course = ({ course: { image, name, link } }) => (
       data-sal-delay='300'
       data-sal-easing='easeOutQuad'
     >
-      <h2>{name}</h2>
+      <Title2 css={css`color: white; text-shadow: 4px 3px 3px hsla(220, 50%, 20%, 0.6);`}>{name}</Title2>
       <Button red='true' as={Link} to={`/${link}`}>
         Conoce más
       </Button>
@@ -87,11 +89,6 @@ const ImageBox = {
   left: '0',
 }
 const TextBox = styled.div`
-  max-width: 250px;
+  max-width: 264px;
   z-index: 1;
-
-  h2 {
-    color: white;
-    text-shadow: 4px 3px 3px hsla(220, 50%, 20%, 0.6);
-  }
 `

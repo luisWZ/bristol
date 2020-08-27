@@ -1,12 +1,15 @@
 import React from 'react'
-import CourseDetails from 'components/CourseDetail/CourseDetails'
-import RecommendedCourses from 'components/CourseDetail/RecommendedCourses'
 
-export default function CourseDetail() {
+import CourseDetail from 'components/CourseDetail'
+// import CourseDetails from 'components/CourseDetail/CourseDetails'
+// import RecommendedCourses from 'components/CourseDetail/RecommendedCourses'
+
+export default function CourseDetailPage() {
   return (
     <>
-      <CourseDetails />
-      <RecommendedCourses />
+      <CourseDetail />
+      {/* <CourseDetails /> */}
+      {/* <RecommendedCourses /> */}
     </>
   )
 }

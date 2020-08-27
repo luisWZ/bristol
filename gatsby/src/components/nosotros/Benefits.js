@@ -13,7 +13,7 @@ import PictogramaDesarrollo from 'svgs/pictograma-desarrollo.svg'
 
 export default function Benefits() {
   const data = useStaticQuery(IMAGE_QUERY)
-  console.log(data)
+
   return (
     <Container paddingBig>
       <TextIlustration img563

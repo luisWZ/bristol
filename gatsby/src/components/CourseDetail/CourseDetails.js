@@ -3,6 +3,7 @@ import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 
 import { Container, Button } from 'styles/CssHelpers'
+import { Big, Subtitle } from 'styles/FontStyles'
 import SvgThumbnail from 'svgs/thumbnail-course-detail.svg'
 import PictogramaDias from 'svgs/pictograma-dias.svg'
 import PictogramaDuracion from 'svgs/pictograma-duracion.svg'
@@ -12,15 +13,11 @@ import PictogramaModalidad from 'svgs/pictograma-modalidad.svg'
 
 export default function CourseDetails() {
   return (
-    <section
-      css={css`
-        background-color: white;
-      `}
-    >
+    <section css={css`background-color: white;`}>
       <ContainerGrid as='div'>
         <TitleBox>
           <TitleText>
-            <h1>Pet for Schools</h1>
+            <Big>Pet for Schools</Big>
             <p>Preliminary English Test</p>
           </TitleText>
           <Button_>Inscríbete</Button_>
@@ -71,10 +68,10 @@ export default function CourseDetails() {
           </InfoGrid>
         </Sidebar>
         <Main>
-          <h1 className='h3'>
+          <Subtitle>
             Aprende a comunicarte eficazmente en inglés, disfruta más de tus
             viajes y garantiza el éxito en tu vida académica y profesional.
-          </h1>
+          </Subtitle>
           <p>
             Desde 2008, Bristol Inglés Profesional es Centro Examinador
             Autorizado por Cambridge Assessment English para la administración

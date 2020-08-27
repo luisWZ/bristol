@@ -1,7 +1,8 @@
 import React from 'react'
 import {graphql, useStaticQuery } from 'gatsby'
 
-import { Container, Title } from 'styles/CssHelpers'
+import { Container, title } from 'styles/CssHelpers'
+import { Title2 } from 'styles/FontStyles'
 import Courses from 'components/Courses'
 
 // Components =========================================
@@ -10,7 +11,7 @@ export default function ComingCoursesHome() {
 
   return (
     <Container>
-      <Title>Próximos cursos</Title>
+      <Title2 css={title}>Próximos cursos</Title2>
       <Courses {...{ data }} />
     </Container>
   )

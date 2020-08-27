@@ -6,7 +6,8 @@ import 'slick-carousel/slick/slick.css'
 import "slick-carousel/slick/slick-theme.css"
 import { FaQuoteRight } from 'react-icons/fa'
 
-import { Container, Title } from 'styles/CssHelpers'
+import { Container, title } from 'styles/CssHelpers'
+import { Title2 } from 'styles/FontStyles'
 import CssVariables from 'styles/CssVariables'
 import { getRandomInt } from 'utils/helpers'
 import IconBoy from 'svgs/testimonial-boy.svg'
@@ -18,7 +19,7 @@ export default function Testimonials() {
 
   return (
     <Container_>
-      <Title>Testimonios</Title>
+      <Title2 css={title}>Testimonios</Title2>
       <Slider {...{ ...settings, initialSlide: getRandomInt(data.length) }}>
         {data.map((testimony, index) => (
           <Testimony

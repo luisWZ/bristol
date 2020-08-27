@@ -26,5 +26,5 @@ export const Title2 = styled.h1`
 export const Subtitle = styled.h2`
   font-size: 1.5rem;
   line-height: 1.375;
-  margin-top: 2.5rem;
+  /* margin-top: 2.5rem; */
 ` // 24px

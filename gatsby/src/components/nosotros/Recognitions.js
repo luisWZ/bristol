@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import { Section, Container, Subtitle } from 'styles/CssHelpers'
+import { Section, Container } from 'styles/CssHelpers'
+import { Title2 } from 'styles/FontStyles'
 import LogoSep from 'svgs/logo-sep.svg'
 import LogoCambridgeAssesmentEnglish from 'svgs/logo-cambridge-assesment-english.svg'
 import LogoCambridgePreparationCentre from 'svgs/logo-cambridge-preparation-centre.svg'
@@ -89,9 +90,7 @@ const RecognitionBox = styled(Container)`
     display: block;
   }
 `
-const RecognitionTitle = styled(Subtitle)`
-  margin-top: 0;
-
+const RecognitionTitle = styled(Title2)`
   @media (${props => props.theme.max560}) {
     margin-bottom: 3rem;
   }

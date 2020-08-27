@@ -2,8 +2,8 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
-import { Select, Container } from 'styles/CssHelpers'
+
+import { Select, Container, title } from 'styles/CssHelpers'
 import { Title2 } from 'styles/FontStyles'
 
 // component ==========================================
@@ -12,7 +12,7 @@ export default function ExamanesGrid() {
 
   return (
     <Container>
-      <Title2 css={css`text-align: center;`}>Calendarios de Exámenes Internacionales</Title2>
+      <Title2 css={title}>Calendarios de Exámenes Internacionales</Title2>
       <Filter>
         <li className='selected'>Todos los exámenes</li>
         {filters.map(exam => <li key={exam}>{exam}</li>)}

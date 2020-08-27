@@ -2,7 +2,8 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 
-import { Container } from 'styles/CssHelpers'
+import { Container, title } from 'styles/CssHelpers'
+import { Title2 } from 'styles/FontStyles'
 import IconArrow from './Svg/SvgIconArrow'
 
 // components =========================================
@@ -15,7 +16,7 @@ export default function Newsletter() {
         padding: 2.5rem ${theme.gutter};
         margin-bottom: -${theme.newsletterOffset};
       `}>
-      <h1 className='h3' css={css`text-align: center;`}>Suscríbete a nuestro newsletter</h1>
+      <Title2 css={title}>Suscríbete a nuestro newsletter</Title2>
       <form css={theme => css`
         display: flex;
         max-width: 48rem;

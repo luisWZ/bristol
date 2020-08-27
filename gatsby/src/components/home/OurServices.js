@@ -2,7 +2,8 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { Container, Title } from 'styles/CssHelpers'
+import { Container, title } from 'styles/CssHelpers'
+import { Title2 } from 'styles/FontStyles'
 
 // Components =========================================
 export default function OurServices() {
@@ -10,7 +11,7 @@ export default function OurServices() {
 
   return (
     <Container>
-      <Title>Nuestros servicios</Title>
+      <Title2 css={title}>Nuestros servicios</Title2>
       <ServicesWrapper>
         {data.map((service, index) => (
           <Service service={service.node} key={`our_services${index}`} />
@@ -23,7 +24,7 @@ export default function OurServices() {
 const Service = ({ service }) => (
   <ServiceBox>
     <Icon src={service.svg.publicURL}></Icon>
-    <Header className='h3'>{service.title}</Header>
+    <Header>{service.title}</Header>
     <p>{service.text}</p>
     <Anchor href='/'>Saber más</Anchor>
   </ServiceBox>
@@ -59,6 +60,8 @@ const ServiceBox = styled.div`
     @media (${props => props.theme.min640}) {
       flex-basis: 48%;
       padding: 3vw;
+      margin-left: auto;
+      margin-right: auto;
     }
     @media (${props => props.theme.min960}) {
       flex-basis: 31%;
@@ -78,8 +81,8 @@ const ServiceBox = styled.div`
     }
 `
 const Icon = styled.img`
-  width: calc(54px + 2vw);
-  height: calc(54px + 2vw);
+  width: calc(48px + 2vw);
+  height: calc(48px + 2vw);
   display: block;
   float: right;
   margin-bottom: 1rem;
@@ -87,8 +90,12 @@ const Icon = styled.img`
   @media (${props => props.theme.min640}) {
     float: none;
   }
+  @media (${props => props.theme.min768}) {
+    width: 4rem;
+    height: 4rem;
+  }
 `
-const Header = styled.h1`
+const Header = styled(Title2)`
   margin-top: 1.25rem;
   margin-bottom: 0.8rem;
 `

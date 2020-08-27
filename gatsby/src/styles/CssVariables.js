@@ -19,7 +19,7 @@ module.exports = {
   // bgWhite: 'white',
   grayLight: '#e1e1e1',
   gray: '#A2A9B0',
-  grayDark: '#444',
+  grayDark: '#697077',
   black: '#586174', // works on text
   // white: 'white',
   // mediaqueries =====================================
