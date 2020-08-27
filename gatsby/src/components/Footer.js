@@ -9,30 +9,6 @@ import SvgFooterBrand from './Svg/SvgFooterBrand'
 import SocialLinks from './SocialLinks'
 import Newsletter from './Newsletter'
 
-const Li = props => (
-  <li
-  css={theme => css`
-    svg { display: none; }
-
-    @media (${theme.min768}) { order: ${props.order}; }
-    @media(${theme.max768}) {
-      a {
-        position: relative;
-      }
-      svg {
-        display: block;
-        position: absolute;
-        width: 1.25rem;
-        right: 1.25rem;
-        font-size: 1.25rem;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
-  `}
-  {...props} />
-)
-
 export default function Footer() {
   return (
     <>
@@ -84,7 +60,7 @@ export default function Footer() {
             @media (${theme.min768}) {
               flex: 0 23rem;
               a {
-                width: 10.5rem;
+                width: 11.4rem;
                 border-top: none;
                 padding-top: 0.5rem;
                 padding-bottom: 0.5rem;
@@ -108,19 +84,16 @@ export default function Footer() {
                 <Li order='3'>
                   <Link to='/nosotros'>Nosotros
                   <AiOutlineRight /></Link></Li>
-                <Li order='5'>
-                  <Link to='/cursos'>Cursos Generales
-                  <AiOutlineRight /></Link></Li>
-                <Li order='7'>
-                  <Link to='/examenes'>Exámenes Internacionales
-                  <AiOutlineRight /></Link></Li>
                 <Li order='2'>
+                  <Link to='/cursos'>Cursos de inglés General
+                  <AiOutlineRight /></Link></Li>
+                <Li order='4'>
                   <Link to='/educacion-continua'>Educación Continua
                   <AiOutlineRight /></Link></Li>
-                {/* <Li order='4'>
-                  <Link to='/contacto'>Contacto
-                  <AiOutlineRight /></Link></Li> */}
                 <Li order='6'>
+                  <Link to='/examenes'>Centro Examinador Cambridge
+                  <AiOutlineRight /></Link></Li>
+                <Li order='5'>
                   <Link to='/aviso-privacidad'>Aviso de Privacidad
                   <AiOutlineRight /></Link></Li>
             </ul>
@@ -155,3 +128,27 @@ export default function Footer() {
     </>
   )
 }
+// style ==============================================
+const Li = props => (
+  <li
+  css={theme => css`
+    svg { display: none; }
+
+    @media (${theme.min848}) { order: ${props.order}; }
+    @media(${theme.max848}) {
+      a {
+        position: relative;
+      }
+      svg {
+        display: block;
+        position: absolute;
+        width: 1.25rem;
+        right: 1.25rem;
+        font-size: 1.25rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  `}
+  {...props} />
+)

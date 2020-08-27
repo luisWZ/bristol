@@ -101,6 +101,7 @@ module.exports = {
           svgs: `src/inline-svg`,
           components: `src/components`,
           utils: `src/utils`,
+          root: `./`,
         }
       }
     },

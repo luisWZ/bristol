@@ -77,9 +77,8 @@ export default function CourseDescription({ children, bgWhite, border, kids, exa
             <p>Talleres gratuitos</p>
           </Feature>
         </Grid>
-        <Underline to='/nosotros'>
-          Consulte nuestro sistema de niveles
-        </Underline>
+        <Underline to='/nosotros'>Consulte nuestro sistema de niveles</Underline>
+        {examen && <Underline to='/examenes'>¿Quieres conocer más sobre cada uno de los exámenes de certificación internacional?</Underline>}
       </Container>
     </Section>
   )

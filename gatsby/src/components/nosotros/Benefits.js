@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import { Container } from 'styles/CssHelpers'
 import TextIlustration from 'components/TextIlustration'
@@ -11,10 +12,14 @@ import PictogramaMedia from 'svgs/pictograma-media.svg'
 import PictogramaDesarrollo from 'svgs/pictograma-desarrollo.svg'
 
 export default function Benefits() {
+  const data = useStaticQuery(IMAGE_QUERY)
+  console.log(data)
   return (
     <Container paddingBig>
-      <TextIlustration ilus2
-        subtitle='El prestigio ganado a lo largo de más de 25 años ha hecho de Bristol Inglés Profesional un referente de calidad y excelencia en la enseñanza del inglés'>
+      <TextIlustration img563
+        subtitle='El prestigio ganado a lo largo de más de 25 años ha hecho de Bristol Inglés Profesional un referente de calidad y excelencia en la enseñanza del inglés'
+        image={data.fachada.childImageSharp.fluid}
+      >
           <p>Más importante aún, es el resultado de los miles de alumnos que han pasado por nuestras aulas que no sólo aprendieron inglés, sino que aprendieron de otras culturas, desarrollaron otras habilidades e hicieron amistades estrechas y duraderas.</p>
       </TextIlustration>
       <H1 className='h3'>Beneficios de nuestros cursos</H1>
@@ -69,6 +74,18 @@ export default function Benefits() {
     </Container>
   )
 }
+// query ==============================================
+const IMAGE_QUERY = graphql`
+  query IMAGE_QUERY {
+    fachada: file(relativePath: { eq: "imagen-fachada.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 563) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+  }
+`
 // styles =============================================
 const H1 = styled.h1`
   font-size: 1.25rem;

@@ -1,20 +1,43 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import HeroContent from 'components/HeroContent'
-import IlustracionBicicleta from 'svgs/ilustracion-bicicleta.svg'
+import IlustracionPatineta from 'svgs/ilustracion-patineta.svg'
 import MainCourses from 'components/educacion-continua/MainCourses'
 import CoursesAbroad from 'components/educacion-continua/CoursesAbroad'
 import CoursesCompanies from 'components/educacion-continua/CoursesCompanies'
 
-export default function EducacionContinua() {
+export default function EducacionContinua({ data }) {
+  // console.log(data)
   return (
     <>
       <HeroContent
-        mainText='Una de las principales fortalezas de Bristol es su personal académico'
-        image={IlustracionBicicleta}/>
+        mainText='La mejor manera de volverse un experto es practicando'
+        image={IlustracionPatineta}
+        section='Educación Continua'
+      />
       <MainCourses />
-      <CoursesAbroad />
-      <CoursesCompanies />
+      <CoursesAbroad data={data.imageCursoExtranjero} />
+      <CoursesCompanies data={data.imageEmpresa} />
     </>
   )
 }
+// query ==============================================
+export const query = graphql`
+  query IMAGES_QUERY {
+    imageCursoExtranjero: file(relativePath: { eq: "image-curso-extranjero.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 447) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    imageEmpresa: file(relativePath: { eq: "image-empresa.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 447) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+  }
+`

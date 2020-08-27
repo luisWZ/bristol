@@ -1,6 +1,8 @@
 import React from 'react'
 import { css } from '@emotion/core'
+
 import { FaFacebookF, FaInstagram } from 'react-icons/fa'
+import { instagram, facebook } from 'root/sitedefaults'
 
 // components =========================================
 export default function SocialLinks({ className }) {
@@ -24,8 +26,8 @@ const socialLink = (url, children, domain) => (
   }
 )
 
-const Facebook = socialLink('https://www.facebook.com/bristolinglesprofesional/', <FaFacebookF />, 'facebook')
-const Instagram = socialLink('https://www.instagram.com/bristolingles/', <FaInstagram />, 'instagram')
+const Facebook = socialLink( facebook, <FaFacebookF />, 'facebook')
+const Instagram = socialLink( instagram, <FaInstagram />, 'instagram')
 
 const List = (props) => (
   <ul className={props.className} css={theme => css`
@@ -36,6 +38,9 @@ const List = (props) => (
       height: 2.4rem;
       display: inline-flex;
       align-items: center;
+    }
+    svg {
+      fill: ${props => props.theme.bristolBlue}
     }
   `}
   {...props} />

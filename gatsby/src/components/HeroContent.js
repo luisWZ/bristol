@@ -4,9 +4,10 @@ import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
 import { Section, Container, Button } from 'styles/CssHelpers'
+import { Body2, Title } from 'styles/FontStyles'
 
 // Components =========================================
-const HeroContent = ({mainText, image, description, button, buttonLink }) => {
+const HeroContent = ({mainText, image, description, button, buttonLink, section }) => {
   const Image = styled(image)`
     flex-basis: 80%;
     margin-top: 2rem;
@@ -27,6 +28,7 @@ const HeroContent = ({mainText, image, description, button, buttonLink }) => {
             data-sal-delay='100'
             data-sal-easing='easeOutSine'
           >
+            <Pagelocation as='span'>{section}</Pagelocation>
             {mainText}
           </Slogan>
           {description && <Description
@@ -102,9 +104,11 @@ const TextBox = styled.div`
     flex-basis: 53%;
   }
 `
-const Slogan = styled.h1`
-  font-size: calc(1rem + 1vw * 2.3);
-  line-height: 1.4;
+const Slogan = styled(Title)`
+  @media(${props => props.theme.max1040 }) {
+    font-size: calc(1rem + 1vw * 2.3);
+    line-height: 1.4;
+  }
 `
 const Description = styled.p`
   font-size: calc(0.91rem + 0.3vw * 1.5);
@@ -113,4 +117,9 @@ const Description = styled.p`
 `
 const Button_ = styled(Button)`
   @media(${props => props.theme.max720 }) { width: 100%; }
+`
+const Pagelocation = styled(Body2)`
+  margin-bottom: 0;
+  display: block;
+  color: ${props => props.theme.bristolBlue};
 `

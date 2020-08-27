@@ -13,13 +13,13 @@ export default function Navigation() {
     <NavBox {...{menuOpen}} role='navigation'>
       <NavItem><Link to='/'>Home<AiOutlineRight /></Link></NavItem>
       <NavItem><Link to='/nosotros'>Nosotros<AiOutlineRight /></Link></NavItem>
-      <NavItem className='dropdown'><a href='#dropdown' aria-haspopup='true'>Cursos</a>
+      <NavItem className='dropdown'><span aria-haspopup='true'>Cursos</span>
         <ul aria-label='submenu'>
           <li><Link to='/cursos'>Cursos de Inglés General <AiOutlineRight /></Link></li>
           <li><Link to='/educacion-continua'>Educación Continua <AiOutlineRight /></Link></li>
         </ul>
       </NavItem>
-      <NavItem><Link to='/examenes'>Centro Examinador<AiOutlineRight /></Link></NavItem>
+      <NavItem><Link to='/examenes'>Centro Examinador Cambridge<AiOutlineRight /></Link></NavItem>
       <NavItem><Link to='/course-detail'>Course Detail<AiOutlineRight /></Link></NavItem>
     </NavBox>
   )
@@ -27,7 +27,8 @@ export default function Navigation() {
 // styles =============================================
 // Made for the navigation menu in desktop size
 const _1wordNav = `minmax(max-content , 100px)`
-const _2wordNav = `minmax(max-content , 168px)`
+const _2wordNav = `minmax(max-content , 144px)`
+const _3wordNav = `minmax(max-content , 264px)`
 
 const NavBox = styled.ul`
   display: grid;
@@ -51,7 +52,7 @@ const NavBox = styled.ul`
   @media (${props => props.theme.min848}) {
     grid-row: 2 / 3;
     grid-auto-flow: column;
-    grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_2wordNav} ${_2wordNav}`}
+    grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_3wordNav} ${_2wordNav}`}
   }
 `
 const anchorHeight = '3rem'
@@ -60,20 +61,25 @@ const anchorHeightMobile = '3.5rem'
 
 const liMobileStyles = theme =>`
   height: ${anchorHeightMobile};
-  padding-left: ${theme.gutter};
-  padding-right: ${theme.gutter};
+  > a {
+    padding-left: ${theme.gutter};
+    padding-right: ${theme.gutter};
+  }
 `
-
 const NavItem = styled('li')`
   display: flex;
   position: relative;
   height: ${anchorHeight};
 
-  a {
+  a,
+  &.dropdown span {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
+  }
+  &.dropdown span {
+    cursor: pointer;
   }
   svg {
     display: none;
@@ -88,6 +94,7 @@ const NavItem = styled('li')`
   }
 
   &:hover > a,
+  &:hover > span,
   ul li:hover a {
     color: white;
     background-color: ${props => props.theme.blueLight};
@@ -99,7 +106,7 @@ const NavItem = styled('li')`
       top: 100%;
       left: 0;
       width: 15rem;
-      box-shadow: 0 1px 2px hsla(220,11%,15%,0.5);
+      box-shadow: 0 2px 3px hsla(220,11%,15%,0.25);
       background-color: white;
       opacity: 0;
       display: none;
@@ -109,9 +116,6 @@ const NavItem = styled('li')`
       a {
         justify-content: unset;
         padding-left: 1.5rem;
-      }
-      span {
-        display: none;
       }
     }
     &:hover > ul,
@@ -133,7 +137,7 @@ const NavItem = styled('li')`
       ul {
         width: 100%;
       }
-      > a {
+      > span {
         display: none;
       }
       li {

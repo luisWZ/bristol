@@ -4,4 +4,7 @@ module.exports = {
   keywords: `inglés, ingles, veracruz, xalapa, coatepec, adolescentes, niños, estudiar, aprender, cambridgem, esol, certificaciones, internacional, intercambios, universidad, bristol, english, canada, londres, london, england, inglaterra`,
   short_name: `Bristol`,
   lang: `es-MX`,
+  email: `bristolinglesrp@gmail.com`,
+  facebook: `https://www.facebook.com/bristolinglesprofesional/`,
+  instagram: `https://www.instagram.com/bristolingles/`,
 }

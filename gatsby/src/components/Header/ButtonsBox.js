@@ -2,11 +2,13 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 import { Button } from 'styles/CssHelpers'
+import { email } from 'root/sitedefaults'
 
 export default function ButtonsBox({children}) {
   return (
     <ButtonsBox_>
-      <ContactanosButton as='button' noRadius blue>
+      <ContactanosButton
+        noRadius href={`mailto:${email}`}>
         Contáctanos
       </ContactanosButton>
       {children}
@@ -24,6 +26,6 @@ const ContactanosButton = styled(Button)`
   @media (${props => props.theme.min848}) {
     padding: 0rem 1.2rem;
     height: 100%;
-    display: initial;
+    display: flex;
   }
 `

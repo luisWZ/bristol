@@ -12,7 +12,9 @@ export default function Nosotros() {
     <>
       <HeroContent
         mainText='Una de las principales fortalezas de Bristol es su personal académico'
-        image={IlustracionBicicleta}/>
+        image={IlustracionBicicleta}
+        section='Nosotros'
+      />
       <Benefits />
       <Us />
       <Recognitions />

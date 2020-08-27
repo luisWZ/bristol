@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import { Container } from 'styles/CssHelpers'
+import { Container, LinkSaberMas } from 'styles/CssHelpers'
 import { Body2, Subtitle } from 'styles/FontStyles'
 import Pictograma50Plus from 'svgs/pictograma-50-plus.svg'
 import PictogramaColegios from 'svgs/pictograma-colegios.svg'
@@ -18,6 +18,7 @@ export function Column({ children, title, subtitle, subheader, pictogram }) {
       {subtitle && <p className='grid__subtitle'>{subtitle}</p>}
       <Body2>{subheader}</Body2>
       {children}
+      <LinkSaberMas />
     </div>
   )
 }

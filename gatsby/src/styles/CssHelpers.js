@@ -4,6 +4,7 @@ import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
 import theme from './CssVariables'
+import { email } from 'root/sitedefaults'
 
 const borderBottomStyle = `border-bottom: 1px solid ${theme.gray};`
 
@@ -83,6 +84,12 @@ export const Button = styled.a`
     };
   }
 `
+export const LinkSaberMas = () => <a
+  css={theme => css` color: ${theme.bristolBlue}; text-decoration: underline; font-weight: bold;`}
+  href={`mailto:${email}`}>Quiero saber más</a>
+
+export const ButtonSaberMas = () => <Button href={`mailto:${email}`}>Quiero saber más</Button>
+
 export const hoverStyle = (theme, color) => {
   return `
     &:hover {
@@ -98,6 +105,11 @@ export const Underline = styled(Link)`
   text-decoration: underline;
   color: ${props => props.theme.bristolBlue};
   font-weight: bold;
+  display: block;
+
+  & + & {
+    margin-top: 0.5rem;
+  }
 `
 
 export const Select = styled.select`

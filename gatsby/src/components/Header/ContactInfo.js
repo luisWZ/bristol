@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
+import { email } from 'root/sitedefaults'
 
 import { hoverStyle } from 'styles/CssHelpers'
 import SvgEnvelope from '../Svg/SvgEnvelope'
@@ -12,10 +13,10 @@ export default function ContactInfo() {
   return (
     <ContactBox>
       <ContactLi>
-        <ContactAnchor href='mailto:hola@bristolingles.com'>
+        <ContactAnchor href={`mailto:${email}`}>
           <SvgEnvelope fill={color} />
           <span>Email</span>
-          <span>hola@bristolingles.com</span>
+          <span>{email}</span>
         </ContactAnchor>
       </ContactLi>
       <ContactLi>

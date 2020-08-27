@@ -8,7 +8,7 @@ module.exports = {
   gap: '3vw',
   sectionSpace: '5rem',
   // colors ===========================================
-  bristolBlue: '#0043CE',
+  bristolBlue: '#1058FB',
   bristolRed: '#DA1E28',
   blueDark: '#394551',
   blueLight: '#0f62fe',
@@ -33,6 +33,7 @@ module.exports = {
   min848: 'min-width: 53em',
   min880: 'min-width: 55em',
   min960: 'min-width: 60em',
+  min1040: 'min-width: 65em',
   min1200: 'min-width: 75em',
   min1600: 'min-width: 100em', // stop any property with vw value
   // ======== max-width
