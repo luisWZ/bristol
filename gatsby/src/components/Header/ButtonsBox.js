@@ -28,4 +28,8 @@ const ContactanosButton = styled(Button)`
     height: 100%;
     display: flex;
   }
+  @media (${props => props.theme.min1400}) {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
 `

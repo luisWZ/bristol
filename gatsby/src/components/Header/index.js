@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+import LogoCambridgeAssesmentEnglish from 'svgs/logo-cambridge-assesment-english.svg'
 import Logo from './Logo'
 import Navigation from './Navigation'
 import ContactInfo from './ContactInfo'
@@ -21,6 +22,7 @@ export default function Header() {
       <ButtonsBox>
         <MenuButton />
       </ButtonsBox>
+      <LogoCambridge />
     </HeaderBox>
   )
 }
@@ -39,5 +41,15 @@ const HeaderBox = styled.header`
   > div,
   > ul {
     background-color: white;
+  }
+`
+const LogoCambridge = styled(LogoCambridgeAssesmentEnglish)`
+  position: absolute;
+  top: 4px;
+  right: 102px;
+  width: 112px;
+  display: none;
+  @media (${props => props.theme.min1400}) {
+    display: block;
   }
 `

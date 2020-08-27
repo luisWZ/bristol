@@ -6,8 +6,8 @@ GLOBAL
 
 MENU
 ✔ Cambiar “Centro Examinador” a “Centro Examinador Cambridge” @done(20-08-26 13:55)
-☐ Agregar logo Cambridge como se muestra en Invision
-☐ Social Links missing
+✔ Agregar logo Cambridge como se muestra en Invision @done(20-08-27 03:03)
+✔ Social Links missing @done(20-08-27 03:03)
 ✔ Cambiar "Cursos" a "Cursos de Inglés General" @done(20-08-26 13:32)
 
 HOME

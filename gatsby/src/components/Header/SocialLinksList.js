@@ -4,8 +4,6 @@ import SocialLinks from 'components/SocialLinks'
 import { hoverStyle } from 'styles/CssHelpers'
 
 const SocialLinksList = styled(SocialLinks)`
-  display: flex;
-
   @media (${props => props.theme.max420}) {
     > li {
       display: none;
@@ -26,6 +24,9 @@ const SocialLinksList = styled(SocialLinks)`
     svg {
       width: 1.2rem;
     }
+  }
+  @media (${props => props.theme.min1400}) {
+    justify-content: flex-end;
   }
 `
 
