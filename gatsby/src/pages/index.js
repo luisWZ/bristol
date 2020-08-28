@@ -14,7 +14,7 @@ export default function Home() {
       <HeroContent
         mainText='Speak a new language, discover a new world'
         image={IlustracionSittingGirl}
-        description='Somos profesionales en la enseñanza de inglés. Nuestros maestros cuentan con grados académicos y certificaciones internacionales como maestros de inglés así como con una gran experiencia'
+        description='Somos profesionales en la enseñanza de inglés. Nuestros maestros cuentan con grados académicos y certificaciones internacionales como maestros de inglés así como con una gran experiencia.'
         button='Nuestros cursos'
         buttonLink='/cursos'
       />

@@ -5,19 +5,38 @@ import { Container, Section } from 'styles/CssHelpers'
 import TitleBox from './TitleBox'
 import CourseFeatures from './CourseFeatures'
 import CourseDescription from './CourseDescription'
-import RecommendedCourses from './RecommendedCourses'
+// import RecommendedCourses from './RecommendedCourses'
 
-export default function CourseDetails() {
+export default function CourseDetails({
+  pageContext: {
+    courseName,
+    courseType,
+    sessionDate,
+    sessionTime,
+    image,
+    startingDate,
+    price,
+    campus,
+    courseDescription,
+  },
+}) {
   return (
     <>
-      <Section>
+      <Section style={{ marginBottom: '8rem' }}>
         <ContainerGrid as='div'>
-          <TitleBox />
-          <CourseFeatures />
-          <CourseDescription />
+          <TitleBox {...{courseName}} {...{courseType}} />
+          <CourseFeatures
+            {...{sessionDate}}
+            {...{sessionTime}}
+            {...{image}}
+            {...{startingDate}}
+            {...{campus}}
+            {...{price}}
+          />
+          <CourseDescription {...{courseDescription}} />
         </ContainerGrid>
       </Section>
-      <RecommendedCourses />
+      {/* <RecommendedCourses /> */}
     </>
   )
 }

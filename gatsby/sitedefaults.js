@@ -7,4 +7,6 @@ module.exports = {
   email: `bristolinglesrp@gmail.com`,
   facebook: `https://www.facebook.com/bristolinglesprofesional/`,
   instagram: `https://www.instagram.com/bristolingles/`,
+  facebookhref1: `https://connect.facebook.net`,
+  facebookhref2: `https://scontent.fmid4-1.fna.fbcdn.net`,
 }

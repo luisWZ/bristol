@@ -1,5 +1,5 @@
 require('dotenv').config({
-  path: `.env.contentful`,
+  path: `.env.site`,
 })
 const loadOnProduction = () => {
   if (!process.env !== 'development') {
@@ -104,6 +104,12 @@ module.exports = {
           root: `./`,
         }
       }
+    },
+    {
+      resolve: `gatsby-plugin-mailchimp`,
+      options: {
+          endpoint: process.env.MAILCHIMP_ENDPOINT,
+      },
     },
   ],
 }

@@ -20,7 +20,7 @@ export default function Navigation() {
         </ul>
       </NavItem>
       <NavItem><Link to='/examenes'>Centro Examinador Cambridge<AiOutlineRight /></Link></NavItem>
-      <NavItem><Link to='/course-detail'>Course Detail<AiOutlineRight /></Link></NavItem>
+      {/* <NavItem><Link to='/course-detail'>Course Detail<AiOutlineRight /></Link></NavItem> */}
     </NavBox>
   )
 }

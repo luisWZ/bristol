@@ -19,9 +19,10 @@ export default function ComingCourses() {
 // query ==============================================
 const COMING_COURSES_QUERY = graphql`
   query COMING_COURSES_QUERY {
-    allContentfulCourses(limit: 3, sort: { fields: startingDate }) {
+    allContentfulCourses(limit: 3, sort: { fields: startingDate, order: DESC }) {
       nodes {
         id
+        slug
         courseType
         courseName
         sessionDate

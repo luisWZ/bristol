@@ -11,11 +11,9 @@ export default function OurServices() {
 
   return (
     <Container>
-      <Title2 css={title}>Nuestros servicios</Title2>
+      <Title2 css={title}>Modalidades</Title2>
       <ServicesWrapper>
-        {data.map((service, index) => (
-          <Service service={service.node} key={`our_services${index}`} />
-        ))}
+        {data.map((service, index) => <Service service={service.node} key={`our_services${index}`} /> )}
       </ServicesWrapper>
     </Container>
   )
@@ -25,8 +23,8 @@ const Service = ({ service }) => (
   <ServiceBox>
     <Icon src={service.svg.publicURL}></Icon>
     <Header>{service.title}</Header>
-    <p>{service.text}</p>
-    <Anchor href='/'>Saber más</Anchor>
+    {service.text.split('@').map((line, index) => <p key={index}>{line}</p>)}
+    {/* <Anchor href='/'>Saber más</Anchor> */}
   </ServiceBox>
 )
 // query ==============================================
@@ -63,10 +61,10 @@ const ServiceBox = styled.div`
       margin-left: auto;
       margin-right: auto;
     }
-    @media (${props => props.theme.min960}) {
+    /* @media (${props => props.theme.min960}) {
       flex-basis: 31%;
       padding: 1.5rem;
-    }
+    } */
 
     > * { color: white; }
 
@@ -99,14 +97,14 @@ const Header = styled(Title2)`
   margin-top: 1.25rem;
   margin-bottom: 0.8rem;
 `
-const Anchor = styled.a`
-  border: 1px solid white;
-  padding: 0.6rem;
-  float: right;
-  border-radius: ${props => props.theme.radius};
+// const Anchor = styled.a`
+//   border: 1px solid white;
+//   padding: 0.6rem;
+//   float: right;
+//   border-radius: ${props => props.theme.radius};
 
-  @media (${props => props.theme.max480}) {
-    width: 100%;
-    text-align: center;
-  }
-`
+//   @media (${props => props.theme.max480}) {
+//     width: 100%;
+//     text-align: center;
+//   }
+// `

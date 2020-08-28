@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-
 import CssVariables from 'styles/CssVariables'
 
 let promise

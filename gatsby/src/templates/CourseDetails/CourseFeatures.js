@@ -2,17 +2,24 @@ import React from 'react'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 
-import SvgThumbnail from 'svgs/thumbnail-course-detail.svg'
+import { formatMoney } from 'utils/helpers'
 import PictogramaDias from 'svgs/pictograma-dias.svg'
 import PictogramaDuracion from 'svgs/pictograma-duracion.svg'
 import PictogramaFechaInicio from 'svgs/pictograma-fecha-inicio.svg'
 import PictogramaHorario from 'svgs/pictograma-horario.svg'
 import PictogramaModalidad from 'svgs/pictograma-modalidad.svg'
 
-export default function CourseFeatures() {
+export default function CourseFeatures({
+  sessionDate,
+  sessionTime,
+  image,
+  startingDate,
+  campus,
+  price,
+}) {
   return (
     <Sidebar>
-      <SvgThumbnail css={css`width: 100%;`} />
+      <img src={image.file.url} alt='' css={css`width: 100%;`} />
       <InfoGrid>
         <Detail>
           <PictogramaDuracion />
@@ -25,33 +32,34 @@ export default function CourseFeatures() {
           <PictogramaDias />
           <p>
             <strong>Días</strong>
-            Martes, miércoles y jueves
+            {sessionDate}
           </p>
         </Detail>
         <Detail>
           <PictogramaHorario />
           <p>
             <strong>Horario</strong>
-            4:00 a 5:30 PM
+            {sessionTime}
           </p>
         </Detail>
         <Detail>
           <PictogramaModalidad />
           <p>
             <strong>Modalidad</strong>
-            Presencial
+            {campus !== 'Online' ? `Bristol ${campus}` : campus }
+            {/* {campus} */}
           </p>
         </Detail>
         <Detail>
           <PictogramaFechaInicio />
           <p>
             <strong>Fecha de inicio</strong>
-            17 de Septiembre de 2020
+            {startingDate}
           </p>
         </Detail>
         <Cost>
           <p>
-            Costo <strong>$1,234.56</strong>
+            Costo <strong>{formatMoney(price)}</strong>
           </p>
         </Cost>
       </InfoGrid>
@@ -100,5 +108,6 @@ const Cost = styled.div`
   }
   strong {
     margin-left: 6%;
+    letter-spacing: 0.4px;
   }
 `

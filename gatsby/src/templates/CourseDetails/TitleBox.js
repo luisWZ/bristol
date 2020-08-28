@@ -3,15 +3,16 @@ import styled from '@emotion/styled'
 
 import { Button } from 'styles/CssHelpers'
 import { Big } from 'styles/FontStyles'
+import { email } from 'root/sitedefaults'
 
-export default function TitleBox() {
+export default function TitleBox({ courseName, courseType }) {
   return (
     <TitleBox_>
       <TitleText>
-        <Big>Pet for Schools</Big>
-        <p>Preliminary English Test</p>
+        <Big>{courseName}</Big>
+        <p>{courseType}</p>
       </TitleText>
-      <Button_>Inscríbete</Button_>
+      <Button_ href={`mailto:${email}`}>Inscríbete</Button_>
     </TitleBox_>
   )
 }

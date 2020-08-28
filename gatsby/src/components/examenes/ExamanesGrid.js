@@ -12,15 +12,16 @@ export default function ExamanesGrid() {
 
   return (
     <Container>
-      <Title2 css={title}>Calendarios de Exámenes Internacionales</Title2>
-      <Filter>
+      <Title2 style={{ marginBottom: '5rem' }}
+        css={title}>Calendarios de Exámenes Internacionales</Title2>
+      {/* <Filter>
         <li className='selected'>Todos los exámenes</li>
         {filters.map(exam => <li key={exam}>{exam}</li>)}
       </Filter>
       <FilterMobile>
         <option value="all">Todos los exámenes</option>
         {filters.map(exam => <option key={exam} value={exam}>{exam}</option>)}
-      </FilterMobile>
+      </FilterMobile> */}
       <Grid>
         {Object.entries(data).map(([ key, exam ]) => (
           <Img

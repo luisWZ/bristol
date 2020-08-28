@@ -16,11 +16,12 @@ export default function Course({ course }) {
     startingDate,
     campus,
     image,
-  } = course
+    slug,
+  } = {...course, slug: `/cursos/${course.slug}` }
 
   return (
     <CourseBox>
-      <ImageLink to='/' aria-label={`Curso: ${courseName}`}>
+      <ImageLink to={slug} aria-label={`Curso: ${courseName}`}>
         <Image src={image.file.url} alt='' />
       </ImageLink>
       <TextBox>
@@ -37,7 +38,7 @@ export default function Course({ course }) {
           Campus: {campus}
         </Small>
       </TextBox>
-      <Button_ noRadius widthFull blue href='/'>
+      <Button_ noRadius widthFull blue href={slug}>
         Más info
       </Button_>
     </CourseBox>

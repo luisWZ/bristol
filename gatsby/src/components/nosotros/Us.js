@@ -5,7 +5,7 @@ import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 
 import { Section, Container } from 'styles/CssHelpers'
-import { Title2 } from 'styles/FontStyles'
+import { Subtitle } from 'styles/FontStyles'
 import TextIlustration from 'components/TextIlustration'
 import IlustracionDocentes from 'svgs/ilustracion-docentes.svg'
 
@@ -17,7 +17,7 @@ export default function Us() {
       <Container paddingBigTop>
         <Flex>
           <div>
-            <Title2>Cursos generales</Title2>
+            <Subtitle>Cursos generales</Subtitle>
             <p>Nuestros cursos están basados en el Marco Común Europeo de Referencia para las Lenguas (Common European Framework of Reference - CEFR) cuyos 6 niveles (A1 a C2) establecen los diferentes grados de desarrollo de las habilidades lingüísticas para los principales idiomas que se hablan en el mundo.</p>
           </div>
           <Img fluid={data.fluid} />
