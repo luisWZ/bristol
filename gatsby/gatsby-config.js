@@ -111,5 +111,14 @@ module.exports = {
           endpoint: process.env.MAILCHIMP_ENDPOINT,
       },
     },
+    {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        allowList: [
+          `FACEBOOK_APPID`,
+          `FACEBOOK_PAGE_ID`,
+        ]
+      },
+    },
   ],
 }
