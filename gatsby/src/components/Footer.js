@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { AiOutlineRight } from 'react-icons/ai';
 
+import { commodity_aesthetics, lasser } from 'root/sitedefaults'
 import { Container } from 'styles/CssHelpers'
 import SvgCambridgeLogo from './Svg/SvgCambridgeLogo'
 import SvgFooterBrand from './Svg/SvgFooterBrand'
@@ -101,32 +102,65 @@ export default function Footer() {
             </ul>
           </div>
         </Container>
-        <div css={theme => css`
-          display: flex;
-          justify-content: space-between;
-          flex-direction: column;
-          align-items: start;
-          padding: 0.8rem ${theme.gutter} 0;
-          background-color: ${theme.blueLight};
+      </footer>
+      <div css={theme => css`
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: start;
+        min-height: 8rem;
+        padding: 0.8rem ${theme.gutter} 0;
+        background-color: ${theme.blueLight};
 
-          @media(min-width: 370px) {
+        @media(${theme.min480}) {
+          justify-content: space-between;
+          align-items: center;
+          min-height: 6rem;
+          padding: 0 4vw;
+        }
+
+        @media(${theme.min960}) {
+          min-height: 0;
+          height: 3rem;
+        }
+      `}>
+        <address css={theme => css`
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          text-align: center;
+          height: 4rem;
+          color: white;
+
+          @media(${theme.min480}) {
+            flex-basis: 0;
+            flex-grow: 1;
+            text-align: left;
+            flex-direction: column;
+          }
+
+          @media(${theme.min960}) {
             flex-direction: row;
-            align-items: center;
-            padding-top: 0;
+            height: auto;
+            justify-content: space-between;
+            flex-basis: 64%;
+            flex-grow: 0;
+          }
+
+          span { display: block; }
+
+          a {
+            color: white;
+            &:hover { text-decoration: underline; }
           }
         `}>
-          <address>Bristol Inglés Profesional ©{new Date().getFullYear()}</address>
-          <SocialLinks css={css`
-            a {
-              padding: 1rem;
-            }
-            svg {
-              fill: white;
-              width: 1.2rem;
-            }
-          `} />
-        </div>
-      </footer>
+          <span>Bristol Inglés Profesional ©{new Date().getFullYear()}</span>
+          <span>Made by&nbsp;
+            <a href={commodity_aesthetics}>Commodity Aesthetics</a> &amp; <a href={lasser}>Lasser</a>
+          </span>
+        </address>
+        <SocialLinks css={css` a {padding: 1rem;} svg {fill: white; width: 1.2rem;} `} />
+      </div>
     </>
   )
 }
