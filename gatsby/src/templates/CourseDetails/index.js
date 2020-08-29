@@ -2,10 +2,10 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 import { Container, Section } from 'styles/CssHelpers'
+import ComingCourses from 'components/ComingCourses'
 import TitleBox from './TitleBox'
 import CourseFeatures from './CourseFeatures'
 import CourseDescription from './CourseDescription'
-// import RecommendedCourses from './RecommendedCourses'
 
 export default function CourseDetails({
   pageContext: {
@@ -22,7 +22,7 @@ export default function CourseDetails({
 }) {
   return (
     <>
-      <Section style={{ marginBottom: '8rem' }}>
+      <Section>
         <ContainerGrid as='div'>
           <TitleBox {...{courseName}} {...{courseType}} />
           <CourseFeatures
@@ -36,7 +36,7 @@ export default function CourseDetails({
           <CourseDescription {...{courseDescription}} />
         </ContainerGrid>
       </Section>
-      {/* <RecommendedCourses /> */}
+      <ComingCourses titleText='Cursos recomendados' />
     </>
   )
 }

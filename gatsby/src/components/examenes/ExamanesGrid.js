@@ -3,7 +3,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 
-import { Select, Container, title } from 'styles/CssHelpers'
+import {
+  // Select,
+  Container, title } from 'styles/CssHelpers'
 import { Title2 } from 'styles/FontStyles'
 
 // component ==========================================
@@ -35,17 +37,17 @@ export default function ExamanesGrid() {
     </Container>
   )
 }
-const filters = [
-  'KET',
-  'PET',
-  'FCE',
-  'CAE',
-  'CPE',
-  'LINGUASKILL',
-  'IELTS',
-  'TKT',
-  'YLE',
-]
+// const filters = [
+//   'KET',
+//   'PET',
+//   'FCE',
+//   'CAE',
+//   'CPE',
+//   'LINGUASKILL',
+//   'IELTS',
+//   'TKT',
+//   'YLE',
+// ]
 // Query ==============================================
 const EXAMENES_QUERY = graphql`
   fragment examenesImageSharpFragment on File {
@@ -71,34 +73,34 @@ const EXAMENES_QUERY = graphql`
   }
 `
 // styles =============================================
-const Filter = styled.ul`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 6rem;
-  font-size: 1.125rem;
+// const Filter = styled.ul`
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 6rem;
+//   font-size: 1.125rem;
 
-  @media (${props => props.theme.max880}) {
-    display: none;
-  }
+//   @media (${props => props.theme.max880}) {
+//     display: none;
+//   }
 
-  li {
-    padding: 0.4rem;
-    margin: 0 0.4rem;
-    cursor: pointer;
+//   li {
+//     padding: 0.4rem;
+//     margin: 0 0.4rem;
+//     cursor: pointer;
 
-    &.selected {
-      color: ${props => props.theme.bristolBlue};
-    }
-  }
-`
-const FilterMobile = styled(Select)`
-  margin: 2.5rem auto;
-  max-width: 25rem;
+//     &.selected {
+//       color: ${props => props.theme.bristolBlue};
+//     }
+//   }
+// `
+// const FilterMobile = styled(Select)`
+//   margin: 2.5rem auto;
+//   max-width: 25rem;
 
-  @media (${props => props.theme.min880}) {
-    display: none;
-  }
-`
+//   @media (${props => props.theme.min880}) {
+//     display: none;
+//   }
+// `
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(26.5rem, 1fr));

@@ -1,5 +1,3 @@
-// import { graphql } from "gatsby";
-
 exports.COURSES_QUERY = `
   query COURSES_QUERY {
     allContentfulCourses(limit: 9, sort: { fields: startingDate, order: DESC }) {

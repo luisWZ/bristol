@@ -18,7 +18,7 @@ export default function Nosotros() {
       <Benefits />
       <Us />
       <Recognitions />
-      <ComingCourses />
+      <ComingCourses titleText='Próximos cursos' />
     </>
   )
 }
