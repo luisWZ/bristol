@@ -155,7 +155,7 @@ export default function Footer() {
           }
         `}>
           <span>Bristol Inglés Profesional ©{new Date().getFullYear()}</span>
-          <span>Made by
+          <span>Made by&nbsp;
             <a href={commodity_aesthetics}>Commodity Aesthetics</a> &amp; <a href={lasser}>Lasser</a>
           </span>
         </address>
