@@ -20,7 +20,6 @@ export default function Navigation() {
         </ul>
       </NavItem>
       <NavItem><Link to='/examenes'>Centro Examinador Cambridge<AiOutlineRight /></Link></NavItem>
-      {/* <NavItem><Link to='/course-detail'>Course Detail<AiOutlineRight /></Link></NavItem> */}
     </NavBox>
   )
 }
@@ -52,7 +51,7 @@ const NavBox = styled.ul`
   @media (${props => props.theme.min848}) {
     grid-row: 2 / 3;
     grid-auto-flow: column;
-    grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_3wordNav} ${_2wordNav}`}
+    grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_3wordNav}`}
   }
 `
 const anchorHeight = '3rem'

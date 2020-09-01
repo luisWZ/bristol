@@ -19,7 +19,7 @@ const loadOnProduction = () => {
   }
   return null
 }
-const { title, description, keywords, lang, short_name } = require('./sitedefaults')
+const { title, description, keywords, lang, short_name: shortName } = require('./sitedefaults')
 const { bristolBlue } = require('./src/styles/CssVariables')
 
 module.exports = {
@@ -68,7 +68,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: title,
-        short_name,
+        short_name: shortName,
         lang,
         start_url: `/`,
         background_color: bristolBlue,

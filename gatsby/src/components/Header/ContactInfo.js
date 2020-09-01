@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
-import { email } from 'root/sitedefaults'
+import { email, telXalapa, telCoatepec } from 'root/sitedefaults'
 
 import { hoverStyle } from 'styles/CssHelpers'
 import SvgEnvelope from '../Svg/SvgEnvelope'
@@ -20,14 +20,14 @@ export default function ContactInfo() {
         </ContactAnchor>
       </ContactLi>
       <ContactLi>
-        <ContactAnchor href='tel:2288405791'>
+        <ContactAnchor href={`tel:${telXalapa}`}>
           <SvgPhone fill={color} />
           <span>Xalapa</span>
           <span>2288 40 57 91</span>
         </ContactAnchor>
       </ContactLi>
       <ContactLi>
-        <ContactAnchor href='tel:2288160543'>
+        <ContactAnchor href={`tel:${telCoatepec}`}>
           <SvgPhone fill={color} />
           <span>Coatepec</span>
           <span>2288 16 05 43</span>
