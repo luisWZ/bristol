@@ -21,7 +21,7 @@ export default function OurServices() {
 
 const Service = ({ service }) => (
   <ServiceBox>
-    <Icon src={service.svg.publicURL} alt=''></Icon>
+    <Icon src={service.svg.publicURL} alt=' '></Icon>
     <Header>{service.title}</Header>
     {service.text.split('@').map((line, index) => <p key={index}>{line}</p>)}
     {/* <Anchor href='/'>Saber más</Anchor> */}

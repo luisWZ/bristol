@@ -26,7 +26,7 @@ export default function Navigation() {
 // styles =============================================
 // Made for the navigation menu in desktop size
 const _1wordNav = `minmax(max-content , 100px)`
-const _2wordNav = `minmax(max-content , 144px)`
+// const _2wordNav = `minmax(max-content , 144px)`
 const _3wordNav = `minmax(max-content , 264px)`
 
 const NavBox = styled.ul`
