@@ -19,9 +19,9 @@ jobs:
       - run:
           name: Build
           command: yarn build
-      - run:
-          name: Test access the server
-          command: scp -r ./test.bak $HOST_USER@$HOST_ADDRESS/test/
+      # - run:
+      #     name: Test access the server
+      #     command: scp -r ./test.bak $HOST_USER@$HOST_ADDRESS/test/
       - run:
           name: Zip build folder
           command: cd gatsby/public; zip -r ../../public.zip *; cd ../../
