@@ -1,6 +1,6 @@
 exports.COURSES_QUERY = `
   query COURSES_QUERY {
-    allContentfulCourses(limit: 9, sort: { fields: startingDate, order: DESC }) {
+    allContentfulCourses(limit: 12, sort: { fields: startingDate, order: DESC }) {
       nodes {
         id
         slug

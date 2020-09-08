@@ -19,11 +19,23 @@ jobs:
       - run:
           name: Build
           command: yarn build
-      # - run:
-      #     name: Deploy
-      #     command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git
+      - run:
+          name: Test access the server
+          command: scp -r ./test.bak $HOST_USER@$HOST_ADDRESS/test/
+      - run:
+          name: Zip build folder
+          command: cd gatsby/public; zip -r ../../public.zip *; cd ../../
+      - store_artifacts:
+          path: public.zip
+      # - store_artifacts:
+      #     path: gatsby/public
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+# deployment:
+#   production:
+#     branch: master
+#     commands:
+#       - scp -r bristol/test username@my-server:/public_html/bristolingles.com.mx/test/
