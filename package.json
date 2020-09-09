@@ -18,7 +18,7 @@
     "public": "yarn run build && yarn run serve",
     "serve": "yarn workspace template run serve --host 0.0.0.0 --port $process_argv",
     "publish": "cp ./CNAME $npm_package_publishDir && npx surge $npm_package_publishDir",
-    "compress": "tar -czvf npm_package_compressFile -C npm_package_publishDir .",
+    "compress": "tar -czvf $npm_package_compressFile -C $npm_package_publishDir .",
     "production": "yarn run compress && scp $npm_package_compressFile $npm_package_connectionAddr"
   },
   "dependencies": {

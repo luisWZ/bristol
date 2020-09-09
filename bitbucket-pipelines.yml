@@ -9,7 +9,7 @@ pipelines:
   branches:
     master:
       - step:
-          name: Build process & Zip
+          name: Build process & Compress
           caches:
             - nodeall
             - yarn
@@ -18,18 +18,18 @@ pipelines:
             - yarn build
             - yarn compress
           artifacts:
-            - $ZIP_FILE
+            - $COMPRESS_FILE
       - step:
-          name: Deploy ZIP using SCP to PROD
+          name: Deploy compress file using SCP to PROD
           script:
             - pipe: atlassian/scp-deploy:0.3.3
               variables:
                 USER: $HOST_USER
                 SERVER: $HOST_SERVER
-                REMOTE_PATH: '$REMOTE_DIR'
-                LOCAL_PATH: './$ZIP_FILE'
+                REMOTE_PATH: $REMOTE_DIR
+                LOCAL_PATH: $COMPRESS_FILE
       - step:
-          name: Uncompress ZIP & Delete old files
+          name: Uncompress tar & Delete old files
           # deployment: production
           script:
             - pipe: atlassian/ssh-run:0.2.6
@@ -38,7 +38,7 @@ pipelines:
                 SERVER: $HOST_SERVER
                 PORT: $HOST_PORT
                 MODE: 'script'
-                COMMAND: './replace_files.sh $REMOTE_DIR $TEMP_DIR $ZIP_FILE'
+                COMMAND: './replace_files.sh $REMOTE_DIR $TEMP_DIR $COMPRESS_FILE'
 definitions:
   caches:
     nodeall: ./node_modules
