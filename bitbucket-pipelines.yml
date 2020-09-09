@@ -1,0 +1,45 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:12.18.3
+
+pipelines:
+  branches:
+    master:
+      - step:
+          caches:
+            - nodeall
+            - yarn
+          script:
+            - yarn install
+            - yarn build
+            - yarn zip
+          artifacts:
+            - $ZIP_FILE
+      - step:
+          name: Deploy ZIP using SCP to PROD
+          deployment: production
+          script:
+            - pipe: atlassian/scp-deploy:0.3.3
+              variables:
+                USER: $HOST_USER
+                SERVER: $HOST_SERVER
+                REMOTE_PATH: '$REMOTE_DIR'
+                LOCAL_PATH: './$ZIP_FILE'
+      - step:
+          name: Uncompress ZIP & Delete old files
+          deployment: production
+          script:
+            - pipe: atlassian/ssh-run:0.2.6
+              variables:
+                SSH_USER: $HOST_USER
+                SERVER: $HOST_SERVER
+                PORT: $HOST_PORT
+                MODE: 'script'
+                COMMAND: './replace_files.sh $REMOTE_DIR $TEMP_DIR $ZIP_FILE'
+definitions:
+  caches:
+    nodeall: ./node_modules
+    yarn: /usr/local/share/.cache/yarn

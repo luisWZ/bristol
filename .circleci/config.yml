@@ -24,7 +24,7 @@ jobs:
       #     command: scp -r ./test.bak $HOST_USER@$HOST_ADDRESS/test/
       - run:
           name: Zip build folder
-          command: cd gatsby/public; zip -r ../../public.zip *; cd ../../
+          command: cd gatsby/public; zip -r public.zip .; cd ../../
       - store_artifacts:
           path: public.zip
       # - store_artifacts:
