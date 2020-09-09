@@ -20,7 +20,6 @@ pipelines:
             - $ZIP_FILE
       - step:
           name: Deploy ZIP using SCP to PROD
-          deployment: production
           script:
             - pipe: atlassian/scp-deploy:0.3.3
               variables:
@@ -30,7 +29,7 @@ pipelines:
                 LOCAL_PATH: './$ZIP_FILE'
       - step:
           name: Uncompress ZIP & Delete old files
-          deployment: production
+          # deployment: production
           script:
             - pipe: atlassian/ssh-run:0.2.6
               variables:
