@@ -9,10 +9,12 @@ pipelines:
   branches:
     master:
       - step:
+          name: Build process & Zip
           caches:
             - nodeall
             - yarn
           script:
+            - apt-get install zip
             - yarn install
             - yarn build
             - yarn zip
