@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "description": "bristol template",
   "staticFolder": "main-files",
-  "zipFile": "build.zip",
+  "publishDir": "gatsby/public",
+  "compressFile": "build.tar.gz",
   "connectionAddr": "bristol@192.185.17.130:public_html/bristolingles.com.mx",
-  "publishDir": "./gatsby/public/",
   "workspaces": [
     "gatsby"
   ],
@@ -18,8 +18,8 @@
     "public": "yarn run build && yarn run serve",
     "serve": "yarn workspace template run serve --host 0.0.0.0 --port $process_argv",
     "publish": "cp ./CNAME $npm_package_publishDir && npx surge $npm_package_publishDir",
-    "zip": "cd $npm_package_publishDir && zip -r $npm_package_zipFile . && mv $npm_package_zipFile $INIT_CWD",
-    "production": "yarn run zip && scp $npm_package_zipFile $npm_package_connectionAddr"
+    "compress": "tar -czvf npm_package_compressFile -C npm_package_publishDir .",
+    "production": "yarn run compress && scp $npm_package_compressFile $npm_package_connectionAddr"
   },
   "dependencies": {
     "surge": "^0.21.6"

@@ -14,10 +14,9 @@ pipelines:
             - nodeall
             - yarn
           script:
-            - apt-get install zip
             - yarn install
             - yarn build
-            - yarn zip
+            - yarn compress
           artifacts:
             - $ZIP_FILE
       - step:

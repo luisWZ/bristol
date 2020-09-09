@@ -4,11 +4,11 @@
 
 DIR=$1
 TEMP_DIR=$2
-ZIP_FILE=$3
+COMPRESS_FILE=$3
 
 echo $DIR
 echo $TEMP_DIR
-echo $ZIP_FILE
+echo $COMPRESS_FILE
 
 # cd $DIR
 
@@ -24,7 +24,7 @@ echo $ZIP_FILE
 #       -path './wp' -prune -o \
 #       -name .htaccess -prune -o \
 #       -name .ftpquota -prune -o \
-#       -name $ZIP_FILE -prune  -o \
+#       -name $COMPRESS_FILE -prune  -o \
 #       -print)
 
 #     echo "Moving files"
@@ -33,13 +33,13 @@ echo $ZIP_FILE
 #         mv $file $TEMP_DIR
 #     done
 
-#     echo "Unziping"
-#     unzip $ZIP_FILE
+#     echo "Uncompress tar file"
+#     tar -xzvf $COMPRESS_FILE
 
 #     echo "Removing files"
 #     [ -f .DS_Store ] && rm .DS_Store
 #     [ -f CNAME ] && rm CNAME
-#     rm -rf $TEMP_DIR $ZIP_FILE
+#     rm -rf $TEMP_DIR $COMPRESS_FILE
 
 #     echo "Files on production 🛫"
 
