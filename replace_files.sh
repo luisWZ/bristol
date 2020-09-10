@@ -21,10 +21,10 @@ if [ $WEBSITE_FULL_ROUTE == $(pwd) ]
 
     echo $files
     # echo "Moving files"
-    # for file in ${files}
+    # for file in $files
     #   do
-    #     echo "Moving ${file}"
-    #     mv ${file} $TEMP_DIR
+    #     echo "Moving $file"
+    #     mv $file $TEMP_DIR
     # done
 
     # echo "Uncompress tar file"

@@ -36,7 +36,7 @@ pipelines:
             - apt-get update
             - apt-get -y install gettext-base
             - apt-get -y install locate
-            - envsubst < replace_files.sh > update_website.sh
+            - envsubst '${WEBSITE_FULL_ROUTE} ${TEMP_DIR} ${COMPRESS_FILE}' < replace_files.sh > update_website.sh
             - cat update_website.sh
             - pipe: atlassian/ssh-run:0.2.6
               variables:
