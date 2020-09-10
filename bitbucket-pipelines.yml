@@ -18,7 +18,7 @@ pipelines:
             - yarn install --immutable
             - yarn build
           artifacts:
-            - ${BUILD_DIR}/**
+            - gatsby/public/**
       - step:
           name: Creating tar file for deployment
           script:
