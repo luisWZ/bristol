@@ -12,12 +12,13 @@ pipelines:
           name: Building production files
           caches:
             - nodeall
+            - gatsby
             - yarn
           script:
             - yarn install --immutable
             - yarn build
           artifacts:
-            - $BUILD_DIR/**
+            - ${BUILD_DIR}/**
       - step:
           name: Creating tar file for deployment
           script:
@@ -50,4 +51,5 @@ pipelines:
 definitions:
   caches:
     nodeall: ./node_modules
+    gatsby: ./gatsby/node_modules
     yarn: /usr/local/share/.cache/yarn
