@@ -20,6 +20,7 @@ pipelines:
             - ls -lh
           artifacts:
             - 'build.tar.gz'
+            - 'replace_files.sh'
       - step:
           name: Deploy compress file using SCP to PROD
           script:
