@@ -8,25 +8,25 @@ image: node:12.18.3
 pipelines:
   branches:
     master:
-      - step:
-          name: Building production files
-          caches:
-            - nodeall
-            - workspace
-            - gatsby
-            - yarn
-          script:
-            - yarn install --immutable
-            - yarn build
-          artifacts:
+      # - step:
+      #     name: Building production files
+      #     caches:
+      #       - nodeall
+      #       - workspace
+      #       - gatsby
+      #       - yarn
+      #     script:
+      #       - yarn install --immutable
+      #       - yarn build
+      #     artifacts:
             # - gatsby/public/**
-            - "./$BUILD_DIR/**"
+            # - "./$BUILD_DIR/**"
       - step:
           name: Creating tar file for deployment
           script:
             - tar -czvf $COMPRESS_FILE -C $BUILD_DIR .
           artifacts:
-            - "./$COMPRESS_FILE"
+            - "./\$COMPRESS_FILE"
       # - step:
       #     name: Deploy tar file to production
       #     script:
