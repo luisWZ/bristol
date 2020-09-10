@@ -19,24 +19,22 @@ if [ $WEBSITE_FULL_ROUTE == $(pwd) ]
       -name $COMPRESS_FILE -prune  -o \
       -print)
 
-    echo $files
-    # echo "Moving files"
-    # for file in $files
-    #   do
-    #     echo "Moving $file"
-    #     mv $file $TEMP_DIR
-    # done
+    echo "Moving files"
+    for file in $files
+      do
+        echo "Moving $file"
+        mv $file $TEMP_DIR
+    done
 
-    # echo "Uncompress tar file"
-    # tar -xzvf $COMPRESS_FILE
+    echo "Uncompress tar file"
+    tar -xzvf $COMPRESS_FILE
 
-    # echo "Removing files"
-    # [ -f .DS_Store ] && rm .DS_Store
-    # [ -f CNAME ] && rm CNAME
+    echo "Removing files"
+    [ -f .DS_Store ] && rm .DS_Store
+    [ -f CNAME ] && rm CNAME
     # rm -rf $TEMP_DIR $COMPRESS_FILE
 
-    # echo "Files on production 🛫"
-    echo "Done  ¯\_(ツ)_/¯"
+    echo "Files on production 🛫"
 
   else
     echo "You're pointing to an incorrect folder 💩"
