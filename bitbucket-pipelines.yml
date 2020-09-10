@@ -12,6 +12,7 @@ pipelines:
           name: Building production files
           caches:
             - nodeall
+            - workspace
             - gatsby
             - yarn
           script:
@@ -24,7 +25,7 @@ pipelines:
           script:
             - tar -czvf $COMPRESS_FILE -C $BUILD_DIR .
           artifacts:
-            - $COMPRESS_FILE
+            - ${COMPRESS_FILE}
       # - step:
       #     name: Deploy tar file to production
       #     script:
@@ -51,5 +52,6 @@ pipelines:
 definitions:
   caches:
     nodeall: ./node_modules
-    gatsby: ./gatsby/node_modules
+    workspace: ./gatsby/node_modules
+    gatsby: ./gatsby/.cache
     yarn: /usr/local/share/.cache/yarn
