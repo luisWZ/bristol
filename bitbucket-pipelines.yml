@@ -33,7 +33,8 @@ pipelines:
       - step:
           name: Uncompress tar & Delete old files
           script:
-            - apt-get install gettext-base
+            - apt-get update
+            - apt-get -y install gettext-base
             - envsubst < replace_files.sh > update_website.sh
             - pipe: atlassian/ssh-run:0.2.6
               variables:
