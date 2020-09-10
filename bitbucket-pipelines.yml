@@ -8,39 +8,39 @@ image: node:12.18.3
 pipelines:
   branches:
     master:
-      - step:
-          name: Build process & Compress
-          caches:
-            - nodeall
-            - yarn
-          script:
-            - yarn install
-            - yarn build
-            - yarn compress
-            - ls -lh
-          artifacts:
-            - 'build.tar.gz'
-            - 'replace_files.sh'
-      - step:
-          name: Deploy compress file using SCP to PROD
-          script:
-            - pipe: atlassian/scp-deploy:0.3.3
-              variables:
-                USER: $HOST_USER
-                SERVER: $HOST_SERVER
-                REMOTE_PATH: $REMOTE_DIR
-                LOCAL_PATH: $COMPRESS_FILE
+      # - step:
+      #     name: Build process & Compress
+      #     caches:
+      #       - nodeall
+      #       - yarn
+      #     script:
+      #       - yarn install
+      #       - yarn build
+      #       - yarn compress
+      #       - ls -lh
+      #     artifacts:
+      #       - 'build.tar.gz'
+      #       # - 'replace_files.sh'2
+      # - step:
+      #     name: Deploy compress file using SCP to PROD
+      #     script:
+      #       - pipe: atlassian/scp-deploy:0.3.3
+      #         variables:
+      #           USER: $HOST_USER
+      #           SERVER: $HOST_SERVER
+      #           REMOTE_PATH: $REMOTE_DIR
+      #           LOCAL_PATH: $COMPRESS_FILE
       - step:
           name: Uncompress tar & Delete old files
-          # deployment: production
           script:
+            - envsubst < replace_files.sh > update_website.sh
             - pipe: atlassian/ssh-run:0.2.6
               variables:
                 SSH_USER: $HOST_USER
                 SERVER: $HOST_SERVER
                 PORT: $HOST_PORT
                 MODE: 'script'
-                COMMAND: 'replace_files.sh "/home1/bristol/public_html/bristolingles.com.mx" $TEMP_DIR $COMPRESS_FILE'
+                COMMAND: 'update_website.sh'
 definitions:
   caches:
     nodeall: ./node_modules

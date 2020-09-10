@@ -2,17 +2,13 @@
 
 #set -e
 
-DIR=$1
-TEMP_DIR=$2
-COMPRESS_FILE=$3
-
-echo $DIR
+echo $WEBSITE_FULL_ROUTE
 echo $TEMP_DIR
 echo $COMPRESS_FILE
 
-# cd $DIR
+# cd $WEBSITE_FULL_ROUTE
 
-# if [ $DIR == $(pwd) ]
+# if [ $WEBSITE_FULL_ROUTE == $(pwd) ]
 #   then
 
 #     echo "Creating temp folder"
