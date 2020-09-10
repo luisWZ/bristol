@@ -18,13 +18,13 @@ pipelines:
             - yarn install --immutable
             - yarn build
           artifacts:
-            - '${BUILD_DIR}/**'
+            - $BUILD_DIR/**
       - step:
           name: Creating tar file for deployment
           script:
             - tar -czvf $COMPRESS_FILE -C $BUILD_DIR .
           artifacts:
-            - '${COMPRESS_FILE}'
+            - $COMPRESS_FILE
       # - step:
       #     name: Deploy tar file to production
       #     script:
