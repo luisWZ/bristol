@@ -37,6 +37,7 @@ pipelines:
             - apt-get -y install gettext-base
             - apt-get -y install locate
             - envsubst < replace_files.sh > update_website.sh
+            - cat update_website.sh
             - pipe: atlassian/ssh-run:0.2.6
               variables:
                 SSH_USER: $HOST_USER
