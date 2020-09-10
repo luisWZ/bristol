@@ -26,7 +26,7 @@ pipelines:
           script:
             - tar -czvf $COMPRESS_FILE -C $BUILD_DIR .
           artifacts:
-            - "./{$COMPRESS_FILE}"
+            - "${COMPRESS_FILE}"
       # - step:
       #     name: Deploy tar file to production
       #     script:
