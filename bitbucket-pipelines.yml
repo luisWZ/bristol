@@ -17,8 +17,9 @@ pipelines:
             - yarn install
             - yarn build
             - yarn compress
+            - ls -lh
           artifacts:
-            - $COMPRESS_FILE
+            - 'build.tar.gz'
       - step:
           name: Deploy compress file using SCP to PROD
           script:
