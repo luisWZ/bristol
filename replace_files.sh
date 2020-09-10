@@ -19,12 +19,13 @@ if [ $WEBSITE_FULL_ROUTE == $(pwd) ]
       -name $COMPRESS_FILE -prune  -o \
       -print)
 
-    echo "Moving files"
-    for file in $files
-      do
-        echo "Moving $file"
-        mv $file $TEMP_DIR
-    done
+    echo $files
+    # echo "Moving files"
+    # for file in $files
+    #   do
+    #     echo "Moving $file"
+    #     mv $file $TEMP_DIR
+    # done
 
     # echo "Uncompress tar file"
     # tar -xzvf $COMPRESS_FILE
