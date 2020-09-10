@@ -2,12 +2,12 @@
 
 #set -e
 
-cd $WEBSITE_FULL_ROUTE
+cd $REMOTE_DIR
 
-if [ $WEBSITE_FULL_ROUTE == $(pwd) ]
+if [ -f $COMPRESS_FILE ]
   then
 
-    echo "Creating temp folder"
+    echo "Creating $TEMP_DIR folder"
     [ -d $TEMP_DIR ] && rm -rf $TEMP_DIR
     mkdir $TEMP_DIR
 
@@ -19,24 +19,21 @@ if [ $WEBSITE_FULL_ROUTE == $(pwd) ]
       -name $COMPRESS_FILE -prune  -o \
       -print)
 
-    echo "Moving files"
+    echo "Moving old files to $TEMP_DIR folder"
     for file in $files
       do
-        echo "Moving $file"
         mv $file $TEMP_DIR
     done
 
     echo "Uncompress tar file"
-    tar -xzvf $COMPRESS_FILE
+    tar -xzf $COMPRESS_FILE
 
     echo "Removing files"
-    [ -f .DS_Store ] && rm .DS_Store
-    [ -f CNAME ] && rm CNAME
-    # rm -rf $TEMP_DIR $COMPRESS_FILE
+    rm -rf $TEMP_DIR $COMPRESS_FILE
 
-    echo "Files on production 🛫"
+    echo "Updated website 🛫"
 
   else
-    echo "You're pointing to an incorrect folder 💩"
+    echo "No tar file was found in directory 💩"
 
 fi
