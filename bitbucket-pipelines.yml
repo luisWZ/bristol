@@ -11,7 +11,6 @@ pipelines:
       - step:
           name: Building production files
           caches:
-            - node
             - nodeall
             - yarn
           script:
