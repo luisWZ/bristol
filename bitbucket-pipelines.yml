@@ -39,7 +39,7 @@ pipelines:
                 SERVER: $HOST_SERVER
                 PORT: $HOST_PORT
                 MODE: 'script'
-                COMMAND: './replace_files.sh $REMOTE_DIR $TEMP_DIR $COMPRESS_FILE'
+                COMMAND: 'replace_files.sh "/home1/bristol/public_html/bristolingles.com.mx" $TEMP_DIR $COMPRESS_FILE'
 definitions:
   caches:
     nodeall: ./node_modules
