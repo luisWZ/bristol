@@ -20,17 +20,13 @@ pipelines:
             - yarn build
           artifacts:
             # - gatsby/public/**
-            name: "$BUILD_DIR"
-            paths:
-              - "$BUILD_DIR/**"
+            - "./$BUILD_DIR/**"
       - step:
           name: Creating tar file for deployment
           script:
             - tar -czvf $COMPRESS_FILE -C $BUILD_DIR .
           artifacts:
-            name: "$COMPRESS_FILE"
-            paths:
-              - "./$COMPRESS_FILE"
+            - "./$COMPRESS_FILE"
       # - step:
       #     name: Deploy tar file to production
       #     script:
