@@ -36,9 +36,9 @@ const FacebookMessenger = React.memo(function FacebookMessenger() {
           window.FB.init({
             appId: process.env.FACEBOOK_APPID,
             xfbml: false,
-            status: true,
+            status: false,
             cookie: true,
-            version: 'v7.0',
+            version: 'v8.0',
           })
           resolve(window.FB)
         }
@@ -46,11 +46,16 @@ const FacebookMessenger = React.memo(function FacebookMessenger() {
         const js = document.createElement('script')
         js.id = 'facebook-jssdk'
         js.src = `https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js`
+        js.async = true
+        js.defer = true
+        js.crossOrigin = 'anonymous'
         document.body.appendChild(js)
-    })
-    promise.then(callBack);
+      })
+      promise.then(callBack);
+
     }
   }, [])
+
   return null
 })
 

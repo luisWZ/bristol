@@ -8,48 +8,47 @@ image: node:12.18.3
 pipelines:
   branches:
     master:
-      # - step:
-      #     name: Building production files
-      #     caches:
-      #       - nodeall
-      #       - workspace
-      #       - gatsby
-      #       - yarn
-      #     script:
-      #       - yarn install --immutable
-      #       - yarn build
-      #     artifacts:
-            # - gatsby/public/**
-            # - "./$BUILD_DIR/**"
+      - step:
+          name: Building production files
+          caches:
+            - nodeall
+            - workspace
+            - gatsby
+            - yarn
+          script:
+            - yarn install --immutable
+            - yarn build
+          artifacts:
+            - gatsby/public/**
       - step:
           name: Creating tar file for deployment
           script:
             - tar -czvf $COMPRESS_FILE -C $BUILD_DIR .
           artifacts:
-            - "${COMPRESS_FILE}"
-      # - step:
-      #     name: Deploy tar file to production
-      #     script:
-      #       - pipe: atlassian/scp-deploy:0.3.3
-      #         variables:
-      #           USER: $HOST_USER
-      #           SERVER: $HOST_SERVER
-      #           REMOTE_PATH: $REMOTE_DIR
-      #           LOCAL_PATH: $COMPRESS_FILE
-      # - step:
-      #     name: Update production files
-      #     script:
-      #       - apt-get update
-      #       - apt-get -y install gettext-base
-      #       - apt-get -y install locate
-      #       - envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < update_website.sh > update_website_out.sh
-      #       - pipe: atlassian/ssh-run:0.2.6
-      #         variables:
-      #           SSH_USER: $HOST_USER
-      #           SERVER: $HOST_SERVER
-      #           PORT: $HOST_PORT
-      #           MODE: 'script'
-      #           COMMAND: 'update_website_out.sh'
+            - build.tar.gz
+      - step:
+          name: Deploy tar file to production
+          script:
+            - pipe: atlassian/scp-deploy:0.3.3
+              variables:
+                USER: $HOST_USER
+                SERVER: $HOST_SERVER
+                REMOTE_PATH: $REMOTE_DIR
+                LOCAL_PATH: $COMPRESS_FILE
+      - step:
+          name: Update production files
+          script:
+            - apt-get update
+            - apt-get -y install gettext-base
+            - apt-get -y install locate
+            - envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < update_website.sh > update_website_out.sh
+            - pipe: atlassian/ssh-run:0.2.6
+              variables:
+                SSH_USER: $HOST_USER
+                SERVER: $HOST_SERVER
+                PORT: $HOST_PORT
+                MODE: 'script'
+                COMMAND: 'update_website_out.sh'
 definitions:
   caches:
     nodeall: ./node_modules
