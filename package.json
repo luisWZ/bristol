@@ -6,7 +6,6 @@
   "staticFolder": "main-files",
   "publishDir": "gatsby/public",
   "compressFile": "build.tar.gz",
-  "connectionAddr": "bristol@192.185.17.130:public_html/bristolingles.com.mx",
   "workspaces": [
     "gatsby"
   ],
@@ -17,9 +16,10 @@
     "build": "yarn workspace template run build",
     "public": "yarn run build && yarn run serve",
     "serve": "yarn workspace template run serve --host 0.0.0.0 --port $process_argv",
-    "publish": "cp ./CNAME $npm_package_publishDir && npx surge $npm_package_publishDir",
+    "publish": "cp ./CNAME $npm_package_publishDir && npx surge $npm_package_publishDir && rm $npm_package_publishDir/CNAME",
     "compress": "tar -czvf $npm_package_compressFile -C $npm_package_publishDir .",
-    "production": "yarn run compress && scp $npm_package_compressFile $npm_package_connectionAddr"
+    "remote": "source .env.remote && scp $npm_package_compressFile ${REMOTE_CONNECTION}",
+    "production": "yarn run compress && yarn run remote && rm $npm_package_compressFile"
   },
   "dependencies": {
     "surge": "^0.21.6"

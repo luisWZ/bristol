@@ -6,7 +6,7 @@ import GlobalStyles from 'styles/GlobalStyles'
 import { Main } from 'styles/CssHelpers'
 import { MenuProvider } from 'utils/menuContext'
 import HtmlHeader from 'utils/HtmlHeader'
-// import FacebookMessenger from 'utils/FacebookMessenger'
+import FacebookMessenger from 'utils/FacebookMessenger'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
@@ -23,7 +23,7 @@ export default function Layout({ children }) {
         <Footer />
       </MenuProvider>
       <HtmlHeader />
-      {/* {process.env.NODE_ENV !== 'development' && <FacebookMessenger />} */}
+      {process.env.NODE_ENV !== 'development' && <FacebookMessenger />}
     </ThemeProvider>
   )
 }
