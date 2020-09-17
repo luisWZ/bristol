@@ -33,7 +33,7 @@ commands:
             - ./gatsby/node_modules
             - ./gatsby/.cache
             - ./gatsby/public
-  tar-file
+  tar-file:
     steps:
       - checkout
       - run:
