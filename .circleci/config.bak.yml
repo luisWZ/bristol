@@ -1,0 +1,41 @@
+version: 2.1
+# orbs:
+#   node: circleci/node@3.0.0
+# workflows:
+#   node-tests:
+jobs:
+  build:
+    docker: # run the steps with Docker
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install --immutable
+      - run:
+          name: Build
+          command: yarn build
+      # - run:
+      #     name: Test access the server
+      #     command: scp -r ./test.bak $HOST_USER@$HOST_ADDRESS/test/
+      - run:
+          name: Zip build folder
+          command: cd gatsby/public; zip -r public.zip .; cd ../../
+      - store_artifacts:
+          path: public.zip
+      # - store_artifacts:
+      #     path: gatsby/public
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+# deployment:
+#   production:
+#     branch: master
+#     commands:
+#       - scp -r bristol/test username@my-server:/public_html/bristolingles.com.mx/test/

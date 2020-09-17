@@ -1,41 +1,62 @@
 version: 2.1
-# orbs:
-#   node: circleci/node@3.0.0
-# workflows:
-#   node-tests:
-jobs:
-  build:
+executors:
+  node-executor:
     docker: # run the steps with Docker
-      - image: circleci/node:12
+      - image: circleci/node:12.18.3
+commands:
+  gatsby-build
     steps:
       - checkout
       - restore_cache:
-          name: Restore Yarn Package Cache
+          name: Restore Project Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
+            - v1-gatsby-cache-
       - run:
           name: Install Dependencies
           command: yarn install --immutable
       - run:
-          name: Build
+          name: Building production files
           command: yarn build
-      # - run:
-      #     name: Test access the server
-      #     command: scp -r ./test.bak $HOST_USER@$HOST_ADDRESS/test/
-      - run:
-          name: Zip build folder
-          command: cd gatsby/public; zip -r public.zip .; cd ../../
       - store_artifacts:
-          path: public.zip
-      # - store_artifacts:
-      #     path: gatsby/public
+          path: gatsby/public/**
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-# deployment:
-#   production:
-#     branch: master
-#     commands:
-#       - scp -r bristol/test username@my-server:/public_html/bristolingles.com.mx/test/
+      - save_cache:
+          name: Save Gatsby Cache
+          key: v1-gatsby-cache-{{ epoch }}
+          paths:
+            - ./node_modules
+            - ./gatsby/node_modules
+            - ./gatsby/.cache
+            - ./gatsby/public
+  tar-file
+    steps:
+      - checkout
+      - run:
+          name: Creating tar file for deployment
+          command: tar -czvf $COMPRESS_FILE -C $BUILD_DIR .
+      - store_artifacts:
+          path: build.tar.gz
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+jobs:
+  build:
+    executor: node-executor
+    working_directory: ~/repo
+    steps:
+      - gatsby-build
+      - tar-file
+      # - run:
+      #     name: Deploy tar file to production
+      #     command: scp $COMPRESS_FILE ${REMOTE_CONNECTION}

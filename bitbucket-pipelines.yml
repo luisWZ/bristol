@@ -13,7 +13,8 @@ pipelines:
           caches:
             - nodeall
             - workspace
-            - gatsby
+            - gatsbyCache
+            - gatsbyPublic
             - yarn
           script:
             - yarn install --immutable
@@ -53,5 +54,6 @@ definitions:
   caches:
     nodeall: ./node_modules
     workspace: ./gatsby/node_modules
-    gatsby: ./gatsby/.cache
+    gatsbyCache: ./gatsby/.cache
+    gatsbyPublic: ./gatsby/public
     yarn: /usr/local/share/.cache/yarn
