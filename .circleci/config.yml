@@ -4,7 +4,7 @@ executors:
     docker: # run the steps with Docker
       - image: circleci/node:12.18.3
 commands:
-  gatsby-build
+  gatsby-build:
     steps:
       - checkout
       - restore_cache:
