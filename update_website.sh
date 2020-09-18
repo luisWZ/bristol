@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #set -e
+shopt -s nullglob
 
 cd $REMOTE_DIR
 
@@ -20,10 +21,12 @@ if [ -f $COMPRESS_FILE ]
       -print)
 
     echo "Moving old files to $TEMP_DIR folder"
+    shopt -s nullglob
     for file in $files
       do
         mv $file $TEMP_DIR
     done
+    shopt -u nullglob
 
     echo "Uncompress tar file"
     tar -xzf $COMPRESS_FILE
