@@ -57,6 +57,6 @@ jobs:
     steps:
       - gatsby-build
       - tar-file
-      # - run:
-      #     name: Deploy tar file to production
-      #     command: scp $COMPRESS_FILE ${REMOTE_CONNECTION}
+      - run:
+          name: Deploy tar file to production
+          command: scp $COMPRESS_FILE $REMOTE_CONNECTION
