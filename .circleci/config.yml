@@ -8,9 +8,12 @@ commands:
     steps:
       - checkout
       - restore_cache:
-          name: Restore Project Cache
+          name: Restore Yarn Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          name: Restore Gatsby Cache
+          keys:
             - v1-gatsby-cache-
       - run:
           name: Install Dependencies
@@ -19,7 +22,7 @@ commands:
           name: Building production files
           command: yarn build
       - store_artifacts:
-          path: $BUILD_DIR
+          path: gatsby/public
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
@@ -40,7 +43,7 @@ commands:
           name: Creating tar file for deployment
           command: tar -czvf $COMPRESS_FILE -C $BUILD_DIR .
       - store_artifacts:
-          path: $COMPRESS_FILE
+          path: build.tar.gz
 workflows:
   version: 2
   build-deploy:
