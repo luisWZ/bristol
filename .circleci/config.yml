@@ -19,7 +19,7 @@ commands:
           name: Building production files
           command: yarn build
       - store_artifacts:
-          path: gatsby/public
+          path: $BUILD_DIR
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
@@ -40,7 +40,7 @@ commands:
           name: Creating tar file for deployment
           command: tar -czvf $COMPRESS_FILE -C $BUILD_DIR .
       - store_artifacts:
-          path: build.tar.gz
+          path: $COMPRESS_FILE
 workflows:
   version: 2
   build-deploy:
@@ -56,7 +56,7 @@ jobs:
     working_directory: ~/repo
     steps:
       - gatsby-build
-      # - tar-file
+      - tar-file
       # - run:
       #     name: Deploy tar file to production
       #     command: scp $COMPRESS_FILE ${REMOTE_CONNECTION}
