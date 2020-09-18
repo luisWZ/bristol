@@ -1,7 +1,7 @@
 version: 2.1
 executors:
   node-executor:
-    docker: # run the steps with Docker
+    docker:
       - image: circleci/node:12.18.3
 commands:
   gatsby-build:
@@ -39,7 +39,7 @@ commands:
       - run:
           name: Creating tar file for deployment
           command: tar -czvf $COMPRESS_FILE -C $BUILD_DIR .
-      - run: echo "export COMPRESS_FILE=$COMPRESS_FILE" >> $BASH_ENV
+      - run: echo 'export COMPRESS_FILE="$COMPRESS_FILE"' >> $BASH_ENV
       - store_artifacts:
           path: $COMPRESS_FILE
 workflows:
