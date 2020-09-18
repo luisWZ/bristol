@@ -8,7 +8,7 @@ if [ -f $COMPRESS_FILE ]
   then
 
     echo "Creating $TEMP_DIR folder"
-    [ -d $TEMP_DIR ] && rm -rf $TEMP_DIR
+    [ -d $TEMP_DIR ] && rm -r $TEMP_DIR
     mkdir $TEMP_DIR
     cd $TEMP_DIR
     touch test.bak
