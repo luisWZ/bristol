@@ -20,18 +20,16 @@ if [ -f $COMPRESS_FILE ]
       -print)
 
     echo "Moving old files to $TEMP_DIR folder"
-    shopt -s nullglob
     for file in $files
       do
-        mv $file $TEMP_DIR
+        mv $file $TEMP_DIR 2>/dev/null
     done
-    shopt -u nullglob
 
-    echo "Uncompress tar file"
-    tar -xzf $COMPRESS_FILE
+    # echo "Uncompress tar file"
+    # tar -xzf $COMPRESS_FILE
 
-    echo "Removing files"
-    rm -rf $TEMP_DIR $COMPRESS_FILE
+    # echo "Removing files"
+    # rm -rf $TEMP_DIR $COMPRESS_FILE
 
     echo "Updated website 🛫"
 
