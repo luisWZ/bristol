@@ -61,11 +61,11 @@ commands:
       - run:
           # shell: /bin/sh
           name: Preparing bash file for deployment
-          command: envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < $CIRCLE_WORKING_DIRECTORY/test.sh > $CIRCLE_WORKING_DIRECTORY/update_website_out.sh
+          command: envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < test.sh > update_website_out.sh
       - run:
           shell: /bin/sh
           name: Running bash in remote server
-          command: ssh -p $HOST_PORT $HOST_USER@$HOST_SERVER "bash -s" < $CIRCLE_WORKING_DIRECTORY/update_website_out.sh
+          command: ssh -p $HOST_PORT $HOST_USER@$HOST_SERVER "bash -s" < update_website_out.sh
 workflows:
   version: 2
   build-deploy:
