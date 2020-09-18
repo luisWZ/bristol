@@ -46,7 +46,7 @@ commands:
       - run:
           name: Deploy tar file to production
           shell: /bin/sh
-          command: scp -P 2222 -v $COMPRESS_FILE $REMOTE_CONNECTION
+          command: scp -P $HOST_PORT -v $COMPRESS_FILE $REMOTE_CONNECTION
   update-website:
     steps:
       - run:
@@ -62,7 +62,7 @@ commands:
       - run:
           shell: /bin/sh
           name: Running bash in remote server
-          command: ssh -p 2222 $HOST_USER@$HOST_SERVER "bash -s" < $working_directory/update_website_out.sh
+          command: ssh -p $HOST_PORT $HOST_USER@$HOST_SERVER "bash -s" < $working_directory/update_website_out.sh
 workflows:
   version: 2
   build-deploy:
@@ -81,9 +81,9 @@ jobs:
           fingerprints:
             - "52:66:0b:05:8a:e3:0b:a2:32:e1:bd:95:07:8b:ab:bb"
       - run:
-          name: Add sshkey to known hosts
+          name: Add ssh key to known hosts
           command: ssh-keyscan $HOST_SERVER >> ~/.ssh/known_hosts
       - gatsby-build
       - tar-file
       - tar-file-deploy
-      # - update-website
+      - update-website
