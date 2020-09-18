@@ -83,8 +83,8 @@ jobs:
           shell: /bin/sh
           name: Deploy tar file to production
           command: |
-            scp -v $COMPRESS_FILE $REMOTE_CONNECTION
-          # ssh-keyscan $HOST_SERVER >> ~/.ssh/known_hosts
+            ssh-keyscan $HOST_SERVER >> ~/.ssh/known_hosts
+            scp -P 2222 -v $COMPRESS_FILE $REMOTE_CONNECTION
           # scp -o "StrictHostKeyChecking no" -P 2222 -v $COMPRESS_FILE $REMOTE_CONNECTION
           # command: scp -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" -v $COMPRESS_FILE $REMOTE_CONNECTION
-      - update-website
+      # - update-website
