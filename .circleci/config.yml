@@ -79,5 +79,5 @@ jobs:
           name: Deploy tar file to production
           command: |
             ssh-keyscan $HOST_SERVER >> ~/.ssh/config
-            scp $COMPRESS_FILE $REMOTE_CONNECTION
+            scp $COMPRESS_FILE $REMOTE_CONNECTION -P $HOST_PORT
       # - update-website
