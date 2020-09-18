@@ -53,12 +53,13 @@ commands:
       - run:
           shell: /bin/sh
           name: Preparing bash file for deployment
-          # envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < update_website.sh > update_website_out.sh
           command: envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < test.sh > update_website_out.sh
+          # command: envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < update_website.sh > update_website_out.sh
       - run:
           shell: /bin/sh
           name: Running bash in remote server
-          command: ssh $HOST_USER@$HOST_SERVER -p $HOST_PORT "bash -s" < $working_directory/update_website_out.sh
+          command: ssh -o "StrictHostKeyChecking no" $HOST_USER@$HOST_SERVER "bash -s" < $working_directory/update_website_out.sh
+          # command: ssh -o StrictHostKeyChecking=no $HOST_USER@$HOST_SERVER -p $HOST_PORT "bash -s" < $working_directory/update_website_out.sh
 workflows:
   version: 2
   build-deploy:
@@ -88,6 +89,5 @@ jobs:
       - run:
           shell: /bin/sh
           name: Deploy tar file to production
-          command: |
-            scp -o StrictHostKeyChecking=no -v $COMPRESS_FILE $REMOTE_CONNECTION
+          command: scp -o "StrictHostKeyChecking no" -v $COMPRESS_FILE $REMOTE_CONNECTION
       # - update-website
