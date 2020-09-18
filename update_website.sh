@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#set -e
-shopt -s nullglob
+# set -e
 
 cd $REMOTE_DIR
 
