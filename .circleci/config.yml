@@ -85,5 +85,5 @@ jobs:
       - run:
           shell: /bin/sh
           name: Deploy tar file to production
-          command: scp $COMPRESS_FILE $REMOTE_CONNECTION -P $HOST_PORT
+          command: scp $COMPRESS_FILE $REMOTE_CONNECTION -p $HOST_PORT
       # - update-website
