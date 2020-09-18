@@ -89,5 +89,6 @@ jobs:
       - run:
           shell: /bin/sh
           name: Deploy tar file to production
-          command: scp -o "StrictHostKeyChecking no" -v $COMPRESS_FILE $REMOTE_CONNECTION
+          command: scp -P 2222 -o "StrictHostKeyChecking no" -v build.tar.gz $REMOTE_CONNECTION
+          # command: scp -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" -v $COMPRESS_FILE $REMOTE_CONNECTION
       # - update-website
