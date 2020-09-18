@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# set -e
+set -e
 
 cd $REMOTE_DIR
 
@@ -25,11 +25,11 @@ if [ -f $COMPRESS_FILE ]
         mv $file $TEMP_DIR 2>/dev/null
     done
 
-    # echo "Uncompress tar file"
-    # tar -xzf $COMPRESS_FILE
+    echo "Uncompress tar file"
+    tar -xzf $COMPRESS_FILE
 
-    # echo "Removing files"
-    # rm -rf $TEMP_DIR $COMPRESS_FILE
+    echo "Removing files"
+    rm -rf $TEMP_DIR $COMPRESS_FILE
 
     echo "Updated website 🛫"
 
