@@ -44,13 +44,17 @@ commands:
   update-website:
     steps:
       - run:
-          name: Preparing bash file for deployment
-            # envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < update_website.sh > update_website_out.sh
+          name: Installing dependancies
           command: |
             apt-get update
             apt-get -y install gettext-base
             apt-get -y install locate
-            envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < test.sh > update_website_out.sh
+
+      - run:
+          shell: /bin/sh
+          name: Preparing bash file for deployment
+          # envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < update_website.sh > update_website_out.sh
+          command: envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < test.sh > update_website_out.sh
       - run:
           shell: /bin/sh
           name: Running bash in remote server
@@ -76,8 +80,10 @@ jobs:
       - tar-file
       - run:
           shell: /bin/sh
+          name: Adding keys to config
+          command: ssh-keyscan $HOST_SERVER >> ~/.ssh/config
+      - run:
+          shell: /bin/sh
           name: Deploy tar file to production
-          command: |
-            ssh-keyscan $HOST_SERVER >> ~/.ssh/config
-            scp $COMPRESS_FILE $REMOTE_CONNECTION -P $HOST_PORT
+          command: scp $COMPRESS_FILE $REMOTE_CONNECTION -P $HOST_PORT
       # - update-website
