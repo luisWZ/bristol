@@ -75,6 +75,9 @@ jobs:
       - gatsby-build
       - tar-file
       - run:
+          shell: /bin/sh
           name: Deploy tar file to production
-          command: scp $COMPRESS_FILE $REMOTE_CONNECTION
+          command: |
+            ssh-keyscan $HOST_SERVER >> ~/.ssh/config
+            scp $COMPRESS_FILE $REMOTE_CONNECTION
       # - update-website
