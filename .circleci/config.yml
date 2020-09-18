@@ -41,6 +41,12 @@ commands:
           command: tar -czvf $COMPRESS_FILE -C $BUILD_DIR .
       - store_artifacts:
           path: build.tar.gz
+  tar-file-deploy:
+    steps:
+      - run:
+          name: Deploy tar file to production
+          shell: /bin/sh
+          command: scp -P 2222 -v $COMPRESS_FILE $REMOTE_CONNECTION
   update-website:
     steps:
       - run:
@@ -49,17 +55,14 @@ commands:
             apt-get update
             apt-get -y install gettext-base
             apt-get -y install locate
-
       - run:
-          shell: /bin/sh
+          # shell: /bin/sh
           name: Preparing bash file for deployment
           command: envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < test.sh > update_website_out.sh
-          # command: envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < update_website.sh > update_website_out.sh
       - run:
           shell: /bin/sh
           name: Running bash in remote server
-          command: ssh -o "StrictHostKeyChecking no" $HOST_USER@$HOST_SERVER "bash -s" < $working_directory/update_website_out.sh
-          # command: ssh -o StrictHostKeyChecking=no $HOST_USER@$HOST_SERVER -p $HOST_PORT "bash -s" < $working_directory/update_website_out.sh
+          command: ssh -p 2222 $HOST_USER@$HOST_SERVER "bash -s" < $working_directory/update_website_out.sh
 workflows:
   version: 2
   build-deploy:
@@ -77,13 +80,10 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "52:66:0b:05:8a:e3:0b:a2:32:e1:bd:95:07:8b:ab:bb"
+      - run:
+          name: Add sshkey to known hosts
+          command: ssh-keyscan $HOST_SERVER >> ~/.ssh/known_hosts
       - gatsby-build
       - tar-file
-      - run:
-          shell: /bin/sh
-          name: Deploy tar file to production
-          command: |
-            scp -P 2222 -v $COMPRESS_FILE $REMOTE_CONNECTION
-          # ssh-keyscan $HOST_SERVER >> ~/.ssh/known_hosts
-          # command: scp -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" -v $COMPRESS_FILE $REMOTE_CONNECTION
+      - tar-file-deploy
       # - update-website
