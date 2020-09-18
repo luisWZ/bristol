@@ -85,5 +85,5 @@ jobs:
       - run:
           shell: /bin/sh
           name: Deploy tar file to production
-          command: scp build.tar.gz bristol@192.185.17.130:/home1/bristol/public_html/bristolingles.com.mx
+          command: scp -v $COMPRESS_FILE $REMOTE_CONNECTION
       # - update-website
