@@ -58,7 +58,7 @@ commands:
       - run:
           # shell: /bin/sh
           name: Preparing bash file for deployment
-          command: envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < test.sh > update_website_out.sh
+          command: envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < $working_directory/test.sh > $working_directory/update_website_out.sh
       - run:
           shell: /bin/sh
           name: Running bash in remote server
