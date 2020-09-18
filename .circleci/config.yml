@@ -78,15 +78,16 @@ jobs:
             - "52:66:0b:05:8a:e3:0b:a2:32:e1:bd:95:07:8b:ab:bb"
       - gatsby-build
       - tar-file
-      - run:
-          shell: /bin/sh
-          name: Adding keys to config
-          command: |
-            echo $COMPRESS_FILE
-            ssh-keyscan $HOST_SERVER >> ~/.ssh/known_hosts
-            scp -v -r ${COMPRESS_FILE} $REMOTE_CONNECTION
       # - run:
       #     shell: /bin/sh
-      #     name: Deploy tar file to production
-      #     command: scp -v $COMPRESS_FILE $REMOTE_CONNECTION
+      #     name: Adding keys to config
+      #     command: |
+      #       echo $COMPRESS_FILE
+      #       ssh-keyscan $HOST_SERVER >> ~/.ssh/known_hosts
+      #       scp -v -r ${COMPRESS_FILE} $REMOTE_CONNECTION
+      - run:
+          shell: /bin/sh
+          name: Deploy tar file to production
+          command: |
+            scp -o StrictHostKeyChecking=no -v $COMPRESS_FILE $REMOTE_CONNECTION
       # - update-website
