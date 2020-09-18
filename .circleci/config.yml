@@ -41,6 +41,20 @@ commands:
           command: tar -czvf $COMPRESS_FILE -C $BUILD_DIR .
       - store_artifacts:
           path: build.tar.gz
+  update-website:
+    steps:
+      - run:
+          name: Preparing bash file for deployment
+            # envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < update_website.sh > update_website_out.sh
+          command: |
+            apt-get update
+            apt-get -y install gettext-base
+            apt-get -y install locate
+            envsubst '${REMOTE_DIR} ${TEMP_DIR} ${COMPRESS_FILE}' < test.sh > update_website_out.sh
+      - run:
+          shell: /bin/sh
+          name: Running bash in remote server
+          command: ssh $HOST_USER@$HOST_SERVER -p $HOST_PORT "bash -s" < $working_directory/update_website_out.sh
 workflows:
   version: 2
   build-deploy:
@@ -55,8 +69,12 @@ jobs:
     executor: node-executor
     working_directory: ~/repo
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "52:66:0b:05:8a:e3:0b:a2:32:e1:bd:95:07:8b:ab:bb"
       - gatsby-build
       - tar-file
       - run:
           name: Deploy tar file to production
           command: scp $COMPRESS_FILE $REMOTE_CONNECTION
+      # - update-website
