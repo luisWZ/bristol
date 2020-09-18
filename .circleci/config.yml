@@ -81,7 +81,7 @@ jobs:
       - run:
           shell: /bin/sh
           name: Adding keys to config
-          command: ssh-keyscan $HOST_SERVER >> ~/.ssh/config
+          command: ssh-keyscan $HOST_SERVER >> ~/.ssh/known_hosts
       - run:
           shell: /bin/sh
           name: Deploy tar file to production
