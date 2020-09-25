@@ -13,8 +13,7 @@ commands:
       - restore_cache:
           name: Restore Gatsby Cache
           keys:
-            - v1-gatsby-cache-{{ epoch }}
-            - v1-gatsby-cache-
+            - v1-gatsby-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Install Dependencies
           command: yarn install --immutable
@@ -28,7 +27,7 @@ commands:
             - ~/.cache/yarn
       - save_cache:
           name: Save Gatsby Cache
-          key: v1-gatsby-cache-{{ epoch }}
+          key: v1-gatsby-cache-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
             - ./gatsby/node_modules

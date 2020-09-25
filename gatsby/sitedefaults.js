@@ -11,6 +11,6 @@ module.exports = {
   instagram: `https://www.instagram.com/bristolingles/`,
   facebookhref1: `https://connect.facebook.net`,
   facebookhref2: `https://scontent.fmid4-1.fna.fbcdn.net`,
-  commodity_aesthetics: `http://commodityaesthetics.com/`,
+  commodityAesthetics: `//commodityaesthetics.com/`,
   lasser: `https://www.linkedin.com/in/luislasser/`,
 }

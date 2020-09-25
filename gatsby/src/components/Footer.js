@@ -187,14 +187,18 @@ const addressBox = theme => css`
   flex-wrap: wrap;
   align-items: start;
   min-height: 8rem;
-  padding: 0.8rem ${theme.gutter} 0;
+  padding: 0.8rem ${theme.gutter} 0 3rem;
   background-color: ${theme.blueLight};
 
   @media(${theme.min480}) {
     justify-content: space-between;
     align-items: center;
     min-height: 6rem;
-    padding: 0 4vw;
+    padding: 0 ${theme.gutter} 5rem ${theme.gutter};
+  }
+
+  @media(${theme.min560}) {
+    padding: 0 6rem 0 ${theme.gutter};
   }
 
   @media(${theme.min960}) {
