@@ -31,8 +31,8 @@ commands:
           paths:
             - ./node_modules
             - ./gatsby/node_modules
-            - ./gatsby/.cache
-            - ./gatsby/public
+            # - ./gatsby/.cache
+            # - ./gatsby/public
   tar-file:
     steps:
       - run:

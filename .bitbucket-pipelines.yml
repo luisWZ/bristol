@@ -1,3 +1,6 @@
+# Contenful webhook
+# POST https://api.bitbucket.org/2.0/repositories/luislasser/bristol/pipelines/
+
 image: node:12.18.3
 
 pipelines:
