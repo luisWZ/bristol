@@ -45,16 +45,6 @@ export default function Course({ course }) {
   )
 }
 // Styles definitions =================================
-export const CoursesWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
-  gap: ${props => props.theme.gap};
-  justify-content: center;
-
-  @media (${props => props.theme.min960}) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`
 const CourseBox = styled.div`
   background-color: white;
   @media (${props => props.theme.max560}) {

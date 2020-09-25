@@ -1,8 +1,8 @@
 import React from 'react'
 
 import HeroContent from 'components/HeroContent'
+import ComingCourses from 'components/ComingCourses'
 import FeaturedCourses from 'components/home/FeaturedCourses'
-import ComingCoursesHome from 'components/home/ComingCourses'
 import OurServices from 'components/home/OurServices'
 import Testimonials from 'components/home/Testimonials'
 import BottomImage from 'components/home/BottomImage'
@@ -19,7 +19,7 @@ export default function Home() {
         buttonLink='/cursos'
       />
       <FeaturedCourses />
-      <ComingCoursesHome />
+      <ComingCourses titleText='Próximos cursos' homeSection />
       <OurServices />
       <Testimonials />
       <BottomImage />
