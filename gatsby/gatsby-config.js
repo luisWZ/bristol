@@ -9,17 +9,20 @@ const loadOnProduction = () => {
         classes: false,
         events: false,
         google: {
-          families: [
-            'Roboto',
-            'Poppins:700',
-          ],
+          families: ['Roboto', 'Poppins:700'],
         },
       },
     }
   }
   return null
 }
-const { title, description, keywords, lang, short_name: shortName } = require('./sitedefaults')
+const {
+  title,
+  description,
+  keywords,
+  lang,
+  short_name: shortName,
+} = require('./sitedefaults')
 const { bristolBlue } = require('./src/styles/CssVariables')
 
 module.exports = {
@@ -74,10 +77,18 @@ module.exports = {
         background_color: bristolBlue,
         theme_color: bristolBlue,
         display: `standalone`,
-        icon: `static/bristol.png`,
+        icon: `static/manifest-icon-bristol.png`,
+        cache_busting_mode: `none`,
       },
     },
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        workboxConfig: {
+          globPatterns: [`**/manifest-icon*`],
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
@@ -103,22 +114,19 @@ module.exports = {
           components: `src/components`,
           utils: `src/utils`,
           root: `./`,
-        }
-      }
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-mailchimp`,
       options: {
-          endpoint: process.env.MAILCHIMP_ENDPOINT,
+        endpoint: process.env.MAILCHIMP_ENDPOINT,
       },
     },
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        allowList: [
-          `FACEBOOK_APPID`,
-          `FACEBOOK_PAGE_ID`,
-        ]
+        allowList: [`FACEBOOK_APPID`, `FACEBOOK_PAGE_ID`],
       },
     },
     {
@@ -126,13 +134,13 @@ module.exports = {
       options: {
         id: process.env.HOTJAR_ID,
         sv: process.env.HOTJAR_SV,
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
-      }
-    }
+      },
+    },
   ],
 }

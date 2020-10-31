@@ -35,7 +35,7 @@ export default function Footer() {
             <a href={commodityAesthetics}>Commodity Aesthetics</a> &amp; <a href={lasser}>Lasser</a>
           </span>
         </address>
-        <SocialLinks css={css` a {padding: 1rem;} svg {fill: white; width: 1.2rem;} `} />
+        <SocialLinks css={css` a {padding: 1.2rem;} svg {fill: white; width: 1.2rem;} `} />
       </div>
     </>
   )
@@ -213,6 +213,10 @@ const addressStyles = theme => css`
   text-align: center;
   height: 4rem;
   color: white;
+
+  @media(${theme.max480}) {
+    margin-bottom: 1rem;
+  }
 
   @media(${theme.min480}) {
     flex-basis: 0;
