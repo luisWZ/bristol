@@ -28,7 +28,7 @@ const HeroContent = ({mainText, image, description, button, buttonLink, section 
             data-sal-delay='100'
             data-sal-easing='easeOutSine'
           >
-            <Pagelocation as='span'>{section}</Pagelocation>
+            <Pagelocation as='span'>{section}</Pagelocation>&nbsp;
             {mainText}
           </Slogan>
           {description && <Description
