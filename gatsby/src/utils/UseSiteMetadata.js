@@ -17,21 +17,3 @@ export const useSiteMetadata = () => {
   )
   return site.siteMetadata
 }
-
-// graphql`
-//   query SiteMetaData {
-//     site {
-//       siteMetadata {
-//         title
-//         siteUrl
-//         headline
-//         description
-//         image
-//         video
-//         twitter
-//         name
-//         logo
-//       }
-//     }
-//   }
-// `
