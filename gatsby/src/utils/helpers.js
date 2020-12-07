@@ -1,3 +1,5 @@
+export const formatPhone = number => number.replace(/(\d{4})(\d{2})(\d{2})(\d{2})/g, `$1 $2 $3 $4`)
+
 // useful for resize events
 export function debounce(fn, ms) {
   let timer;

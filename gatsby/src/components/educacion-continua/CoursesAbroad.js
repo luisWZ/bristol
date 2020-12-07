@@ -11,7 +11,7 @@ export default function CoursesAbroad({ data }) {
     <>
       <Section css={theme => css`border-bottom: 1px solid ${theme.gray};`}>
         <Container>
-          <TextIlustration textRight
+          <TextIlustration textRight translateY
             title='Cursos de inglés en el extranjero'
             subtitle='¿Te interesa vivir la experiencia de estudiar en el extranjero y a la vez mejorar tu nivel de inglés y conocer otras culturas? Tenemos varias opciones para ti'
             image={data.childImageSharp.fluid}

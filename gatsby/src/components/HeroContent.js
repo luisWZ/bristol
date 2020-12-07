@@ -7,19 +7,16 @@ import { Section, Container, Button } from 'styles/CssHelpers'
 import { Body2, Title } from 'styles/FontStyles'
 
 // Components =========================================
-const HeroContent = ({mainText, image, description, button, buttonLink, section }) => {
-  const Image = styled(image)`
-    flex-basis: 80%;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-
-    @media(${props => props.theme.min720 }) {
-      flex-basis: 0;
-      flex-grow: 1;
-    }
-  `
+const HeroContent = ({
+  mainText,
+  image,
+  home,
+  section,
+  gray,
+}) => {
+  const Image = ImageStyles(image)
   return (
-    <Section_>
+    <Section_ {...{gray}} {...{home}}>
       <Container_ as='div'>
         <TextBox>
           <Slogan
@@ -28,29 +25,29 @@ const HeroContent = ({mainText, image, description, button, buttonLink, section 
             data-sal-delay='100'
             data-sal-easing='easeOutSine'
           >
-            <Pagelocation as='span'>{section}</Pagelocation>&nbsp;
+            {section && <><Pagelocation as='span'>{section}</Pagelocation>&nbsp;</>}
             {mainText}
           </Slogan>
-          {description && <Description
-            data-sal='slide-up'
-            data-sal-duration='600'
-            data-sal-delay='300'
-            data-sal-easing='easeOutQuart'
-          >
-            {description}
-          </Description>
-          }
-          {button && <Button_ red='true'
-            as={Link}
-            to={buttonLink}
-            data-sal='fade'
-            data-sal-duration='800'
-            data-sal-delay='800'
-            data-sal-easing='easeInOutCubic'
-          >
-            {button}
-          </Button_>
-          }
+          {home && <>
+            <Description
+              data-sal='slide-up'
+              data-sal-duration='600'
+              data-sal-delay='300'
+              data-sal-easing='easeOutQuart'
+            >
+              {home.description}
+            </Description>
+            <Button_ red='true'
+              as={Link}
+              to={home.buttonLink}
+              data-sal='fade'
+              data-sal-duration='800'
+              data-sal-delay='800'
+              data-sal-easing='easeInOutCubic'
+            >
+              {home.button}
+            </Button_>
+          </>}
         </TextBox>
         <Image
           data-sal='fade'
@@ -72,13 +69,30 @@ export default HeroContent
 
 //  styles ============================================
 const Section_ = styled(Section)`
+  padding-top: 6rem; // header height aprox
   display: flex;
-  padding-top: 7rem;
-  padding-bottom: 2rem;
-  justify-content: space-around;
+  height: 100vh;
+
+  @media(${props => props.theme.max720 }) {
+    align-items: center;
+    justify-content: center;
+    min-height: 45rem;
+    max-height: 51rem;
+  }
+  @media(${props => props.theme.min720 }) {
+    justify-content: space-around;
+    min-height: ${props => props.home ? '35rem' : '24rem'};
+    max-height: 54rem;
+
+  }
+`
+const ImageStyles = image => styled(image)`
+  flex-basis: 80%;
+  max-height: 100%;
 
   @media(${props => props.theme.min720 }) {
-    min-height: 640px;
+    flex-basis: 0;
+    flex-grow: 1;
   }
 `
 const Container_ = styled(Container)`
@@ -90,18 +104,22 @@ const Container_ = styled(Container)`
   justify-content: space-around;
   flex: 0 1 25rem;
 
+  @media(${props => props.theme.max720 }) {
+    gap: 2rem;
+  }
   @media(${props => props.theme.min720 }) {
     flex-grow: 1;
   }
 `
 const TextBox = styled.div`
   @media(${props => props.theme.max720 }) {
-    flex-basis: 380px;
+    flex-basis: 24rem;
     text-align: center;
     margin-bottom: 2rem;
   }
   @media(${props => props.theme.min720 }) {
     flex-basis: 53%;
+    transform: translateY(-2rem);
   }
 `
 const Slogan = styled(Title)`

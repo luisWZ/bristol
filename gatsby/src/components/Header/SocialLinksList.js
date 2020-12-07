@@ -25,9 +25,6 @@ const SocialLinksList = styled(SocialLinks)`
       width: 1.2rem;
     }
   }
-  @media (${props => props.theme.min1400}) {
-    justify-content: flex-end;
-  }
 `
 
 export default SocialLinksList

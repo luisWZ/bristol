@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { Body2 } from 'styles/FontStyles'
-import { Container, Underline } from 'styles/CssHelpers'
+import { Container, Anchor, Feature } from 'styles/CssHelpers'
 
 import PictogramaGruposHomogeneos from 'svgs/pictograma-grupos-homogeneos.svg'
 import PictogramaPlataforma from 'svgs/pictograma-plataforma.svg'
@@ -14,8 +14,16 @@ import PictogramaExamenPractica from 'svgs/pictograma-examen-practica.svg'
 import PictogramaRecursosAula from 'svgs/pictograma-recursos-aula.svg'
 import PictogramaCertificacion from 'svgs/pictograma-certificacion.svg'
 import PictogramaTalleresGratuitos from 'svgs/pictograma-talleres-gratuitos.svg'
+import IconAnchorUs from 'svgs/icon-layer-system.svg'
 
-export default function CourseDescription({ children, bgWhite, border, kids, examen }) {
+export default function CourseDescription({
+  children,
+  bgWhite,
+  border,
+  kids,
+  examen,
+  last,
+}) {
   const lecturaExtensivaOrder = () => {
     if (kids) return css`order: -1;`
     else if (examen) return css`order: 1;`
@@ -23,10 +31,10 @@ export default function CourseDescription({ children, bgWhite, border, kids, exa
   }
 
   return (
-    <Section {...{ bgWhite }} {...{ border }}>
+    <Section {...{ bgWhite }} {...{ border }} {...{last}}>
       <Container as='div'>
         {children}
-        <Body2>CARACTERÍSTICAS DEL CURSO</Body2>
+        <Body2_>Características del curso</Body2_>
         <Grid>
           <Feature css={css`order: -2;`}>
             <PictogramaGruposHomogeneos />
@@ -77,42 +85,46 @@ export default function CourseDescription({ children, bgWhite, border, kids, exa
             <p>Talleres gratuitos</p>
           </Feature>
         </Grid>
-        <Underline to='/nosotros'>Consulte nuestro sistema de niveles</Underline>
-        {examen && <Underline to='/examenes'>¿Quieres conocer más sobre cada uno de los exámenes de certificación internacional?</Underline>}
+        <Anchor to='/nosotros'><IconAnchorUs /> Consulte nuestro sistema de niveles</Anchor>
+        {examen && <Anchor to='/examenes'>¿Quieres conocer más sobre cada uno de los exámenes de certificación internacional?</Anchor>}
       </Container>
     </Section>
   )
 }
 const Section = styled.section`
-  padding-bottom: 6rem;
-  padding-top: 6rem;
-  ${props => props.bgWhite && `
-    background-color: white;
-  `}
-  ${props => props.border && `
-    border-bottom: 1px solid ${props.theme.gray};
-  `}
+  @media (${props => props.theme.min848}) {
+    padding-top: 5rem;
+    padding-bottom: ${props => props.last ? 2 : 5}rem;
+  }
+  ${props => props.bgWhite && `background-color: white; `}
+  ${props => props.border && `border-bottom: 1px solid ${props.theme.gray}; `}
 `
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   grid-gap: 2rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
-`
-const Feature = styled.div`
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-
-  svg {
-    flex-basis: 4.25rem;
-    margin-right: 2rem;
-  }
-  p {
-    margin-bottom: 0;
-    flex: 1;
+  @media (${props => props.theme.min320}) {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   }
 `
+// const Feature = styled.div`
+//   display: flex;
+//   align-items: center;
+//   flex-wrap: wrap;
 
+//   svg {
+//     flex-basis: 4.25rem;
+//     margin-right: 2rem;
+//   }
+//   p {
+//     margin-bottom: 0;
+//     flex: 1;
+//   }
+// `
+const Body2_ = styled(Body2)`
+  @media (${props => props.theme.max848}) {
+    margin-top: 1.5rem;
+  }
+`
 

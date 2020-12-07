@@ -69,6 +69,7 @@ export default function CourseFeatures({
 // styles =============================================
 const InfoGrid = styled.div`
   display: grid;
+  margin-top: -1px; // fix layout gap between image & info
   grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
   border-top: 4px solid ${props => props.theme.black};
   border-bottom: 4px solid ${props => props.theme.black};

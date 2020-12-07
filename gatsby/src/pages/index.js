@@ -8,21 +8,59 @@ import Testimonials from 'components/home/Testimonials'
 import BottomImage from 'components/home/BottomImage'
 import IlustracionSittingGirl from 'svgs/ilustracion-sitting-girl.svg'
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <>
       <HeroContent
+        gray
         mainText='Speak a new language, discover a new world'
         image={IlustracionSittingGirl}
-        description='Somos profesionales en la enseñanza de inglés. Nuestros maestros cuentan con grados académicos y certificaciones internacionales como maestros de inglés así como con una gran experiencia.'
-        button='Nuestros cursos'
-        buttonLink='/cursos'
+        home={
+          {
+            description: 'Somos profesionales en la enseñanza de inglés. Nuestros maestros cuentan con grados académicos y certificaciones internacionales como maestros de inglés así como con una gran experiencia.',
+            button: 'Nuestros cursos',
+            buttonLink: '/cursos',
+          }
+        }
       />
-      <FeaturedCourses />
+      <FeaturedCourses images={data} />
       <ComingCourses titleText='Próximos cursos' homeSection />
-      <OurServices />
+      <OurServices images={data} />
       <Testimonials />
       <BottomImage />
     </>
   )
 }
+// query ==============================================
+export const query = graphql`
+  query IMAGES_QUERY {
+    imageCursoInglesGeneral: file(relativePath: { eq: "image-cursos-ingles-general.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 680) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    imageCentroExaminador: file(relativePath: { eq: "image-centro-examinador.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 797) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    imageCursoPresencial: file(relativePath: { eq: "cursos-presencial.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 447) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    imageCursoOnline: file(relativePath: { eq: "cursos-online.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 447) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+  }
+`

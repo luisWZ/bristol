@@ -16,14 +16,13 @@ module.exports = {
   purple: '#2A2DA1',
   pink: '#FA4D56',
   bgGray: '#f2f4f8',
-  // bgWhite: 'white',
   grayLight: '#e1e1e1',
   gray: '#A2A9B0',
   grayDark: '#697077',
-  black: '#586174', // works on text
-  // white: 'white',
+  black: '#586174',
   // mediaqueries =====================================
   // ======== min-width
+  min320: 'min-width: 20em',
   min400: 'min-width: 25em',
   min480: 'min-width: 30em',
   min560: 'min-width: 35em',
@@ -38,6 +37,7 @@ module.exports = {
   min1400: 'min-width: 88em', // 1408
   min1600: 'min-width: 100em', // stop any property with vw value
   // ======== max-width
+  max352: 'max-width: 21.9375em',
   max420: 'max-width: 26.1875em',
   max480: 'max-width: 29.9375em',
   max560: 'max-width: 34.9375em',

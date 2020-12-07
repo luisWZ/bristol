@@ -1,24 +1,18 @@
 - title:
     Cursos en línea
   text: >
-    Aprende inglés en grupos pequeños a través de zoom. Nuestros cursos virtuales son:
-    @Flexibles: aprende donde quieras! en casa, en la oficina, en cualquier lugar!
-    @Baratos: Ahorras tiempo y dinero en traslados.
-    @Modernos: Utiliza la tecnología para aprender inglés y al mismo tiempo desarrollar habilidades digitales.
-    @Interactivos: Comunícate en tiempo real con tu maestro y compañeros de clase.
-  svg:
-    ../images/servicios-online.svg
+    Aprende inglés en grupos pequeños a través de zoom.
+    @Nuestros cursos virtuales son:
+    @• Flexibles: aprende donde quieras! en casa, en la oficina, en cualquier lugar!
+    @• Baratos: Ahorras tiempo y dinero en traslados.
+    @• Modernos: Utiliza la tecnología para aprender inglés y al mismo tiempo desarrollar habilidades digitales.
+    @• Interactivos: Comunícate en tiempo real con tu maestro y compañeros de clase.
+  type:
+    online
 
 - title:
     Presencial
   text:
     Se ofrecen en nuestras instalaciones o también los llevamos a tu colegio o empresa. Nuestros grupos son pequeños para que todos puedan sacar el mayor provecho de cada sesión. Contamos con salones de clase cómodos y equipados con recursos tecnológicos para hacer de cada sesión una experiencia memorable y provechosa al máximo.
-  svg:
-    ../images/servicios-presencial.svg
-
-# - title:
-#     Híbrido
-#   text:
-#     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
-#   svg:
-#     ../images/servicios-hibrido.svg
+  type:
+    presencial

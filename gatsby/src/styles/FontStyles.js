@@ -1,30 +1,40 @@
 import styled from '@emotion/styled'
+import theme from 'styles/CssVariables'
 
 export const Body = styled.p`
   font-size: 1rem;
   line-height: 1.5;
 `
-export const Body2 = styled.p`
+export const Body2 = styled.p` // 18px
   font-size: 1.125rem;
   font-weight: bold;
-` // 18px
-export const Legal = styled.p`
+`
+export const Legal = styled.p` // 14px
   font-size: 0.875rem;
-` // 14px
-export const Big = styled.h1`
+`
+export const Big = styled.h1` // 48px
   font-size: 3rem;
   line-height: 1.312;
-` // 48px
-export const Title = styled.h1`
+`
+export const Title = styled.h1` // 40px
   font-size: 2.5rem;
   line-height: 1.325;
-` // 40px
-export const Title2 = styled.h1`
+  @media (${theme.max480}) {
+    font-size: 2rem;
+  }
+`
+export const Title2 = styled.h1` // 32px
   font-size: 2rem;
   line-height: 1.375;
-` // 32px
-export const Subtitle = styled.h2`
+
+  @media (${theme.max480}) {
+    font-size: 1.45rem;
+  }
+`
+export const Subtitle = styled.h2` // 24px
   font-size: 1.5rem;
   line-height: 1.375;
-  /* margin-top: 2.5rem; */
-` // 24px
+  @media (${theme.max480}) {
+    font-size: 1.25rem;
+  }
+`

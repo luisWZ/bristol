@@ -16,7 +16,7 @@ export const Main = styled.main`
   margin-bottom: -${props => props.theme.newsletterOffset};
 `
 export const Section = styled.section`
-  background-color: white;
+  background-color: ${props => props.gray ? theme.bgGray : 'white'};
   ${props => props.borderBottom && borderBottomStyle}
 `
 export const Container = styled.section`
@@ -46,7 +46,7 @@ export function ContainerWhite({ children, borderBottom = false }) {
     </section>
   )
 }
-export const title = css`
+export const title = props => css`
   text-align: center;
   transition: color .24s ease-in;
   margin-top: 4rem;
@@ -76,12 +76,13 @@ export const Button = styled.a`
     };
   }
 `
-export const LinkSaberMas = () => <a
+export const LinkSaberMas = () => ( <a
   css={theme => css` color: ${theme.bristolBlue}; text-decoration: underline; font-weight: bold;`}
   href={`mailto:${email}`}>Quiero saber más</a>
-
-export const ButtonSaberMas = () => <Button href={`mailto:${email}`}>Quiero saber más</Button>
-
+)
+export const ButtonSaberMas = () => ( <Button
+  href={`mailto:${email}`}>Quiero saber más</Button>
+)
 export const hoverStyle = (theme, color) => {
   return `
     &:hover {
@@ -90,27 +91,21 @@ export const hoverStyle = (theme, color) => {
     }
   `
 }
+export const borderTopStyle = theme => `border-top: 1px solid ${theme.grayLight};`
 
-export const borderTopStyle = (theme) => `border-top: 1px solid ${theme.grayLight};`
-
-export const Underline = styled(Link)`
-  text-decoration: underline;
+export const Anchor = styled(Link)`
   color: ${props => props.theme.bristolBlue};
-  font-weight: bold;
-  display: block;
+  display: flex;
+
+  svg {
+    margin-right: 1rem;
+  }
 
   & + & {
     margin-top: 0.5rem;
   }
 `
-
 export const Select = styled.select`
-	/* font-family: sans-serif; */
-	/* font-weight: 700; */
-	/* color: #444; */
-	/* box-sizing: border-box; */
-	/* -moz-appearance: none;
-	-webkit-appearance: none; */
   display: block;
 	font-size: 16px;
 	line-height: 1.3;
@@ -140,5 +135,25 @@ export const Select = styled.select`
     color: #222;
     outline: none;
     border-color: ${props => props.theme.bristolBlue};
+  }
+`
+export const Feature = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: ${props => props.alignTop ? 'flex-start' : 'center'};
+
+  svg {
+    flex-basis: 4.25rem;
+    margin-right: 2rem;
+  }
+  p {
+    margin-bottom: 0;
+    flex: 1;
+  }
+  @media (${props => props.theme.max480}) {
+    svg {
+      flex-basis: 16.192vw;
+      margin-right: 8vw;
+    }
   }
 `

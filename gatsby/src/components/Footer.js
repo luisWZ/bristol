@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { AiOutlineRight } from 'react-icons/ai';
 
-import { commodityAesthetics, lasser } from 'root/sitedefaults'
+import { commodityAesthetics, lasso } from 'root/sitedefaults'
 import { Container } from 'styles/CssHelpers'
 import SvgCambridgeLogo from './Svg/SvgCambridgeLogo'
 import SvgFooterBrand from './Svg/SvgFooterBrand'
@@ -15,7 +15,7 @@ export default function Footer() {
     <>
       <Newsletter />
       <footer css={footerStyles}>
-        <Container css={theme => css` @media (${theme.min640}) { display: flex; } `}>
+        <Container css={theme => css` @media (${theme.min720}) { display: flex; } `}>
           <div css={footerBrandsStyles}>
             <SvgFooterBrand fill='white' />
             <SvgCambridgeLogo fill='white' />
@@ -32,7 +32,7 @@ export default function Footer() {
         <address css={addressStyles}>
           <span>Bristol Inglés Profesional ©{new Date().getFullYear()}</span>
           <span>Made by&nbsp;
-            <a href={commodityAesthetics}>Commodity Aesthetics</a> &amp; <a href={lasser}>Lasser</a>
+            <a target="_blank" rel="noreferrer" href={commodityAesthetics}>Commodity Aesthetics</a> &amp; <a target="_blank" rel="noreferrer" href={lasso}>Luis Lasso</a>
           </span>
         </address>
         <SocialLinks css={css` a {padding: 1.2rem;} svg {fill: white; width: 1.2rem;} `} />
@@ -53,23 +53,23 @@ const siteNavigation = [
   },
   {
     url: '/cursos',
-    name: 'Cursos de Inglés General',
+    name: 'Cursos Generales',
     order: '2',
   },
   {
-    url: '/educacion-continua',
-    name: 'Educación Continua',
-    order: '4',
+    url: '/examenes',
+    name: 'Centro Examinador',
+    order: '5',
   },
   {
-    url: '/examenes',
-    name: 'Centro Examinador Cambridge',
-    order: '6',
+    url: '/educacion-continua',
+    name: 'Exámenes Internacionales',
+    order: '4',
   },
   {
     url: '/aviso-privacidad',
     name: 'Aviso de Privacidad',
-    order: '5',
+    order: '6',
   },
 ]
 // styles =============================================
@@ -80,7 +80,7 @@ const Li = props => (
     @media (${theme.min848}) {
       order: ${props.order};
     }
-    @media(${theme.max848}) {
+    @media(${theme.max720}) {
       a {
         position: relative;
       }
@@ -130,55 +130,68 @@ const footerBrandsStyles = theme => css`
 `
 const footerNavigation = theme => css`
   padding-bottom: ${theme.gutter};
+  margin: 2rem -4vw 0;
 
   li:first-of-type a {
     border-top: none;
   }
 
   a {
-    padding: ${theme.gutter};
     display: block;
     border-top: 1px solid white;
-
-    @media (${theme.min400}) {
-      padding: 1rem 3.5rem 1rem 1rem;
-    }
+    padding: 1rem 8vw;
   }
 
   h1 {
     font-size: 1.125rem;
     line-height: 1.5;
     margin-bottom: 1rem;
-    padding-left: ${theme.gutter};
+    padding-left: 8vw;
+  }
+
+  @media (${theme.min480}) {
+    margin: 0;
+
+    a {
+      padding: ${theme.gutter};
+    }
+
+    h1{
+      padding-left: ${theme.gutter};
+    }
   }
 
   @media (${theme.min640}) {
     padding-top: 6rem;
     flex-grow: 1;
-
+  }
+  @media (${theme.min720}) {
     h1 {
       padding-left: 0;
     }
-    a {
-      padding: 0.8rem 0;
-    }
-  }
-  @media (${theme.min768}) {
-    flex: 0 23rem;
 
     a {
-      width: 11.4rem;
+      padding: 0.2rem 0;
       border-top: none;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+    }
+  }
+  @media (${theme.min960}) {
+    flex: 0 24rem;
+
+    a {
+      width: 11rem;
+      border-top: none;
+      white-space: nowrap;
+      padding-top: 0.1rem;
+      padding-bottom: 0.1rem;
     }
   }
 `
 const footerNavigationList = theme => css`
-  @media (${theme.min768}) {
+  @media (${theme.min960}) {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
 `
 const addressBox = theme => css`
@@ -187,14 +200,14 @@ const addressBox = theme => css`
   flex-wrap: wrap;
   align-items: start;
   min-height: 8rem;
-  padding: 0.8rem ${theme.gutter} 0 3rem;
+  padding: 1rem ${theme.gutter};
   background-color: ${theme.blueLight};
 
   @media(${theme.min480}) {
     justify-content: space-between;
     align-items: center;
     min-height: 6rem;
-    padding: 0 ${theme.gutter} 5rem ${theme.gutter};
+    padding: 1rem ${theme.gutter} 5rem ${theme.gutter};
   }
 
   @media(${theme.min560}) {

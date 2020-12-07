@@ -6,7 +6,6 @@ import Course from './Course'
 
 // Component ==========================================
 export default function Courses({ data, homeSection, twoGrid }) {
-  console.log(homeSection)
   return (
     <CoursesWrapper {...{twoGrid}} css={theme => !homeSection && hideLastCourse(theme)}>
       {data.map(course => <Course {...{ course }} key={course.id} /> )}
@@ -16,9 +15,11 @@ export default function Courses({ data, homeSection, twoGrid }) {
 // styles =============================================
 const CoursesWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
-  gap: ${props => props.theme.gap};
   justify-content: center;
+  gap: ${props => props.theme.gap};
+  @media (${props => props.theme.min320}) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
+  }
 
   @media (${props => props.theme.min960}) {
     grid-template-columns: ${props => props.twoGrid ? 'repeat(2, 21.5rem)' : 'repeat(3, 1fr)'};
@@ -38,10 +39,3 @@ const hideLastCourse = theme => css`
     }
   }
 `
-// const centerOrphan = theme => css`
-//   @media (${theme.min960}) {
-//     > div:last-of-type {
-//       grid-column-start: 2;
-//     }
-//   }
-// `

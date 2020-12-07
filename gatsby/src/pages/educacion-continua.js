@@ -8,7 +8,6 @@ import CoursesAbroad from 'components/educacion-continua/CoursesAbroad'
 import CoursesCompanies from 'components/educacion-continua/CoursesCompanies'
 
 export default function EducacionContinua({ data }) {
-  // console.log(data)
   return (
     <>
       <HeroContent
@@ -24,7 +23,7 @@ export default function EducacionContinua({ data }) {
 }
 // query ==============================================
 export const query = graphql`
-  query IMAGES_QUERY {
+  query IMAGES_EDUCACIONCONTINUA_QUERY {
     imageCursoExtranjero: file(relativePath: { eq: "image-curso-extranjero.png" }) {
       childImageSharp {
         fluid(maxWidth: 447) {

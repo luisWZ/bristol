@@ -13,22 +13,18 @@ const TextIlustration = ({
   subheader,
   textRight,
   image,
-  Ilustration,
-  ilus2,
   img563,
-  noImage,
+  translateY,
 }) => {
   return (
-    <Flex {...{noImage}}>
-      <Text {...{textRight}} {...{ilus2}} {...{img563}} {...{noImage}}>
+    <Flex {...{image}}>
+      <Text {...{textRight}} {...{img563}} {...{image}}>
         {title && <Title>{title}</Title>}
         {subheader && <p>{subheader}</p>}
-        {subtitle && <Subtitle style={{ marginTop: !title ? '0' : null }}>{subtitle}</Subtitle>}
+        {subtitle && <Subtitle css={!title && css`margin-top: 0;` }>{subtitle}</Subtitle>}
         {children}
       </Text>
-      {!noImage && Ilustration
-        ? <Ilustration css={ilustrationStyles} />
-        : <Img style={{ flexBasis: img563 ? '35.1875rem' : '27.9375rem' }} fluid={image} css={ilustrationStyles} />
+      {image && <ImgStyles {...{translateY}} {...{img563}} fluid={image} />
       }
     </Flex>
   )
@@ -36,36 +32,46 @@ const TextIlustration = ({
 TextIlustration.propTypes = {
   children: PropTypes.node.isRequired,
 }
-export default TextIlustration
-// styles =============================================
-const ilustrationStyles = theme => css`
-  flex-grow: 0;
 
-  @media (${theme.max1040}) {
-    margin: 2rem auto;
-  }
-`
+export default TextIlustration
+
+// styles =============================================
 const Flex = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 5rem;
-  padding-top: ${props => props.noImage ? '0' : '5rem'};
-`
-const Text = styled.div`
-  flex-basis: ${props =>
-    props.noImage ? '100%'
-    : props.img563 ? '44%'
-    : !props.ilus2 ? '50%'
-    : '44%'
-  };
-  ${props => props.textRight && `
-    order: 1;
-  `}
 
-  @media (${props => props.theme.max1040}) {
-    flex-grow: 1;
+  @media (${props => props.theme.min848}) {
+    padding-top: ${props => props.image ? '5rem' : 0};
+    padding-bottom: 5rem;
+  }
+`
+const ImgStyles = styled(Img)`
+  margin-bottom: 2rem;
+  order: 1;
+
+  @media (${props => props.theme.min848}) {
+    flex-basis: ${props => props.img563
+      ? '50%'
+      : '40%'
+    };
+  }
+  @media (${props => props.theme.min848}) {
+    ${props => props.translateY && `transform:translateY(-3rem);`}
+  }
+`
+// =============================== DELETE
+const Text = styled.div`
+  order: 1;
+
+  @media (${props => props.theme.min848}) {
+    flex-basis: ${props => !props.image
+      ? '100%'
+      : props.img563 ? '44%'
+      : '54%'
+    };
+    order: ${props => props.textRight ? 2 : 1};
   }
   h1 {
     margin-bottom: 0.5rem;

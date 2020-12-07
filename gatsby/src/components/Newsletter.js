@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 import { Container, title } from 'styles/CssHelpers'
 import { Title2 } from 'styles/FontStyles'
-import IconArrow from './Svg/SvgIconArrow'
+import IconArrow from 'svgs/icon-arrow-form.svg'
 
 // components =========================================
 export default function Newsletter() {
@@ -22,7 +23,7 @@ export default function Newsletter() {
 
   return (
     <Container css={container}>
-      <Title2 css={title}>{message ? message : 'Suscríbete a nuestro newsletter'}</Title2>
+      <Title_>{message ? message : 'Suscríbete a nuestro newsletter'}</Title_>
       <form css={formStyles} method='post'
         onSubmit={handleSubmit}
       >
@@ -42,8 +43,13 @@ const container = theme => css`
   background-color: white;
   position: relative;
   z-index: 1;
-  padding: 2.5rem ${theme.gutter};
   margin-bottom: -${theme.newsletterOffset};
+  padding: 8vw ${theme.gutter};
+
+  @media (${theme.min480}) {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
 `
 const formStyles = theme => css`
   display: flex;
@@ -61,4 +67,11 @@ const inputStyles = css`
 const buttonStyles = css`
   background-color: transparent;
   svg {vertical-align: middle;}
+`
+const Title_ = styled(Title2)`
+  ${title}
+  margin-top: 0;
+  @media (${props => props.theme.max420}) {
+    font-size: 1.4rem;
+  }
 `

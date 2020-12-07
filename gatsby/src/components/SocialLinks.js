@@ -18,7 +18,7 @@ const socialLink = (url, children, domain) => (
   function SocialLink() {
     return (
       <li>
-        <a href={url} aria-label={`Página de ${domain}`}>
+        <a target="_blank" rel="noreferrer" href={url} aria-label={`Página de ${domain}`}>
           {children}
         </a>
       </li>

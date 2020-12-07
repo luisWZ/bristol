@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import { Container } from 'styles/CssHelpers'
+import { Container, Feature } from 'styles/CssHelpers'
 import TextIlustration from 'components/TextIlustration'
 import PictogramaFilosofiaInstitucional from 'svgs/pictograma-filosofia-institucional.svg'
 import PictogramaConversacion from 'svgs/pictograma-conversacion.svg'
@@ -16,7 +16,7 @@ export default function Benefits() {
 
   return (
     <Container paddingBig>
-      <TextIlustration img563
+      <TextIlustration img563 translateY
         subtitle='El prestigio ganado a lo largo de más de 25 años ha hecho de Bristol Inglés Profesional un referente de calidad y excelencia en la enseñanza del inglés'
         image={data.fachada.childImageSharp.fluid}
       >
@@ -24,7 +24,7 @@ export default function Benefits() {
       </TextIlustration>
       <H1 className='h3'>Beneficios de nuestros cursos</H1>
       <BenefitsBox>
-        <Benefit>
+        <Feature>
           <PictogramaFilosofiaInstitucional />
           <p>
             Una filosofía institucional basada en valores y que busca ayudar a
@@ -32,23 +32,23 @@ export default function Benefits() {
             través del cumplimiento con estándares internacionales de dominio
             del inglés.
           </p>
-        </Benefit>
-        <Benefit>
+        </Feature>
+        <Feature>
           <PictogramaConversacion />
           <p>
             Un sistema de gestión de la calidad con el fin de asegurar
             resultados y una excelente atención a nuestros alumnos, padres de
             familia y público en general.
           </p>
-        </Benefit>
-        <Benefit>
+        </Feature>
+        <Feature>
           <PictogramaAlumno />
           <p>
             Un Modelo educativo y diseño curricular propios, orientados a
             preparar a nuestros alumnos para los retos del siglo XXI.
           </p>
-        </Benefit>
-        <Benefit>
+        </Feature>
+        <Feature>
           <PictogramaEducacionOnline />
           <p>
             Una calidad en el servicio que busca ofrecer una atención amable,
@@ -56,20 +56,20 @@ export default function Benefits() {
             necesidades y requerimientos de todos nuestros alumnos y padres de
             familia.
           </p>
-        </Benefit>
-        <Benefit>
+        </Feature>
+        <Feature>
           <PictogramaMedia />
           <p>
             Una orientación hacia la mejora continua y la innovación que nos
             permita cada vez ser mejores en lo que hacemos.
           </p>
-        </Benefit>
-        <Benefit>
+        </Feature>
+        <Feature>
           <PictogramaDesarrollo />
           <p>
             Un Sistema de Desarrollo Profesional para todo nuestro personal.
           </p>
-        </Benefit>
+        </Feature>
       </BenefitsBox>
     </Container>
   )
@@ -106,26 +106,4 @@ const BenefitsBox = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
   grid-gap: 3rem;
-`
-const Benefit = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-
-  svg {
-    flex-basis: 4.375rem;
-    margin-right: 2rem;
-  }
-  p {
-    flex-grow: 1;
-    flex-basis: 0;
-    margin-bottom: 0;
-  }
-
-  @media (${props => props.theme.max420}) {
-    p {
-      flex-basis: 100%;
-      margin-top: 1rem;
-    }
-  }
 `

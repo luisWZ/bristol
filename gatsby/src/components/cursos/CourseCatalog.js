@@ -11,7 +11,7 @@ export default function CourseCatalog() {
     <>
       <CourseDescription kids>
         <TextIlustration
-          title='Kids'
+          title='Cursos para Niños'
           subheader='Desde los 7 a 10 años'
           subtitle='Hacemos que el primer contacto de su hijo con el inglés sea una experiencia divertida, fácil y exitosa.'
           image={data.kids.childImageSharp.fluid}
@@ -21,9 +21,9 @@ export default function CourseCatalog() {
           <p>Sabemos además lo importante que es la participación de los padres de familia en el proceso de aprendizaje de sus hijos, por lo que tenemos una comunicación constante con ellos para mantenerlos informados de los avances de sus hijos así como de cómo pueden apoyarlos a ser más exitosos.</p>
         </TextIlustration>
       </CourseDescription>
-      <CourseDescription bgWhite border>
+      <CourseDescription bgWhite>
         <TextIlustration textRight
-          title='Teens'
+          title='Cursos para Adolecentes'
           subheader='Desde los 11 a 15 años'
           subtitle='Desarrolla tu habilidad comunicativa en inglés y prepárate para triunfar en el futuro.'
           image={data.teens.childImageSharp.fluid}
@@ -33,9 +33,9 @@ export default function CourseCatalog() {
           <p>Sabemos que es importante que los padres de familia estén informados sobre el desempeño y progreso de sus hijos en nuestros cursos,  por lo que mantenemos comunicación constante con ellos.</p>
         </TextIlustration>
       </CourseDescription>
-      <CourseDescription bgWhite>
+      <CourseDescription last>
         <TextIlustration
-          title='Adultos'
+          title='Cursos para Adultos'
           subheader='Mayores de 16 años'
           subtitle='Aprende a comunicarte eficazmente en inglés, disfruta más de tus viajes y garantiza el éxito en tu vida académica y profesional.'
           image={data.adultos.childImageSharp.fluid}
@@ -43,7 +43,7 @@ export default function CourseCatalog() {
           <p>En Bristol, nuestros alumnos aprenden de una manera sistemática pero divertida, en un ambiente cordial y en grupos pequeños, lo cual les permite participar más en clase y recibir una atención personalizada. Nuestros cursos están alineados con el Marco Común Europeo de Referencia para las Lenguas (CEFR por sus siglas en inglés) y el avance puede ser  comprobable mediante certificaciones de Cambridge Assessment English. Usamos una gran variedad de recursos y técnicas que facilitan el aprendizaje del idioma, a la vez que desarrollan otras habilidades y aprenden de otras culturas y temas. En Bristol aprendes más que inglés.</p>
         </TextIlustration>
       </CourseDescription>
-      <CourseDescription examen>
+      {/* <CourseDescription examen>
         <TextIlustration textRight
           title='Preparación de Exámenes Internacionales'
           subtitle='Obtén una certificación de Cambridge Assessment English y acredita tu nivel de inglés a nivel internacional.'
@@ -54,7 +54,7 @@ export default function CourseCatalog() {
           <p>No somos simplemente una escuela que sigue un libro de texto al pie de la letra para preparar a sus alumnos, SOMOS LOS EXPERTOS.</p>
           <p>Con nosotros puedes preparar todos los exámenes de Cambridge Assessment English: A2 Key (Ket), B1 Preliminary (PET), B2  First (FCE), C1 Advanced (CAE),C2  Proficiency (CPE) y ielts (General y Académico)</p>
         </TextIlustration>
-      </CourseDescription>
+      </CourseDescription> */}
     </>
   )
 }
