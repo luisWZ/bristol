@@ -38,7 +38,7 @@ export default function Course({ course, simple }) {
           Campus: {campus}
         </Small>}
       </TextBox>
-      <Button_ noRadius widthFull blue href={slug}>
+      <Button_ {...{simple}} noRadius widthFull blue href={slug}>
         Más info
       </Button_>
     </CourseBox>
@@ -101,6 +101,12 @@ const Small = styled(Legal)`
   color: ${props => props.theme.grayDark};
 `
 const Button_ = styled(Button)`
+  ${props => props.simple && `
+    margin: 0.5rem 1rem 1rem;
+    padding: 0.6rem 1.4rem;
+    width: calc(100% - 2rem);
+    border-radius: ${props => props.theme.radius};
+  `}
   @media (${props => props.theme.min768}) {
     margin: 0.5rem 1rem 1rem;
     padding: 0.6rem 1.4rem;

@@ -14,7 +14,7 @@ export function Column({ children, title, subtitle, subheader, pictogram }) {
   return (
     <div>
       {pictograms[pictogram]}
-      <Subtitle>{title}</Subtitle>
+      <Subtitle style={{marginTop: '1rem'}}>{title}</Subtitle>
       {subtitle && <p className='grid__subtitle'>{subtitle}</p>}
       <Body2>{subheader}</Body2>
       {children}

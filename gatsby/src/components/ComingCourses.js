@@ -14,12 +14,12 @@ export default function ComingCourses({
 }) {
   const data = useCoursesQuery()
   return (
-    <Container css={theme =>
-      (homeSection && data.length === 4 && css`@media (${theme.min1200}) { max-width: 90rem; }`) ||
-      (!homeSection && css`margin-bottom: 3rem; padding-bottom: 0;`)
+    <Container noPadding={simple} css={theme =>
+      (homeSection && data.length === 4 && css`@media (${theme.min1200}) { max-width: 90rem; }`)
+      // || (!homeSection && css`margin-bottom: 3rem; padding-bottom: 0;`)
     }>
       {titleText && <Title2 css={title}>{titleText}</Title2>}
-      {simple && <Body2>Próximos cursos</Body2>}
+      {simple && <Body2 css={body2}>Próximos cursos</Body2>}
       <Courses
         {...{homeSection}}
         {...{simple}}
@@ -29,3 +29,8 @@ export default function ComingCourses({
     </Container>
   )
 }
+const body2 = theme => css`
+  @media (${theme.max720}) {
+    text-align: center;
+  }
+`

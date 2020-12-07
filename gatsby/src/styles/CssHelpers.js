@@ -22,13 +22,18 @@ export const Section = styled.section`
 export const Container = styled.section`
   margin-left: ${props => props.theme.gutter};
   margin-right: ${props => props.theme.gutter};
-  padding-top: ${props => props.paddingBig || props.paddingBigTop ? '6rem' : '3rem'};
-  padding-bottom: ${props => props.paddingBig || props.paddingBigBottom ? '6rem' : '3rem'};
-
-  ${props => props.paddingSmall && `
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  `}
+  padding-top: ${props => props.paddingBig || props.paddingBigTop
+    ? '6rem' : props.paddingSmall
+    ? '1.5rem' : props.noPadding
+    ? '0'
+    : '3rem'
+  };
+  padding-bottom: ${props => props.paddingBig || props.paddingBigTop
+    ? '6rem' : props.paddingSmall
+    ? '1.5rem' : props.noPadding
+    ? '0'
+    : '3rem'
+  };
 
   @media (${props => props.theme.min1200}) {
     margin-left: auto;

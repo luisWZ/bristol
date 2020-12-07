@@ -12,7 +12,7 @@ export default function Courses({
   simple,
 }) {
   return (
-    <CoursesWrapper {...{twoGrid}} css={theme => !homeSection && hideLastCourse(theme)}>
+    <CoursesWrapper {...{twoGrid}} css={theme => !homeSection && data.length >= 3 && hideLastCourse(theme)}>
       {data.map(course => <Course {...{simple}} {...{ course }} key={course.id} /> )}
     </CoursesWrapper>
   )

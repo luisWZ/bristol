@@ -86,9 +86,11 @@ export default function CourseDescription({
             <p>Talleres gratuitos</p>
           </Feature>
         </Grid>
+      </Container>
 
-        <ComingCourses simple />
+      <ComingCourses simple />
 
+      <Container>
         <Anchor to='/nosotros'><IconAnchorUs /> Consulte nuestro sistema de niveles</Anchor>
         {examen && <Anchor to='/examenes'>¿Quieres conocer más sobre cada uno de los exámenes de certificación internacional?</Anchor>}
       </Container>

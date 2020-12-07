@@ -50,6 +50,7 @@ const Flex = styled.div`
 const ImgStyles = styled(Img)`
   margin-bottom: 2rem;
   order: 1;
+  flex-basis: 66%;
 
   @media (${props => props.theme.min848}) {
     flex-basis: ${props => props.img563
@@ -61,9 +62,8 @@ const ImgStyles = styled(Img)`
     ${props => props.translateY && `transform:translateY(-3rem);`}
   }
 `
-// =============================== DELETE
 const Text = styled.div`
-  order: 1;
+  order: 2;
 
   @media (${props => props.theme.min848}) {
     flex-basis: ${props => !props.image
