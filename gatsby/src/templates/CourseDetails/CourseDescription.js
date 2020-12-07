@@ -14,7 +14,6 @@ export default function CourseDescription({
   return (
     <Main>
       <TextIlustration
-        // noImage
         {...{title}}
         {...{subheader}}
         {...{subtitle}}

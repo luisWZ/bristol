@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import ComingCourses from 'components/ComingCourses'
 import { Body2 } from 'styles/FontStyles'
 import { Container, Anchor, Feature } from 'styles/CssHelpers'
 
@@ -85,6 +86,9 @@ export default function CourseDescription({
             <p>Talleres gratuitos</p>
           </Feature>
         </Grid>
+
+        <ComingCourses simple />
+
         <Anchor to='/nosotros'><IconAnchorUs /> Consulte nuestro sistema de niveles</Anchor>
         {examen && <Anchor to='/examenes'>¿Quieres conocer más sobre cada uno de los exámenes de certificación internacional?</Anchor>}
       </Container>

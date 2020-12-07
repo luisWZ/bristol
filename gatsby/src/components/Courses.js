@@ -5,10 +5,15 @@ import styled from '@emotion/styled'
 import Course from './Course'
 
 // Component ==========================================
-export default function Courses({ data, homeSection, twoGrid }) {
+export default function Courses({
+  data,
+  twoGrid,
+  homeSection,
+  simple,
+}) {
   return (
     <CoursesWrapper {...{twoGrid}} css={theme => !homeSection && hideLastCourse(theme)}>
-      {data.map(course => <Course {...{ course }} key={course.id} /> )}
+      {data.map(course => <Course {...{simple}} {...{ course }} key={course.id} /> )}
     </CoursesWrapper>
   )
 }
