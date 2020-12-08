@@ -22,15 +22,19 @@ export default function ContactInfo() {
         </ContactAnchor>
       </ContactLi>
       <ContactLi>
-        <ContactAnchor href={`tel:${telXalapa}`}>
+        <ContactAnchor href={`tel:${telXalapa}`}
+          css={css`@media (${secondPhoneMediaQuery}) {
+            padding-right: 0.25rem; justify-content: flex-end; }
+        `}>
           <SvgPhone fill={color} />
           <span>Xalapa</span>
           <span>{formatPhone(telXalapa)}</span>
         </ContactAnchor>
         <ContactAnchor href={`tel:${tel2Xalapa}`}
-          css={css`display: none; @media (min-width: ${secondPhone}) { display: inherit; } `}
-        >
-          <span style={{ margin: '0 0.5em' }}>y</span>
+          css={css`display: none; flex-grow: 2; justify-content: flex-start;
+            @media (${secondPhoneMediaQuery}) { display: inherit; }
+        `}>
+          <span style={{ margin: '0 0.5rem 0 0.25rem' }}>y</span>
           <span>{formatPhone(tel2Xalapa)}</span>
         </ContactAnchor>
       </ContactLi>
@@ -45,7 +49,7 @@ export default function ContactInfo() {
   )
 }
 // styles =============================================
-const secondPhone = '72em'
+const secondPhoneMediaQuery = 'min-width: 72em'
 
 const ContactBox = styled.ul`
   display: grid;
@@ -62,7 +66,7 @@ const ContactBox = styled.ul`
   @media (${props => props.theme.min960}) {
     grid-template-columns: repeat(3, minmax(208px , 256px));
   }
-  @media (min-width: ${secondPhone}) {
+  @media (${secondPhoneMediaQuery}) {
     grid-template-columns: minmax(208px , 256px) minmax(208px , 320px) minmax(208px , 256px);
   }
 `
@@ -111,6 +115,7 @@ const ContactAnchor = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
   ${props => hoverStyle(props.theme)}
 
   svg {

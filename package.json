@@ -5,7 +5,9 @@
   "description": "Bristol web app",
   "publishDir": "gatsby/public",
   "compressFile": "build.tar.gz",
-  "workspaces": [ "gatsby" ],
+  "workspaces": [
+    "gatsby"
+  ],
   "scripts": {
     "start": "yarn run dev",
     "dev": "yarn workspace gatsby start",
