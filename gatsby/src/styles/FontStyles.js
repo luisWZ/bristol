@@ -15,6 +15,9 @@ export const Legal = styled.p` // 14px
 export const Big = styled.h1` // 48px
   font-size: 3rem;
   line-height: 1.312;
+  @media (${theme.max480}) {
+    font-size: 2.5rem;
+  }
 `
 export const Title = styled.h1` // 40px
   font-size: 2.5rem;

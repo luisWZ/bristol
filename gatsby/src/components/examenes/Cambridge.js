@@ -25,7 +25,6 @@ const Flex = styled.div`
   align-items: start;
   justify-content: space-evenly;
   padding-bottom: 4rem;
-  margin-bottom: 6.5rem;
   border-bottom: 1px solid ${props => props.theme.gray};
 
   svg {
