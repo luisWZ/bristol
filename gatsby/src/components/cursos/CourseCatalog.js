@@ -23,7 +23,7 @@ export default function CourseCatalog() {
       </CourseDescription>
       <CourseDescription bgWhite>
         <TextIlustration textRight
-          title='Cursos para Adolecentes'
+          title='Cursos para Adolescentes'
           subheader='Desde los 11 a 15 años'
           subtitle='Desarrolla tu habilidad comunicativa en inglés y prepárate para triunfar en el futuro.'
           image={data.teens.childImageSharp.fluid}
