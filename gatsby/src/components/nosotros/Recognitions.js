@@ -9,7 +9,8 @@ import LogoCambridgePreparationCentre from 'svgs/logo-cambridge-preparation-cent
 import LogoTheAnglo from 'svgs/logo-the-anglo.svg'
 import LogoGreatPlaceToWork from 'svgs/logo-great-place-to-work.svg'
 import PictogramaExcelencia from 'svgs/pictograma-excelencia.svg'
-import PictogramaEscuela from 'svgs/pictograma-escuela.svg'
+// import PictogramaEscuela from 'svgs/pictograma-escuela.svg'
+import iconFlags from '../../images/flags-eng-can.png'
 
 export default function Recognitions() {
   return (
@@ -69,7 +70,7 @@ export default function Recognitions() {
           </p>
         </Recognition>
         <Recognition>
-          <PictogramaEscuela />
+          <img src={iconFlags} alt="" />
           <p>
             Durante 20 años, Bristol ha establecido alianzas con escuelas de
             prestigio en Canadá e Inglaterra para ofrecer a nuestros alumnos
@@ -100,9 +101,10 @@ const Recognition = styled.div`
   flex-flow: column wrap;
   align-items: center;
 
-  svg {
+  svg, img {
     margin-bottom: 2rem;
     height: 5rem;
+    width: auto;
   }
 
   @media (${props => props.theme.max560}) {

@@ -53,23 +53,28 @@ const siteNavigation = [
   },
   {
     url: '/cursos',
-    name: 'Cursos Generales',
+    name: 'Inglés General',
     order: '2',
   },
   {
-    url: '/examenes',
-    name: 'Centro Examinador',
+    url: '/educacion-continua',
+    name: 'Educación Continua',
     order: '5',
   },
   {
-    url: '/educacion-continua',
+    url: '/examenes',
     name: 'Exámenes Internacionales',
     order: '4',
   },
   {
+    url: '/centro-examinador-cambridge',
+    name: 'Centro Examinador Cambridge',
+    order: '6',
+  },
+  {
     url: '/aviso-privacidad',
     name: 'Aviso de Privacidad',
-    order: '6',
+    order: '7',
   },
 ]
 // styles =============================================

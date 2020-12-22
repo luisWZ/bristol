@@ -30,7 +30,7 @@ const HeaderBox = styled.header`
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   box-shadow: 0 1px 2px hsla(220, 11%, 15%, 0.15);
   grid-template-columns: max-content 1fr max-content max-content;

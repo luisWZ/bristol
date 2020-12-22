@@ -7,7 +7,7 @@ import styled from '@emotion/styled'
 import { Section, Container } from 'styles/CssHelpers'
 import { Subtitle } from 'styles/FontStyles'
 import TextIlustration from 'components/TextIlustration'
-import IlustracionDocentes from 'svgs/ilustracion-docentes.svg'
+import IlustracionDocente from 'svgs/ilustracion-docente.svg'
 
 export default function Us() {
   const data = useStaticQuery(DIAGRAM_QUERY).diagram.childImageSharp
@@ -26,7 +26,8 @@ export default function Us() {
       <Container>
         <TextIlustration
           textRight
-          Ilustration={IlustracionDocentes}
+          image
+          Ilustration={IlustracionDocente}
           subtitle='Nuestros docentes'
           css={css`flex-basis: 100%;`}
         >

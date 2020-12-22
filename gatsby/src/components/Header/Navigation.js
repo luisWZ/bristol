@@ -15,11 +15,13 @@ export default function Navigation() {
       <NavItem><Link to='/nosotros'>Nosotros<AiOutlineRight /></Link></NavItem>
       <NavItem className='dropdown'><span aria-haspopup='true'>Cursos</span>
         <ul aria-label='submenu'>
-          <li><Link to='/cursos'>Cursos de Inglés General <AiOutlineRight /></Link></li>
+          <li><Link to='/cursos'>Inglés General <AiOutlineRight /></Link></li>
           <li><Link to='/educacion-continua'>Educación Continua <AiOutlineRight /></Link></li>
+          <li><Link to='/examenes'>Exámenes Internacionales <AiOutlineRight /></Link></li>
         </ul>
       </NavItem>
-      <NavItem><Link to='/examenes'>Centro Examinador Cambridge<AiOutlineRight /></Link></NavItem>
+      <NavItem><Link to='/centro-examinador-cambridge'>Centro Examinador Cambridge<AiOutlineRight /></Link></NavItem>
+      {/* <NavItem><Link to='/certificacion-cambridge'>Centro Examinador Cambridge<AiOutlineRight /></Link></NavItem> */}
     </NavBox>
   )
 }
@@ -131,7 +133,7 @@ const NavItem = styled('li')`
     &.dropdown {
       padding-left: 0;
       padding-right: 0;
-      height: ${anchorHeightMobile.split('rem')[0] * 2 + 'rem'};
+      height: ${anchorHeightMobile.split('rem')[0] * 3 + 'rem'};
 
       ul {
         width: 100%;
@@ -141,9 +143,10 @@ const NavItem = styled('li')`
       }
       li {
         ${props => liMobileStyles(props.theme)}
+        border-top: 1px solid ${props => props.theme.grayLight};
 
         &:first-of-type {
-          border-bottom: 1px solid ${props => props.theme.grayLight};
+          border-top: none;
         }
       }
     }

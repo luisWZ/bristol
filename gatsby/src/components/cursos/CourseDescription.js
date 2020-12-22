@@ -15,7 +15,8 @@ import PictogramaExamenPractica from 'svgs/pictograma-examen-practica.svg'
 import PictogramaRecursosAula from 'svgs/pictograma-recursos-aula.svg'
 import PictogramaCertificacion from 'svgs/pictograma-certificacion.svg'
 import PictogramaTalleresGratuitos from 'svgs/pictograma-talleres-gratuitos.svg'
-import IconAnchorUs from 'svgs/icon-layer-system.svg'
+import PictogramaNiveles from 'svgs/pictograma-niveles.svg'
+import PictogramaDias from 'svgs/pictograma-dias.svg'
 
 export default function CourseDescription({
   children,
@@ -24,6 +25,7 @@ export default function CourseDescription({
   kids,
   examen,
   last,
+  calendar,
 }) {
   const lecturaExtensivaOrder = () => {
     if (kids) return css`order: -1;`
@@ -91,12 +93,14 @@ export default function CourseDescription({
       <ComingCourses simple />
 
       <Container>
-        <Anchor to='/nosotros'><IconAnchorUs /> Consulte nuestro sistema de niveles</Anchor>
-        {examen && <Anchor to='/examenes'>¿Quieres conocer más sobre cada uno de los exámenes de certificación internacional?</Anchor>}
+        {!calendar && <Anchor to='/nosotros'><PictogramaNiveles /> Consulte nuestro sistema de niveles</Anchor>}
+        {!calendar && examen && <Anchor to='/centro-examinador-cambridge'>¿Quieres conocer más sobre cada uno de los exámenes de certificación internacional?</Anchor>}
+        {calendar && <Anchor to='/centro-examinador-cambridge'><PictogramaDias /> Calendario de exámenes internacionales</Anchor>}
       </Container>
     </Section>
   )
 }
+// styles =================================================
 const Section = styled.section`
   @media (${props => props.theme.min848}) {
     padding-top: 5rem;
@@ -114,20 +118,6 @@ const Grid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   }
 `
-// const Feature = styled.div`
-//   display: flex;
-//   align-items: center;
-//   flex-wrap: wrap;
-
-//   svg {
-//     flex-basis: 4.25rem;
-//     margin-right: 2rem;
-//   }
-//   p {
-//     margin-bottom: 0;
-//     flex: 1;
-//   }
-// `
 const Body2_ = styled(Body2)`
   @media (${props => props.theme.max848}) {
     margin-top: 1.5rem;

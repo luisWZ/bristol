@@ -45,6 +45,7 @@ export function ContainerWhite({ children, borderBottom = false }) {
   return (
     <section css={css`
       background-color: white;
+      overflow: hidden; //possible svg overflow on index
       ${borderBottom && borderBottomStyle}
     `}>
       <Container as='div'>{children}</Container>
@@ -101,9 +102,11 @@ export const borderTopStyle = theme => `border-top: 1px solid ${theme.grayLight}
 export const Anchor = styled(Link)`
   color: ${props => props.theme.bristolBlue};
   display: flex;
+  align-items: center;
 
   svg {
-    margin-right: 1rem;
+    margin-right: 0.75rem;
+    width: 1.5rem;
   }
 
   & + & {

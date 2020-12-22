@@ -35,16 +35,16 @@ export default function Home({ data }) {
 // query ==============================================
 export const query = graphql`
   query IMAGES_QUERY {
-    imageCursoInglesGeneral: file(relativePath: { eq: "image-cursos-ingles-general.png" }) {
+    imageCursoInglesGeneral: file(relativePath: { eq: "curso-de-ingles-general.png" }) {
       childImageSharp {
-        fluid(maxWidth: 680) {
+        fluid(maxWidth: 780) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
-    imageCentroExaminador: file(relativePath: { eq: "image-centro-examinador.png" }) {
+    imageCentroExaminador: file(relativePath: { eq: "centro-examinador-cambridge.png" }) {
       childImageSharp {
-        fluid(maxWidth: 797) {
+        fluid(maxWidth: 897) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }

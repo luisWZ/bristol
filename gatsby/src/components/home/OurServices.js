@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { ContainerWhite, title } from 'styles/CssHelpers'
 import { Title2 } from 'styles/FontStyles'
+import { ContainerWhite, title } from 'styles/CssHelpers'
+import LineDecoration from 'svgs/linea-dorada.svg'
 
 // Components =========================================
 export default function OurServices({ images }) {
@@ -19,13 +21,16 @@ export default function OurServices({ images }) {
       <Title2 css={title}>Modalidades</Title2>
       <ServicesWrapper>
         {data.map((service, index) => <Service service={service} key={`our_services${index}`} /> )}
+        <LineDecoration css={lineDecorationStyles} />
       </ServicesWrapper>
     </ContainerWhite>
   )
 }
 const Service = ({ service }) => (
-  <ServiceBox>
-    <Img fluid={service.image.childImageSharp.fluid} />
+  <ServiceBox css={css`position: relative;`}>
+    <ImageWrapper decoration={service.decoration}>
+      <Img css={() => imageStyles()} fluid={service.image.childImageSharp.fluid} />
+    </ImageWrapper>
     <Header>{service.title}</Header>
     {service.text.split('@').map((line, index) => <p key={index}>{line}</p>)}
   </ServiceBox>
@@ -39,6 +44,7 @@ const HOME_SERVICES_QUERY = graphql`
           title
           text
           type
+          decoration
         }
       }
     }
@@ -51,6 +57,7 @@ const ServicesWrapper = styled.div`
   justify-content: space-evenly;
   margin-top: 3rem;
   margin-bottom: 5rem;
+  position: relative;
 `
 const ServiceBox = styled.div`
     margin-bottom: 1.5rem;
@@ -63,8 +70,6 @@ const ServiceBox = styled.div`
       &:first-of-type {
         margin-bottom: 3rem;
       }
-    }
-
     }
 
     p {
@@ -80,6 +85,50 @@ const ServiceBox = styled.div`
     }
 `
 const Header = styled(Title2)`
-  margin-top: 1.25rem;
+  margin-top: 5rem;
   margin-bottom: 0.8rem;
+`
+const imageStyles = _ => css`
+  position: relative;
+  z-index: 1;
+`
+const ImageWrapper = styled.div`
+  position: relative;
+
+  ${props => props.decoration &&
+    `
+    &:before {
+      content: '';
+      position: absolute;
+      width: 5rem;
+      height: 5rem;
+      top: -15%;
+      left: 15%;
+      z-index: 3;
+      border-radius: 50%;
+      border: 2px solid #61CC7A;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 86%;
+      left: -7%;
+      top: 7%;
+      background-color: #B50F7D;
+    }
+    `
+  }
+`
+const lineDecorationStyles = theme => css`
+  position: absolute;
+  left: -23%;
+  top: 13%;
+  width: 2600px;
+  max-width: none;
+  z-index: 0;
+
+  @media (${theme.max848}) {
+    visibility: hidden;
+  }
 `

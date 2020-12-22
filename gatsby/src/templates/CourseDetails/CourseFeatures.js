@@ -80,8 +80,8 @@ const Sidebar = styled.div`
 `
 const Detail = styled.div`
   display: flex;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
 
   svg {
     margin-left: 9%;

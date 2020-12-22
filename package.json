@@ -13,9 +13,9 @@
     "dev": "yarn workspace gatsby start",
     "clean": "yarn workspace gatsby run clean",
     "build": "yarn workspace gatsby run build",
-    "public": "yarn run build && yarn run serve",
     "serve": "yarn workspace gatsby run serve --host 0.0.0.0 --port $process_argv",
-    "publish": "cp ./CNAME $npm_package_publishDir && npx surge $npm_package_publishDir && rm $npm_package_publishDir/CNAME",
+    "surge": "cp ./CNAME $npm_package_publishDir && npx surge $npm_package_publishDir && rm $npm_package_publishDir/CNAME",
+    "publish": "yarn clean && yarn build && yarn run surge",
     "compress": "tar -czvf $npm_package_compressFile -C $npm_package_publishDir .",
     "remote": "source .env.remote && scp $npm_package_compressFile ${REMOTE_CONNECTION}",
     "production": "yarn run compress && yarn run remote && rm $npm_package_compressFile"

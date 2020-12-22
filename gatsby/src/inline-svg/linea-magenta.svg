@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400px" height="268px" viewBox="0 0 1400 268" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Stroke 1</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Home-V2" transform="translate(0.000000, -1107.000000)" stroke="#ED26AB" stroke-width="1.5">
+            <path d="M-4.54747351e-13,1303.51309 C-4.54747351e-13,1303.51309 481.223964,1328.33282 726.415632,1165.35921 C826.351856,1098.93518 387.863491,1245.11668 424.308298,1321.82651 C460.755818,1398.53383 871.616799,1200.16398 905.08447,1137.5119 C938.552141,1074.85982 450.619445,1369.56369 712.686071,1335.39803 C974.752697,1301.23237 1167.20266,1059.98502 1154.81647,1130.26623 C1100.30531,1439.58174 1345.48613,1476.43414 1400,1167.11612" id="Stroke-1" transform="translate(700.000000, 1249.500000) rotate(181.000000) translate(-700.000000, -1249.500000) "></path>
+        </g>
+    </g>
+</svg>

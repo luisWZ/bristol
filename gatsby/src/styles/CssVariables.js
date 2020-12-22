@@ -49,5 +49,6 @@ module.exports = {
   max960: 'max-width: 59.9375em',
   max1040: 'max-width: 64.9375em',
   max1120: 'max-width: 69.9375em',
+  max1400: 'max-width: 87.9375em',
   // --------------------------------------------------
 }

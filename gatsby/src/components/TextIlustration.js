@@ -13,6 +13,7 @@ const TextIlustration = ({
   subheader,
   textRight,
   image,
+  Ilustration,
   img563,
   translateY,
 }) => {
@@ -24,7 +25,8 @@ const TextIlustration = ({
         {subtitle && <Subtitle css={!title && css`margin-top: 0;` }>{subtitle}</Subtitle>}
         {children}
       </Text>
-      {image && <ImgStyles {...{translateY}} {...{img563}} fluid={image} />
+      {Ilustration && <Ilustration css={ilustrationStyles} />}
+      {image && !Ilustration && <ImgStyles {...{translateY}} {...{img563}} fluid={image} />
       }
     </Flex>
   )
@@ -36,6 +38,13 @@ TextIlustration.propTypes = {
 export default TextIlustration
 
 // styles =============================================
+const ilustrationStyles = theme => css`
+  flex-grow: 0;
+
+  @media (${theme.max1040}) {
+    margin: 2rem auto;
+  }
+`
 const Flex = styled.div`
   display: flex;
   flex-wrap: wrap;
