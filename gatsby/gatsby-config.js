@@ -81,14 +81,14 @@ module.exports = {
         cache_busting_mode: `none`,
       },
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        workboxConfig: {
-          globPatterns: [`**/manifest-icon*`],
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-offline`,
+    //   options: {
+    //     workboxConfig: {
+    //       globPatterns: [`**/manifest-icon*`],
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {

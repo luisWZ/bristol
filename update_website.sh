@@ -7,7 +7,7 @@ cd $REMOTE_DIR
 if [ -f $COMPRESS_FILE ]
   then
 
-    echo "Creating temp folder"
+    echo "Creating 'temp' folder"
     [ -d $TEMP_DIR ] && rm -rf $TEMP_DIR
     mkdir $TEMP_DIR
 
@@ -19,7 +19,7 @@ if [ -f $COMPRESS_FILE ]
       -name $COMPRESS_FILE -prune  -o \
       -print)
 
-    echo "Moving old files to temp folder"
+    echo "Moving old files to 'temp' folder"
     for file in $files
       do
         mv $file $TEMP_DIR 2>/dev/null
