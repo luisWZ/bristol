@@ -82,7 +82,7 @@ const Section_ = styled(Section)`
   @media(${props => props.theme.min720 }) {
     justify-content: space-around;
     min-height: ${props => props.home ? '35rem' : '24rem'};
-    max-height: 54rem;
+    max-height: 64rem;
 
   }
 `
