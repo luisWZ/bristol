@@ -67,28 +67,28 @@ module.exports = {
         once: false,
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: title,
-        short_name: shortName,
-        lang,
-        start_url: `/`,
-        background_color: bristolBlue,
-        theme_color: bristolBlue,
-        display: `standalone`,
-        icon: `static/manifest-icon-bristol.png`,
-        cache_busting_mode: `none`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        workboxConfig: {
-          globPatterns: [`**/manifest-icon*`],
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: title,
+    //     short_name: shortName,
+    //     lang,
+    //     start_url: `/`,
+    //     background_color: bristolBlue,
+    //     theme_color: bristolBlue,
+    //     display: `standalone`,
+    //     icon: `static/manifest-icon-bristol.png`,
+    //     cache_busting_mode: `none`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-plugin-offline`,
+    //   options: {
+    //     workboxConfig: {
+    //       globPatterns: [`**/manifest-icon*`],
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {

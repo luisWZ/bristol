@@ -14,8 +14,7 @@ export default function OurServices({ images }) {
   const data = useStaticQuery(HOME_SERVICES_QUERY).allHomeServicesYaml.edges
     .map( ({ node }) => ({
       ...node,
-      image: node.type === 'online' ? images.imageCursoOnline : images.imageCursoPresencial,
-      decoration: node.type === 'online' ? true : false,
+      image: node.type === 'online' ? images.imageCursoOnline : images.imageCursoPresencial
     }))
   return (
     <ContainerWhite>
@@ -45,6 +44,7 @@ const HOME_SERVICES_QUERY = graphql`
           title
           text
           type
+          decoration
         }
       }
     }
@@ -95,7 +95,7 @@ const imageStyles = _ => css`
 const ImageWrapper = styled.div`
   position: relative;
 
-  ${props => props.decoration &&
+  ${props => props.decoration === 'enabled' &&
     `
     &:before {
       content: '';

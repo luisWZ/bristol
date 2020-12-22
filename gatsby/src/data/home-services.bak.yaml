@@ -9,6 +9,8 @@
     @• Interactivos: Comunícate en tiempo real con tu maestro y compañeros de clase.
   type:
     online
+  decoration:
+    enabled
 
 - title:
     Presencial
@@ -16,3 +18,5 @@
     Se ofrecen en nuestras instalaciones o también los llevamos a tu colegio o empresa. Nuestros grupos son pequeños para que todos puedan sacar el mayor provecho de cada sesión. Contamos con salones de clase cómodos y equipados con recursos tecnológicos para hacer de cada sesión una experiencia memorable y provechosa al máximo.
   type:
     presencial
+  decoration:
+    none
