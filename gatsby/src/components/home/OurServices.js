@@ -95,7 +95,7 @@ const imageStyles = _ => css`
 const ImageWrapper = styled.div`
   position: relative;
 
-  ${props => props.decoration &&
+  ${props => props.decoration === 'enabled' &&
     `
     &:before {
       content: '';

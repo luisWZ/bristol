@@ -10,7 +10,7 @@
   type:
     online
   decoration:
-    true
+    enabled
 
 - title:
     Presencial
@@ -19,4 +19,4 @@
   type:
     presencial
   decoration:
-    false
+    none
