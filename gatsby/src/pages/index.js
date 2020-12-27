@@ -37,29 +37,29 @@ export const query = graphql`
   query IMAGES_QUERY {
     imageCursoInglesGeneral: file(relativePath: { eq: "curso-de-ingles-general.png" }) {
       childImageSharp {
-        fluid(maxWidth: 780) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
+        fluid(maxWidth: 780, quality:80, traceSVG: { color: "#cdd7ea" }) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     imageCentroExaminador: file(relativePath: { eq: "centro-examinador-cambridge.png" }) {
       childImageSharp {
-        fluid(maxWidth: 897) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
+        fluid(maxWidth: 897, quality:80, traceSVG: { color: "#cdd7ea" }) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     imageCursoPresencial: file(relativePath: { eq: "cursos-presencial.png" }) {
       childImageSharp {
-        fluid(maxWidth: 447) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
+        fluid(maxWidth: 447, quality: 92, traceSVG: { color: "#cdd7ea" }) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     imageCursoOnline: file(relativePath: { eq: "cursos-online.png" }) {
       childImageSharp {
-        fluid(maxWidth: 447) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
+        fluid(maxWidth: 447, quality: 92, traceSVG: { color: "#cdd7ea" }) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }

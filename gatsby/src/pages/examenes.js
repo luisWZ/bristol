@@ -38,15 +38,15 @@ export const EXAMENES_IMAGES_QUERY = graphql`
   query EXAMENES_IMAGES_QUERY {
     examenesInternacionales: file(relativePath: { eq: "image-examenes-internacionales.png" }) {
       childImageSharp {
-        fluid(maxWidth: 447) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
+        fluid(maxWidth: 600, traceSVG: { color: "#cdd7ea" }) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     diagram: file(relativePath: { eq: "cefr-diagram-december-2020.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
+        fluid(traceSVG: { color: "#cdd7ea" }) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
