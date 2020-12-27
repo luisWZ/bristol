@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+import PageTitle from 'utils/PageTitle'
+import { formatDateShort } from 'utils/helpers'
 import { Container, Section } from 'styles/CssHelpers'
 import ComingCourses from 'components/ComingCourses'
 import TitleBox from './TitleBox'
@@ -22,6 +24,7 @@ export default function CourseDetails({
 }) {
   return (
     <>
+      <PageTitle>{`${courseName} ${formatDateShort(startingDate)}`}</PageTitle>
       <Section>
         <ContainerGrid as='div'>
           <TitleBox {...{courseName}} {...{courseType}} />

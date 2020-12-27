@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
+import PageTitle from 'utils/PageTitle'
 import HeroContent from 'components/HeroContent'
 import IlustracionPatineta from 'svgs/ilustracion-patineta.svg'
 import MainCourses from 'components/educacion-continua/MainCourses'
@@ -10,6 +11,7 @@ import CoursesCompanies from 'components/educacion-continua/CoursesCompanies'
 export default function EducacionContinua({ data }) {
   return (
     <>
+      <PageTitle>Educación Continua</PageTitle>
       <HeroContent
         mainText='La mejor manera de volverse un experto es practicando'
         image={IlustracionPatineta}

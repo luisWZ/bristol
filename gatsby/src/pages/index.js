@@ -51,14 +51,14 @@ export const query = graphql`
     }
     imageCursoPresencial: file(relativePath: { eq: "cursos-presencial.png" }) {
       childImageSharp {
-        fluid(maxWidth: 447, quality: 92, traceSVG: { color: "#cdd7ea" }) {
+        fluid(maxWidth: 600, quality: 100, traceSVG: { color: "#cdd7ea" }) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     imageCursoOnline: file(relativePath: { eq: "cursos-online.png" }) {
       childImageSharp {
-        fluid(maxWidth: 447, quality: 92, traceSVG: { color: "#cdd7ea" }) {
+        fluid(maxWidth: 600, quality: 100, traceSVG: { color: "#cdd7ea" }) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }

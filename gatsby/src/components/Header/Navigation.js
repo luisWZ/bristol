@@ -21,7 +21,6 @@ export default function Navigation() {
         </ul>
       </NavItem>
       <NavItem><Link to='/centro-examinador-cambridge'>Centro Examinador Cambridge<AiOutlineRight /></Link></NavItem>
-      {/* <NavItem><Link to='/certificacion-cambridge'>Centro Examinador Cambridge<AiOutlineRight /></Link></NavItem> */}
     </NavBox>
   )
 }

@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import { useSiteMetadata } from './UseSiteMetadata'
 import { facebookhref1, facebookhref2 } from 'root/sitedefaults'
 
+// Used in layout template
 export default function HtmlHeader({ children }) {
   const { title, description, keywords, lang } = useSiteMetadata()
   return (
