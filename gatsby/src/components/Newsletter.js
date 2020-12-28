@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
-import { useTheme } from 'emotion-theming'
+import { css } from '@emotion/react'
+import { useTheme } from '@emotion/react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 import { Container, title } from 'styles/CssHelpers'

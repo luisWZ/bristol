@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import ComingCourses from 'components/ComingCourses'
 import { Body2 } from 'styles/FontStyles'
 import { Container, Anchor, Feature } from 'styles/CssHelpers'

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import { Button } from 'styles/CssHelpers'
 import { Legal, Subtitle } from 'styles/FontStyles'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import PageTitle from 'utils/PageTitle'
 import { Subtitle, Body2 , Big } from 'styles/FontStyles'
 import { Container } from 'styles/CssHelpers'

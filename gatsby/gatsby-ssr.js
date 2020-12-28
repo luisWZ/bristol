@@ -1,8 +1,8 @@
 import React from 'react'
 
 // Needed for emotion =================================
-import { CacheProvider } from '@emotion/core'
-import createEmotionServer from 'create-emotion-server'
+import { CacheProvider } from '@emotion/react'
+import createEmotionServer from '@emotion/server/create-instance'
 import { renderToString } from 'react-dom/server'
 import { myCache } from './create-emotion-cache'
 

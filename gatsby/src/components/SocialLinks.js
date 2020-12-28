@@ -1,5 +1,5 @@
 import React from 'react'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import { FaFacebookF, FaInstagram } from 'react-icons/fa'
 import { instagram, facebook } from 'root/sitedefaults'

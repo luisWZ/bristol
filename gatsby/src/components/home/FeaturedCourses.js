@@ -2,7 +2,7 @@ import React from 'react'
 import { navigate } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import { Title } from 'styles/FontStyles'
 import { ContainerWhite } from 'styles/CssHelpers'

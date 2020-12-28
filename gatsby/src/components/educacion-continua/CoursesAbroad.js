@@ -4,7 +4,7 @@ import { Section, Container, ButtonSaberMas } from 'styles/CssHelpers'
 import { Body2 } from 'styles/FontStyles'
 import TextIlustration from 'components/TextIlustration'
 import { Grid_3_Columns, Column } from './Grid_3_Columns'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 export default function CoursesAbroad({ data }) {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import IlustracionFallingGirl from 'svgs/ilustracion-falling-girl.svg'
 
