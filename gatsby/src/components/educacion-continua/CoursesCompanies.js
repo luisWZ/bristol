@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, Button } from 'styles/CssHelpers'
+import { Container, ButtonSaberMas } from 'styles/CssHelpers'
 import TextIlustration from 'components/TextIlustration'
 
 export default function CoursesCompanies({ data }) {
@@ -13,7 +13,7 @@ export default function CoursesCompanies({ data }) {
       >
         <p>Con base en un análisis de necesidades, diseñamos data a la medida de las necesidades de su empresa y nos adaptamos también a sus necesidades de horario para que el curso no interfiera con las actividades de sus colaboradores.</p>
         <p>Si su empresa no tienen necesidades específicas, pero el dominio del inglés es parte del programa de capacitación de la empresa, les ofrecemos descuentos y beneficios especiales en nuestros cursos de Inglés General.</p>
-        <Button>Quiero saber más</Button>
+        <ButtonSaberMas />
       </TextIlustration>
     </Container>
   )

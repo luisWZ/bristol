@@ -31,7 +31,7 @@ if [ -f $COMPRESS_FILE ]
     echo "Removing unnecessary files"
     rm -rf $TEMP_DIR $COMPRESS_FILE
 
-    echo "Updated website 🛫"
+    echo "Website update successful 🛫"
 
   else
     echo "No tar file was found in directory 💩"

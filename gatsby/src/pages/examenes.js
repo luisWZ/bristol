@@ -6,8 +6,7 @@ import styled from '@emotion/styled'
 import PageTitle from 'utils/PageTitle'
 import CourseDescription from 'components/cursos/CourseDescription'
 import TextIlustration from 'components/TextIlustration'
-import { Section, Container, Button } from 'styles/CssHelpers'
-import { email } from 'root/sitedefaults'
+import { Section, Container, ButtonSaberMas } from 'styles/CssHelpers'
 
 export default function Examenes({ data }) {
   return (
@@ -26,7 +25,7 @@ export default function Examenes({ data }) {
             <div>
               <p>Con nosotros no sólo estudias inglés, aprendes como enfrentar con éxito el examen y desarrollas habilidades que podrás aplicar a otras áreas de conocimiento o a otros idiomas. No somos simplemente una escuela que sigue un libro de texto al pie de la letra para preparar a sus alumnos, SOMOS LOS EXPERTOS.</p>
               <p>Con nosotros puedes preparar todos los exámenes de Cambridge Assessment English: A2 Key (Ket), B1 Preliminary (PET), B2  First (FCE), C1 Advanced (CAE),C2  Proficiency (CPE) y ielts (General y Académico)</p>
-              <Button href={`mailto:${email}`}>Quiero saber más</Button>
+              <ButtonSaberMas />
             </div>
             <Img fluid={data.diagram.childImageSharp.fluid} />
           </Flex>
