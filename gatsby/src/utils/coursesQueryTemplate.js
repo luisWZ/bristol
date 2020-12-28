@@ -21,11 +21,7 @@ exports.COURSES_QUERY = `
           subheader
           subtitle
           text {
-            content {
-              content {
-                value
-              }
-            }
+            raw
           }
         }
       }

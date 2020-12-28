@@ -18,7 +18,7 @@ export default function CourseDescription({
         {...{subheader}}
         {...{subtitle}}
       >
-        {text.content.map((paragraph, index) => <p key={index}>{paragraph.content[0].value}</p>)}
+        {JSON.parse(text.raw).content.map((paragraph, index) => <p key={index}>{paragraph.content[0].value}</p>)}
       </TextIlustration>
     </Main>
   )
