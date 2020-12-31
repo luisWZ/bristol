@@ -14,7 +14,7 @@ export default function TitleBox({
     <TitleBox_>
       <TitleText>
         <Big>{courseName}</Big>&emsp;
-        <p>{courseType}&ensp;•&ensp;{subheader}</p>
+        <Text><span>{courseType}</span>&ensp;<Dot>•</Dot>&ensp;<span>{subheader}</span></Text>
       </TitleText>
       <Button_ href={`mailto:${email}`}>Inscríbete</Button_>
     </TitleBox_>
@@ -49,4 +49,20 @@ const TitleText = styled.div`
 const Button_ = styled(Button)`
   flex-basis: 13rem;
   flex-grow: 1;
+`
+const Text = styled.p`
+  @media (${props => props.theme.max720}) {
+    line-height: 1;
+    margin-bottom: 1.5rem;
+
+    span:first-of-type,
+    span:last-of-type {
+      display: block;
+    }
+  }
+`
+const Dot = styled.span`
+  @media (${props => props.theme.max720}) {
+    display: none;
+  }
 `
