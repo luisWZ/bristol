@@ -73,10 +73,10 @@ const InfoGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
   border-top: 4px solid ${props => props.theme.black};
   border-bottom: 4px solid ${props => props.theme.black};
+  background-color: ${props => props.theme.bgGray};
 `
 const Sidebar = styled.div`
   grid-area: sidebar;
-  background-color: ${props => props.theme.bgGray};
 `
 const Detail = styled.div`
   display: flex;

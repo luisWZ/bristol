@@ -27,16 +27,20 @@ export default function CourseDetails({
       <PageTitle>{`${courseName} ${formatDateShort(startingDate)}`}</PageTitle>
       <Section>
         <ContainerGrid as='div'>
-          <TitleBox {...{courseName}} {...{courseType}} />
-          <CourseFeatures
-            {...{sessionDate}}
-            {...{sessionTime}}
-            {...{image}}
-            {...{startingDate}}
-            {...{campus}}
-            {...{price}}
+          <TitleBox
+            {...{ courseName }}
+            {...{ courseType }}
+            subheader={courseDescription.subheader}
           />
-          <CourseDescription {...{courseDescription}} />
+          <CourseFeatures
+            {...{ sessionDate }}
+            {...{ sessionTime }}
+            {...{ image }}
+            {...{ startingDate }}
+            {...{ campus }}
+            {...{ price }}
+          />
+          <CourseDescription {...{ courseDescription }} />
         </ContainerGrid>
       </Section>
       <ComingCourses titleText='Cursos recomendados' />

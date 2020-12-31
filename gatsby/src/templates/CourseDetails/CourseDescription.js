@@ -5,8 +5,6 @@ import TextIlustration from 'components/TextIlustration'
 
 export default function CourseDescription({
   courseDescription: {
-    title,
-    subheader,
     subtitle,
     text,
   },
@@ -14,11 +12,9 @@ export default function CourseDescription({
   return (
     <Main>
       <TextIlustration
-        {...{title}}
-        {...{subheader}}
         {...{subtitle}}
       >
-        {JSON.parse(text.raw).content.map((paragraph, index) => <p key={index}>{paragraph.content[0].value}</p>)}
+        {JSON.parse(text.raw).content.map((paragraph, index) => console.log(paragraph) || <p key={index}>{paragraph.content[0].value}</p>)}
       </TextIlustration>
     </Main>
   )

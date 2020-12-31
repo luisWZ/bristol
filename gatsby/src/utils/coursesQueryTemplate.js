@@ -17,7 +17,6 @@ exports.COURSES_QUERY = `
           }
         }
         courseDescription {
-          title
           subheader
           subtitle
           text {
