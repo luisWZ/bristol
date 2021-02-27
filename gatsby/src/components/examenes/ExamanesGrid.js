@@ -49,7 +49,7 @@ const filters = [
   'fce',
   'cae',
   'cpe',
-  'linguaskill',
+  // 'linguaskill',
   'ielts',
   'tkt',
   'yle',
@@ -59,7 +59,7 @@ const EXAMENES_QUERY = graphql`
   fragment examenesImageSharpFragment on File {
     childImageSharp {
       fluid(maxWidth: 576) {
-        ...GatsbyImageSharpFluid_withWebp_noBase64
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
@@ -72,7 +72,7 @@ const EXAMENES_QUERY = graphql`
     fceschools: file(relativePath: { eq: "centro-examinador/fce-schools.png" }) { name ...examenesImageSharpFragment }
     cae: file(relativePath: { eq: "centro-examinador/cae.png" }) { name ...examenesImageSharpFragment }
     cpe: file(relativePath: { eq: "centro-examinador/cpe.png" }) { name ...examenesImageSharpFragment }
-    linguaskill: file(relativePath: { eq: "centro-examinador/linguaskill.png" }) { name ...examenesImageSharpFragment }
+    # linguaskill: file(relativePath: { eq: "centro-examinador/linguaskill.png" }) { name ...examenesImageSharpFragment }
     ielts: file(relativePath: { eq: "centro-examinador/ielts.png" }) { name ...examenesImageSharpFragment }
     tkt: file(relativePath: { eq: "centro-examinador/tkt.png" }) { name ...examenesImageSharpFragment }
     yle: file(relativePath: { eq: "centro-examinador/yle.png" }) { name ...examenesImageSharpFragment }

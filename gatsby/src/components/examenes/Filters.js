@@ -58,7 +58,6 @@ const Button = styled.button`
 
   &:hover {
     background-color: ${props => props.theme.grayLight};
-    /* background-color: hsl(222deg 97% 52% / 10%); */
   }
 `
 const FilterMobile = styled(Select)`
