@@ -3,8 +3,7 @@ import { Link } from 'gatsby'
 import { css } from '@emotion/react'
 import { AiOutlineRight } from 'react-icons/ai';
 
-import { commodityAesthetics } from 'root/sitedefaults'
-// import { commodityAesthetics, lasso } from 'root/sitedefaults'
+import { commodityAesthetics, lasso } from 'root/sitedefaults'
 import { Container } from 'styles/CssHelpers'
 import SvgCambridgeLogo from './Svg/SvgCambridgeLogo'
 import SvgFooterBrand from './Svg/SvgFooterBrand'
@@ -33,8 +32,7 @@ export default function Footer() {
         <address css={addressStyles}>
           <span>Bristol Inglés Profesional ©{new Date().getFullYear()}</span>
           <span>Made by&nbsp;
-            <a target="_blank" rel="noreferrer" href={commodityAesthetics}>Commodity Aesthetics</a>
-            {/* <a target="_blank" rel="noreferrer" href={commodityAesthetics}>Commodity Aesthetics</a> &amp; <a target="_blank" rel="noreferrer" href={lasso}>Luis Lasso</a> */}
+            <a target="_blank" rel="noreferrer" href={commodityAesthetics}>Commodity Aesthetics</a> &amp; <a target="_blank" rel="noreferrer" href={lasso}>Luis Lasso</a>
           </span>
         </address>
         <SocialLinks css={css` a {padding: 1.2rem;} svg {fill: white; width: 1.2rem;} `} />
@@ -198,7 +196,6 @@ const footerNavigationList = theme => css`
   @media (${theme.min960}) {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
   }
 `
 const addressBox = theme => css`
