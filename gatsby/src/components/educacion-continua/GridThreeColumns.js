@@ -31,7 +31,7 @@ const pictograms = {
   'tkt': <PictogramaTkt />,
 }
 // styles =============================================
-export const Grid_3_Columns = styled(Container)`
+export const GridThreeColumns = styled(Container)`
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(16rem, 1fr));
   grid-gap: 5rem;

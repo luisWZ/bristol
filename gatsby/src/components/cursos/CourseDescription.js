@@ -37,7 +37,7 @@ export default function CourseDescription({
     <Section {...{ bgWhite }} {...{ border }} {...{last}}>
       <Container as='div'>
         {children}
-        <Body2_>Características del curso</Body2_>
+        <Body2Styles>Características del curso</Body2Styles>
         <Grid>
           <Feature css={css`order: -2;`}>
             <PictogramaGruposHomogeneos />
@@ -118,7 +118,7 @@ const Grid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   }
 `
-const Body2_ = styled(Body2)`
+const Body2Styles = styled(Body2)`
   @media (${props => props.theme.max848}) {
     margin-top: 1.5rem;
   }

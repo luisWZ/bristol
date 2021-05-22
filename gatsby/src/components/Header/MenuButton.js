@@ -12,7 +12,7 @@ export default function MenuButton() {
   useMobileListener(node, setMenuOpen)
 
   return (
-    <MenuButton_
+    <MenuButtonStyles
       as='button'
       noBg
       noRadius
@@ -21,11 +21,11 @@ export default function MenuButton() {
     >
       <AiOutlineMenu />
       &ensp;Menú
-    </MenuButton_>
+    </MenuButtonStyles>
   )
 }
 // styles =============================================
-const MenuButton_ = styled(Button)`
+const MenuButtonStyles = styled(Button)`
   padding-left: 1.6rem;
   padding-right: 1.6em;
 

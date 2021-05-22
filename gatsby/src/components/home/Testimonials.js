@@ -18,7 +18,7 @@ export default function Testimonials() {
   const data = useStaticQuery(HOME_TESTIMONIALS_QUERY).allHomeTestimonialsYaml.edges
 
   return (
-    <Container_>
+    <ContainerStyles>
       <Title2 css={title}>Testimonios</Title2>
       <Slider {...{ ...settings, initialSlide: getRandomInt(data.length) }}>
         {data.map((testimony, index) => (
@@ -28,18 +28,18 @@ export default function Testimonials() {
           />
         ))}
       </Slider>
-    </Container_>
+    </ContainerStyles>
   )
 }
 const Testimony = ({ testimony }) => (
-  <Testimony_>
+  <TestimonyStyles>
     <p>{testimony.text}</p>
     <Cite>
       {testimony.icon === 'girl' ? <IconGirl /> : <IconBoy />}
       <h1 className='h4'>{testimony.name}</h1>
     </Cite>
     <Icon />
-  </Testimony_>
+  </TestimonyStyles>
 )
 const settings = {
   slidesToShow: 2,
@@ -72,7 +72,7 @@ const HOME_TESTIMONIALS_QUERY = graphql`
 `
 // Styles =============================================
 const width = `40px`
-const Container_ = styled(Container)`
+const ContainerStyles = styled(Container)`
   .slick {
     &-arrow {
       &:before {
@@ -111,7 +111,7 @@ const Container_ = styled(Container)`
   }
 `
 const maxWidth = `28.5rem`
-const Testimony_ = styled.div`
+const TestimonyStyles = styled.div`
   padding: 1.5rem;
   position: relative;
   margin-left: auto;

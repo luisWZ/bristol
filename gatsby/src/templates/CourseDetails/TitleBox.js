@@ -11,17 +11,17 @@ export default function TitleBox({
   subheader,
 }) {
   return (
-    <TitleBox_>
+    <TitleBoxStyles>
       <TitleText>
         <Big>{courseName}</Big>&emsp;
         <Text><span>{courseType}</span>&ensp;<Dot>•</Dot>&ensp;<span>{subheader}</span></Text>
       </TitleText>
-      <Button_ href={`mailto:${email}`}>Inscríbete</Button_>
-    </TitleBox_>
+      <ButtonStyles href={`mailto:${email}`}>Inscríbete</ButtonStyles>
+    </TitleBoxStyles>
   )
 }
 // styles =============================================
-const TitleBox_ = styled.div`
+const TitleBoxStyles = styled.div`
   grid-area: title;
   display: flex;
   flex-wrap: wrap;
@@ -46,7 +46,7 @@ const TitleText = styled.div`
     margin-bottom: 0.8rem;
   }
 `
-const Button_ = styled(Button)`
+const ButtonStyles = styled(Button)`
   flex-basis: 13rem;
   flex-grow: 1;
 `

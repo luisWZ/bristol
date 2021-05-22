@@ -23,7 +23,13 @@ export default function Footer() {
           <div css={footerNavigation}>
             <h1>Mapa del sitio</h1>
             <ul css={footerNavigationList}>
-              {siteNavigation.map(({ url, name, order }) => <Li key={order} {...{order}}><Link to={url}>{name}<AiOutlineRight /></Link></Li>)}
+              {siteNavigation.map(({ url, name, order }) => <Li key={order} {...{order}}>
+                  {name !== 'Blog'
+                    ? <Link to={url}>{name}<AiOutlineRight /></Link>
+                    : <a href={url} rel='noopener noreferrer' target='_blank'>{name}<AiOutlineRight /></a>
+                  }
+                </Li>)
+              }
             </ul>
           </div>
         </Container>
@@ -32,7 +38,7 @@ export default function Footer() {
         <address css={addressStyles}>
           <span>Bristol Inglés Profesional ©{new Date().getFullYear()}</span>
           <span>Made by&nbsp;
-            <a target="_blank" rel="noreferrer" href={commodityAesthetics}>Commodity Aesthetics</a> &amp; <a target="_blank" rel="noreferrer" href={lasso}>Luis Lasso</a>
+            <a target='_blank' rel='noopener noreferrer' href={commodityAesthetics}>Commodity Aesthetics</a> &amp; <a target="_blank" rel="noreferrer" href={lasso}>Luis Lasso</a>
           </span>
         </address>
         <SocialLinks css={css` a {padding: 1.2rem;} svg {fill: white; width: 1.2rem;} `} />
@@ -75,6 +81,11 @@ const siteNavigation = [
     url: '/aviso-privacidad',
     name: 'Aviso de Privacidad',
     order: '7',
+  },
+  {
+    url: 'https://blog.bristolingles.com.mx/',
+    name: 'Blog',
+    order: '8',
   },
 ]
 // styles =============================================

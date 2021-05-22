@@ -6,17 +6,17 @@ import { email } from 'root/sitedefaults'
 
 export default function ButtonsBox({children}) {
   return (
-    <ButtonsBox_>
+    <ButtonsBoxStyles>
       <ContactanosButton
         noRadius href={`mailto:${email}`}>
         Contáctanos
       </ContactanosButton>
       {children}
-    </ButtonsBox_>
+    </ButtonsBoxStyles>
   )
 }
 // styles =============================================
-const ButtonsBox_ = styled.div`
+const ButtonsBoxStyles = styled.div`
   grid-column-end: -1;
   justify-self: end;
 `

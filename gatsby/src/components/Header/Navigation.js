@@ -21,6 +21,7 @@ export default function Navigation() {
         </ul>
       </NavItem>
       <NavItem><Link to='/centro-examinador-cambridge'>Centro Examinador Cambridge<AiOutlineRight /></Link></NavItem>
+      <NavItem><a href='https://blog.bristolingles.com.mx/' rel='noopener noreferrer' target='_blank'>Blog<AiOutlineRight /></a></NavItem>
     </NavBox>
   )
 }
@@ -52,7 +53,7 @@ const NavBox = styled.ul`
   @media (${props => props.theme.min848}) {
     grid-row: 2 / 3;
     grid-auto-flow: column;
-    grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_3wordNav}`}
+    grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_3wordNav} ${_1wordNav}`}
   }
 `
 const anchorHeight = '3rem'
@@ -123,6 +124,10 @@ const NavItem = styled('li')`
       visibility: visible;
       opacity: 1;
       display: block;
+    }
+
+    &:last-child {
+      border-right: 1px solid white;
     }
   }
   @media (${props => props.theme.max848}) {

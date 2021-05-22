@@ -7,7 +7,7 @@ const Image = ({
   filter,
   image
 }) => (
-  <Image_
+  <ImageStyles
     {...{activeView}}
     {...{filter}}
     fluid={image}
@@ -18,7 +18,7 @@ const Image = ({
 export default Image
 
 // styles =============================================
-const Image_ = styled(Img)`
+const ImageStyles = styled(Img)`
   ${props => props.activeView !== 'all'
     && props.activeView !== props.filter
     && 'display: none;'

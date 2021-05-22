@@ -3,7 +3,7 @@ import React from 'react'
 import { Section, Container, ButtonSaberMas } from 'styles/CssHelpers'
 import { Body2 } from 'styles/FontStyles'
 import TextIlustration from 'components/TextIlustration'
-import { Grid_3_Columns, Column } from './Grid_3_Columns'
+import { GridThreeColumns, Column } from './GridThreeColumns'
 import { css } from '@emotion/react'
 
 export default function CoursesAbroad({ data }) {
@@ -24,7 +24,7 @@ export default function CoursesAbroad({ data }) {
         </Container>
       </Section>
       <Section>
-        <Grid_3_Columns>
+        <GridThreeColumns>
           <Column pictogram='colegios' title='Cursos especiales para colegios'>
             <p>Ofrecemos cursos y talleres a la medida de las necesidades de capacitación y desarrollo profesional de los docentes de inglés de su colegio o universidad.</p>
             <p>Solicite una visita o llamada y permítanos apoyarle con nuestra experiencia en la enseñanza del inglés.</p>
@@ -42,7 +42,7 @@ export default function CoursesAbroad({ data }) {
               <li>Module 3: Managing the teaching and learning process.</li>
             </ul>
           </Column>
-        </Grid_3_Columns>
+        </GridThreeColumns>
       </Section>
     </>
   )

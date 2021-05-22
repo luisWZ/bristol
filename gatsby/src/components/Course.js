@@ -38,9 +38,9 @@ export default function Course({ course, simple }) {
           Campus: {campus}
         </Small>}
       </TextBox>
-      <Button_ {...{simple}} noRadius widthFull blue href={slug}>
+      <ButtonStyles {...{simple}} noRadius widthFull blue href={slug}>
         Más info
-      </Button_>
+      </ButtonStyles>
     </CourseBox>
   )
 }
@@ -100,7 +100,7 @@ const TextBox = styled.div`
 const Small = styled(Legal)`
   color: ${props => props.theme.grayDark};
 `
-const Button_ = styled(Button)`
+const ButtonStyles = styled(Button)`
   ${props => props.simple && `
     margin: 0.5rem 1rem 1rem;
     padding: 0.6rem 1.4rem;

@@ -16,8 +16,8 @@ const HeroContent = ({
 }) => {
   const Image = ImageStyles(image)
   return (
-    <Section_ {...{gray}} {...{home}}>
-      <Container_ as='div'>
+    <SectionStyles {...{gray}} {...{home}}>
+      <ContainerStyles as='div'>
         <TextBox>
           <Slogan
             data-sal='fade'
@@ -37,7 +37,7 @@ const HeroContent = ({
             >
               {home.description}
             </Description>
-            <Button_ red='true'
+            <ButtonStyles red='true'
               as={Link}
               to={home.buttonLink}
               data-sal='fade'
@@ -46,7 +46,7 @@ const HeroContent = ({
               data-sal-easing='easeInOutCubic'
             >
               {home.button}
-            </Button_>
+            </ButtonStyles>
           </>}
         </TextBox>
         <Image
@@ -55,8 +55,8 @@ const HeroContent = ({
           data-sal-delay='300'
           data-sal-easing='easeInOutCubic'
          />
-      </Container_>
-    </Section_>
+      </ContainerStyles>
+    </SectionStyles>
   )
 }
 
@@ -68,7 +68,7 @@ HeroContent.propTypes = {
 export default HeroContent
 
 //  styles ============================================
-const Section_ = styled(Section)`
+const SectionStyles = styled(Section)`
   padding-top: 6rem; // header height aprox
   display: flex;
   height: 100vh;
@@ -95,7 +95,7 @@ const ImageStyles = image => styled(image)`
     flex-grow: 1;
   }
 `
-const Container_ = styled(Container)`
+const ContainerStyles = styled(Container)`
   margin-bottom: 0;
   display: flex;
   flex-wrap: wrap;
@@ -136,7 +136,7 @@ const Description = styled.p`
     font-size: 1.25rem;
   }
 `
-const Button_ = styled(Button)`
+const ButtonStyles = styled(Button)`
   @media(${props => props.theme.max720 }) { width: 100%; }
 `
 const Pagelocation = styled(Body2)`

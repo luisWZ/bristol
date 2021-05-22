@@ -23,7 +23,7 @@ export default function Newsletter() {
 
   return (
     <Container css={container}>
-      <Title_>{message ? message : 'Suscríbete a nuestro newsletter'}</Title_>
+      <TitleStyles>{message ? message : 'Suscríbete a nuestro newsletter'}</TitleStyles>
       <form css={formStyles} method='post'
         onSubmit={handleSubmit}
       >
@@ -68,7 +68,7 @@ const buttonStyles = css`
   background-color: transparent;
   svg {vertical-align: middle;}
 `
-const Title_ = styled(Title2)`
+const TitleStyles = styled(Title2)`
   ${title}
   margin-top: 0;
   @media (${props => props.theme.max420}) {

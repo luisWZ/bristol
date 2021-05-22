@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { Grid_3_Columns, Column } from './Grid_3_Columns'
+import { GridThreeColumns, Column } from './GridThreeColumns'
 
 export default function MainCourses() {
   return (
-    <Grid_3_Columns>
+    <GridThreeColumns>
       <Column pictogram='one-to-one' title='One to One' subtitle='Curso Individual'
         subheader='Para ti que tienes necesidades especiales y que deseas que el curso se adapte a tu ritmo'>
         <p>Los cursos One-To-One están pensados para aquellas personas que necesitan cubrir necesidades especiales de aprendizaje del idioma ya sea por requerimientos académicos o profesionales;  necesitan alcanzar el objetivo en un corto tiempo, o bien, les gusta que el curso se adapte a su ritmo y no sentirse presionado por el avance de un grupo.</p>
@@ -19,6 +19,6 @@ export default function MainCourses() {
         subheader='Si tienes más de 50 años y quieres aprender inglés para viajar o simplemente para hacer amigos de tu edad y pasar un rato divertido y aprendiendo algo nuevo a la vez, este curso es para ti'>
         <p>En nuestro curso 50+ te divertirás y al mismo tiempo podrás aprender inglés con personas de tu edad sin las presiones de exámenes o tareas. El objetivo es que desarrolles las habilidades lingüísticas que te permitan comunicarte con facilidad cuando viajes de vacaciones al extranjero o simplemente darte el gusto de aprender algo nuevo!</p>
       </Column>
-    </Grid_3_Columns>
+    </GridThreeColumns>
   )
 }
