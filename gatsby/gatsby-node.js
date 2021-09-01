@@ -5,9 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const { data } = await graphql(COURSES_QUERY)
-
-  if (data.erros) throw new Error(data.erros)
-  // if (data?.erros) throw new Error(data.erros) //es2020
+  if (!Boolean(data)) throw new Error(`Error querying data from contentful`)
 
   data.allContentfulCourses.nodes.forEach(course => {
     createPage({

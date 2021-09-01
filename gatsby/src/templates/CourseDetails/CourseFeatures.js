@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
-import { formatMoney } from 'utils/helpers'
+// import { formatMoney } from 'utils/helpers'
 import PictogramaDias from 'svgs/pictograma-dias.svg'
 import PictogramaDuracion from 'svgs/pictograma-duracion.svg'
 import PictogramaFechaInicio from 'svgs/pictograma-fecha-inicio.svg'
@@ -57,11 +57,11 @@ export default function CourseFeatures({
             {startingDate}
           </p>
         </Detail>
-        <Cost>
+        {/* <Cost>
           <p>
             Costo <strong>{formatMoney(price)}</strong>
           </p>
-        </Cost>
+        </Cost> */}
       </InfoGrid>
     </Sidebar>
   )
@@ -98,17 +98,17 @@ const Detail = styled.div`
     flex-grow: 1;
   }
 `
-const Cost = styled.div`
-  padding-top: 1rem;
-  grid-column: 1 / -1;
-  border-top: 1px solid ${props => props.theme.black};
+// const Cost = styled.div`
+//   padding-top: 1rem;
+//   grid-column: 1 / -1;
+//   border-top: 1px solid ${props => props.theme.black};
 
-  p {
-    margin-bottom: 1rem;
-    margin-left: 6%;
-  }
-  strong {
-    margin-left: 6%;
-    letter-spacing: 0.4px;
-  }
-`
+//   p {
+//     margin-bottom: 1rem;
+//     margin-left: 6%;
+//   }
+//   strong {
+//     margin-left: 6%;
+//     letter-spacing: 0.4px;
+//   }
+// `

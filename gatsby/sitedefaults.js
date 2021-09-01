@@ -7,7 +7,7 @@ module.exports = {
   email: `hola@bristolingles.com.mx`,
   telXalapa: `2288405791`,
   tel2Xalapa: `2288159338`,
-  telCoatepec: `2288160533`,
+  telCoatepec: `2288160543`,
   facebook: `https://www.facebook.com/bristolinglesprofesional/`,
   instagram: `https://www.instagram.com/bristolingles/`,
   facebookhref1: `https://connect.facebook.net`,
