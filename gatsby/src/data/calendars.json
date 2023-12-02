@@ -1,0 +1,411 @@
+{
+  "data": [
+    {
+      "table": [
+        {
+          "FORMAT": "PB",
+          "WEEK": "4",
+          "EXAM DATE WRITTEN": "22nd Jan - 26th Jan",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 23rd Nov, 2023"
+        },
+        {
+          "FORMAT": "PB",
+          "WEEK": "8",
+          "EXAM DATE WRITTEN": "19th Feb - 23rd Feb",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 28th Nov, 2023"
+        },
+        {
+          "FORMAT": "PB",
+          "WEEK": "12",
+          "EXAM DATE WRITTEN": "18th Mar - 22nd Mar",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 18th Jan, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "WEEK": "17",
+          "EXAM DATE WRITTEN": "22nd Apr - 26th Apr",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 22nd Feb, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "WEEK": "20",
+          "EXAM DATE WRITTEN": "13th May - 17th May",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 7th Mar, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "WEEK": "24",
+          "EXAM DATE WRITTEN": "10th Jun - 14th Jun",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 10th Apr, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "WEEK": "27",
+          "EXAM DATE WRITTEN": "1st Jul - 5th Jul",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 2nd May, 2024"
+        }
+      ],
+      "title": "YLE 2024",
+      "price": [
+        {
+          "category": "PRE A1 STARTERS",
+          "price": "$2,033"
+        },
+        {
+          "category": "A1 MOVERS",
+          "price": "$2,276"
+        },
+        {
+          "category": "A2 FLYERS",
+          "price": "$2,488"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "table": [
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "9th Mar",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 11th Jan, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "11th May",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 7th Mar, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "THU",
+          "EXAM DATE WRITTEN": "6th Jun",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 21st Mar, 2024"
+        }
+      ],
+      "title": "A2 Key 2024",
+      "price": [
+        "$3,080"
+      ],
+      "id": 2
+    },
+    {
+      "table": [
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "19th Jan",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 13th Nov, 2023"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "16th Feb",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 30th Nov, 2023"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "15th Mar",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 11th Jan, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "19th Apr",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 15th Feb, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "3rd May",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 28th Feb, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "7th Jun",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 4th Apr, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "12th Jul",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 10th May, 2024"
+        }
+      ],
+      "title": "A2 Key For Schools 2024",
+      "price": [
+        "$3,080"
+      ],
+      "id": 3
+    },
+    {
+      "table": [
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "9th Mar",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 11th Jan, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "11th May",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 7th Mar, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "THU",
+          "EXAM DATE WRITTEN": "6th Jun",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 21st Mar, 2024"
+        }
+      ],
+      "title": "B1 Preliminary 2024",
+      "price": [
+        "$3,219"
+      ],
+      "id": 4
+    },
+    {
+      "table": [
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "19th Jan",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 13th Nov, 2023"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "16th Feb",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 30th Nov, 2023"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "15th Mar",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 11th Jan, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "19th Apr",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 15th Feb, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "3rd May",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 28th Feb, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "7th Jun",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 4th Apr, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "12th Jul",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 10th May, 2024"
+        }
+      ],
+      "title": "B1 Preliminary For Schools 2024",
+      "price": [
+        "$3,219"
+      ],
+      "id": 5
+    },
+    {
+      "table": [
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "2nd Mar",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 4th Jan, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "20th Apr",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 15th Feb, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "18th May",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 7th Mar, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "TUE",
+          "EXAM DATE WRITTEN": "4th Jun",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 21st Mar, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "THU",
+          "EXAM DATE WRITTEN": "25th Jul",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 30th May, 2024"
+        }
+      ],
+      "title": "B2 First 2024",
+      "price": [
+        "$5,260"
+      ],
+      "id": 6
+    },
+    {
+      "table": [
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "9th Mar",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 11th Jan, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "THU",
+          "EXAM DATE WRITTEN": "18th Apr",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 15th Feb, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "11th May",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 7th Mar, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "WED",
+          "EXAM DATE WRITTEN": "5th Jun",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 4th Apr, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "20th Jul",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 23rd May, 2024"
+        }
+      ],
+      "title": "First For Schools 2024",
+      "price": [
+        "$5,260"
+      ],
+      "id": 7
+    },
+    {
+      "table": [
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "13th Jan",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 9th Nov, 2023"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "3rd Feb",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 30th Nov, 2023"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "9th Mar",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 11th Jan, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "20th Apr",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 15th Feb, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "TUE",
+          "EXAM DATE WRITTEN": "14th May",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 7th Mar, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "WED",
+          "EXAM DATE WRITTEN": "5th Jun",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 21st Mar, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "26th Jul",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 30th May, 2024"
+        }
+      ],
+      "title": "C1 Advanced 2024",
+      "price": [
+        "$5,615"
+      ],
+      "id": 8
+    },
+    {
+      "table": [
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "2nd Mar",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 4th Jan, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "4th May",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 29th Feb, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "7th Jun",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 21st Mar, 2024"
+        }
+      ],
+      "title": "C2 Proficiency 2024",
+      "price": [
+        "$5,918"
+      ],
+      "id": 9
+    },
+    {
+      "table": [
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "23rd Feb",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 29th Nov, 2023"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "26th Apr",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 22nd Feb, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "17th May",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 6th Mar, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "FRI",
+          "EXAM DATE WRITTEN": "14th Jun",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 10th Apr, 2024"
+        }
+      ],
+      "title": "TKT",
+      "price": [
+        "$1,675"
+      ],
+      "id": 10
+    }
+  ]
+}

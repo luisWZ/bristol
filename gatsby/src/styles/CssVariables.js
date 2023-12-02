@@ -20,6 +20,8 @@ module.exports = {
   gray: '#A2A9B0',
   grayDark: '#697077',
   black: '#586174',
+  blue: '#25358E',
+  yellow: '#AD943E',
   // mediaqueries =====================================
   // ======== min-width
   min320: 'min-width: 20em',
