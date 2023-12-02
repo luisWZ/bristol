@@ -41,8 +41,8 @@ export default function Recognitions() {
           <p>
             Desde 2012, año tras año, hemos recibido el Certificado de
             Preparation Centre por parte de Cambridge Assessment English por
-            lograr certificar a más de 200 de nuestros alumnos por año. Somos
-            de las pocas instituciones en el Estado que lo logran de manera
+            lograr certificar a más de 200 de nuestros alumnos por año. Somos de
+            las pocas instituciones en el Estado que lo logran de manera
             consecutiva.
           </p>
         </Recognition>
@@ -65,12 +65,11 @@ export default function Recognitions() {
           <PictogramaExcelencia />
           <p>
             En dos ocasiones hemos recibido la distinción por la excelencia en
-            la calidad en el servicio por parte de Cambridge Assessment
-            English.
+            la calidad en el servicio por parte de Cambridge Assessment English.
           </p>
         </Recognition>
         <Recognition>
-          <img src={iconFlags} alt="" />
+          <img src={iconFlags} alt='' />
           <p>
             Durante 20 años, Bristol ha establecido alianzas con escuelas de
             prestigio en Canadá e Inglaterra para ofrecer a nuestros alumnos
@@ -101,7 +100,8 @@ const Recognition = styled.div`
   flex-flow: column wrap;
   align-items: center;
 
-  svg, img {
+  svg,
+  img {
     margin-bottom: 2rem;
     height: 5rem;
     width: auto;

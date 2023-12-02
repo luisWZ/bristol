@@ -73,5 +73,5 @@ export function formatDateShort(date) {
     default:
       startingDateShort[1] = '00'
   }
-  return startingDateShort.join('/');
+  return startingDateShort.join('/')
 }

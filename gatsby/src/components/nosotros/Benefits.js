@@ -16,11 +16,18 @@ export default function Benefits() {
 
   return (
     <Container paddingBig>
-      <TextIlustration img563 translateY
+      <TextIlustration
+        img563
+        translateY
         subtitle='El prestigio ganado a lo largo de más de 25 años ha hecho de Bristol Inglés Profesional un referente de calidad y excelencia en la enseñanza del inglés'
         image={data.fachada.childImageSharp.fluid}
       >
-          <p>Más importante aún, es el resultado de los miles de alumnos que han pasado por nuestras aulas que no sólo aprendieron inglés, sino que aprendieron de otras culturas, desarrollaron otras habilidades e hicieron amistades estrechas y duraderas.</p>
+        <p>
+          Más importante aún, es el resultado de los miles de alumnos que han
+          pasado por nuestras aulas que no sólo aprendieron inglés, sino que
+          aprendieron de otras culturas, desarrollaron otras habilidades e
+          hicieron amistades estrechas y duraderas.
+        </p>
       </TextIlustration>
       <H1 className='h3'>Beneficios de nuestros cursos</H1>
       <BenefitsBox>
@@ -52,9 +59,8 @@ export default function Benefits() {
           <PictogramaEducacionOnline />
           <p>
             Una calidad en el servicio que busca ofrecer una atención amable,
-            considerada y personalizada y respuesta inmediata a las
-            necesidades y requerimientos de todos nuestros alumnos y padres de
-            familia.
+            considerada y personalizada y respuesta inmediata a las necesidades
+            y requerimientos de todos nuestros alumnos y padres de familia.
           </p>
         </Feature>
         <Feature>

@@ -22,18 +22,30 @@ export default function ContactInfo() {
         </ContactAnchor>
       </ContactLi>
       <ContactLi>
-        <ContactAnchor href={`tel:${telXalapa}`}
-          css={css`@media (${secondPhoneMediaQuery}) {
-            padding-right: 0.25rem; justify-content: flex-end; }
-        `}>
+        <ContactAnchor
+          href={`tel:${telXalapa}`}
+          css={css`
+            @media (${secondPhoneMediaQuery}) {
+              padding-right: 0.25rem;
+              justify-content: flex-end;
+            }
+          `}
+        >
           <SvgPhone fill={color} />
           <span>Xalapa</span>
           <span>{formatPhone(telXalapa)}</span>
         </ContactAnchor>
-        <ContactAnchor href={`tel:${tel2Xalapa}`}
-          css={css`display: none; flex-grow: 2; justify-content: flex-start;
-            @media (${secondPhoneMediaQuery}) { display: inherit; }
-        `}>
+        <ContactAnchor
+          href={`tel:${tel2Xalapa}`}
+          css={css`
+            display: none;
+            flex-grow: 2;
+            justify-content: flex-start;
+            @media (${secondPhoneMediaQuery}) {
+              display: inherit;
+            }
+          `}
+        >
           <span style={{ margin: '0 0.5rem 0 0.25rem' }}>y</span>
           <span>{formatPhone(tel2Xalapa)}</span>
         </ContactAnchor>
@@ -55,7 +67,7 @@ const ContactBox = styled.ul`
   display: grid;
   grid-row: 2 / 3;
   grid-column: 1 / -1;
-  grid-template-columns: repeat(auto-fit, minmax(100px , 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   border-top: 1px solid ${props => props.theme.grayLight};
 
   @media (${props => props.theme.min848}) {
@@ -64,10 +76,13 @@ const ContactBox = styled.ul`
     grid-column: 2 / -2;
   }
   @media (${props => props.theme.min960}) {
-    grid-template-columns: repeat(3, minmax(208px , 256px));
+    grid-template-columns: repeat(3, minmax(208px, 256px));
   }
   @media (${secondPhoneMediaQuery}) {
-    grid-template-columns: minmax(208px , 256px) minmax(208px , 320px) minmax(208px , 256px);
+    grid-template-columns: minmax(208px, 256px) minmax(208px, 320px) minmax(
+        208px,
+        256px
+      );
   }
 `
 const ContactLi = styled.li`
@@ -121,7 +136,8 @@ const ContactAnchor = styled.a`
   svg {
     margin-right: 0.5em;
 
-    @media (${props => props.theme.min848}) and (${props => props.theme.max960}) {
+    @media (${props => props.theme.min848}) and (${props =>
+        props.theme.max960}) {
       display: none;
     }
   }

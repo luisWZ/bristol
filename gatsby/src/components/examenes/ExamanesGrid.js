@@ -1,14 +1,14 @@
-import React/* , { useState } */ from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
+import React /* , { useState } */ from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 
-import { Container, title } from 'styles/CssHelpers';
-import { Title2 } from 'styles/FontStyles';
-import Image from './Image';
+import { Container, title } from 'styles/CssHelpers'
+import { Title2 } from 'styles/FontStyles'
+import Image from './Image'
 // import Filters from './Filters';
-import calendars from '../../data/calendars.json';
-import Calendars from './Calendars';
+import calendars from '../../data/calendars.json'
+import Calendars from './Calendars'
 
 // component ==========================================
 export default function ExamanesGrid() {
@@ -22,7 +22,7 @@ export default function ExamanesGrid() {
 
   return (
     <Container
-      css={(theme) =>
+      css={theme =>
         css`
           @media (${theme.min560}) {
             min-height: 45rem;
@@ -34,11 +34,15 @@ export default function ExamanesGrid() {
         Calendarios de Exámenes Internacionales
       </Title2>
       {/* <Filters {...{ filters }} {...{ activeView }} {...{ setActiveView }} /> */}
-      <Grid css={css`align-items: flex-start`}>
+      <Grid
+        css={css`
+          align-items: flex-start;
+        `}
+      >
         {!!calendars.data.length && <Calendars calendars={calendars.data} />}
       </Grid>
     </Container>
-  );
+  )
 }
 const filters = [
   'all',
@@ -51,7 +55,7 @@ const filters = [
   'ielts',
   'tkt',
   'yle',
-];
+]
 // Query ==============================================
 const EXAMENES_QUERY = graphql`
   fragment examenesImageSharpFragment on File {
@@ -114,14 +118,14 @@ const EXAMENES_QUERY = graphql`
       ...examenesImageSharpFragment
     }
   }
-`;
+`
 // styles =============================================
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(26.5rem, 1fr));
   grid-gap: 2rem;
 
-  @media (${(props) => props.theme.max560}) {
+  @media (${props => props.theme.max560}) {
     grid-template-columns: 1fr;
   }
-`;
+`

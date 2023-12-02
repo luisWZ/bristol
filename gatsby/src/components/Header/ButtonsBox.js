@@ -4,11 +4,10 @@ import styled from '@emotion/styled'
 import { Button } from 'styles/CssHelpers'
 import { email } from 'root/sitedefaults'
 
-export default function ButtonsBox({children}) {
+export default function ButtonsBox({ children }) {
   return (
     <ButtonsBoxStyles>
-      <ContactanosButton
-        noRadius href={`mailto:${email}`}>
+      <ContactanosButton noRadius href={`mailto:${email}`}>
         Contáctanos
       </ContactanosButton>
       {children}

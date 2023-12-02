@@ -23,16 +23,26 @@ export default function Newsletter() {
 
   return (
     <Container css={container}>
-      <TitleStyles>{message ? message : 'Suscríbete a nuestro newsletter'}</TitleStyles>
-      <form css={formStyles} method='post'
-        onSubmit={handleSubmit}
-      >
-        <input css={inputStyles} id='newsletter' name='newsletter' type='email' required
-          aria-label='Newsletter' placeholder='Escribe tu correo electrónico'
+      <TitleStyles>
+        {message ? message : 'Suscríbete a nuestro newsletter'}
+      </TitleStyles>
+      <form css={formStyles} method='post' onSubmit={handleSubmit}>
+        <input
+          css={inputStyles}
+          id='newsletter'
+          name='newsletter'
+          type='email'
+          required
+          aria-label='Newsletter'
+          placeholder='Escribe tu correo electrónico'
           value={email}
           onChange={handleEmailChange}
         />
-        <button css={buttonStyles} type='submit' aria-label='Suscríbir a newsletter'>
+        <button
+          css={buttonStyles}
+          type='submit'
+          aria-label='Suscríbir a newsletter'
+        >
           <IconArrow fill={useTheme().pink} />
         </button>
       </form>
@@ -66,7 +76,9 @@ const inputStyles = css`
 `
 const buttonStyles = css`
   background-color: transparent;
-  svg {vertical-align: middle;}
+  svg {
+    vertical-align: middle;
+  }
 `
 const TitleStyles = styled(Title2)`
   ${title}

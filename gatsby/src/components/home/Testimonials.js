@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
-import "slick-carousel/slick/slick-theme.css"
+import 'slick-carousel/slick/slick-theme.css'
 import { FaQuoteRight } from 'react-icons/fa'
 
 import { Container, title } from 'styles/CssHelpers'
@@ -15,7 +15,8 @@ import IconGirl from 'svgs/testimonial-girl.svg'
 
 // Components =========================================
 export default function Testimonials() {
-  const data = useStaticQuery(HOME_TESTIMONIALS_QUERY).allHomeTestimonialsYaml.edges
+  const data = useStaticQuery(HOME_TESTIMONIALS_QUERY).allHomeTestimonialsYaml
+    .edges
 
   return (
     <ContainerStyles>
@@ -47,11 +48,11 @@ const settings = {
   arrows: false,
   responsive: [
     {
-      breakpoint: (CssVariables.max848.split(' ')).slice(-1).pop(),
+      breakpoint: CssVariables.max848.split(' ').slice(-1).pop(),
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false
+        arrows: false,
       },
     },
   ],
@@ -141,10 +142,10 @@ const TestimonyStyles = styled.div`
     /* min-height: 120px; */
 
     &:before {
-        content: "« ";
+      content: '« ';
     }
     &:after {
-        content: " »";
+      content: ' »';
     }
   }
 `
@@ -158,5 +159,5 @@ const Icon = styled(FaQuoteRight)`
   right: 1.8rem;
   width: 5.8rem;
   transform: scaleY(-1);
-  fill: hsla(220, 29%, 90%, .4);
+  fill: hsla(220, 29%, 90%, 0.4);
 `

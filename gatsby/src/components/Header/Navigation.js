@@ -10,18 +10,55 @@ export default function Navigation() {
   const { menuOpen } = useContext(MenuContext)
 
   return (
-    <NavBox {...{menuOpen}} role='navigation'>
-      <NavItem><Link to='/'>Home<AiOutlineRight /></Link></NavItem>
-      <NavItem><Link to='/nosotros'>Nosotros<AiOutlineRight /></Link></NavItem>
-      <NavItem className='dropdown'><span aria-haspopup='true'>Cursos</span>
+    <NavBox {...{ menuOpen }} role='navigation'>
+      <NavItem>
+        <Link to='/'>
+          Home
+          <AiOutlineRight />
+        </Link>
+      </NavItem>
+      <NavItem>
+        <Link to='/nosotros'>
+          Nosotros
+          <AiOutlineRight />
+        </Link>
+      </NavItem>
+      <NavItem className='dropdown'>
+        <span aria-haspopup='true'>Cursos</span>
         <ul aria-label='submenu'>
-          <li><Link to='/cursos'>Inglés General <AiOutlineRight /></Link></li>
-          <li><Link to='/educacion-continua'>Educación Continua <AiOutlineRight /></Link></li>
-          <li><Link to='/examenes'>Exámenes Internacionales <AiOutlineRight /></Link></li>
+          <li>
+            <Link to='/cursos'>
+              Inglés General <AiOutlineRight />
+            </Link>
+          </li>
+          <li>
+            <Link to='/educacion-continua'>
+              Educación Continua <AiOutlineRight />
+            </Link>
+          </li>
+          <li>
+            <Link to='/examenes'>
+              Exámenes Internacionales <AiOutlineRight />
+            </Link>
+          </li>
         </ul>
       </NavItem>
-      <NavItem><Link to='/centro-examinador-cambridge'>Centro Examinador Cambridge<AiOutlineRight /></Link></NavItem>
-      <NavItem><a href='https://blog.bristolingles.com.mx/' rel='noopener noreferrer' target='_blank'>Blog<AiOutlineRight /></a></NavItem>
+      <NavItem>
+        <Link to='/centro-examinador-cambridge'>
+          Centro Examinador Cambridge
+          <AiOutlineRight />
+        </Link>
+      </NavItem>
+      <NavItem>
+        <a
+          href='https://blog.bristolingles.com.mx/'
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          Blog
+          <AiOutlineRight />
+        </a>
+      </NavItem>
     </NavBox>
   )
 }
@@ -42,25 +79,25 @@ const NavBox = styled.ul`
     width: 100%;
     position: absolute;
     z-index: -1;
-    transition: transform .26s cubic-bezier(0.4, 0.26, 0.24, 0.89);
-    box-shadow: ${props => props.menuOpen
-      ? '0 4px 8px hsla(220, 11%, 15%, 0.15), 0 1px 3px rgba(0,0,0,0.4)'
-      : 'none'};
-    transform: ${props => props.menuOpen
-      ? 'translate3d(0%, 0%, 0)'
-      : 'translate3d(0%, -100%, 0)'};
+    transition: transform 0.26s cubic-bezier(0.4, 0.26, 0.24, 0.89);
+    box-shadow: ${props =>
+      props.menuOpen
+        ? '0 4px 8px hsla(220, 11%, 15%, 0.15), 0 1px 3px rgba(0,0,0,0.4)'
+        : 'none'};
+    transform: ${props =>
+      props.menuOpen ? 'translate3d(0%, 0%, 0)' : 'translate3d(0%, -100%, 0)'};
   }
   @media (${props => props.theme.min848}) {
     grid-row: 2 / 3;
     grid-auto-flow: column;
-    grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_3wordNav} ${_1wordNav}`}
+    grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_3wordNav} ${_1wordNav}`};
   }
 `
 const anchorHeight = '3rem'
 
 const anchorHeightMobile = '3.5rem'
 
-const liMobileStyles = theme =>`
+const liMobileStyles = theme => `
   height: ${anchorHeightMobile};
   > a {
     padding-left: ${theme.gutter};
@@ -107,7 +144,7 @@ const NavItem = styled('li')`
       top: 100%;
       left: 0;
       width: 15rem;
-      box-shadow: 0 2px 3px hsla(220,11%,15%,0.25);
+      box-shadow: 0 2px 3px hsla(220, 11%, 15%, 0.25);
       background-color: white;
       opacity: 0;
       display: none;

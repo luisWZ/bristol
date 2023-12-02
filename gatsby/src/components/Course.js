@@ -17,28 +17,38 @@ export default function Course({ course, simple }) {
     campus,
     image,
     slug,
-  } = {...course, slug: `/cursos/${course.slug}` }
+  } = { ...course, slug: `/cursos/${course.slug}` }
 
   return (
-    <CourseBox {...{simple}}>
-      {!simple && <ImageLink to={slug} aria-label={`Curso: ${courseName}`}>
-        <Image src={image.file.url} alt='' />
-      </ImageLink>}
+    <CourseBox {...{ simple }}>
+      {!simple && (
+        <ImageLink to={slug} aria-label={`Curso: ${courseName}`}>
+          <Image src={image.file.url} alt='' />
+        </ImageLink>
+      )}
       <TextBox>
-        <Small css={css`text-transform: uppercase;`}>{courseType}</Small>
+        <Small
+          css={css`
+            text-transform: uppercase;
+          `}
+        >
+          {courseType}
+        </Small>
         <Subtitle as='h1'>{courseName}</Subtitle>
         <p>
           {sessionDate}
           <br />
           {sessionTime}
         </p>
-        {!simple && <Small>
-          Inicio: {startingDate}
-          <br />
-          Campus: {campus}
-        </Small>}
+        {!simple && (
+          <Small>
+            Inicio: {startingDate}
+            <br />
+            Campus: {campus}
+          </Small>
+        )}
       </TextBox>
-      <ButtonStyles {...{simple}} noRadius widthFull blue href={slug}>
+      <ButtonStyles {...{ simple }} noRadius widthFull blue href={slug}>
         Más info
       </ButtonStyles>
     </CourseBox>
@@ -47,10 +57,8 @@ export default function Course({ course, simple }) {
 // Styles definitions =================================
 const CourseBox = styled.div`
   background-color: white;
-  border: 1px solid ${props => props.simple
-    ? props.theme.blueGray
-    : 'transparent'
-  };
+  border: 1px solid
+    ${props => (props.simple ? props.theme.blueGray : 'transparent')};
 
   @media (${props => props.theme.max560}) {
     margin-bottom: 1.5rem;
@@ -101,7 +109,9 @@ const Small = styled(Legal)`
   color: ${props => props.theme.grayDark};
 `
 const ButtonStyles = styled(Button)`
-  ${props => props.simple && `
+  ${props =>
+    props.simple &&
+    `
     margin: 0.5rem 1rem 1rem;
     padding: 0.6rem 1.4rem;
     width: calc(100% - 2rem);

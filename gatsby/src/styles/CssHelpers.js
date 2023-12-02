@@ -12,49 +12,56 @@ export const Main = styled.main`
   min-height: 100vh;
   overflow: hidden;
   background-color: ${props => props.theme.bgGray};
-  padding-bottom: ${props => (parseInt(props.theme.newsletterOffset.split('rem')) + 4) + 'rem'};
+  padding-bottom: ${props =>
+    parseInt(props.theme.newsletterOffset.split('rem')) + 4 + 'rem'};
   margin-bottom: -${props => props.theme.newsletterOffset};
 `
 export const Section = styled.section`
-  background-color: ${props => props.gray ? theme.bgGray : 'white'};
+  background-color: ${props => (props.gray ? theme.bgGray : 'white')};
   ${props => props.borderBottom && borderBottomStyle}
 `
 export const Container = styled.section`
   margin-left: ${props => props.theme.gutter};
   margin-right: ${props => props.theme.gutter};
-  padding-top: ${props => props.paddingBig || props.paddingBigTop
-    ? '6rem' : props.paddingSmall
-    ? '1.5rem' : props.noPadding
-    ? '0'
-    : '3rem'
-  };
-  padding-bottom: ${props => props.paddingBig || props.paddingBigTop
-    ? '6rem' : props.paddingSmall
-    ? '1.5rem' : props.noPadding
-    ? '0'
-    : '3rem'
-  };
+  padding-top: ${props =>
+    props.paddingBig || props.paddingBigTop
+      ? '6rem'
+      : props.paddingSmall
+      ? '1.5rem'
+      : props.noPadding
+      ? '0'
+      : '3rem'};
+  padding-bottom: ${props =>
+    props.paddingBig || props.paddingBigTop
+      ? '6rem'
+      : props.paddingSmall
+      ? '1.5rem'
+      : props.noPadding
+      ? '0'
+      : '3rem'};
 
   @media (${props => props.theme.min1200}) {
     margin-left: auto;
     margin-right: auto;
-    max-width: ${props => !props.slim ? '70rem' : '58rem'}; // 1120px || 928px
+    max-width: ${props => (!props.slim ? '70rem' : '58rem')}; // 1120px || 928px
   }
 `
 export function ContainerWhite({ children, borderBottom = false }) {
   return (
-    <section css={css`
-      background-color: white;
-      overflow: hidden; //possible svg overflow on index
-      ${borderBottom && borderBottomStyle}
-    `}>
+    <section
+      css={css`
+        background-color: white;
+        overflow: hidden; //possible svg overflow on index
+        ${borderBottom && borderBottomStyle}
+      `}
+    >
       <Container as='div'>{children}</Container>
     </section>
   )
 }
 export const title = props => css`
   text-align: center;
-  transition: color .24s ease-in;
+  transition: color 0.24s ease-in;
   margin-top: 4rem;
   &:hover {
     color: ${theme.black};
@@ -66,28 +73,40 @@ export const Button = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: ${props => props.noBg ? props.theme.black : 'white'};
-  border-radius: ${props => props.noRadius ? '0' : props.theme.radius};
+  color: ${props => (props.noBg ? props.theme.black : 'white')};
+  border-radius: ${props => (props.noRadius ? '0' : props.theme.radius)};
   width: ${props => props.widthFull && '100%'};
   background-color: ${props =>
-    props.noBg ? 'transparent' :
-    props.red ? props.theme.bristolRed :
-    props.theme.bristolBlue
-  };
+    props.noBg
+      ? 'transparent'
+      : props.red
+      ? props.theme.bristolRed
+      : props.theme.bristolBlue};
   &:hover {
     background-color: ${props =>
-      props.noBg ? 'transparent' :
-      props.blue ? props.theme.bristolRed :
-      props.theme.pink
-    };
+      props.noBg
+        ? 'transparent'
+        : props.blue
+        ? props.theme.bristolRed
+        : props.theme.pink};
   }
 `
-export const LinkSaberMas = () => ( <a
-  css={theme => css` color: ${theme.bristolBlue}; text-decoration: underline; font-weight: bold;`}
-  href={`mailto:${email}`}>Quiero saber más</a>
+export const LinkSaberMas = () => (
+  <a
+    css={theme =>
+      css`
+        color: ${theme.bristolBlue};
+        text-decoration: underline;
+        font-weight: bold;
+      `
+    }
+    href={`mailto:${email}`}
+  >
+    Quiero saber más
+  </a>
 )
-export const ButtonSaberMas = () => ( <Button
-  href={`mailto:${email}`}>Quiero saber más</Button>
+export const ButtonSaberMas = () => (
+  <Button href={`mailto:${email}`}>Quiero saber más</Button>
 )
 export const hoverStyle = (theme, color) => {
   return `
@@ -97,7 +116,8 @@ export const hoverStyle = (theme, color) => {
     }
   `
 }
-export const borderTopStyle = theme => `border-top: 1px solid ${theme.grayLight};`
+export const borderTopStyle = theme =>
+  `border-top: 1px solid ${theme.grayLight};`
 
 export const Anchor = styled(Link)`
   color: ${props => props.theme.bristolBlue};
@@ -115,21 +135,21 @@ export const Anchor = styled(Link)`
 `
 export const Select = styled.select`
   display: block;
-	font-size: 16px;
-	line-height: 1.3;
-	padding: .6em 1.4em .5em .8em;
-	width: 100%;
-	max-width: 100%;
-	margin: 0;
-	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-	border-radius: .5em;
-	appearance: none;
-	background-color: white;
-	background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
-	background-repeat: no-repeat;
-	background-position: right .7em top 50%;
-	background-size: .65em auto;
-	border: 1px solid ${props => props.theme.gray};
+  font-size: 16px;
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
+  appearance: none;
+  background-color: white;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.7em top 50%;
+  background-size: 0.65em auto;
+  border: 1px solid ${props => props.theme.gray};
 
   &::-ms-expand {
     display: none;
@@ -138,7 +158,7 @@ export const Select = styled.select`
     border-color: ${props => props.theme.bristolBlue};
   }
   &:focus {
-    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
     box-shadow: 0 0 0 3px -moz-mac-focusring;
     color: #222;
     outline: none;
@@ -148,7 +168,7 @@ export const Select = styled.select`
 export const Feature = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align-items: ${props => props.alignTop ? 'flex-start' : 'center'};
+  align-items: ${props => (props.alignTop ? 'flex-start' : 'center')};
 
   svg {
     flex-basis: 4.25rem;

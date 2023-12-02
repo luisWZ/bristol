@@ -12,8 +12,8 @@ export default function HtmlHeader({ children }) {
       <title>{title}</title>
       <meta name='description' content={description} />
       <meta name='keywords' content={keywords} />
-      <link rel="preconnect" href={facebookhref1} />
-      <link rel="preconnect" href={facebookhref2} />
+      <link rel='preconnect' href={facebookhref1} />
+      <link rel='preconnect' href={facebookhref2} />
       {children}
     </Helmet>
   )

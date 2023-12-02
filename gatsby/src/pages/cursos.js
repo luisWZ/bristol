@@ -9,7 +9,9 @@ export default function Cursos() {
     <>
       <PageTitle>Inglés General</PageTitle>
       <HeroContent
-        mainText={'El inglés es algo necesario para nuestro desarrollo profesional'}
+        mainText={
+          'El inglés es algo necesario para nuestro desarrollo profesional'
+        }
         image={IllustrationDancingGirl}
         section='Cursos de Inglés General'
       />

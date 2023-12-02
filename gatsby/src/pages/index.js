@@ -16,13 +16,12 @@ export default function Home({ data }) {
         gray
         mainText='Speak a new language, discover a new world'
         image={IlustracionSittingGirl}
-        home={
-          {
-            description: 'Somos profesionales en la enseñanza de inglés. Nuestros maestros cuentan con grados académicos y certificaciones internacionales como maestros de inglés así como con una gran experiencia.',
-            button: 'Nuestros cursos',
-            buttonLink: '/cursos',
-          }
-        }
+        home={{
+          description:
+            'Somos profesionales en la enseñanza de inglés. Nuestros maestros cuentan con grados académicos y certificaciones internacionales como maestros de inglés así como con una gran experiencia.',
+          button: 'Nuestros cursos',
+          buttonLink: '/cursos',
+        }}
       />
       <FeaturedCourses images={data} />
       <ComingCourses titleText='Próximos cursos' homeSection />
@@ -35,16 +34,20 @@ export default function Home({ data }) {
 // query ==============================================
 export const query = graphql`
   query IMAGES_QUERY {
-    imageCursoInglesGeneral: file(relativePath: { eq: "curso-de-ingles-general.png" }) {
+    imageCursoInglesGeneral: file(
+      relativePath: { eq: "curso-de-ingles-general.png" }
+    ) {
       childImageSharp {
-        fluid(maxWidth: 780, quality:80, traceSVG: { color: "#cdd7ea" }) {
+        fluid(maxWidth: 780, quality: 80, traceSVG: { color: "#cdd7ea" }) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
-    imageCentroExaminador: file(relativePath: { eq: "centro-examinador-cambridge.png" }) {
+    imageCentroExaminador: file(
+      relativePath: { eq: "centro-examinador-cambridge.png" }
+    ) {
       childImageSharp {
-        fluid(maxWidth: 897, quality:80, traceSVG: { color: "#cdd7ea" }) {
+        fluid(maxWidth: 897, quality: 80, traceSVG: { color: "#cdd7ea" }) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }

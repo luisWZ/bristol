@@ -5,15 +5,15 @@ import styled from '@emotion/styled'
 import Course from './Course'
 
 // Component ==========================================
-export default function Courses({
-  data,
-  twoGrid,
-  homeSection,
-  simple,
-}) {
+export default function Courses({ data, twoGrid, homeSection, simple }) {
   return (
-    <CoursesWrapper {...{twoGrid}} css={theme => !homeSection && data.length >= 3 && hideLastCourse(theme)}>
-      {data.map(course => <Course {...{simple}} {...{ course }} key={course.id} /> )}
+    <CoursesWrapper
+      {...{ twoGrid }}
+      css={theme => !homeSection && data.length >= 3 && hideLastCourse(theme)}
+    >
+      {data.map(course => (
+        <Course {...{ simple }} {...{ course }} key={course.id} />
+      ))}
     </CoursesWrapper>
   )
 }
@@ -27,15 +27,17 @@ const CoursesWrapper = styled.div`
   }
 
   @media (${props => props.theme.min960}) {
-    grid-template-columns: ${props => props.twoGrid ? 'repeat(2, 21.5rem)' : 'repeat(3, 1fr)'};
+    grid-template-columns: ${props =>
+      props.twoGrid ? 'repeat(2, 21.5rem)' : 'repeat(3, 1fr)'};
   }
-  ${props => props.twoGrid && `
+  ${props =>
+    props.twoGrid &&
+    `
     @media (${props.theme.min1400}) {
       grid-template-columns: repeat(auto-fill, 320px);
       gap: 2.5rem;
     }
-  `
-  }
+  `}
 `
 const hideLastCourse = theme => css`
   @media (${theme.max960}) {

@@ -26,7 +26,9 @@ export default function EducacionContinua({ data }) {
 // query ==============================================
 export const query = graphql`
   query IMAGES_EDUCACIONCONTINUA_QUERY {
-    imageCursoExtranjero: file(relativePath: { eq: "image-curso-extranjero.png" }) {
+    imageCursoExtranjero: file(
+      relativePath: { eq: "image-curso-extranjero.png" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 447) {
           ...GatsbyImageSharpFluid_withWebp_noBase64

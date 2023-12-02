@@ -14,31 +14,38 @@ export default function SocialLinks({ className }) {
   )
 }
 
-const socialLink = (url, children, domain) => (
+const socialLink = (url, children, domain) =>
   function SocialLink() {
     return (
       <li>
-        <a target="_blank" rel="noreferrer" href={url} aria-label={`Página de ${domain}`}>
+        <a
+          target='_blank'
+          rel='noreferrer'
+          href={url}
+          aria-label={`Página de ${domain}`}
+        >
           {children}
         </a>
       </li>
     )
   }
-)
 
-const Facebook = socialLink( facebook, <FaFacebookF />, 'facebook')
-const Instagram = socialLink( instagram, <FaInstagram />, 'instagram')
+const Facebook = socialLink(facebook, <FaFacebookF />, 'facebook')
+const Instagram = socialLink(instagram, <FaInstagram />, 'instagram')
 
-const List = (props) => (
-  <ul className={props.className} css={css`
-    display: flex;
-    a {
-      padding: 0 0.7rem;
-      display: block;
-      height: 2.4rem;
-      display: inline-flex;
-      align-items: center;
-    }
-  `}
-  {...props} />
+const List = props => (
+  <ul
+    className={props.className}
+    css={css`
+      display: flex;
+      a {
+        padding: 0 0.7rem;
+        display: block;
+        height: 2.4rem;
+        display: inline-flex;
+        align-items: center;
+      }
+    `}
+    {...props}
+  />
 )

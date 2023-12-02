@@ -7,16 +7,10 @@ import { Section, Container, Button } from 'styles/CssHelpers'
 import { Body2, Title } from 'styles/FontStyles'
 
 // Components =========================================
-const HeroContent = ({
-  mainText,
-  image,
-  home,
-  section,
-  gray,
-}) => {
+const HeroContent = ({ mainText, image, home, section, gray }) => {
   const Image = ImageStyles(image)
   return (
-    <SectionStyles {...{gray}} {...{home}}>
+    <SectionStyles {...{ gray }} {...{ home }}>
       <ContainerStyles as='div'>
         <TextBox>
           <Slogan
@@ -25,36 +19,43 @@ const HeroContent = ({
             data-sal-delay='100'
             data-sal-easing='easeOutSine'
           >
-            {section && <><Pagelocation as='span'>{section}</Pagelocation>&nbsp;</>}
+            {section && (
+              <>
+                <Pagelocation as='span'>{section}</Pagelocation>&nbsp;
+              </>
+            )}
             {mainText}
           </Slogan>
-          {home && <>
-            <Description
-              data-sal='slide-up'
-              data-sal-duration='600'
-              data-sal-delay='300'
-              data-sal-easing='easeOutQuart'
-            >
-              {home.description}
-            </Description>
-            <ButtonStyles red='true'
-              as={Link}
-              to={home.buttonLink}
-              data-sal='fade'
-              data-sal-duration='800'
-              data-sal-delay='800'
-              data-sal-easing='easeInOutCubic'
-            >
-              {home.button}
-            </ButtonStyles>
-          </>}
+          {home && (
+            <>
+              <Description
+                data-sal='slide-up'
+                data-sal-duration='600'
+                data-sal-delay='300'
+                data-sal-easing='easeOutQuart'
+              >
+                {home.description}
+              </Description>
+              <ButtonStyles
+                red='true'
+                as={Link}
+                to={home.buttonLink}
+                data-sal='fade'
+                data-sal-duration='800'
+                data-sal-delay='800'
+                data-sal-easing='easeInOutCubic'
+              >
+                {home.button}
+              </ButtonStyles>
+            </>
+          )}
         </TextBox>
         <Image
           data-sal='fade'
           data-sal-duration='1000'
           data-sal-delay='300'
           data-sal-easing='easeInOutCubic'
-         />
+        />
       </ContainerStyles>
     </SectionStyles>
   )
@@ -73,24 +74,23 @@ const SectionStyles = styled(Section)`
   display: flex;
   height: 100vh;
 
-  @media(${props => props.theme.max720 }) {
+  @media (${props => props.theme.max720}) {
     align-items: center;
     justify-content: center;
     min-height: 45rem;
     max-height: 51rem;
   }
-  @media(${props => props.theme.min720 }) {
+  @media (${props => props.theme.min720}) {
     justify-content: space-around;
-    min-height: ${props => props.home ? '35rem' : '24rem'};
+    min-height: ${props => (props.home ? '35rem' : '24rem')};
     max-height: 64rem;
-
   }
 `
 const ImageStyles = image => styled(image)`
   flex-basis: 80%;
   max-height: 100%;
 
-  @media(${props => props.theme.min720 }) {
+  @media (${props => props.theme.min720}) {
     flex-basis: 0;
     flex-grow: 1;
   }
@@ -104,26 +104,26 @@ const ContainerStyles = styled(Container)`
   justify-content: space-around;
   flex: 0 1 25rem;
 
-  @media(${props => props.theme.max720 }) {
+  @media (${props => props.theme.max720}) {
     gap: 2rem;
   }
-  @media(${props => props.theme.min720 }) {
+  @media (${props => props.theme.min720}) {
     flex-grow: 1;
   }
 `
 const TextBox = styled.div`
-  @media(${props => props.theme.max720 }) {
+  @media (${props => props.theme.max720}) {
     flex-basis: 24rem;
     text-align: center;
     margin-bottom: 2rem;
   }
-  @media(${props => props.theme.min720 }) {
+  @media (${props => props.theme.min720}) {
     flex-basis: 53%;
     transform: translateY(-2rem);
   }
 `
 const Slogan = styled(Title)`
-  @media(${props => props.theme.max1040 }) {
+  @media (${props => props.theme.max1040}) {
     font-size: calc(1rem + 1vw * 2.3);
     line-height: 1.4;
   }
@@ -137,7 +137,9 @@ const Description = styled.p`
   }
 `
 const ButtonStyles = styled(Button)`
-  @media(${props => props.theme.max720 }) { width: 100%; }
+  @media (${props => props.theme.max720}) {
+    width: 100%;
+  }
 `
 const Pagelocation = styled(Body2)`
   margin-bottom: 0;

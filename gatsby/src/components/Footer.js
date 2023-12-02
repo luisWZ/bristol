@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { css } from '@emotion/react'
-import { AiOutlineRight } from 'react-icons/ai';
+import { AiOutlineRight } from 'react-icons/ai'
 
 import { commodityAesthetics, lasso } from 'root/sitedefaults'
 import { Container } from 'styles/CssHelpers'
@@ -15,7 +15,15 @@ export default function Footer() {
     <>
       <Newsletter />
       <footer css={footerStyles}>
-        <Container css={theme => css` @media (${theme.min720}) { display: flex; } `}>
+        <Container
+          css={theme =>
+            css`
+              @media (${theme.min720}) {
+                display: flex;
+              }
+            `
+          }
+        >
           <div css={footerBrandsStyles}>
             <SvgFooterBrand fill='white' />
             <SvgCambridgeLogo fill='white' />
@@ -23,13 +31,21 @@ export default function Footer() {
           <div css={footerNavigation}>
             <h1>Mapa del sitio</h1>
             <ul css={footerNavigationList}>
-              {siteNavigation.map(({ url, name, order }) => <Li key={order} {...{order}}>
-                  {name !== 'Blog'
-                    ? <Link to={url}>{name}<AiOutlineRight /></Link>
-                    : <a href={url} rel='noopener noreferrer' target='_blank'>{name}<AiOutlineRight /></a>
-                  }
-                </Li>)
-              }
+              {siteNavigation.map(({ url, name, order }) => (
+                <Li key={order} {...{ order }}>
+                  {name !== 'Blog' ? (
+                    <Link to={url}>
+                      {name}
+                      <AiOutlineRight />
+                    </Link>
+                  ) : (
+                    <a href={url} rel='noopener noreferrer' target='_blank'>
+                      {name}
+                      <AiOutlineRight />
+                    </a>
+                  )}
+                </Li>
+              ))}
             </ul>
           </div>
         </Container>
@@ -37,11 +53,32 @@ export default function Footer() {
       <div css={addressBox}>
         <address css={addressStyles}>
           <span>Bristol Inglés Profesional ©{new Date().getFullYear()}</span>
-          <span>Made by&nbsp;
-            <a target='_blank' rel='noopener noreferrer' href={commodityAesthetics}>Commodity Aesthetics</a> &amp; <a target="_blank" rel="noreferrer" href={lasso}>Luis Lasso</a>
+          <span>
+            Made by&nbsp;
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href={commodityAesthetics}
+            >
+              Commodity Aesthetics
+            </a>{' '}
+            &amp;{' '}
+            <a target='_blank' rel='noreferrer' href={lasso}>
+              Luis Lasso
+            </a>
           </span>
         </address>
-        <SocialLinks css={css` a {padding: 1.2rem;} svg {fill: white; width: 1.2rem;} `} />
+        <SocialLinks
+          css={css`
+            a {
+              padding: 1.2rem;
+            }
+            svg {
+              fill: white;
+              width: 1.2rem;
+            }
+          `}
+        />
       </div>
     </>
   )
@@ -90,29 +127,33 @@ const siteNavigation = [
 ]
 // styles =============================================
 const Li = props => (
-  <li css={theme => css`
-    svg { display: none; }
-
-    @media (${theme.min848}) {
-      order: ${props.order};
-    }
-    @media(${theme.max720}) {
-      a {
-        position: relative;
-      }
-
+  <li
+    css={theme => css`
       svg {
-        display: block;
-        position: absolute;
-        width: 1.25rem;
-        right: 1.25rem;
-        font-size: 1.25rem;
-        top: 50%;
-        transform: translateY(-50%);
+        display: none;
       }
-    }
-  `}
-  {...props} />
+
+      @media (${theme.min848}) {
+        order: ${props.order};
+      }
+      @media (${theme.max720}) {
+        a {
+          position: relative;
+        }
+
+        svg {
+          display: block;
+          position: absolute;
+          width: 1.25rem;
+          right: 1.25rem;
+          font-size: 1.25rem;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    `}
+    {...props}
+  />
 )
 const footerStyles = theme => css`
   background-color: ${theme.bristolBlue};
@@ -172,7 +213,7 @@ const footerNavigation = theme => css`
       padding: ${theme.gutter};
     }
 
-    h1{
+    h1 {
       padding-left: ${theme.gutter};
     }
   }
@@ -218,18 +259,18 @@ const addressBox = theme => css`
   padding: 1rem ${theme.gutter};
   background-color: ${theme.blueLight};
 
-  @media(${theme.min480}) {
+  @media (${theme.min480}) {
     justify-content: space-between;
     align-items: center;
     min-height: 6rem;
     padding: 1rem ${theme.gutter} 5rem ${theme.gutter};
   }
 
-  @media(${theme.min560}) {
+  @media (${theme.min560}) {
     padding: 0 6rem 0 ${theme.gutter};
   }
 
-  @media(${theme.min960}) {
+  @media (${theme.min960}) {
     min-height: 0;
     height: 3rem;
   }
@@ -242,18 +283,18 @@ const addressStyles = theme => css`
   height: 4rem;
   color: white;
 
-  @media(${theme.max480}) {
+  @media (${theme.max480}) {
     margin-bottom: 1rem;
   }
 
-  @media(${theme.min480}) {
+  @media (${theme.min480}) {
     flex-basis: 0;
     flex-grow: 1;
     text-align: left;
     flex-direction: column;
   }
 
-  @media(${theme.min960}) {
+  @media (${theme.min960}) {
     flex-direction: row;
     height: auto;
     justify-content: space-between;
@@ -267,6 +308,8 @@ const addressStyles = theme => css`
 
   a {
     color: white;
-    &:hover { text-decoration: underline; }
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `

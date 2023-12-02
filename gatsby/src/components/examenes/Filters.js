@@ -2,22 +2,25 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Select } from 'styles/CssHelpers'
 
-const Filters = ({
-  filters,
-  activeView,
-  setActiveView,
-}) => (
+const Filters = ({ filters, activeView, setActiveView }) => (
   <>
     <Filter>
       {filters.map(filter => (
         <li key={filter}>
-          <Button {...{activeView}} filter={filter.toString()} onClick={() => setActiveView(filter)}>
+          <Button
+            {...{ activeView }}
+            filter={filter.toString()}
+            onClick={() => setActiveView(filter)}
+          >
             {filter === 'all' ? 'Todos los exámenes' : filter.toUpperCase()}
           </Button>
         </li>
       ))}
     </Filter>
-    <FilterMobile value={activeView} onChange={event => setActiveView(event.target.value)}>
+    <FilterMobile
+      value={activeView}
+      onChange={event => setActiveView(event.target.value)}
+    >
       {filters.map(filter => (
         <option key={filter} value={filter}>
           {filter === 'all' ? 'Todos los exámenes' : filter.toUpperCase()}
@@ -47,14 +50,13 @@ const Button = styled.button`
   padding: 0.3rem 0.5rem;
   margin: 0 0.4rem;
 
-  color: ${props => props.activeView === props.filter
-    ? props.theme.bristolBlue
-    : 'inherit'
-  };
-  border: 2px solid ${props => props.activeView === props.filter
-    ? props.theme.bristolBlue
-    : 'transparent'
-  };
+  color: ${props =>
+    props.activeView === props.filter ? props.theme.bristolBlue : 'inherit'};
+  border: 2px solid
+    ${props =>
+      props.activeView === props.filter
+        ? props.theme.bristolBlue
+        : 'transparent'};
 
   &:hover {
     background-color: ${props => props.theme.grayLight};

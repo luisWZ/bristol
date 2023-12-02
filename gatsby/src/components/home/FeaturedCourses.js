@@ -14,38 +14,30 @@ import LineaVioleta from 'svgs/linea-violeta.svg'
 export default function FeaturedCourses({ images }) {
   return (
     <ContainerWhite>
-      <Course
-        image={images.imageCursoInglesGeneral}
-        link='cursos'
-      >
+      <Course image={images.imageCursoInglesGeneral} link='cursos'>
         <Title>Cursos de Inglés General</Title>
         <p>
           Hacemos que el primer contacto de su hijo con el inglés sea una
           experiencia divertida, fácil y exitosa.
         </p>
       </Course>
-      <Course inverse
-        image={images.imageCentroExaminador}
-        link='examenes'
-      >
+      <Course inverse image={images.imageCentroExaminador} link='examenes'>
         <Title>Centro Examinador Cambridge</Title>
-        <p>Obtén una certificación y acredita tu nivel de inglés a nivel internacional.</p>
+        <p>
+          Obtén una certificación y acredita tu nivel de inglés a nivel
+          internacional.
+        </p>
       </Course>
     </ContainerWhite>
   )
 }
-const Course = ({
-children,
-image,
-inverse,
-link,
-}) => (
+const Course = ({ children, image, inverse, link }) => (
   <CourseBox>
-    <ImgWrapper  {...{inverse}}>
+    <ImgWrapper {...{ inverse }}>
       {inverse ? <DecoratorVioleta /> : <DecoratorMagenta />}
       <Img fluid={image.childImageSharp.fluid} css={_ => imageStyles()} />
     </ImgWrapper>
-    <TextBox {...{inverse}} onClick={() => navigate(`/${link}`)}>
+    <TextBox {...{ inverse }} onClick={() => navigate(`/${link}`)}>
       {children}
       <IconArrow />
     </TextBox>
@@ -85,7 +77,7 @@ const CourseBox = styled.div`
 const TextBox = styled.div`
   cursor: pointer;
   order: 2;
-  transition: background-color .25s ease-in;
+  transition: background-color 0.25s ease-in;
 
   @media (${props => props.theme.max848}) {
     text-align: center;
@@ -101,12 +93,13 @@ const TextBox = styled.div`
     padding: 2rem;
     max-width: 22rem;
     transform: translateY(-2rem);
-    order: ${props => props.inverse ? '0' : '2'};
-    ${props => props.inverse ? 'margin-right: 1.5rem' : 'margin-left: 1.5rem' };
+    order: ${props => (props.inverse ? '0' : '2')};
+    ${props =>
+      props.inverse ? 'margin-right: 1.5rem' : 'margin-left: 1.5rem'};
   }
 
   svg {
-    transition: transform .4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
     @media (${props => props.theme.max848}) {
       display: none;
     }
@@ -133,24 +126,18 @@ const ImgWrapper = styled.div`
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 60%;
     height: 73%;
     bottom: -10%;
-    background-color: ${props => props.inverse ? '#658FF8' : '#F2D18D'};
+    background-color: ${props => (props.inverse ? '#658FF8' : '#F2D18D')};
     z-index: 0;
-    ${props => props.inverse
-      ? 'left: 25%;'
-      : 'right: 25%;'
-    }
+    ${props => (props.inverse ? 'left: 25%;' : 'right: 25%;')}
   }
 
   > div {
-    ${props => props.inverse
-      ? 'margin-right: auto;'
-      : 'margin-left: auto;'
-    }
+    ${props => (props.inverse ? 'margin-right: auto;' : 'margin-left: auto;')}
   }
 `
 const imageStyles = _ => css`

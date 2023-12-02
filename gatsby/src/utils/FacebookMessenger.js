@@ -14,23 +14,20 @@ const FacebookMessenger = React.memo(function FacebookMessenger() {
         el.className = 'fb-customerchat'
         el.setAttribute('page_id', process.env.FACEBOOK_PAGE_ID)
         el.setAttribute('theme_color', CssVariables.bristolBlue)
-        el.setAttribute('logged_in_greeting', greeting);
-        el.setAttribute('logged_out_greeting', greeting);
+        el.setAttribute('logged_in_greeting', greeting)
+        el.setAttribute('logged_out_greeting', greeting)
         el.setAttribute('greeting_dialog_display', 'hide')
         document.body.appendChild(el)
 
         FB.XFBML.parse()
-
       }, 100)
     }
   }
 
   useEffect(() => {
     if (promise) {
-      promise.then(callBack);
-
+      promise.then(callBack)
     } else {
-
       promise = new Promise(resolve => {
         window.fbAsyncInit = () => {
           window.FB.init({
@@ -51,8 +48,7 @@ const FacebookMessenger = React.memo(function FacebookMessenger() {
         js.crossOrigin = 'anonymous'
         document.body.appendChild(js)
       })
-      promise.then(callBack);
-
+      promise.then(callBack)
     }
   }, [])
 

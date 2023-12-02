@@ -19,7 +19,7 @@ const LogoBox = styled.div`
   align-items: center;
   padding-left: calc(${props => props.theme.gutter} - 4px);
   border-left: 4px solid ${props => props.theme.bristolRed};
-  transition: padding .4s ease-out;
+  transition: padding 0.4s ease-out;
 
   @media (${props => props.theme.min848}) {
     padding: 0 0.8rem;
@@ -34,7 +34,7 @@ const LogoBox = styled.div`
 const LogoBristol = styled(SvgBristolLogo)`
   width: auto;
   max-height: 44px;
-  transition: max-height .4s ease-out;
+  transition: max-height 0.4s ease-out;
 
   @media (${props => props.theme.min1200}) {
     max-height: 60px;

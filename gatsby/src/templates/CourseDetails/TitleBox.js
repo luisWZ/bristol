@@ -5,16 +5,15 @@ import { Button } from 'styles/CssHelpers'
 import { Big } from 'styles/FontStyles'
 import { email } from 'root/sitedefaults'
 
-export default function TitleBox({
-  courseName,
-  courseType,
-  subheader,
-}) {
+export default function TitleBox({ courseName, courseType, subheader }) {
   return (
     <TitleBoxStyles>
       <TitleText>
         <Big>{courseName}</Big>&emsp;
-        <Text><span>{courseType}</span>&ensp;<Dot>•</Dot>&ensp;<span>{subheader}</span></Text>
+        <Text>
+          <span>{courseType}</span>&ensp;<Dot>•</Dot>&ensp;
+          <span>{subheader}</span>
+        </Text>
       </TitleText>
       <ButtonStyles href={`mailto:${email}`}>Inscríbete</ButtonStyles>
     </TitleBoxStyles>

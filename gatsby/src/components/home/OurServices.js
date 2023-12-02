@@ -11,29 +11,44 @@ import LineDecoration from 'svgs/linea-dorada.svg'
 // Components =========================================
 export default function OurServices({ images }) {
   // query course info & add sharpImages
-  const data = useStaticQuery(HOME_SERVICES_QUERY).allHomeServicesYaml.edges
-    .map( ({ node }) => ({
-      ...node,
-      image: node.type === 'online' ? images.imageCursoOnline : images.imageCursoPresencial,
-      decoration: node.type === 'online' ? true : false,
-    }))
+  const data = useStaticQuery(
+    HOME_SERVICES_QUERY
+  ).allHomeServicesYaml.edges.map(({ node }) => ({
+    ...node,
+    image:
+      node.type === 'online'
+        ? images.imageCursoOnline
+        : images.imageCursoPresencial,
+    decoration: node.type === 'online' ? true : false,
+  }))
   return (
     <ContainerWhite>
       <Title2 css={title}>Modalidades</Title2>
       <ServicesWrapper>
-        {data.map((service, index) => <Service service={service} key={`our_services${index}`} /> )}
+        {data.map((service, index) => (
+          <Service service={service} key={`our_services${index}`} />
+        ))}
         <LineDecoration css={lineDecorationStyles} />
       </ServicesWrapper>
     </ContainerWhite>
   )
 }
 const Service = ({ service }) => (
-  <ServiceBox css={css`position: relative;`}>
+  <ServiceBox
+    css={css`
+      position: relative;
+    `}
+  >
     <ImageWrapper decoration={service.decoration}>
-      <Img css={() => imageStyles()} fluid={service.image.childImageSharp.fluid} />
+      <Img
+        css={() => imageStyles()}
+        fluid={service.image.childImageSharp.fluid}
+      />
     </ImageWrapper>
     <Header>{service.title}</Header>
-    {service.text.split('@').map((line, index) => <p key={index}>{line}</p>)}
+    {service.text.split('@').map((line, index) => (
+      <p key={index}>{line}</p>
+    ))}
   </ServiceBox>
 )
 // query ==============================================
@@ -60,29 +75,29 @@ const ServicesWrapper = styled.div`
   position: relative;
 `
 const ServiceBox = styled.div`
-    margin-bottom: 1.5rem;
-    flex-basis: 40%;
+  margin-bottom: 1.5rem;
+  flex-basis: 40%;
 
-    @media (${props => props.theme.max848}) {
-      max-width: 32rem;
-      flex-basis: initial;
+  @media (${props => props.theme.max848}) {
+    max-width: 32rem;
+    flex-basis: initial;
 
-      &:first-of-type {
-        margin-bottom: 3rem;
-      }
+    &:first-of-type {
+      margin-bottom: 3rem;
     }
+  }
 
-    p {
-      margin-bottom: 0.2rem;
+  p {
+    margin-bottom: 0.2rem;
 
-      &:first-of-type {
-        margin-bottom: 1rem;
-      }
+    &:first-of-type {
+      margin-bottom: 1rem;
     }
+  }
 
-    &:hover {
-      cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 `
 const Header = styled(Title2)`
   margin-top: 5rem;
@@ -95,7 +110,8 @@ const imageStyles = _ => css`
 const ImageWrapper = styled.div`
   position: relative;
 
-  ${props => props.decoration &&
+  ${props =>
+    props.decoration &&
     `
     &:before {
       content: '';
@@ -117,8 +133,7 @@ const ImageWrapper = styled.div`
       top: 7%;
       background-color: #B50F7D;
     }
-    `
-  }
+    `}
 `
 const lineDecorationStyles = theme => css`
   position: absolute;

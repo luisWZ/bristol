@@ -19,7 +19,13 @@ export default function CourseFeatures({
 }) {
   return (
     <Sidebar>
-      <img src={image.file.url} alt='' css={css`width: 100%;`} />
+      <img
+        src={image.file.url}
+        alt=''
+        css={css`
+          width: 100%;
+        `}
+      />
       <InfoGrid>
         <Detail>
           <PictogramaDuracion />
@@ -46,7 +52,7 @@ export default function CourseFeatures({
           <PictogramaModalidad />
           <p>
             <strong>Modalidad</strong>
-            {campus !== 'Online' ? `Bristol ${campus}` : campus }
+            {campus !== 'Online' ? `Bristol ${campus}` : campus}
             {/* {campus} */}
           </p>
         </Detail>

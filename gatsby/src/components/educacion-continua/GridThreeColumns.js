@@ -14,7 +14,7 @@ export function Column({ children, title, subtitle, subheader, pictogram }) {
   return (
     <div>
       {pictograms[pictogram]}
-      <Subtitle style={{marginTop: '1rem'}}>{title}</Subtitle>
+      <Subtitle style={{ marginTop: '1rem' }}>{title}</Subtitle>
       {subtitle && <p className='grid__subtitle'>{subtitle}</p>}
       <Body2>{subheader}</Body2>
       {children}
@@ -26,14 +26,14 @@ const pictograms = {
   'one-to-one': <PictogramaOneToOne />,
   'flex-english': <PictogramaFlexEnglish />,
   '50-plus': <Pictograma50Plus />,
-  'colegios': <PictogramaColegios />,
-  'docente': <PictogramaDocente />,
-  'tkt': <PictogramaTkt />,
+  colegios: <PictogramaColegios />,
+  docente: <PictogramaDocente />,
+  tkt: <PictogramaTkt />,
 }
 // styles =============================================
 export const GridThreeColumns = styled(Container)`
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   grid-gap: 5rem;
   padding-top: 5rem;
   padding-bottom: 5rem;

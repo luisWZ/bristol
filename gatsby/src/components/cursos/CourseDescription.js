@@ -28,23 +28,40 @@ export default function CourseDescription({
   calendar,
 }) {
   const lecturaExtensivaOrder = () => {
-    if (kids) return css`order: -1;`
-    else if (examen) return css`order: 1;`
+    if (kids)
+      return css`
+        order: -1;
+      `
+    else if (examen)
+      return css`
+        order: 1;
+      `
     return null
   }
 
   return (
-    <Section {...{ bgWhite }} {...{ border }} {...{last}}>
+    <Section {...{ bgWhite }} {...{ border }} {...{ last }}>
       <Container as='div'>
         {children}
         <Body2Styles>Características del curso</Body2Styles>
         <Grid>
-          <Feature css={css`order: -2;`}>
+          <Feature
+            css={css`
+              order: -2;
+            `}
+          >
             <PictogramaGruposHomogeneos />
             <p>Grupos homogéneos por edad y nivel</p>
           </Feature>
           {!kids && (
-            <Feature css={examen && css`order: -2;`}>
+            <Feature
+              css={
+                examen &&
+                css`
+                  order: -2;
+                `
+              }
+            >
               <PictogramaPlataforma />
               <p>Uso de plataforma</p>
             </Feature>
@@ -59,9 +76,19 @@ export default function CourseDescription({
             <PictogramaTutorias />
             <p>Servicio de tutorías personalizadas presenciales y en línea</p>
           </Feature>
-          <Feature css={kids && css`order: 1;`}>
+          <Feature
+            css={
+              kids &&
+              css`
+                order: 1;
+              `
+            }
+          >
             <PictogramaSeguimiento />
-            <p>Seguimiento individual continuo por parte del maestro y coordinación académica</p>
+            <p>
+              Seguimiento individual continuo por parte del maestro y
+              coordinación académica
+            </p>
           </Feature>
           <Feature css={lecturaExtensivaOrder}>
             <PictogramaLecturas />
@@ -71,19 +98,35 @@ export default function CourseDescription({
             <Feature css={css``}>
               <PictogramaExamenPractica />
               <p>Exámenes de práctica (mock exams)</p>
-            </Feature>)
-          }
+            </Feature>
+          )}
           <Feature css={css``}>
             <PictogramaRecursosAula />
             <p>Integración de recursos tecnológicos en el aula</p>
           </Feature>
           {!examen && (
-            <Feature css={kids && css`order: -2;`}>
+            <Feature
+              css={
+                kids &&
+                css`
+                  order: -2;
+                `
+              }
+            >
               <PictogramaCertificacion />
-              <p>Preparación para certificaciones de Cambridge Assessment English</p>
+              <p>
+                Preparación para certificaciones de Cambridge Assessment English
+              </p>
             </Feature>
           )}
-          <Feature css={examen && css`order: -1;`}>
+          <Feature
+            css={
+              examen &&
+              css`
+                order: -1;
+              `
+            }
+          >
             <PictogramaTalleresGratuitos />
             <p>Talleres gratuitos</p>
           </Feature>
@@ -93,9 +136,22 @@ export default function CourseDescription({
       <ComingCourses simple />
 
       <Container>
-        {!calendar && <Anchor to='/nosotros'><PictogramaNiveles /> Consulte nuestro sistema de niveles</Anchor>}
-        {!calendar && examen && <Anchor to='/centro-examinador-cambridge'>¿Quieres conocer más sobre cada uno de los exámenes de certificación internacional?</Anchor>}
-        {calendar && <Anchor to='/centro-examinador-cambridge'><PictogramaDias /> Calendario de exámenes internacionales</Anchor>}
+        {!calendar && (
+          <Anchor to='/nosotros'>
+            <PictogramaNiveles /> Consulte nuestro sistema de niveles
+          </Anchor>
+        )}
+        {!calendar && examen && (
+          <Anchor to='/centro-examinador-cambridge'>
+            ¿Quieres conocer más sobre cada uno de los exámenes de certificación
+            internacional?
+          </Anchor>
+        )}
+        {calendar && (
+          <Anchor to='/centro-examinador-cambridge'>
+            <PictogramaDias /> Calendario de exámenes internacionales
+          </Anchor>
+        )}
       </Container>
     </Section>
   )
@@ -104,7 +160,7 @@ export default function CourseDescription({
 const Section = styled.section`
   @media (${props => props.theme.min848}) {
     padding-top: 5rem;
-    padding-bottom: ${props => props.last ? 2 : 5}rem;
+    padding-bottom: ${props => (props.last ? 2 : 5)}rem;
   }
   ${props => props.bgWhite && `background-color: white; `}
   ${props => props.border && `border-bottom: 1px solid ${props.theme.gray}; `}
@@ -123,4 +179,3 @@ const Body2Styles = styled(Body2)`
     margin-top: 1.5rem;
   }
 `
-
