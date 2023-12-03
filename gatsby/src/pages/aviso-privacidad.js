@@ -4,17 +4,19 @@ import PageTitle from 'utils/PageTitle'
 import { Subtitle, Body2, Big } from 'styles/FontStyles'
 import { Container } from 'styles/CssHelpers'
 
+const section = 'Aviso de Privacidad'
+
 export default function AvisoPrivacidad() {
   return (
     <>
-      <PageTitle>Aviso de Privacidad</PageTitle>
+      <PageTitle pageTitle={section} />
       <Container
         slim
         css={css`
           padding-top: 10rem;
         `}
       >
-        <Big>Aviso de Privacidad</Big>
+        <Big>{section}</Big>
         <hr />
         <Subtitle>Finalidades</Subtitle>
         <p>

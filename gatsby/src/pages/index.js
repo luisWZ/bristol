@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
+import PageTitle from 'utils/PageTitle'
 import HeroContent from 'components/HeroContent'
 import ComingCourses from 'components/ComingCourses'
 import FeaturedCourses from 'components/home/FeaturedCourses'
@@ -12,6 +13,7 @@ import IlustracionSittingGirl from 'svgs/ilustracion-sitting-girl.svg'
 export default function Home({ data }) {
   return (
     <>
+      <PageTitle />
       <HeroContent
         gray
         mainText='Speak a new language, discover a new world'

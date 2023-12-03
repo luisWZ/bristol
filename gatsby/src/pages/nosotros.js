@@ -8,14 +8,18 @@ import Us from 'components/nosotros/Us'
 import Recognitions from 'components/nosotros/Recognitions'
 import ComingCourses from 'components/ComingCourses'
 
+const section = 'Nosotros'
+const description =
+  'Una de las principales fortalezas de Bristol es su personal académico'
+
 export default function Nosotros() {
   return (
     <>
-      <PageTitle>Nosotros</PageTitle>
+      <PageTitle pageTitle={section} description={description} />
       <HeroContent
-        mainText='Una de las principales fortalezas de Bristol es su personal académico'
+        mainText={description}
         image={IlustracionBicicleta}
-        section='Nosotros'
+        section={section}
       />
       <Benefits />
       <Us />

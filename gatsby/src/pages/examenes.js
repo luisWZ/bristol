@@ -8,16 +8,20 @@ import CourseDescription from 'components/cursos/CourseDescription'
 import TextIlustration from 'components/TextIlustration'
 import { Section, Container, ButtonSaberMas } from 'styles/CssHelpers'
 
+const section = 'Exámenes Internacionales'
+const description =
+  'Obtén una certificación de Cambridge Assessment English y acredita tu nivel de inglés a nivel internacional.'
+
 export default function Examenes({ data }) {
   return (
     <>
-      <PageTitle>Exámenes Internacionales</PageTitle>
+      <PageTitle pageTitle={section} description={description} />
       <Section>
         <Container paddingBigTop>
           <TextIlustration
             textRight
-            title='Preparación de Exámenes Internacionales'
-            subtitle='Obtén una certificación de Cambridge Assessment English y acredita tu nivel de inglés a nivel internacional.'
+            title={`Preparación de ${section}`}
+            subtitle={description}
             image={data.examenesInternacionales.childImageSharp.fluid}
           >
             <p>

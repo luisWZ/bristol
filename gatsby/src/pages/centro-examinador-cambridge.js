@@ -5,14 +5,18 @@ import Cambridge from 'components/examenes/Cambridge'
 import ExamanesGrid from 'components/examenes/ExamanesGrid'
 import IlustracionCertificacion from 'svgs/ilustracion-certificacion.svg'
 
+const section = 'Centro Examinador Cambridge'
+const description =
+  'Obtén una certificación y acredita tu nivel de inglés a nivel internacional'
+
 export default function CentroExaminadorCambridge() {
   return (
     <>
-      <PageTitle>Centro Examinador Cambridge</PageTitle>
+      <PageTitle pageTitle={section} description={description} />
       <HeroContent
-        mainText='Obtén una certificación y acredita tu nivel de inglés a nivel internacional'
+        mainText={description}
         image={IlustracionCertificacion}
-        section='Centro Examinador Cambridge'
+        section={section}
       />
       <Cambridge />
       <ExamanesGrid />

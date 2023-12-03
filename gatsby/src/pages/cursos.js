@@ -4,16 +4,18 @@ import HeroContent from 'components/HeroContent'
 import CourseCatalog from 'components/cursos/CourseCatalog'
 import IllustrationDancingGirl from 'svgs/illustration-dancing-girl.svg'
 
+const section = 'Inglés General'
+const description =
+  'El inglés es algo necesario para nuestro desarrollo profesional'
+
 export default function Cursos() {
   return (
     <>
-      <PageTitle>Inglés General</PageTitle>
+      <PageTitle pageTitle={section} description={description} />
       <HeroContent
-        mainText={
-          'El inglés es algo necesario para nuestro desarrollo profesional'
-        }
+        mainText={description}
         image={IllustrationDancingGirl}
-        section='Cursos de Inglés General'
+        section={`Cursos de ${section}`}
       />
       <CourseCatalog />
     </>

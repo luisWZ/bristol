@@ -8,14 +8,17 @@ import MainCourses from 'components/educacion-continua/MainCourses'
 import CoursesAbroad from 'components/educacion-continua/CoursesAbroad'
 import CoursesCompanies from 'components/educacion-continua/CoursesCompanies'
 
+const section = 'Educación Continua'
+const description = 'La mejor manera de volverse un experto es practicando'
+
 export default function EducacionContinua({ data }) {
   return (
     <>
-      <PageTitle>Educación Continua</PageTitle>
+      <PageTitle pageTitle={section} description={description} />
       <HeroContent
-        mainText='La mejor manera de volverse un experto es practicando'
+        mainText={description}
         image={IlustracionPatineta}
-        section='Educación Continua'
+        section={section}
       />
       <MainCourses />
       <CoursesAbroad data={data.imageCursoExtranjero} />
