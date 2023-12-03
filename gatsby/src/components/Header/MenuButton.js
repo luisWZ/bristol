@@ -29,7 +29,7 @@ const MenuButtonStyles = styled(Button)`
   padding-left: 1.6rem;
   padding-right: 1.6em;
 
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     display: none;
   }
 `

@@ -22,11 +22,11 @@ const CoursesWrapper = styled.div`
   display: grid;
   justify-content: center;
   gap: ${props => props.theme.gap};
-  @media (${props => props.theme.min320}) {
+  @media (${({ theme }) => theme.min320}) {
     grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
   }
 
-  @media (${props => props.theme.min960}) {
+  @media (${({ theme }) => theme.min960}) {
     grid-template-columns: ${props =>
       props.twoGrid ? 'repeat(2, 21.5rem)' : 'repeat(3, 1fr)'};
   }

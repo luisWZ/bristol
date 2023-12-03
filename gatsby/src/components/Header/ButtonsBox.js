@@ -22,12 +22,12 @@ const ButtonsBoxStyles = styled.div`
 const ContactanosButton = styled(Button)`
   display: none;
 
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     padding: 0rem 1.2rem;
     height: 100%;
     display: flex;
   }
-  @media (${props => props.theme.min1400}) {
+  @media (${({ theme }) => theme.min1400}) {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
   }

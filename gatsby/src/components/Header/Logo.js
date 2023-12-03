@@ -21,12 +21,12 @@ const LogoBox = styled.div`
   border-left: 4px solid ${props => props.theme.bristolRed};
   transition: padding 0.4s ease-out;
 
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     padding: 0 0.8rem;
     grid-area: 1 / 1 / 3 / 2;
     border-right: 1px solid ${props => props.theme.grayLight};
   }
-  @media (${props => props.theme.min1200}) {
+  @media (${({ theme }) => theme.min1200}) {
     padding-left: 1.4rem;
     padding-right: 1.4rem;
   }
@@ -36,7 +36,7 @@ const LogoBristol = styled(SvgBristolLogo)`
   max-height: 44px;
   transition: max-height 0.4s ease-out;
 
-  @media (${props => props.theme.min1200}) {
+  @media (${({ theme }) => theme.min1200}) {
     max-height: 60px;
   }
 `

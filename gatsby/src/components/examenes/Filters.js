@@ -40,7 +40,7 @@ const Filter = styled.ul`
   margin-bottom: 3rem;
   font-size: 1.125rem;
 
-  @media (${props => props.theme.max880}) {
+  @media (${({ theme }) => theme.max880}) {
     display: none;
   }
 `
@@ -66,7 +66,7 @@ const FilterMobile = styled(Select)`
   margin: 2.5rem auto;
   max-width: 25rem;
 
-  @media (${props => props.theme.min880}) {
+  @media (${({ theme }) => theme.min880}) {
     display: none;
   }
 `

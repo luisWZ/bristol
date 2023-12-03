@@ -70,12 +70,12 @@ const ContactBox = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   border-top: 1px solid ${props => props.theme.grayLight};
 
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     border-top: none;
     grid-row: 1 / 2;
     grid-column: 2 / -2;
   }
-  @media (${props => props.theme.min960}) {
+  @media (${({ theme }) => theme.min960}) {
     grid-template-columns: repeat(3, minmax(208px, 256px));
   }
   @media (${secondPhoneMediaQuery}) {
@@ -93,7 +93,7 @@ const ContactLi = styled.li`
     &:last-of-type {
       display: none;
     }
-    @media (${props => props.theme.min640}) {
+    @media (${({ theme }) => theme.min640}) {
       &:last-of-type {
         display: initial;
       }
@@ -108,7 +108,7 @@ const ContactLi = styled.li`
     @media (max-width: 18.9375em) {
       display: none;
     }
-    @media (${props => props.theme.min640}) {
+    @media (${({ theme }) => theme.min640}) {
       span {
         &:first-of-type {
           display: none;
@@ -119,7 +119,7 @@ const ContactLi = styled.li`
   &:last-of-type {
     border-left: 1px solid ${props => props.theme.grayLight};
 
-    @media (${props => props.theme.min848}) {
+    @media (${({ theme }) => theme.min848}) {
       border-right: 1px solid ${props => props.theme.grayLight};
     }
   }
@@ -136,7 +136,7 @@ const ContactAnchor = styled.a`
   svg {
     margin-right: 0.5em;
 
-    @media (${props => props.theme.min848}) and (${props =>
+    @media (${({ theme }) => theme.min848}) and (${props =>
         props.theme.max960}) {
       display: none;
     }

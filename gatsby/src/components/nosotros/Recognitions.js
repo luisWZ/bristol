@@ -86,12 +86,12 @@ const RecognitionBox = styled(Container)`
   grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   grid-gap: 2rem;
 
-  @media (${props => props.theme.max560}) {
+  @media (${({ theme }) => theme.max560}) {
     display: block;
   }
 `
 const RecognitionTitle = styled(Title2)`
-  @media (${props => props.theme.max560}) {
+  @media (${({ theme }) => theme.max560}) {
     margin-bottom: 3rem;
   }
 `
@@ -107,7 +107,7 @@ const Recognition = styled.div`
     width: auto;
   }
 
-  @media (${props => props.theme.max560}) {
+  @media (${({ theme }) => theme.max560}) {
     margin-top: 1.5rem;
     margin-bottom: 1.5em;
   }

@@ -83,7 +83,7 @@ const buttonStyles = css`
 const TitleStyles = styled(Title2)`
   ${title}
   margin-top: 0;
-  @media (${props => props.theme.max420}) {
+  @media (${({ theme }) => theme.max420}) {
     font-size: 1.4rem;
   }
 `

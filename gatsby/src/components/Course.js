@@ -60,7 +60,7 @@ const CourseBox = styled.div`
   border: 1px solid
     ${props => (props.simple ? props.theme.blueGray : 'transparent')};
 
-  @media (${props => props.theme.max560}) {
+  @media (${({ theme }) => theme.max560}) {
     margin-bottom: 1.5rem;
   }
 
@@ -117,7 +117,7 @@ const ButtonStyles = styled(Button)`
     width: calc(100% - 2rem);
     border-radius: ${props => props.theme.radius};
   `}
-  @media (${props => props.theme.min768}) {
+  @media (${({ theme }) => theme.min768}) {
     margin: 0.5rem 1rem 1rem;
     padding: 0.6rem 1.4rem;
     width: calc(100% - 2rem);

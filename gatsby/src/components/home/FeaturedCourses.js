@@ -53,22 +53,22 @@ const CourseBox = styled.div`
     margin-top: 16rem;
   }
 
-  @media (${props => props.theme.max1400}) {
+  @media (${({ theme }) => theme.max1400}) {
     &:last-of-type {
       margin-top: 16vw;
     }
   }
-  @media (${props => props.theme.max848}) {
+  @media (${({ theme }) => theme.max848}) {
     margin-left: auto;
     margin-right: auto;
     margin-top: 4rem;
     flex-direction: column;
     max-width: 35rem;
   }
-  @media (${props => props.theme.max480}) {
+  @media (${({ theme }) => theme.max480}) {
     margin-top: 1rem;
   }
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     &:last-of-type {
       margin-bottom: 6rem;
     }
@@ -79,17 +79,17 @@ const TextBox = styled.div`
   order: 2;
   transition: background-color 0.25s ease-in;
 
-  @media (${props => props.theme.max848}) {
+  @media (${({ theme }) => theme.max848}) {
     text-align: center;
     margin-top: 3.5rem;
     padding-left: 10%;
     padding-right: 10%;
   }
-  @media (${props => props.theme.max352}) {
+  @media (${({ theme }) => theme.max352}) {
     padding-left: 0;
     padding-right: 0;
   }
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     padding: 2rem;
     max-width: 22rem;
     transform: translateY(-2rem);
@@ -100,12 +100,12 @@ const TextBox = styled.div`
 
   svg {
     transition: transform 0.4s ease-in-out;
-    @media (${props => props.theme.max848}) {
+    @media (${({ theme }) => theme.max848}) {
       display: none;
     }
   }
 
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     &:hover {
       background-color: ${props => props.theme.bgGray};
 
@@ -120,7 +120,7 @@ const ImgWrapper = styled.div`
   flex-grow: 1;
   order: 1;
 
-  @media (${props => props.theme.max848}) {
+  @media (${({ theme }) => theme.max848}) {
     align-self: center;
     width: 80%;
   }

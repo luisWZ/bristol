@@ -158,7 +158,7 @@ export default function CourseDescription({
 }
 // styles =================================================
 const Section = styled.section`
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     padding-top: 5rem;
     padding-bottom: ${props => (props.last ? 2 : 5)}rem;
   }
@@ -170,12 +170,12 @@ const Grid = styled.div`
   grid-gap: 2rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  @media (${props => props.theme.min320}) {
+  @media (${({ theme }) => theme.min320}) {
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   }
 `
 const Body2Styles = styled(Body2)`
-  @media (${props => props.theme.max848}) {
+  @media (${({ theme }) => theme.max848}) {
     margin-top: 1.5rem;
   }
 `

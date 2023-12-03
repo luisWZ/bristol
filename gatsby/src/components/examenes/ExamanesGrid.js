@@ -1,6 +1,6 @@
 import React /* , { useState } */ from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/react'
+// import { css } from '@emotion/react'
 
 import { Container, title } from 'styles/CssHelpers'
 import { Title2 } from 'styles/FontStyles'
@@ -18,15 +18,7 @@ export default function ExamanesGrid() {
   // });
 
   return (
-    <Container
-      css={theme =>
-        css`
-          @media (${theme.min560}) {
-            min-height: 45rem;
-          }
-        `
-      }
-    >
+    <Container thick>
       <Title2 style={{ marginBottom: '2rem', marginTop: 0 }} css={title}>
         Calendarios de Exámenes Internacionales
       </Title2>

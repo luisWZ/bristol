@@ -29,7 +29,7 @@ const TitleBoxStyles = styled.div`
   border-bottom: 1px solid ${props => props.theme.gray};
   margin-bottom: 1.5rem;
 
-  @media (${props => props.theme.max480}) {
+  @media (${({ theme }) => theme.max480}) {
     border-bottom: none;
   }
 `
@@ -50,7 +50,7 @@ const ButtonStyles = styled(Button)`
   flex-grow: 1;
 `
 const Text = styled.p`
-  @media (${props => props.theme.max720}) {
+  @media (${({ theme }) => theme.max720}) {
     line-height: 1;
     margin-bottom: 1.5rem;
 
@@ -61,7 +61,7 @@ const Text = styled.p`
   }
 `
 const Dot = styled.span`
-  @media (${props => props.theme.max720}) {
+  @media (${({ theme }) => theme.max720}) {
     display: none;
   }
 `

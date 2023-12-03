@@ -121,13 +121,13 @@ const TestimonyStyles = styled.div`
   max-width: ${maxWidth};
   border-radius: ${props => props.theme.radius};
 
-  @media (${props => props.theme.min560}) {
+  @media (${({ theme }) => theme.min560}) {
     border: 1px solid ${props => props.theme.blueGray};
   }
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     max-width: 90%;
   }
-  @media (${props => props.theme.min1200}) {
+  @media (${({ theme }) => theme.min1200}) {
     max-width: ${maxWidth};
   }
 

@@ -10,7 +10,7 @@ export default function Navigation() {
   const { menuOpen } = useContext(MenuContext)
 
   return (
-    <NavBox {...{ menuOpen }} role='navigation'>
+    <NavBox {...{ menuOpen }} role='navigation' aria-label='Secciones'>
       <NavItem>
         <Link to='/'>
           Home
@@ -73,7 +73,7 @@ const NavBox = styled.ul`
   grid-template-columns: repeat(6, auto);
   ${props => borderTopStyle(props.theme)}
 
-  @media (${props => props.theme.max848}) {
+  @media (${({ theme }) => theme.max848}) {
     display: block;
     grid-row: 3 / 4;
     width: 100%;
@@ -87,7 +87,7 @@ const NavBox = styled.ul`
     transform: ${props =>
       props.menuOpen ? 'translate3d(0%, 0%, 0)' : 'translate3d(0%, -100%, 0)'};
   }
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     grid-row: 2 / 3;
     grid-auto-flow: column;
     grid-template-columns: ${`${_1wordNav} ${_1wordNav} ${_1wordNav} ${_3wordNav} ${_1wordNav}`};
@@ -138,7 +138,7 @@ const NavItem = styled('li')`
     background-color: ${props => props.theme.blueLight};
   }
 
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     ul {
       position: absolute;
       top: 100%;
@@ -167,7 +167,7 @@ const NavItem = styled('li')`
       border-right: 1px solid white;
     }
   }
-  @media (${props => props.theme.max848}) {
+  @media (${({ theme }) => theme.max848}) {
     border-bottom: 1px solid ${props => props.theme.grayLight};
     ${props => liMobileStyles(props.theme)}
 

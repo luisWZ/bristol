@@ -56,11 +56,11 @@ const ContainerGrid = styled(Container)`
   grid-template-areas: 'title title title' 'sidebar main main';
   grid-gap: 0 ${props => props.theme.gap};
 
-  @media (${props => props.theme.max768}) {
+  @media (${({ theme }) => theme.max768}) {
     grid-template-areas: 'title title title' 'sidebar sidebar sidebar' 'main main main';
     grid-gap: 2rem 0;
   }
-  @media (${props => props.theme.min960}) {
+  @media (${({ theme }) => theme.min960}) {
     margin-left: auto;
     margin-right: auto;
     max-width: 56rem;

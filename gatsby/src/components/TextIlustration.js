@@ -63,7 +63,7 @@ const Flex = styled.div`
   justify-content: space-between;
   align-items: flex-start;
 
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     padding-top: ${props => (props.image ? '5rem' : 0)};
     padding-bottom: 5rem;
   }
@@ -73,17 +73,17 @@ const ImgStyles = styled(Img)`
   order: 1;
   flex-basis: 66%;
 
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     flex-basis: ${props => (props.img563 ? '50%' : '40%')};
   }
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     ${props => props.translateY && `transform:translateY(-3rem);`}
   }
 `
 const Text = styled.div`
   order: 2;
 
-  @media (${props => props.theme.min848}) {
+  @media (${({ theme }) => theme.min848}) {
     flex-basis: ${props =>
       !props.image ? '100%' : props.img563 ? '44%' : '54%'};
     order: ${props => (props.textRight ? 2 : 1)};

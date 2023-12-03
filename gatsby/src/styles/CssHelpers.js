@@ -40,10 +40,14 @@ export const Container = styled.section`
       ? '0'
       : '3rem'};
 
-  @media (${props => props.theme.min1200}) {
+  @media (${({ theme }) => theme.min1200}) {
     margin-left: auto;
     margin-right: auto;
-    max-width: ${props => (!props.slim ? '70rem' : '58rem')}; // 1120px || 928px
+    max-width: ${props => {
+      if (props.slim) return '58rem'
+      if (props.thick) return '75rem'
+      return '70rem'
+    }}; // 1120px || 928px
   }
 `
 export function ContainerWhite({ children, borderBottom = false }) {
@@ -178,7 +182,7 @@ export const Feature = styled.div`
     margin-bottom: 0;
     flex: 1;
   }
-  @media (${props => props.theme.max480}) {
+  @media (${({ theme }) => theme.max480}) {
     svg {
       flex-basis: 16.192vw;
       margin-right: 8vw;

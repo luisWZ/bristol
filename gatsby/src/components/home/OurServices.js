@@ -78,7 +78,7 @@ const ServiceBox = styled.div`
   margin-bottom: 1.5rem;
   flex-basis: 40%;
 
-  @media (${props => props.theme.max848}) {
+  @media (${({ theme }) => theme.max848}) {
     max-width: 32rem;
     flex-basis: initial;
 

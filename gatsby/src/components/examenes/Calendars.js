@@ -6,14 +6,14 @@ export default function Calendars({ calendars }) {
     <Calendar key={calendar.id}>
       <Title as='h3'>{calendar.title}</Title>
       <Period>Locales 2024</Period>
-      <GridCalendar>
+      <GridCalendar role='table'>
         {Object.keys(calendar.table[0]).map(key => (
-          <span className='th' key={key}>
+          <span className='th' key={key} role='columnheader'>
             {key.toLocaleLowerCase()}
           </span>
         ))}
         {calendar.table.map(row =>
-          Object.values(row).map(value => <span key={value}>{value}</span>)
+          Object.values(row).map(value => <span key={value} role='cell'>{value}</span>)
         )}
       </GridCalendar>
       {!!(calendar.price && typeof calendar.price[0] === 'string') ? (
@@ -53,7 +53,6 @@ const Calendar = styled.div`
 
   @media (${({ theme }) => theme.min1200}) {
     --rows: 2fr 2fr 5fr 7fr;
-    /* --rows: 56px 52px 6fr 8fr; */
   }
 `
 const Title = styled.h3`
