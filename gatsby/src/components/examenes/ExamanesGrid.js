@@ -1,30 +1,41 @@
-import React /* , { useState } */ from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
-// import { css } from '@emotion/react'
 
 import { Container, title } from 'styles/CssHelpers'
 import { Title2 } from 'styles/FontStyles'
-// import Filters from './Filters';
-import calendars from '../../data/calendars.json'
+import Filters from './Filters'
 import Calendars from './Calendars'
 
-export default function ExamanesGrid() {
-  // const [activeView, setActiveView] = useState('all');
+import calendars from '../../data/calendars.json'
 
-  // add filter property to every image object
-  // const data = Object.values(useStaticQuery(EXAMENES_QUERY)).map((obj) => {
-  //   obj.filter = obj.name.match(/^\w*/)[0];
-  //   return obj;
-  // });
+let tags = []
+if (Array.isArray(calendars.tags)) {
+  tags = ['all', ...calendars.tags]
+}
+
+export default function ExamanesGrid() {
+  const [activeTag, setActiveTag] = useState('all')
 
   return (
-    <Container thick>
+    <Container thick style={{ minHeight: '66vh' }}>
       <Title2 style={{ marginBottom: '2rem', marginTop: 0 }} css={title}>
         Calendarios de Exámenes Internacionales
       </Title2>
-      {/* <Filters {...{ filters }} {...{ activeView }} {...{ setActiveView }} /> */}
+      {!!tags.length && (
+        <Filters
+          tags={tags}
+          activeTag={activeTag}
+          setActiveTag={setActiveTag}
+        />
+      )}
       <Grid>
-        {!!calendars.data.length && <Calendars calendars={calendars.data} />}
+        {!!calendars.data.length && (
+          <Calendars
+            calendars={calendars.data}
+            metadata={calendars.metadata}
+            activeTag={activeTag}
+          />
+        )}
       </Grid>
     </Container>
   )
@@ -45,16 +56,3 @@ const Grid = styled.div`
     max-width: 100%;
   }
 `
-
-// const filters = [
-//   'all',
-//   'ket',
-//   'pet',
-//   'fce',
-//   'cae',
-//   'cpe',
-//   // 'linguaskill',
-//   'ielts',
-//   'tkt',
-//   'yle',
-// ]

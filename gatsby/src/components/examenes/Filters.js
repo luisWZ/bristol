@@ -2,28 +2,28 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Select } from 'styles/CssHelpers'
 
-const Filters = ({ filters, activeView, setActiveView }) => (
+const Filters = ({ tags, activeTag, setActiveTag }) => (
   <>
     <Filter>
-      {filters.map(filter => (
-        <li key={filter}>
+      {tags.map(tag => (
+        <li key={tag}>
           <Button
-            {...{ activeView }}
-            filter={filter.toString()}
-            onClick={() => setActiveView(filter)}
+            {...{ activeTag }}
+            tag={tag.toString()}
+            onClick={() => setActiveTag(tag)}
           >
-            {filter === 'all' ? 'Todos los exámenes' : filter.toUpperCase()}
+            {tag === 'all' ? 'Todos los exámenes' : tag}
           </Button>
         </li>
       ))}
     </Filter>
     <FilterMobile
-      value={activeView}
-      onChange={event => setActiveView(event.target.value)}
+      value={activeTag}
+      onChange={({ target }) => setActiveTag(target.value)}
     >
-      {filters.map(filter => (
-        <option key={filter} value={filter}>
-          {filter === 'all' ? 'Todos los exámenes' : filter.toUpperCase()}
+      {tags.map(tag => (
+        <option key={tag} value={tag}>
+          {tag === 'all' ? 'Todos los exámenes' : tag}
         </option>
       ))}
     </FilterMobile>
@@ -50,16 +50,15 @@ const Button = styled.button`
   padding: 0.3rem 0.5rem;
   margin: 0 0.4rem;
 
-  color: ${props =>
-    props.activeView === props.filter ? props.theme.bristolBlue : 'inherit'};
+  color: ${({ activeTag, tag, theme }) =>
+    activeTag === tag ? theme.bristolBlue : 'inherit'};
+
   border: 2px solid
-    ${props =>
-      props.activeView === props.filter
-        ? props.theme.bristolBlue
-        : 'transparent'};
+    ${({ activeTag, tag, theme }) =>
+      activeTag === tag ? theme.bristolBlue : 'transparent'};
 
   &:hover {
-    background-color: ${props => props.theme.grayLight};
+    background-color: ${({ theme }) => theme.grayLight};
   }
 `
 const FilterMobile = styled(Select)`

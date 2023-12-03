@@ -45,8 +45,21 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 2nd May, 2024"
         }
       ],
-      "title": "YLE 2024",
-      "price": [
+      "titles": [
+        [
+          "Pre A1",
+          "(YLE Starters)"
+        ],
+        [
+          "A1 Movers",
+          "(YLE Movers)"
+        ],
+        [
+          "A2 Flyers",
+          "(YLE Flyers)"
+        ]
+      ],
+      "prices": [
         {
           "category": "PRE A1 STARTERS",
           "price": "$2,033"
@@ -60,37 +73,43 @@
           "price": "$2,488"
         }
       ],
-      "id": 1
-    },
-    {
-      "table": [
-        {
-          "FORMAT": "PB",
-          "DAY": "SAT",
-          "EXAM DATE WRITTEN": "9th Mar",
-          "REGISTRATION PERIOD": "1st Nov, 2023 - 11th Jan, 2024"
-        },
-        {
-          "FORMAT": "PB",
-          "DAY": "SAT",
-          "EXAM DATE WRITTEN": "11th May",
-          "REGISTRATION PERIOD": "1st Nov, 2023 - 7th Mar, 2024"
-        },
-        {
-          "FORMAT": "PB",
-          "DAY": "THU",
-          "EXAM DATE WRITTEN": "6th Jun",
-          "REGISTRATION PERIOD": "1st Nov, 2023 - 21st Mar, 2024"
-        }
-      ],
-      "title": "A2 Key 2024",
-      "price": ["$3,080"],
+      "tag": "YLE",
       "id": 2
     },
     {
       "table": [
         {
           "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "9th Mar",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 11th Jan, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "SAT",
+          "EXAM DATE WRITTEN": "11th May",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 7th Mar, 2024"
+        },
+        {
+          "FORMAT": "PB",
+          "DAY": "THU",
+          "EXAM DATE WRITTEN": "6th Jun",
+          "REGISTRATION PERIOD": "1st Nov, 2023 - 21st Mar, 2024"
+        }
+      ],
+      "titles": [
+        "A2 Key"
+      ],
+      "prices": [
+        "$3,080"
+      ],
+      "tag": "KET",
+      "id": 3
+    },
+    {
+      "table": [
+        {
+          "FORMAT": "PB",
           "DAY": "FRI",
           "EXAM DATE WRITTEN": "19th Jan",
           "REGISTRATION PERIOD": "1st Nov, 2023 - 13th Nov, 2023"
@@ -132,9 +151,17 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 10th May, 2024"
         }
       ],
-      "title": "A2 Key For Schools 2024",
-      "price": ["$3,080"],
-      "id": 3
+      "titles": [
+        [
+          "A2 Key",
+          "for schools"
+        ]
+      ],
+      "prices": [
+        "$3,080"
+      ],
+      "tag": "KET",
+      "id": 4
     },
     {
       "table": [
@@ -157,9 +184,17 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 21st Mar, 2024"
         }
       ],
-      "title": "B1 Preliminary 2024",
-      "price": ["$3,219"],
-      "id": 4
+      "titles": [
+        [
+          "B1",
+          "preliminary"
+        ]
+      ],
+      "prices": [
+        "$3,219"
+      ],
+      "tag": "PET",
+      "id": 5
     },
     {
       "table": [
@@ -206,9 +241,17 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 10th May, 2024"
         }
       ],
-      "title": "B1 Preliminary For Schools 2024",
-      "price": ["$3,219"],
-      "id": 5
+      "titles": [
+        [
+          "B1",
+          "preliminary for schools"
+        ]
+      ],
+      "prices": [
+        "$3,219"
+      ],
+      "tag": "PET",
+      "id": 6
     },
     {
       "table": [
@@ -243,9 +286,17 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 30th May, 2024"
         }
       ],
-      "title": "B2 First 2024",
-      "price": ["$5,260"],
-      "id": 6
+      "titles": [
+        [
+          "B2",
+          "First"
+        ]
+      ],
+      "prices": [
+        "$5,260"
+      ],
+      "tag": "FCE",
+      "id": 7
     },
     {
       "table": [
@@ -280,9 +331,17 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 23rd May, 2024"
         }
       ],
-      "title": "First For Schools 2024",
-      "price": ["$5,260"],
-      "id": 7
+      "titles": [
+        [
+          "First",
+          "for schools"
+        ]
+      ],
+      "prices": [
+        "$5,260"
+      ],
+      "tag": "FCE",
+      "id": 8
     },
     {
       "table": [
@@ -329,9 +388,17 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 30th May, 2024"
         }
       ],
-      "title": "C1 Advanced 2024",
-      "price": ["$5,615"],
-      "id": 8
+      "titles": [
+        [
+          "C1",
+          "Advanced"
+        ]
+      ],
+      "prices": [
+        "$5,615"
+      ],
+      "tag": "CAE",
+      "id": 9
     },
     {
       "table": [
@@ -354,9 +421,17 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 21st Mar, 2024"
         }
       ],
-      "title": "C2 Proficiency 2024",
-      "price": ["$5,918"],
-      "id": 9
+      "titles": [
+        [
+          "C2",
+          "Proficiency"
+        ]
+      ],
+      "prices": [
+        "$5,918"
+      ],
+      "tag": "CPE",
+      "id": 10
     },
     {
       "table": [
@@ -385,9 +460,27 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 10th Apr, 2024"
         }
       ],
-      "title": "TKT",
-      "price": ["$1,675"],
-      "id": 10
+      "titles": [
+        [
+          "TKT",
+          "Teaching Knowledge Test"
+        ]
+      ],
+      "prices": [
+        "$1,675"
+      ],
+      "tag": "TKT",
+      "id": 11
     }
+  ],
+  "metadata": "Locales 2024",
+  "tags": [
+    "YLE",
+    "KET",
+    "PET",
+    "FCE",
+    "CAE",
+    "CPE",
+    "TKT"
   ]
 }
