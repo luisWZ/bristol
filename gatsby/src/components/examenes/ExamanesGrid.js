@@ -1,16 +1,13 @@
 import React /* , { useState } */ from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 
 import { Container, title } from 'styles/CssHelpers'
 import { Title2 } from 'styles/FontStyles'
-import Image from './Image'
 // import Filters from './Filters';
 import calendars from '../../data/calendars.json'
 import Calendars from './Calendars'
 
-// component ==========================================
 export default function ExamanesGrid() {
   // const [activeView, setActiveView] = useState('all');
 
@@ -34,98 +31,38 @@ export default function ExamanesGrid() {
         Calendarios de Exámenes Internacionales
       </Title2>
       {/* <Filters {...{ filters }} {...{ activeView }} {...{ setActiveView }} /> */}
-      <Grid
-        css={css`
-          align-items: flex-start;
-        `}
-      >
+      <Grid>
         {!!calendars.data.length && <Calendars calendars={calendars.data} />}
       </Grid>
     </Container>
   )
 }
-const filters = [
-  'all',
-  'ket',
-  'pet',
-  'fce',
-  'cae',
-  'cpe',
-  // 'linguaskill',
-  'ielts',
-  'tkt',
-  'yle',
-]
-// Query ==============================================
-const EXAMENES_QUERY = graphql`
-  fragment examenesImageSharpFragment on File {
-    childImageSharp {
-      fluid(maxWidth: 576) {
-        ...GatsbyImageSharpFluid_withWebp
-      }
-    }
-  }
-  query EXAMENES_QUERY {
-    ket: file(relativePath: { eq: "centro-examinador/ket.png" }) {
-      name
-      ...examenesImageSharpFragment
-    }
-    ketschools: file(
-      relativePath: { eq: "centro-examinador/ket-schools.png" }
-    ) {
-      name
-      ...examenesImageSharpFragment
-    }
-    pet: file(relativePath: { eq: "centro-examinador/pet.png" }) {
-      name
-      ...examenesImageSharpFragment
-    }
-    petschools: file(
-      relativePath: { eq: "centro-examinador/pet-schools.png" }
-    ) {
-      name
-      ...examenesImageSharpFragment
-    }
-    fce: file(relativePath: { eq: "centro-examinador/fce.png" }) {
-      name
-      ...examenesImageSharpFragment
-    }
-    fceschools: file(
-      relativePath: { eq: "centro-examinador/fce-schools.png" }
-    ) {
-      name
-      ...examenesImageSharpFragment
-    }
-    cae: file(relativePath: { eq: "centro-examinador/cae.png" }) {
-      name
-      ...examenesImageSharpFragment
-    }
-    cpe: file(relativePath: { eq: "centro-examinador/cpe.png" }) {
-      name
-      ...examenesImageSharpFragment
-    }
-    # linguaskill: file(relativePath: { eq: "centro-examinador/linguaskill.png" }) { name ...examenesImageSharpFragment }
-    ielts: file(relativePath: { eq: "centro-examinador/ielts.png" }) {
-      name
-      ...examenesImageSharpFragment
-    }
-    tkt: file(relativePath: { eq: "centro-examinador/tkt.png" }) {
-      name
-      ...examenesImageSharpFragment
-    }
-    yle: file(relativePath: { eq: "centro-examinador/yle.png" }) {
-      name
-      ...examenesImageSharpFragment
-    }
-  }
-`
-// styles =============================================
+
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(26.5rem, 1fr));
+  grid-template-columns: 1fr;
   grid-gap: 2rem;
+  align-items: flex-start;
+  max-width: 672px;
+  margin-left: auto;
+  margin-right: auto;
+  /* grid-template-columns: repeat(auto-fill, minmax(672, 1fr)); */
 
-  @media (${props => props.theme.max560}) {
-    grid-template-columns: 1fr;
+  @media (${({ theme }) => theme.min1200}) {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
   }
 `
+
+// const filters = [
+//   'all',
+//   'ket',
+//   'pet',
+//   'fce',
+//   'cae',
+//   'cpe',
+//   // 'linguaskill',
+//   'ielts',
+//   'tkt',
+//   'yle',
+// ]
