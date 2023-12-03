@@ -2,7 +2,6 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 export default function Calendars({ calendars, metadata, activeTag }) {
-  console.log({ calendars })
   return calendars.map(calendar => (
     <Calendar key={calendar.id} activeTag={activeTag} tag={calendar.tag}>
       {!!calendar.titles.length &&
