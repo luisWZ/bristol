@@ -35,7 +35,7 @@ export default function Calendars({ calendars, metadata, activeTag }) {
       {!!(calendar.prices && typeof calendar.prices[0] === 'string') ? (
         <Price>
           {calendar.prices[0]}{' '}
-          {calendar.tag === 'TKT' && <span>* price per module</span>}
+          {calendar.tag === 'TKT' && <span>*price per module</span>}
         </Price>
       ) : (
         calendar.prices?.length > 1 && (
@@ -138,6 +138,9 @@ const Price = styled.p`
 
     span {
       display: block;
+      font-weight: normal;
+      font-size: 0.8rem;
+      line-height: 1.3;
     }
   }
 `

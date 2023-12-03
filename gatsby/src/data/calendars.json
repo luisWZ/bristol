@@ -46,18 +46,9 @@
         }
       ],
       "titles": [
-        [
-          "Pre A1",
-          "(YLE Starters)"
-        ],
-        [
-          "A1 Movers",
-          "(YLE Movers)"
-        ],
-        [
-          "A2 Flyers",
-          "(YLE Flyers)"
-        ]
+        ["Pre A1", "(YLE Starters)"],
+        ["A1 Movers", "(YLE Movers)"],
+        ["A2 Flyers", "(YLE Flyers)"]
       ],
       "prices": [
         {
@@ -97,12 +88,8 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 21st Mar, 2024"
         }
       ],
-      "titles": [
-        "A2 Key"
-      ],
-      "prices": [
-        "$3,080"
-      ],
+      "titles": ["A2 Key"],
+      "prices": ["$3,080"],
       "tag": "KET",
       "id": 3
     },
@@ -151,15 +138,8 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 10th May, 2024"
         }
       ],
-      "titles": [
-        [
-          "A2 Key",
-          "for schools"
-        ]
-      ],
-      "prices": [
-        "$3,080"
-      ],
+      "titles": [["A2 Key", "for schools"]],
+      "prices": ["$3,080"],
       "tag": "KET",
       "id": 4
     },
@@ -184,15 +164,8 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 21st Mar, 2024"
         }
       ],
-      "titles": [
-        [
-          "B1",
-          "preliminary"
-        ]
-      ],
-      "prices": [
-        "$3,219"
-      ],
+      "titles": [["B1", "preliminary"]],
+      "prices": ["$3,219"],
       "tag": "PET",
       "id": 5
     },
@@ -241,15 +214,8 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 10th May, 2024"
         }
       ],
-      "titles": [
-        [
-          "B1",
-          "preliminary for schools"
-        ]
-      ],
-      "prices": [
-        "$3,219"
-      ],
+      "titles": [["B1", "preliminary for schools"]],
+      "prices": ["$3,219"],
       "tag": "PET",
       "id": 6
     },
@@ -286,15 +252,8 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 30th May, 2024"
         }
       ],
-      "titles": [
-        [
-          "B2",
-          "First"
-        ]
-      ],
-      "prices": [
-        "$5,260"
-      ],
+      "titles": [["B2", "First"]],
+      "prices": ["$5,260"],
       "tag": "FCE",
       "id": 7
     },
@@ -331,15 +290,8 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 23rd May, 2024"
         }
       ],
-      "titles": [
-        [
-          "First",
-          "for schools"
-        ]
-      ],
-      "prices": [
-        "$5,260"
-      ],
+      "titles": [["First", "for schools"]],
+      "prices": ["$5,260"],
       "tag": "FCE",
       "id": 8
     },
@@ -388,15 +340,8 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 30th May, 2024"
         }
       ],
-      "titles": [
-        [
-          "C1",
-          "Advanced"
-        ]
-      ],
-      "prices": [
-        "$5,615"
-      ],
+      "titles": [["C1", "Advanced"]],
+      "prices": ["$5,615"],
       "tag": "CAE",
       "id": 9
     },
@@ -421,15 +366,8 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 21st Mar, 2024"
         }
       ],
-      "titles": [
-        [
-          "C2",
-          "Proficiency"
-        ]
-      ],
-      "prices": [
-        "$5,918"
-      ],
+      "titles": [["C2", "Proficiency"]],
+      "prices": ["$5,918"],
       "tag": "CPE",
       "id": 10
     },
@@ -460,27 +398,12 @@
           "REGISTRATION PERIOD": "1st Nov, 2023 - 10th Apr, 2024"
         }
       ],
-      "titles": [
-        [
-          "TKT",
-          "Teaching Knowledge Test"
-        ]
-      ],
-      "prices": [
-        "$1,675"
-      ],
+      "titles": [["TKT", "Teaching Knowledge Test"]],
+      "prices": ["$1,675"],
       "tag": "TKT",
       "id": 11
     }
   ],
   "metadata": "Locales 2024",
-  "tags": [
-    "YLE",
-    "KET",
-    "PET",
-    "FCE",
-    "CAE",
-    "CPE",
-    "TKT"
-  ]
+  "tags": ["YLE", "KET", "PET", "FCE", "CAE", "CPE", "TKT"]
 }
